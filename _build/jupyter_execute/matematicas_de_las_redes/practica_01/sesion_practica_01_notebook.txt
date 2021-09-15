@@ -1,0 +1,306 @@
+import numpy as np
+import networkx as nx
+import matplotlib.pyplot as plt
+
+#se crea un objeto de clase Graph y 
+#se guarda en la variable G para aplicarle funciones y analizar sus propiedades
+
+G = nx.Graph() 
+
+# La funcion draw nos da una visualizacion simple de la red generada.
+# En este caso, como la red todavia no tiene nodos ni enlaces, solo se 
+# muestra un "lienzo" blanco:
+
+nx.draw(G) 
+
+# Un objeto de tipo Graph tiene una propiedad llamada nodes y es la lista de nodos.
+# En el caso de la red que creamos no es otra cosa que una lista sin elementos:
+
+G.nodes
+
+# Otra propiedad es edges, que es la lista de los enlaces de la red.
+# Como se vio antes, un enlace es en primer lugar una pareja de nodos. Entonces,
+# la propiedad edges es una lista de parejas de nodos. En el caso de nuestra red
+# vuelve a ser una lista sin elementos
+
+G.edges
+
+G.add_node('Nodo 1') # se agrega el nodo "Nodo 1"
+
+nx.draw(G)  # la visualizacion ya no es un lienzo blanco
+
+G.add_node('Nodo 2') #se agregan otros nodos
+G.add_node('Nodo 3')
+G.add_node('Nodo 4')
+G.add_node('Nodo 5')
+
+nx.draw(G)   #se visualiza
+
+G.add_edge('Nodo 1', 'Nodo 2')
+G.add_edge('Nodo 1', 'Nodo 3')
+G.add_edge('Nodo 1', 'Nodo 4')
+G.add_edge('Nodo 3', 'Nodo 5')
+
+nx.draw(G, with_labels = True)
+
+G.nodes
+
+G.edges
+
+G.degree
+
+G1 = nx.Graph()
+
+G1.add_node(0)
+G1.add_node(1)
+G1.add_node(2)
+G1.add_node(3)
+
+G1.nodes
+
+for i in range(10):
+  G1.add_node(i)
+
+nx.draw(G1, with_labels= True)
+
+N = 10
+
+G_lineal = nx.Graph()
+
+
+for i in range(N - 1):
+  G_lineal.add_edge(i, i+1)
+
+nx.draw(G1, with_labels = True)
+
+G1.degree
+
+G_circular = nx.Graph()
+
+N = 5
+
+for i in range(N):
+  G_circular.add_node(i)
+lista_nodos = list(G_circular.nodes)
+
+for i in range(N):
+  G_circular.add_edge(lista_nodos[i], lista_nodos[i - 1])
+
+
+nx.draw(G_circular)
+
+G_anillo = nx.Graph()
+
+N = 25
+
+for i in range(N):
+  G_anillo.add_node(i)
+
+lista_nodos = list(G_anillo.nodes)
+
+for i in range(N):
+  G_anillo.add_edge(lista_nodos[i], lista_nodos[i-1]) #primeros vecinos
+  G_anillo.add_edge(lista_nodos[i], lista_nodos[i-2]) #segundos vecinos
+  G_anillo.add_edge(lista_nodos[i], lista_nodos[i-3]) #terceros vecinos
+
+nx.draw_circular(G_anillo)
+
+G_completa = nx.Graph()
+
+N = 15
+
+for i in range(N):
+  for j in range(i):
+    G_completa.add_edge(i,j)
+
+nx.draw_circular(G_completa)
+
+def Anillo(N):
+  # generar la red
+  Red = nx.Graph()
+
+  # agregar los nodos
+  for i in range(N):
+    Red.add_node(i)
+
+  lista_nodos = list(Red.nodes)
+
+  for i in range(N):
+    Red.add_edge( lista_nodos[i-1] , lista_nodos[i] )
+    Red.add_edge( lista_nodos[i-2] , lista_nodos[i] )
+    Red.add_edge( lista_nodos[i-3] , lista_nodos[i] )
+  
+  #graficar la red
+  nx.draw_circular(Red)
+
+  return Red
+
+anillo_20 = Anillo(20)
+
+anillo_20
+
+anillo_20.nodes
+
+anillo_20.edges
+
+nx.draw(anillo_20, with_labels = True)
+
+N = 20
+
+np.array(range(N))
+
+nodos = np.arange(N)
+
+list(zip(nodos[:-1],nodos[1:]))
+
+N = 5
+
+nodos = np.arange(N)
+
+red_lineal = nx.Graph()
+
+red_lineal.add_nodes_from(nodos)
+
+red_lineal.add_edges_from( zip(nodos[:-1], nodos[1:] ) )
+
+nx.draw(red_lineal)
+
+def Red_lineal(N):
+  nodos = np.arange(N)
+
+  red_lineal = nx.Graph()
+
+  red_lineal.add_nodes_from(nodos)
+
+  red_lineal.add_edges_from( zip(nodos[:-1], nodos[1:] ) )
+
+  nx.draw(red_lineal)
+
+  return red_lineal
+
+Red_lineal(250)
+
+nodos = np.arange(20)
+nodos
+
+np.roll(nodos, 1)
+
+#N = 20
+
+def Red_circular(N):
+  nodos = np.arange(N)
+
+  circular = nx.Graph()
+
+  circular.add_nodes_from(nodos)
+
+  circular.add_edges_from( zip( nodos, np.roll(nodos, 1) ) )
+
+  nx.draw(circular)
+  
+  return circular
+
+Red_circular(8)
+
+def Red_anillo(N, d):
+  nodos = np.arange(N)
+
+  anillo = nx.Graph()
+
+  anillo.add_nodes_from(nodos)
+
+  for i in range(d):
+    anillo.add_edges_from( zip( nodos, np.roll(nodos, i+1) ) )
+  
+  return anillo
+
+Anillo = Red_anillo(10,3)
+nx.draw_circular(Anillo)
+
+N = 10
+
+completa = nx.Graph()
+
+for i in range(N):
+  for j in range(i):
+    completa.add_edge( i , j )
+
+nx.draw_circular(completa)
+
+
+matriz = [[0,1,1,1], 
+ [1,0,0,0], 
+ [1,0,0,1], 
+ [1,0,1,0]]
+
+A = np.array(matriz)
+
+G = nx.from_numpy_array( A )
+
+
+
+nx.draw_circular(G,with_labels = True)
+
+A.dot(A).dot(A)
+
+plt.imshow(A)
+
+A = nx.to_numpy_array(G)
+
+
+
+A = nx.to_numpy_array(completa)
+
+plt.imshow(A)
+
+red_anillo = Red_anillo(50, 2)
+
+A = nx.to_numpy_array(red_anillo)
+
+plt.imshow(A)
+
+A = nx.to_numpy_array(red_lineal)
+plt.imshow(A)
+
+circular = Red_circular(10)
+
+A = nx.to_numpy_array(circular)
+
+plt.imshow(A)
+
+
+
+A = np.array(
+    [[0,1,1,1,0,1],
+     [1,0,1,1,0,0],
+     [1,1,0,0,0,1],
+     [1,1,0,0,0,0],
+     [0,0,0,0,0,0],
+     [1,0,1,0,0,0]
+     ]
+
+)
+
+G = nx.from_numpy_array(A)
+
+nx.draw_circular(G)
+
+A.dot(A).dot(A)
+
+G = nx.DiGraph()
+G.add_edge('Nodo 1', 'Nodo 5')
+G.add_edge('Nodo 1', 'Nodo 4')
+G.add_edge('Nodo 2', 'Nodo 3')
+G.add_edge('Nodo 3', 'Nodo 5')
+G.add_edge('Nodo 2', 'Nodo 5')
+
+nx.draw(G, with_labels = True)
+
+GM = nx.MultiGraph()
+
+GM.add_edge(0,1)
+GM.add_edge(0,2)
+GM.add_edge(0,3)
+GM.add_edge(0,1)
+GM.add_edge(0,1)
+GM.add_edge(0,1)

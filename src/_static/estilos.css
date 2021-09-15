@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Lato&family=Merriweather:wght@300&family=Zilla+Slab:wght@500&display=swap');
+
+.iframe-container-out {
+	max-width: 560px;
+	margin: auto;
+}
+.iframe-container-in {
+	position: relative;
+	overflow: hidden;
+	max-width: 100%;
+	padding-top: 56.25%;
+}
+.iframe-container-in iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+body{
+	font-family: 'Helvetica', sans-serif;
+	font-size: 12pt;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Zilla Slab', serif;
+	font-weight: 600;
+}
+
+.caption-text{
+	text-transform: none;
+	font-family: 'Zilla Slab',serif;
+	font-weight: 600;
+	font-size: 12pt;
+}
+
+#next-link::before{
+	content: 'Siguiente página' !important;
+}
+
+#prev-link::before{
+	content: 'Página previa' !important;
+}
+
+p > span > a.reference.internal {
+	font-weight: bold;
+}
+
+/* a.current{
+	font-weight: normal !important;
+} */
+
+
+#site-title{
+	display: none;
+}
+
+img.logo{
+	min-height: 230px !important;
+}

@@ -1,0 +1,2118 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7.1. Práctica 3 (notebook) &#8212; Ciencia de Redes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="8. Redes aleatorias" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/presentacion.html" />
+    <link rel="prev" title="7. Práctica 3" href="presentacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-pagina-01.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Prefacio
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../prefacio/presentacion.html">
+   Presentación
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 1: Matemáticas de las redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/presentacion.html">
+   1. Matemáticas de las redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/tipos_de_redes_y_matriz_de_adyacencia.html">
+     1.1. Tipos de redes y matriz de adyacencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/definicion_de_grado.html">
+     1.2. Definición de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/motivacion_y_mas_tipos_de_redes.html">
+     1.3. Motivación y más tipos de redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades.html">
+     1.4. Matríz de adyacencia y sus propiedades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/numero_de_enlaces_de_la_red.html">
+     1.5. Número de enlaces de la red
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/caminos_y_distancia_entre_nodos.html">
+     1.6. Caminos y distancia entre nodos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/presentacion.html">
+   2. Práctica 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/primeros_pasos_python_notebook.html">
+     2.1. Preliminar: primeros pasos con Python (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_notebook.html">
+     2.2. Práctica 1 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_video.html">
+     2.3. Práctica 1 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2: Medidas y métricas
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/presentacion.html">
+   3. Medidas de centralidad de los nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
+     3.1. Centralidad de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
+     3.2. Centralidad de cercanía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
+     3.3. Centralidad de intermediación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
+     3.4. Centralidad de eigenvector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
+     3.5. Centralidad de Katz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
+     3.6. Centralidad de Page Rank (opcional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../practica_02/presentacion.html">
+   4. Práctica 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../practica_02/sesion_practica_02_notebook.html">
+     4.1. Práctica 2 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../practica_02/sesion_practica_02_video.html">
+     4.2. Práctica 2 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../medidas_de_grupos_de_nodos/presentacion.html">
+   5. Medidas de grupos de nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
+     5.1. Coeficiente de agrupamiento/acumulación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_grupos_de_nodos/grupos_de_nodos.html">
+     5.2. Grupos de nodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_grupos_de_nodos/modularidad.html">
+     5.3. Modularidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../propiedades_globales_de_la_red/presentacion.html">
+   6. Propiedades globales de la red
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../propiedades_globales_de_la_red/propiedades_globales.html">
+     6.1. Propiedades globales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../propiedades_globales_de_la_red/distribucion_de_grado.html">
+     6.2. Distribución de grado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="presentacion.html">
+   7. Práctica 3
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.1. Práctica 3 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3: Redes complejas y sus propiedades
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/presentacion.html">
+   8. Redes aleatorias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
+   9. Redes de mundo pequeño
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
+   10. Redes con independencia de escala (scale-free)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 4: Procesos en redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/presentacion.html">
+   11. Difusión en redes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../procesos_en_redes/percolacion_en_redes/presentacion.html">
+   12. Percolación en redes
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 5: Estudio de redes reales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html">
+   13. Redes de información
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_en_biologia/presentacion.html">
+   14. Redes en biología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_sociales/presentacion.html">
+   15. Redes sociales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/proyectos_finales/presentacion.html">
+   16. Proyectos finales
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Referencias
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../referencias/referencias.html">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/medidas_y_metricas/practica_03/sesion_practica_03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/medidas_y_metricas/practica_03/sesion_practica_03.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/medidas_y_metricas/practica_03/sesion_practica_03.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#medidas-de-grupos-de-nodos">
+   7.1.1. Medidas de grupos de nodos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clustering-coeficiente-de-agrupamiento-o-acumulacion">
+     7.1.1.1. Clustering (coeficiente de agrupamiento o acumulación)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comunidades">
+     7.1.1.2. Comunidades
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propiedades-globales">
+   7.1.2. Propiedades globales
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#componentes">
+     7.1.2.1. Componentes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#medidas-promedio-y-otras-medidas-globales">
+     7.1.2.2. Medidas promedio y otras medidas globales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribucion-de-probabilidad-de-grado">
+     7.1.2.3. Distribución de probabilidad de grado
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="practica-3-notebook">
+<h1><span class="section-number">7.1. </span>Práctica 3 (notebook)<a class="headerlink" href="#practica-3-notebook" title="Enlazar permanentemente con este título">¶</a></h1>
+<!-- esta celda no se renderizará en jupyter -->
+<div class="admonition-ejecuta-el-notebook admonition">
+<p class="admonition-title">Ejecuta el notebook</p>
+<p>Para ejecutar este notebook da click en <i class="fas fa-download"></i> y descarga el archivo <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> para correrolo localmente en tu computadora o da click en <i class="fas fa-rocket"></i> para correlo en Binder o Google Colab.</p>
+</div>
+<p>En este notebook se aplican los siguientes conceptos:</p>
+<ul class="simple">
+<li><p>Medidas de grupos de nodos</p>
+<ul>
+<li><p>Coeficiente de agrupamiento (clustering): <a class="reference external" href="https://youtu.be/zH5oMNKtVoA">https://youtu.be/zH5oMNKtVoA</a></p></li>
+<li><p>Detección de comunidades: <a class="reference external" href="https://www.youtube.com/watch?v=pG5XKZqyFmk&amp;t">https://www.youtube.com/watch?v=pG5XKZqyFmk&amp;t</a></p></li>
+</ul>
+</li>
+<li><p>Propiedades globales: <a class="reference external" href="https://youtu.be/FBu3yA0CdwY">https://youtu.be/FBu3yA0CdwY</a></p>
+<ul>
+<li><p>Componentes y máxima componente</p></li>
+<li><p>Medidas promedio</p></li>
+<li><p>Modularidad: <a class="reference external" href="https://www.youtube.com/watch?v=jlAZJqAqlTA&amp;t">https://www.youtube.com/watch?v=jlAZJqAqlTA&amp;t</a></p></li>
+<li><p>Distribución de grado: <a class="reference external" href="https://youtu.be/nUi203c53lA">https://youtu.be/nUi203c53lA</a></p></li>
+</ul>
+</li>
+</ul>
+<p>La única función nueva que se importar para esta práctica es greedy_modularity_communities, se se encuentra en networkx.algorithms.community y es para la detección de comunidades según el algoritmo de Newman, Clauset y Moore (ver <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.modularity_max.greedy_modularity_communities.html#networkx.algorithms.community.modularity_max.greedy_modularity_communities">documentación</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span> <span class="c1">#solo para trabajar en Colaboratory</span>
+
+<span class="kn">from</span> <span class="nn">networkx.algorithms.community</span> <span class="kn">import</span> <span class="n">greedy_modularity_communities</span> <span class="c1"># para detección de comunidades</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="medidas-de-grupos-de-nodos">
+<h2><span class="section-number">7.1.1. </span>Medidas de grupos de nodos<a class="headerlink" href="#medidas-de-grupos-de-nodos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para este notebook se utilizarán datos de redes reales. La importación de datos reales en un notebook se discute en la <a class="reference external" href="https://www.youtube.com/playlist?list=PLCTzelSlkHdP2NZ-zKVwPqSbnw61b9eY7">práctica 2</a>.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<input type="file" id="files-003f22f2-4f4b-4079-8426-9342bb307808" name="files[]" multiple disabled
+   style="border:none" />
+<output id="result-003f22f2-4f4b-4079-8426-9342bb307808">
+ Upload widget is only available when the cell has been executed in the
+ current browser session. Please rerun this cell to enable.
+ </output>
+ <script src="/nbextensions/google.colab/files.js"></script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving ca-netscience.mtx to ca-netscience.mtx
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ca-netscience.mtx&#39;: b&#39;%MatrixMarket matrix coordinate pattern symmetric \n% 379 379 914\n2 1\n3 1\n4 1\n5 1\n16 1\n44 1\n113 1\n131 1\n250 1\n259 1\n3 2\n5 4\n13 4\n14 4\n15 4\n16 4\n44 4\n45 4\n46 4\n47 4\n61 4\n126 4\n127 4\n128 4\n146 4\n152 4\n153 4\n154 4\n164 4\n165 4\n166 4\n176 4\n177 4\n249 4\n250 4\n274 4\n313 4\n314 4\n323 4\n324 4\n330 4\n371 4\n373 4\n374 4\n15 5\n16 5\n44 5\n45 5\n46 5\n47 5\n176 5\n177 5\n199 5\n201 5\n202 5\n204 5\n231 5\n235 5\n236 5\n237 5\n238 5\n249 5\n250 5\n254 5\n298 5\n313 5\n314 5\n373 5\n374 5\n7 6\n8 6\n8 7\n190 7\n191 7\n192 7\n193 7\n26 8\n62 8\n63 8\n64 8\n65 8\n137 8\n189 8\n342 8\n343 8\n344 8\n10 9\n11 9\n12 9\n11 10\n12 10\n67 10\n68 10\n69 10\n12 11\n14 13\n15 13\n16 13\n17 13\n18 13\n19 13\n20 13\n274 13\n15 14\n16 14\n16 15\n45 15\n46 15\n47 15\n176 15\n177 15\n278 15\n279 15\n334 15\n366 15\n367 15\n368 15\n45 16\n46 16\n47 16\n153 16\n154 16\n176 16\n177 16\n249 16\n250 16\n313 16\n314 16\n323 16\n324 16\n371 16\n373 16\n18 17\n29 17\n58 17\n172 17\n201 17\n258 17\n261 17\n365 17\n58 18\n172 18\n201 18\n258 18\n261 18\n365 18\n20 19\n208 19\n22 21\n23 21\n24 21\n33 21\n109 21\n220 21\n221 21\n232 21\n233 21\n268 21\n287 21\n288 21\n23 22\n24 22\n24 23\n50 23\n51 23\n52 23\n54 23\n55 23\n220 23\n227 23\n228 23\n79 24\n140 24\n220 24\n229 24\n232 24\n233 24\n268 24\n26 25\n27 25\n28 25\n27 26\n28 26\n40 26\n95 26\n104 26\n105 26\n106 26\n107 26\n108 26\n124 26\n125 26\n155 26\n197 26\n198 26\n231 26\n234 26\n251 26\n273 26\n295 26\n296 26\n297 26\n306 26\n315 26\n316 26\n317 26\n28 27\n31 30\n32 30\n33 30\n34 30\n35 30\n36 30\n51 30\n76 30\n219 30\n32 31\n33 31\n34 31\n33 32\n34 32\n35 32\n36 32\n51 32\n76 32\n216 32\n217 32\n218 32\n219 32\n307 32\n369 32\n370 32\n34 33\n35 33\n36 33\n109 33\n219 33\n220 33\n221 33\n36 35\n219 35\n38 37\n304 38\n305 38\n40 39\n173 40\n174 40\n175 40\n239 40\n240 40\n282 40\n326 40\n42 41\n43 41\n241 41\n242 41\n243 41\n244 41\n43 42\n52 42\n170 42\n241 42\n242 42\n243 42\n244 42\n275 42\n276 42\n277 42\n364 42\n275 43\n276 43\n277 43\n66 44\n46 45\n47 45\n176 45\n177 45\n323 45\n324 45\n47 46\n176 46\n177 46\n176 47\n177 47\n49 48\n67 49\n74 49\n181 49\n182 49\n183 49\n226 49\n51 50\n52 50\n53 50\n52 51\n76 51\n95 51\n100 51\n160 51\n169 51\n170 51\n307 51\n308 51\n322 51\n337 51\n76 52\n100 52\n116 52\n117 52\n169 52\n170 52\n266 52\n267 52\n291 52\n364 52\n170 53\n55 54\n57 56\n100 56\n110 56\n194 56\n195 56\n59 58\n60 58\n60 59\n304 60\n357 60\n358 60\n359 60\n164 61\n165 61\n166 61\n63 62\n64 62\n65 62\n64 63\n264 65\n265 65\n299 65\n300 65\n301 65\n302 65\n345 65\n346 65\n100 66\n101 66\n102 66\n110 66\n111 66\n68 67\n69 67\n70 67\n71 67\n72 67\n73 67\n74 67\n75 67\n80 67\n81 67\n121 67\n122 67\n123 67\n169 67\n248 67\n285 67\n363 67\n69 68\n80 68\n81 68\n70 69\n71 69\n75 69\n80 69\n81 69\n285 69\n71 70\n72 70\n73 70\n75 70\n119 70\n150 70\n214 70\n303 70\n328 70\n329 70\n348 70\n349 70\n350 70\n351 70\n378 70\n379 70\n72 71\n73 71\n75 71\n73 72\n119 72\n303 72\n150 73\n285 75\n169 76\n170 76\n78 77\n79 77\n79 78\n81 80\n121 81\n122 81\n123 81\n83 82\n84 82\n85 82\n86 82\n87 82\n88 82\n89 82\n84 83\n85 83\n86 83\n87 83\n88 83\n89 83\n262 83\n263 83\n85 84\n86 84\n87 84\n88 84\n89 84\n86 85\n87 85\n88 85\n89 85\n106 85\n260 85\n262 85\n263 85\n87 86\n88 86\n89 86\n106 86\n260 86\n262 86\n263 86\n88 87\n89 87\n89 88\n106 88\n260 88\n262 88\n263 88\n91 90\n92 90\n92 91\n130 91\n131 91\n132 91\n133 91\n134 91\n188 91\n130 92\n131 92\n132 92\n133 92\n134 92\n188 92\n94 93\n95 93\n96 93\n97 93\n98 93\n99 93\n95 94\n96 94\n97 94\n98 94\n99 94\n96 95\n97 95\n98 95\n99 95\n178 95\n179 95\n180 95\n286 95\n308 95\n337 95\n338 95\n339 95\n362 95\n97 96\n98 96\n99 96\n141 96\n98 97\n99 97\n178 97\n362 97\n99 98\n101 100\n102 100\n103 100\n110 100\n111 100\n145 100\n194 100\n195 100\n102 101\n103 101\n311 101\n159 102\n280 102\n360 102\n361 102\n105 104\n106 104\n107 104\n108 104\n106 105\n107 105\n107 106\n185 106\n260 106\n108 107\n283 107\n284 107\n372 107\n125 108\n155 108\n156 108\n158 108\n111 110\n194 110\n195 110\n113 112\n114 112\n115 112\n114 113\n115 113\n131 113\n135 113\n136 113\n189 113\n259 113\n312 113\n352 113\n353 113\n354 113\n355 113\n356 113\n115 114\n131 114\n135 114\n312 114\n172 115\n347 115\n117 116\n318 116\n319 116\n320 116\n321 116\n119 118\n120 118\n209 118\n120 119\n214 119\n303 119\n348 119\n349 119\n350 119\n351 119\n122 121\n123 121\n123 122\n169 122\n248 122\n125 124\n234 125\n255 125\n256 125\n127 126\n128 126\n129 126\n327 126\n330 126\n128 127\n129 127\n327 127\n330 127\n129 128\n327 128\n330 128\n340 128\n341 128\n131 130\n132 130\n133 130\n134 130\n132 131\n133 131\n134 131\n135 131\n136 131\n259 131\n133 132\n134 132\n188 132\n134 133\n189 135\n352 135\n353 135\n354 135\n355 135\n356 135\n138 137\n342 137\n343 137\n140 139\n206 140\n207 140\n229 140\n230 140\n143 142\n144 142\n145 142\n144 143\n145 143\n145 144\n194 145\n147 146\n148 146\n148 147\n150 149\n151 149\n270 149\n293 149\n151 150\n270 150\n271 150\n293 150\n294 150\n154 153\n156 155\n157 155\n158 155\n161 160\n162 160\n163 160\n322 160\n162 161\n163 162\n165 164\n166 164\n166 165\n168 167\n169 167\n170 167\n169 168\n170 168\n205 168\n170 169\n205 169\n248 169\n289 169\n290 169\n291 169\n292 169\n266 170\n267 170\n336 170\n364 170\n172 171\n325 172\n347 172\n174 173\n175 173\n175 174\n282 175\n177 176\n179 178\n180 178\n182 181\n183 181\n183 182\n226 183\n185 184\n186 184\n187 184\n309 184\n310 184\n186 185\n187 185\n309 185\n310 185\n187 186\n309 186\n310 186\n191 190\n192 190\n193 190\n193 192\n195 194\n196 194\n251 198\n200 199\n201 199\n202 199\n203 199\n204 199\n258 199\n201 200\n202 200\n202 201\n203 201\n204 201\n245 201\n252 201\n253 201\n254 201\n258 201\n298 201\n203 202\n204 202\n258 202\n245 204\n298 204\n207 206\n375 207\n376 207\n377 207\n211 210\n212 210\n213 210\n214 210\n215 210\n212 211\n213 211\n214 211\n215 211\n213 212\n214 212\n215 212\n222 212\n223 212\n224 212\n225 212\n214 213\n215 213\n215 214\n303 214\n348 214\n349 214\n350 214\n351 214\n217 216\n218 216\n218 217\n221 220\n223 222\n224 222\n225 222\n224 223\n225 223\n225 224\n228 227\n232 231\n233 231\n234 231\n235 231\n236 231\n237 231\n238 231\n239 231\n240 231\n246 231\n257 231\n297 231\n233 232\n268 232\n268 233\n237 236\n238 236\n239 236\n240 236\n245 236\n246 236\n247 236\n257 236\n238 237\n240 239\n246 239\n257 239\n326 239\n246 240\n257 240\n326 240\n242 241\n243 241\n244 241\n243 242\n244 242\n244 243\n246 245\n247 245\n298 245\n247 246\n257 246\n313 250\n314 250\n253 252\n256 255\n263 262\n265 264\n299 265\n300 265\n301 265\n302 265\n267 266\n270 269\n271 269\n272 269\n271 270\n272 270\n293 270\n294 270\n294 271\n276 275\n277 275\n277 276\n279 278\n281 280\n360 280\n361 280\n284 283\n288 287\n290 289\n291 290\n292 290\n296 295\n300 299\n301 299\n302 299\n301 300\n328 303\n329 303\n348 303\n349 303\n350 303\n351 303\n378 303\n379 303\n305 304\n357 304\n358 304\n359 304\n337 308\n310 309\n314 313\n316 315\n317 315\n317 316\n319 318\n320 318\n321 318\n320 319\n321 319\n321 320\n324 323\n329 328\n332 331\n333 331\n334 331\n335 331\n333 332\n334 332\n335 332\n334 333\n335 333\n335 334\n366 334\n367 334\n368 334\n339 338\n341 340\n343 342\n346 345\n349 348\n350 348\n351 348\n350 349\n351 349\n351 350\n353 352\n354 352\n355 352\n356 352\n354 353\n355 353\n356 353\n355 354\n356 354\n356 355\n358 357\n359 357\n359 358\n361 360\n367 366\n368 366\n368 367\n370 369\n374 373\n376 375\n377 375\n377 376\n379 378\n&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aquí se utiliza una red de coautoría en trabajos de redes obtenida de <a class="reference external" href="http://www.networkrepository.com">www.networkrepository.com</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ruta</span> <span class="o">=</span> <span class="s1">&#39;ca-netscience.mtx&#39;</span>
+
+<span class="n">datos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ruta</span><span class="p">,</span>
+            <span class="c1">#nrows = 10,</span>
+            <span class="n">skiprows</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="n">datos</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nodo1&#39;</span><span class="p">,</span> <span class="s1">&#39;Nodo2&#39;</span><span class="p">]</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;Nodo1&#39;</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;Nodo2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clustering-coeficiente-de-agrupamiento-o-acumulacion">
+<h3><span class="section-number">7.1.1.1. </span>Clustering (coeficiente de agrupamiento o acumulación)<a class="headerlink" href="#clustering-coeficiente-de-agrupamiento-o-acumulacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En forma completamente análoga a las centralidades analizadas en la práctica 2, la función <code class="docutils literal notranslate"><span class="pre">nx.clustering(G)</span></code> arroja un diccionario que asigna a cada nodo un valor de agrupamiento (acumulación). Siguiendo el mismo procedimiento para visualizarlo, a continuación se convierte el diccionario en un arreglo y se introduce como argumento para la función <code class="docutils literal notranslate"><span class="pre">nx.draw()</span></code>. Para esta red, el layout «Kamada kawai» ofrece una visualización adecuada; ustedes pueden explorar distintos diseños (ver <a class="reference external" href="https://networkx.org/documentation/stable/reference/drawing.html">documentación</a> correspondiente)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">clus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_kamada_kawai</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
+                     <span class="n">node_color</span> <span class="o">=</span> <span class="n">clus</span><span class="p">,</span>
+                     <span class="n">node_size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sesion_practica_03_11_0.png" src="../../_images/sesion_practica_03_11_0.png" />
+</div>
+</div>
+<p>Como se dice en la parte práctica, el coeficiente de clustering es una medida de cuánto se acumulan enlaces en grupos de nodos, o lo que es lo mismo, cuántos enlaces hay entre los nodos vecinos de un nodo. En esta imagen se utiliza el mapeo de color (<code class="docutils literal notranslate"><span class="pre">cmap</span></code>) plasma, que recorre del azul para valores pequeños al amarillo para valores grandes. A partir de ello se pueden identificar zonas de «alta densidad» de enlaces en amarillo y nodos azules, más bien aislados (relativamente).</p>
+<p>Se recomienda explorar los distintos cmap disponibles para matplotlib: <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">https://matplotlib.org/stable/tutorials/colors/colormaps.html</a></p>
+</div>
+<div class="section" id="comunidades">
+<h3><span class="section-number">7.1.1.2. </span>Comunidades<a class="headerlink" href="#comunidades" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como se explicó en el video correspondiente, algunos algoritmos de detección de comunidades utilizan el método de maximización de la modularidad. El empleado a continuación se basa en el método de Newman, Clauset y Moore proporcionado en la parte teórica. El método desarrollado por Blondel que se explicó con más detalle también está implementado en networkx y se les recomienda explorarlo e implementarlo. En su <a class="reference external" href="https://python-louvain.readthedocs.io/en/latest/">documentación</a> viene un ejemplo que pueden copiar y pegar, introduciendo su red de trabajo.</p>
+<p>Su implementación es inmediata, como se importó directamente, únicamente hay que aplicar la función a la red. Lo que arroja es una lista de objetos <code class="docutils literal notranslate"><span class="pre">frozenset</span></code> que agrupan a los nodos y cuya naturaleza no nos importa mucho aquí.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comunidades</span> <span class="o">=</span> <span class="n">greedy_modularity_communities</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comunidades</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[frozenset({21,
+            22,
+            23,
+            24,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            41,
+            42,
+            43,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            76,
+            109,
+            167,
+            168,
+            169,
+            170,
+            205,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            227,
+            228,
+            232,
+            233,
+            241,
+            242,
+            243,
+            244,
+            266,
+            267,
+            268,
+            275,
+            276,
+            277,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            307,
+            336,
+            364,
+            369,
+            370}),
+ frozenset({25,
+            26,
+            27,
+            28,
+            39,
+            40,
+            104,
+            105,
+            106,
+            107,
+            108,
+            124,
+            125,
+            155,
+            156,
+            157,
+            158,
+            173,
+            174,
+            175,
+            197,
+            198,
+            231,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            245,
+            246,
+            247,
+            251,
+            255,
+            256,
+            257,
+            273,
+            282,
+            283,
+            284,
+            295,
+            296,
+            297,
+            306,
+            315,
+            316,
+            317,
+            326,
+            372}),
+ frozenset({1,
+            2,
+            3,
+            4,
+            5,
+            13,
+            14,
+            15,
+            16,
+            19,
+            20,
+            44,
+            45,
+            46,
+            47,
+            61,
+            152,
+            153,
+            154,
+            164,
+            165,
+            166,
+            176,
+            177,
+            208,
+            249,
+            250,
+            274,
+            278,
+            279,
+            313,
+            314,
+            323,
+            324,
+            331,
+            332,
+            333,
+            334,
+            335,
+            366,
+            367,
+            368,
+            371,
+            373,
+            374}),
+ frozenset({9,
+            10,
+            11,
+            12,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            75,
+            80,
+            81,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            222,
+            223,
+            224,
+            225,
+            248,
+            285,
+            303,
+            328,
+            329,
+            348,
+            349,
+            350,
+            351,
+            363,
+            378,
+            379}),
+ frozenset({90,
+            91,
+            92,
+            112,
+            113,
+            114,
+            115,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            171,
+            172,
+            188,
+            189,
+            259,
+            312,
+            325,
+            347,
+            352,
+            353,
+            354,
+            355,
+            356}),
+ frozenset({17,
+            18,
+            29,
+            37,
+            38,
+            58,
+            59,
+            60,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            252,
+            253,
+            254,
+            258,
+            261,
+            298,
+            304,
+            305,
+            357,
+            358,
+            359,
+            365}),
+ frozenset({6,
+            7,
+            8,
+            62,
+            63,
+            64,
+            65,
+            137,
+            138,
+            190,
+            191,
+            192,
+            193,
+            264,
+            265,
+            299,
+            300,
+            301,
+            302,
+            342,
+            343,
+            344,
+            345,
+            346}),
+ frozenset({56,
+            57,
+            66,
+            100,
+            101,
+            102,
+            103,
+            110,
+            111,
+            142,
+            143,
+            144,
+            145,
+            159,
+            194,
+            195,
+            196,
+            280,
+            281,
+            311,
+            360,
+            361}),
+ frozenset({93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            141,
+            178,
+            179,
+            180,
+            286,
+            308,
+            337,
+            338,
+            339,
+            362}),
+ frozenset({82, 83, 84, 85, 86, 87, 88, 89, 260, 262, 263}),
+ frozenset({139, 140, 206, 207, 229, 230, 375, 376, 377}),
+ frozenset({149, 150, 151, 269, 270, 271, 272, 293, 294}),
+ frozenset({126, 127, 128, 129, 327, 330, 340, 341}),
+ frozenset({48, 49, 74, 181, 182, 183, 226}),
+ frozenset({116, 117, 318, 319, 320, 321}),
+ frozenset({184, 185, 186, 187, 309, 310}),
+ frozenset({160, 161, 162, 163, 322}),
+ frozenset({77, 78, 79}),
+ frozenset({146, 147, 148})]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imitando los procedimientos anteriores en los que partimos de un diccionario y lo convertimos en arreglos, a continuación generamos un diccionario al que a cada nodo le asignará un valor numérico en función de a qué comunidad pertenece. Los pasos son los siguientes:</p>
+<ul class="simple">
+<li><p>Se genera un diccionario vacío</p></li>
+<li><p>Se hace un <code class="docutils literal notranslate"><span class="pre">for</span></code> sobre el objeto <code class="docutils literal notranslate"><span class="pre">enumerate(comunidades)</span></code>; este objeto le asocia a cada elemento del iterable <code class="docutils literal notranslate"><span class="pre">comunidades</span></code> un índice, por eso en el <code class="docutils literal notranslate"><span class="pre">for</span></code> hay que introducir dos objetos.</p></li>
+<li><p>Como cada elemento de <code class="docutils literal notranslate"><span class="pre">comunidades</span></code> es una «lista» de nodos, hacemos un <code class="docutils literal notranslate"><span class="pre">for</span></code> que los recorra y a cada uno se le asocia el índice que <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> le asoció a su grupo.</p></li>
+<li><p>Ya con ese diccionario, se puede generar el arreglo como se ha hecho hasta ahora.</p></li>
+</ul>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comunidad</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">comunidades</span><span class="p">):</span> <span class="c1">#visita cada comunidad</span>
+  <span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="n">comunidad</span><span class="p">:</span> <span class="c1">#visita cada nodo de la comunidad</span>
+    <span class="n">diccionario</span><span class="p">[</span><span class="n">nodo</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> 
+    
+<span class="n">diccionario</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 2,
+ 2: 2,
+ 3: 2,
+ 4: 2,
+ 5: 2,
+ 6: 6,
+ 7: 6,
+ 8: 6,
+ 9: 3,
+ 10: 3,
+ 11: 3,
+ 12: 3,
+ 13: 2,
+ 14: 2,
+ 15: 2,
+ 16: 2,
+ 17: 5,
+ 18: 5,
+ 19: 2,
+ 20: 2,
+ 21: 0,
+ 22: 0,
+ 23: 0,
+ 24: 0,
+ 25: 1,
+ 26: 1,
+ 27: 1,
+ 28: 1,
+ 29: 5,
+ 30: 0,
+ 31: 0,
+ 32: 0,
+ 33: 0,
+ 34: 0,
+ 35: 0,
+ 36: 0,
+ 37: 5,
+ 38: 5,
+ 39: 1,
+ 40: 1,
+ 41: 0,
+ 42: 0,
+ 43: 0,
+ 44: 2,
+ 45: 2,
+ 46: 2,
+ 47: 2,
+ 48: 13,
+ 49: 13,
+ 50: 0,
+ 51: 0,
+ 52: 0,
+ 53: 0,
+ 54: 0,
+ 55: 0,
+ 56: 7,
+ 57: 7,
+ 58: 5,
+ 59: 5,
+ 60: 5,
+ 61: 2,
+ 62: 6,
+ 63: 6,
+ 64: 6,
+ 65: 6,
+ 66: 7,
+ 67: 3,
+ 68: 3,
+ 69: 3,
+ 70: 3,
+ 71: 3,
+ 72: 3,
+ 73: 3,
+ 74: 13,
+ 75: 3,
+ 76: 0,
+ 77: 17,
+ 78: 17,
+ 79: 17,
+ 80: 3,
+ 81: 3,
+ 82: 9,
+ 83: 9,
+ 84: 9,
+ 85: 9,
+ 86: 9,
+ 87: 9,
+ 88: 9,
+ 89: 9,
+ 90: 4,
+ 91: 4,
+ 92: 4,
+ 93: 8,
+ 94: 8,
+ 95: 8,
+ 96: 8,
+ 97: 8,
+ 98: 8,
+ 99: 8,
+ 100: 7,
+ 101: 7,
+ 102: 7,
+ 103: 7,
+ 104: 1,
+ 105: 1,
+ 106: 1,
+ 107: 1,
+ 108: 1,
+ 109: 0,
+ 110: 7,
+ 111: 7,
+ 112: 4,
+ 113: 4,
+ 114: 4,
+ 115: 4,
+ 116: 14,
+ 117: 14,
+ 118: 3,
+ 119: 3,
+ 120: 3,
+ 121: 3,
+ 122: 3,
+ 123: 3,
+ 124: 1,
+ 125: 1,
+ 126: 12,
+ 127: 12,
+ 128: 12,
+ 129: 12,
+ 130: 4,
+ 131: 4,
+ 132: 4,
+ 133: 4,
+ 134: 4,
+ 135: 4,
+ 136: 4,
+ 137: 6,
+ 138: 6,
+ 139: 10,
+ 140: 10,
+ 141: 8,
+ 142: 7,
+ 143: 7,
+ 144: 7,
+ 145: 7,
+ 146: 18,
+ 147: 18,
+ 148: 18,
+ 149: 11,
+ 150: 11,
+ 151: 11,
+ 152: 2,
+ 153: 2,
+ 154: 2,
+ 155: 1,
+ 156: 1,
+ 157: 1,
+ 158: 1,
+ 159: 7,
+ 160: 16,
+ 161: 16,
+ 162: 16,
+ 163: 16,
+ 164: 2,
+ 165: 2,
+ 166: 2,
+ 167: 0,
+ 168: 0,
+ 169: 0,
+ 170: 0,
+ 171: 4,
+ 172: 4,
+ 173: 1,
+ 174: 1,
+ 175: 1,
+ 176: 2,
+ 177: 2,
+ 178: 8,
+ 179: 8,
+ 180: 8,
+ 181: 13,
+ 182: 13,
+ 183: 13,
+ 184: 15,
+ 185: 15,
+ 186: 15,
+ 187: 15,
+ 188: 4,
+ 189: 4,
+ 190: 6,
+ 191: 6,
+ 192: 6,
+ 193: 6,
+ 194: 7,
+ 195: 7,
+ 196: 7,
+ 197: 1,
+ 198: 1,
+ 199: 5,
+ 200: 5,
+ 201: 5,
+ 202: 5,
+ 203: 5,
+ 204: 5,
+ 205: 0,
+ 206: 10,
+ 207: 10,
+ 208: 2,
+ 209: 3,
+ 210: 3,
+ 211: 3,
+ 212: 3,
+ 213: 3,
+ 214: 3,
+ 215: 3,
+ 216: 0,
+ 217: 0,
+ 218: 0,
+ 219: 0,
+ 220: 0,
+ 221: 0,
+ 222: 3,
+ 223: 3,
+ 224: 3,
+ 225: 3,
+ 226: 13,
+ 227: 0,
+ 228: 0,
+ 229: 10,
+ 230: 10,
+ 231: 1,
+ 232: 0,
+ 233: 0,
+ 234: 1,
+ 235: 1,
+ 236: 1,
+ 237: 1,
+ 238: 1,
+ 239: 1,
+ 240: 1,
+ 241: 0,
+ 242: 0,
+ 243: 0,
+ 244: 0,
+ 245: 1,
+ 246: 1,
+ 247: 1,
+ 248: 3,
+ 249: 2,
+ 250: 2,
+ 251: 1,
+ 252: 5,
+ 253: 5,
+ 254: 5,
+ 255: 1,
+ 256: 1,
+ 257: 1,
+ 258: 5,
+ 259: 4,
+ 260: 9,
+ 261: 5,
+ 262: 9,
+ 263: 9,
+ 264: 6,
+ 265: 6,
+ 266: 0,
+ 267: 0,
+ 268: 0,
+ 269: 11,
+ 270: 11,
+ 271: 11,
+ 272: 11,
+ 273: 1,
+ 274: 2,
+ 275: 0,
+ 276: 0,
+ 277: 0,
+ 278: 2,
+ 279: 2,
+ 280: 7,
+ 281: 7,
+ 282: 1,
+ 283: 1,
+ 284: 1,
+ 285: 3,
+ 286: 8,
+ 287: 0,
+ 288: 0,
+ 289: 0,
+ 290: 0,
+ 291: 0,
+ 292: 0,
+ 293: 11,
+ 294: 11,
+ 295: 1,
+ 296: 1,
+ 297: 1,
+ 298: 5,
+ 299: 6,
+ 300: 6,
+ 301: 6,
+ 302: 6,
+ 303: 3,
+ 304: 5,
+ 305: 5,
+ 306: 1,
+ 307: 0,
+ 308: 8,
+ 309: 15,
+ 310: 15,
+ 311: 7,
+ 312: 4,
+ 313: 2,
+ 314: 2,
+ 315: 1,
+ 316: 1,
+ 317: 1,
+ 318: 14,
+ 319: 14,
+ 320: 14,
+ 321: 14,
+ 322: 16,
+ 323: 2,
+ 324: 2,
+ 325: 4,
+ 326: 1,
+ 327: 12,
+ 328: 3,
+ 329: 3,
+ 330: 12,
+ 331: 2,
+ 332: 2,
+ 333: 2,
+ 334: 2,
+ 335: 2,
+ 336: 0,
+ 337: 8,
+ 338: 8,
+ 339: 8,
+ 340: 12,
+ 341: 12,
+ 342: 6,
+ 343: 6,
+ 344: 6,
+ 345: 6,
+ 346: 6,
+ 347: 4,
+ 348: 3,
+ 349: 3,
+ 350: 3,
+ 351: 3,
+ 352: 4,
+ 353: 4,
+ 354: 4,
+ 355: 4,
+ 356: 4,
+ 357: 5,
+ 358: 5,
+ 359: 5,
+ 360: 7,
+ 361: 7,
+ 362: 8,
+ 363: 3,
+ 364: 0,
+ 365: 5,
+ 366: 2,
+ 367: 2,
+ 368: 2,
+ 369: 0,
+ 370: 0,
+ 371: 2,
+ 372: 1,
+ 373: 2,
+ 374: 2,
+ 375: 10,
+ 376: 10,
+ 377: 10,
+ 378: 3,
+ 379: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span> <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_kamada_kawai</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+                     <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;nipy_spectral&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sesion_practica_03_20_0.png" src="../../_images/sesion_practica_03_20_0.png" />
+</div>
+</div>
+<p>Para esta gráfica se utilizó un cmap que genera altos contrastes, en este caso no es tan conveniente usar los que generan un gradiente uniforme (a la percepción) pues buscamos que las comunidades se distingan. Ver de nuevo los mapeos de color <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">disponibles</a>.</p>
+<p>En este caso, como se explica en la parte teórica, se han detectado grupos de nodos que maximizan la modularidad; estos grupos son tales que la modularidad de la red es elevada. El significado de estas comunidades es labor del análisis de las propiedades de los elementos y puede ser una ruta de investigación del fenómeno en cuestión. En este caso (coautorías), si las comunidades corresponden a grupos de trabajo de universidades, publicaciones de áreas de conocimiento específicas, comunidades culturales o lingüísticas de los autores o regiones geográficas (por poner ejemplos) se revelará en un análisis de las propiedades de los autores que son representados por nodos.</p>
+<p>En cada res particular, las comunidades pueden motivar estas reflexiones dependiendo del fenómeno del que se trate.</p>
+<p>En la siguiente celda se prueba que tal partición de los nodos efectivamente arroja una modularidad alta; recordar que una modularidad mayor a 0.3 ya puede considerarse significativa, y que el 1 es una cota superior. La documentación de la función <code class="docutils literal notranslate"><span class="pre">modularity</span></code> también está <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.quality.modularity.html#networkx.algorithms.community.quality.modularity">disponible</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">community</span><span class="o">.</span><span class="n">modularity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">comunidades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8373765256237758
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="propiedades-globales">
+<h2><span class="section-number">7.1.2. </span>Propiedades globales<a class="headerlink" href="#propiedades-globales" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="componentes">
+<h3><span class="section-number">7.1.2.1. </span>Componentes<a class="headerlink" href="#componentes" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como se menciona en el video correspondiente a propiedades globales, es común que las redes estén formadas por varias componentes no conectadas entre sí. Esto es especialmente común en redes biológicas como la que se usa en este ejemplo (de tortugas). Muchas veces, como veremos con las redes aleatorias, el análisis del número y tamaño de las componentes es importante para la comprensión de los fenómenos.</p>
+<p>En otras ocasiones, algunas de las propiedades de las redes que hemos estudiado hasta ahora no están definidas para redes disconexas (por ejemplo, la centralidad de cercanía), y la solución puede ser analizar sólo la componente más grande.</p>
+<p>A continuación se hace esto para el conjunto de datos “reptilia-tortoise-network-fi” disponible en networkrepository.</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<input type="file" id="files-ade6bddd-7146-43c3-aeb1-5e16be8afd6f" name="files[]" multiple disabled
+   style="border:none" />
+<output id="result-ade6bddd-7146-43c3-aeb1-5e16be8afd6f">
+ Upload widget is only available when the cell has been executed in the
+ current browser session. Please rerun this cell to enable.
+ </output>
+ <script src="/nbextensions/google.colab/files.js"></script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving reptilia-tortoise-network-fi.edges to reptilia-tortoise-network-fi.edges
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;reptilia-tortoise-network-fi.edges&#39;: b&#39;1 2 2005\n3 4 2005\n5 6 2005\n7 8 2005\n9 10 2005\n11 12 2005\n13 14 2005\n15 16 2005\n17 18 2005\n19 20 2005\n21 22 2005\n21 23 2005\n23 22 2005\n24 25 2005\n24 26 2005\n27 28 2005\n29 30 2005\n29 2 2005\n29 1 2005\n31 32 2005\n33 34 2005\n35 36 2005\n37 10 2005\n37 9 2005\n38 39 2005\n40 41 2005\n1 2 2005\n42 43 2005\n42 44 2005\n45 46 2005\n3 4 2005\n47 48 2005\n49 50 2005\n51 41 2005\n51 52 2005\n53 39 2005\n54 55 2005\n56 30 2005\n46 57 2005\n58 59 2005\n60 61 2005\n62 63 2005\n64 65 2005\n66 65 2005\n66 67 2005\n68 69 2005\n68 59 2005\n70 71 2005\n72 73 2005\n74 19 2005\n75 76 2005\n9 10 2005\n77 78 2005\n77 79 2005\n80 81 2005\n80 82 2005\n80 83 2005\n84 85 2005\n84 86 2005\n87 88 2005\n63 89 2005\n63 90 2005\n11 12 2005\n13 19 2005\n13 14 2005\n91 92 2005\n93 94 2005\n17 18 2005\n95 23 2005\n96 97 2005\n96 98 2005\n99 100 2005\n99 30 2005\n99 101 2005\n102 30 2005\n102 103 2005\n8 104 2005\n101 30 2005\n105 106 2005\n107 108 2005\n109 110 2006\n27 111 2006\n112 113 2006\n114 85 2006\n108 115 2006\n108 116 2006\n3 4 2006\n3 104 2006\n21 117 2006\n9 118 2006\n29 105 2006\n29 101 2006\n67 119 2006\n11 12 2006\n120 121 2006\n122 123 2006\n13 19 2006\n85 84 2006\n85 124 2006\n85 125 2006\n84 124 2006\n84 125 2006\n68 59 2006\n126 36 2006\n125 124 2006\n127 128 2006\n127 129 2006\n130 131 2006\n132 133 2006\n45 134 2006\n47 48 2006\n38 39 2006\n32 135 2006\n4 136 2006\n4 104 2006\n137 138 2006\n139 140 2006\n69 141 2006\n69 12 2006\n121 142 2006\n73 72 2006\n143 144 2006\n39 145 2006\n82 80 2006\n146 54 2006\n16 15 2006\n147 144 2006\n59 58 2006\n129 128 2006\n17 18 2006\n148 149 2006\n148 140 2006\n150 90 2006\n151 145 2006\n66 65 2006\n116 115 2006\n96 152 2006\n52 40 2006\n52 153 2006\n91 92 2006\n101 105 2006\n154 155 2006\n53 12 2006\n81 103 2006\n51 41 2007\n11 12 2007\n156 157 2007\n95 23 2007\n118 10 2007\n8 115 2007\n158 25 2007\n89 63 2007\n142 159 2007\n66 65 2007\n37 10 2007\n160 161 2007\n162 163 2008\n164 165 2008\n166 167 2008\n166 168 2008\n169 170 2008\n169 171 2008\n169 172 2008\n173 174 2008\n126 175 2008\n171 170 2008\n171 172 2008\n171 176 2008\n177 168 2008\n178 179 2008\n180 181 2008\n182 183 2008\n184 179 2008\n185 186 2008\n167 168 2008\n187 188 2008\n189 190 2008\n189 191 2008\n192 193 2008\n194 195 2008\n194 196 2008\n194 197 2008\n198 188 2008\n199 200 2008\n170 172 2008\n172 201 2008\n196 197 2008\n202 203 2008\n204 205 2008\n190 191 2008\n206 207 2008\n206 208 2008\n209 210 2008\n209 211 2008\n209 212 2008\n213 116 2008\n214 215 2008\n216 217 2008\n216 126 2008\n218 190 2008\n218 191 2008\n218 219 2008\n218 189 2008\n220 221 2008\n162 163 2008\n222 223 2008\n224 200 2008\n224 225 2008\n224 199 2008\n226 227 2008\n226 228 2008\n226 229 2008\n226 230 2008\n226 231 2008\n51 153 2008\n232 233 2008\n232 196 2008\n232 234 2008\n235 163 2008\n236 177 2008\n236 237 2008\n236 187 2008\n236 166 2008\n238 239 2008\n238 240 2008\n238 241 2008\n238 105 2008\n238 204 2008\n238 242 2008\n238 205 2008\n238 243 2008\n244 245 2008\n244 246 2008\n247 248 2008\n247 249 2008\n250 251 2008\n252 253 2008\n252 254 2008\n252 182 2008\n252 255 2008\n256 257 2008\n256 200 2008\n256 258 2008\n233 196 2008\n259 260 2008\n259 261 2008\n262 263 2008\n262 260 2008\n262 264 2008\n258 257 2008\n258 200 2008\n255 253 2008\n255 254 2008\n255 182 2008\n265 266 2008\n261 260 2008\n267 268 2008\n267 269 2008\n11 270 2008\n11 12 2008\n13 74 2008\n166 177 2008\n166 168 2008\n166 187 2008\n166 188 2008\n166 198 2008\n166 167 2008\n166 237 2008\n169 201 2008\n169 176 2008\n169 271 2008\n169 272 2008\n169 273 2008\n169 170 2008\n169 274 2008\n169 172 2008\n169 171 2008\n169 138 2008\n243 239 2008\n243 240 2008\n243 241 2008\n243 105 2008\n243 204 2008\n243 242 2008\n243 275 2008\n243 205 2008\n210 276 2008\n210 175 2008\n210 202 2008\n210 277 2008\n63 278 2008\n271 201 2008\n271 272 2008\n271 273 2008\n271 170 2008\n271 274 2008\n271 172 2008\n271 171 2008\n279 280 2008\n126 186 2008\n126 175 2008\n126 202 2008\n126 281 2008\n126 203 2008\n126 184 2008\n282 148 2008\n282 283 2008\n284 285 2008\n284 286 2008\n284 287 2008\n284 288 2008\n284 289 2008\n284 281 2008\n110 3 2008\n268 290 2008\n268 269 2008\n95 291 2008\n95 292 2008\n95 293 2008\n294 186 2008\n175 186 2008\n175 202 2008\n175 184 2008\n295 296 2008\n297 298 2008\n297 299 2008\n297 203 2008\n300 285 2008\n301 302 2008\n303 304 2008\n305 272 2008\n305 171 2008\n305 176 2008\n275 204 2008\n275 205 2008\n306 307 2008\n308 309 2008\n171 201 2008\n171 138 2008\n171 170 2008\n171 272 2008\n171 273 2008\n171 274 2008\n171 172 2008\n171 176 2008\n310 311 2008\n312 313 2008\n312 314 2008\n3 161 2008\n228 315 2008\n228 316 2008\n228 317 2008\n177 318 2008\n177 168 2008\n177 187 2008\n177 188 2008\n177 198 2008\n177 237 2008\n280 251 2008\n174 319 2008\n174 320 2008\n321 322 2008\n291 293 2008\n323 324 2008\n317 245 2008\n317 208 2008\n317 325 2008\n307 326 2008\n307 4 2008\n327 223 2008\n327 328 2008\n327 37 2008\n45 329 2008\n330 248 2008\n330 331 2008\n332 333 2008\n334 335 2008\n336 10 2008\n178 179 2008\n178 299 2008\n178 184 2008\n178 337 2008\n32 135 2008\n338 179 2008\n338 184 2008\n339 217 2008\n340 269 2008\n341 342 2008\n343 344 2008\n4 326 2008\n345 346 2008\n345 347 2008\n345 348 2008\n349 58 2008\n349 350 2008\n351 352 2008\n351 353 2008\n180 354 2008\n180 181 2008\n182 253 2008\n182 355 2008\n182 254 2008\n320 356 2008\n357 10 2008\n357 358 2008\n242 239 2008\n242 240 2008\n242 241 2008\n242 105 2008\n242 204 2008\n242 205 2008\n337 299 2008\n184 179 2008\n359 360 2008\n185 186 2008\n361 161 2008\n318 168 2008\n362 16 2008\n165 363 2008\n239 240 2008\n239 241 2008\n239 105 2008\n239 204 2008\n239 205 2008\n364 365 2008\n290 281 2008\n290 269 2008\n167 168 2008\n167 187 2008\n167 188 2008\n167 198 2008\n366 367 2008\n366 368 2008\n241 240 2008\n241 105 2008\n241 204 2008\n241 205 2008\n369 370 2008\n369 371 2008\n270 12 2008\n372 373 2008\n374 375 2008\n375 376 2008\n179 299 2008\n183 377 2008\n277 276 2008\n277 186 2008\n277 202 2008\n378 299 2008\n378 203 2008\n281 286 2008\n281 287 2008\n272 201 2008\n272 138 2008\n272 170 2008\n272 273 2008\n272 274 2008\n272 176 2008\n272 172 2008\n187 168 2008\n187 188 2008\n187 198 2008\n187 237 2008\n249 248 2008\n379 380 2008\n379 381 2008\n379 316 2008\n379 382 2008\n379 356 2008\n379 383 2008\n379 246 2008\n379 384 2008\n385 386 2008\n79 387 2008\n79 388 2008\n148 77 2008\n148 283 2008\n389 344 2008\n176 273 2008\n390 391 2008\n390 376 2008\n391 376 2008\n344 392 2008\n344 393 2008\n189 190 2008\n189 219 2008\n189 191 2008\n394 223 2008\n395 198 2008\n346 347 2008\n346 348 2008\n347 348 2008\n392 194 2008\n392 196 2008\n392 197 2008\n392 234 2008\n392 393 2008\n392 396 2008\n246 356 2008\n246 245 2008\n246 384 2008\n246 325 2008\n397 398 2008\n397 399 2008\n370 371 2008\n400 401 2008\n402 403 2008\n286 285 2008\n286 287 2008\n286 288 2008\n286 289 2008\n287 285 2008\n287 288 2008\n287 289 2008\n288 285 2008\n288 289 2008\n384 356 2008\n404 405 2008\n253 355 2008\n356 382 2008\n356 373 2008\n227 229 2008\n227 231 2008\n381 383 2008\n381 316 2008\n381 380 2008\n138 201 2008\n138 273 2008\n138 170 2008\n138 274 2008\n138 172 2008\n225 199 2008\n225 260 2008\n225 264 2008\n225 200 2008\n225 406 2008\n192 193 2008\n194 195 2008\n194 196 2008\n194 197 2008\n396 234 2008\n396 197 2008\n313 314 2008\n102 30 2008\n263 264 2008\n263 260 2008\n264 260 2008\n264 388 2008\n264 406 2008\n406 260 2008\n406 388 2008\n315 316 2008\n331 248 2008\n331 407 2008\n368 367 2008\n198 168 2008\n198 188 2008\n198 237 2008\n199 257 2008\n199 200 2008\n388 260 2008\n231 373 2008\n231 229 2008\n231 230 2008\n408 358 2008\n408 409 2008\n105 240 2008\n105 204 2008\n105 205 2008\n410 411 2008\n298 299 2008\n186 202 2008\n168 188 2008\n223 328 2008\n223 37 2008\n373 230 2008\n316 380 2008\n170 201 2008\n170 273 2008\n170 274 2008\n170 172 2008\n37 328 2008\n172 201 2008\n172 273 2008\n172 274 2008\n383 380 2008\n274 201 2008\n274 273 2008\n237 188 2008\n200 257 2008\n196 197 2008\n197 195 2008\n197 234 2008\n398 399 2008\n202 203 2008\n412 195 2008\n289 285 2008\n413 414 2008\n409 358 2008\n299 203 2008\n68 399 2008\n240 204 2008\n240 205 2008\n273 201 2008\n93 415 2008\n416 10 2008\n204 205 2008\n190 191 2008\n417 418 2009\n419 420 2009\n421 422 2009\n423 424 2009\n11 12 2009\n126 202 2009\n284 287 2009\n425 426 2009\n427 428 2009\n323 324 2009\n45 361 2009\n330 248 2009\n330 429 2009\n59 58 2009\n270 430 2009\n322 431 2009\n432 433 2009\n264 260 2009\n1 278 2009\n115 37 2009\n434 435 2009\n196 197 2009\n214 436 2009\n214 215 2009\n214 437 2009\n212 216 2009\n216 165 2009\n216 164 2009\n216 202 2009\n226 419 2009\n226 230 2009\n226 231 2009\n218 190 2009\n218 191 2009\n218 189 2009\n162 163 2009\n162 235 2009\n419 315 2009\n419 420 2009\n419 438 2009\n232 233 2009\n232 196 2009\n232 197 2009\n235 163 2009\n252 253 2009\n252 182 2009\n252 255 2009\n233 196 2009\n233 197 2009\n439 39 2009\n439 440 2009\n262 248 2009\n262 264 2009\n262 441 2009\n262 260 2009\n255 182 2009\n253 182 2009\n392 194 2009\n392 234 2009\n392 196 2009\n392 396 2009\n392 197 2009\n266 265 2009\n442 411 2009\n443 444 2009\n423 445 2009\n423 424 2009\n11 270 2009\n11 12 2009\n13 19 2009\n13 74 2009\n181 180 2009\n173 369 2009\n164 165 2009\n164 175 2009\n164 202 2009\n164 446 2009\n68 58 2009\n68 59 2009\n126 175 2009\n126 299 2009\n126 202 2009\n126 186 2009\n126 178 2009\n284 286 2009\n284 287 2009\n284 296 2009\n284 288 2009\n447 379 2009\n279 251 2009\n294 175 2009\n294 202 2009\n294 186 2009\n294 277 2009\n294 339 2009\n175 179 2009\n175 184 2009\n175 186 2009\n175 202 2009\n175 203 2009\n175 338 2009\n199 200 2009\n199 225 2009\n199 448 2009\n320 356 2009\n320 373 2009\n449 450 2009\n229 227 2009\n229 231 2009\n397 451 2009\n438 315 2009\n438 420 2009\n177 168 2009\n348 347 2009\n174 319 2009\n323 324 2009\n323 452 2009\n317 245 2009\n317 208 2009\n317 246 2009\n453 454 2009\n330 248 2009\n330 429 2009\n330 331 2009\n178 165 2009\n178 185 2009\n178 299 2009\n338 184 2009\n338 179 2009\n339 217 2009\n339 202 2009\n339 203 2009\n383 379 2009\n383 381 2009\n455 456 2009\n455 71 2009\n455 314 2009\n455 341 2009\n341 314 2009\n341 71 2009\n341 456 2009\n231 227 2009\n231 230 2009\n345 346 2009\n349 58 2009\n349 350 2009\n349 457 2009\n349 59 2009\n420 315 2009\n184 179 2009\n184 186 2009\n184 277 2009\n184 202 2009\n458 47 2009\n89 459 2009\n89 460 2009\n89 63 2009\n89 1 2009\n461 462 2009\n461 463 2009\n464 360 2009\n71 314 2009\n71 456 2009\n39 440 2009\n59 58 2009\n187 188 2009\n369 356 2009\n369 379 2009\n369 382 2009\n460 63 2009\n270 12 2009\n274 273 2009\n274 172 2009\n325 246 2009\n372 166 2009\n215 436 2009\n215 437 2009\n288 286 2009\n288 287 2009\n208 246 2009\n277 186 2009\n249 248 2009\n249 465 2009\n379 381 2009\n379 356 2009\n379 382 2009\n193 192 2009\n167 315 2009\n446 287 2009\n446 466 2009\n79 387 2009\n436 437 2009\n456 314 2009\n390 391 2009\n344 393 2009\n189 190 2009\n189 219 2009\n189 191 2009\n346 347 2009\n424 445 2009\n467 278 2009\n246 245 2009\n246 207 2009\n194 195 2009\n194 196 2009\n194 197 2009\n287 285 2009\n287 468 2009\n287 286 2009\n287 281 2009\n384 230 2009\n384 166 2009\n286 285 2009\n286 281 2009\n322 431 2009\n356 373 2009\n356 382 2009\n432 433 2009\n469 170 2009\n225 200 2009\n225 448 2009\n396 234 2009\n396 197 2009\n19 74 2009\n465 470 2009\n465 471 2009\n441 248 2009\n441 264 2009\n441 260 2009\n264 248 2009\n264 260 2009\n264 388 2009\n200 448 2009\n331 248 2009\n331 429 2009\n248 260 2009\n248 429 2009\n1 459 2009\n1 63 2009\n459 63 2009\n388 260 2009\n186 202 2009\n186 299 2009\n170 273 2009\n172 273 2009\n196 197 2009\n197 195 2009\n197 234 2009\n197 412 2009\n202 299 2009\n202 165 2009\n202 203 2009\n166 451 2009\n166 230 2009\n463 462 2009\n403 203 2009\n281 468 2009\n412 195 2009\n190 191 2009\n472 473 2010\n474 475 2010\n476 477 2010\n478 479 2010\n480 481 2010\n256 355 2010\n258 352 2010\n258 315 2010\n266 201 2010\n482 483 2010\n13 19 2010\n13 74 2010\n484 485 2010\n173 383 2010\n486 487 2010\n427 428 2010\n324 488 2010\n489 490 2010\n491 492 2010\n339 468 2010\n493 494 2010\n464 360 2010\n59 58 2010\n189 190 2010\n404 352 2010\n404 299 2010\n432 433 2010\n19 74 2010\n315 352 2010\n267 269 2010\n495 496 2010\n497 498 2010\n209 202 2010\n226 227 2010\n226 419 2010\n226 207 2010\n419 227 2010\n419 420 2010\n419 231 2010\n235 163 2010\n421 422 2010\n477 428 2010\n499 478 2010\n499 500 2010\n478 479 2010\n501 502 2010\n479 269 2010\n233 196 2010\n233 412 2010\n392 234 2010\n392 197 2010\n266 265 2010\n266 503 2010\n261 344 2010\n261 260 2010\n482 445 2010\n11 504 2010\n11 12 2010\n13 19 2010\n13 74 2010\n181 123 2010\n181 180 2010\n173 373 2010\n173 382 2010\n505 458 2010\n126 202 2010\n126 186 2010\n126 277 2010\n126 175 2010\n284 287 2010\n447 320 2010\n447 506 2010\n486 487 2010\n417 418 2010\n425 426 2010\n175 202 2010\n507 288 2010\n427 428 2010\n320 356 2010\n264 388 2010\n264 260 2010\n309 308 2010\n508 509 2010\n510 511 2010\n199 200 2010\n251 265 2010\n330 248 2010\n330 429 2010\n330 331 2010\n178 468 2010\n32 512 2010\n383 381 2010\n4 176 2010\n349 58 2010\n180 123 2010\n185 468 2010\n89 63 2010\n464 360 2010\n59 58 2010\n369 382 2010\n396 234 2010\n396 393 2010\n325 372 2010\n513 514 2010\n288 285 2010\n288 277 2010\n288 269 2010\n208 207 2010\n208 246 2010\n277 285 2010\n277 186 2010\n515 387 2010\n446 164 2010\n516 517 2010\n346 347 2010\n194 195 2010\n194 197 2010\n518 519 2010\n286 287 2010\n286 281 2010\n286 468 2010\n287 281 2010\n287 468 2010\n520 521 2010\n322 431 2010\n356 382 2010\n381 379 2010\n432 433 2010\n469 170 2010\n225 448 2010\n319 373 2010\n522 514 2010\n19 74 2010\n465 470 2010\n465 514 2010\n504 523 2010\n504 411 2010\n331 248 2010\n331 429 2010\n248 429 2010\n278 63 2010\n281 468 2010\n373 382 2010\n172 273 2010\n434 435 2010\n196 412 2010\n196 197 2010\n202 217 2010\n523 155 2010\n523 411 2010\n299 203 2010\n267 269 2010\n311 310 2010\n217 203 2010\n524 525 2011\n482 483 2011\n505 192 2011\n526 527 2011\n526 528 2011\n527 528 2011\n510 511 2011\n529 530 2011\n531 532 2011\n533 534 2011\n535 536 2011\n359 278 2011\n472 473 2011\n537 538 2011\n432 433 2011\n539 540 2011\n541 542 2011\n431 322 2011\n543 544 2011\n545 546 2011\n547 548 2011\n474 475 2011\n474 331 2011\n209 175 2011\n209 93 2011\n209 202 2011\n209 446 2011\n549 550 2011\n214 551 2011\n214 116 2011\n212 552 2011\n212 553 2011\n216 186 2011\n216 175 2011\n216 217 2011\n216 202 2011\n216 446 2011\n216 164 2011\n554 555 2011\n556 557 2011\n558 559 2011\n218 190 2011\n218 191 2011\n218 219 2011\n218 310 2011\n218 189 2011\n397 231 2011\n560 561 2011\n419 331 2011\n419 372 2011\n419 420 2011\n419 226 2011\n419 227 2011\n419 317 2011\n419 231 2011\n562 355 2011\n562 221 2011\n562 107 2011\n562 563 2011\n232 233 2011\n232 196 2011\n232 412 2011\n235 163 2011\n476 564 2011\n477 565 2011\n206 504 2011\n206 430 2011\n566 567 2011\n568 287 2011\n569 332 2011\n570 528 2011\n571 572 2011\n573 574 2011\n573 265 2011\n573 266 2011\n575 576 2011\n466 402 2011\n236 38 2011\n236 392 2011\n577 488 2011\n577 578 2011\n579 580 2011\n478 479 2011\n500 581 2011\n500 197 2011\n501 310 2011\n582 583 2011\n480 481 2011\n584 585 2011\n252 253 2011\n252 182 2011\n586 587 2011\n588 473 2011\n256 589 2011\n256 258 2011\n256 541 2011\n233 196 2011\n233 197 2011\n233 266 2011\n233 412 2011\n233 392 2011\n262 264 2011\n262 260 2011\n262 140 2011\n258 589 2011\n258 541 2011\n255 590 2011\n255 591 2011\n253 485 2011\n253 182 2011\n392 234 2011\n392 512 2011\n392 412 2011\n392 396 2011\n266 592 2011\n266 196 2011\n266 265 2011\n261 593 2011\n261 594 2011\n482 445 2011\n482 483 2011\n595 424 2011\n596 597 2011\n596 424 2011\n598 599 2011\n11 574 2011\n13 74 2011\n181 81 2011\n181 123 2011\n600 601 2011\n173 356 2011\n173 379 2011\n173 383 2011\n173 369 2011\n173 420 2011\n503 265 2011\n503 602 2011\n503 251 2011\n603 320 2011\n604 605 2011\n68 318 2011\n68 344 2011\n126 175 2011\n126 299 2011\n126 203 2011\n284 185 2011\n284 296 2011\n284 286 2011\n284 287 2011\n284 606 2011\n284 281 2011\n607 347 2011\n607 608 2011\n609 610 2011\n609 611 2011\n609 565 2011\n612 613 2011\n614 615 2011\n616 9 2011\n282 464 2011\n282 617 2011\n618 619 2011\n486 487 2011\n620 621 2011\n622 350 2011\n623 624 2011\n625 508 2011\n626 163 2011\n627 580 2011\n627 506 2011\n417 628 2011\n417 418 2011\n425 629 2011\n425 426 2011\n175 179 2011\n175 186 2011\n175 277 2011\n175 299 2011\n175 202 2011\n175 296 2011\n175 203 2011\n175 164 2011\n199 200 2011\n199 278 2011\n507 630 2011\n507 631 2011\n427 428 2011\n320 379 2011\n320 369 2011\n320 174 2011\n320 356 2011\n320 373 2011\n632 356 2011\n632 373 2011\n301 633 2011\n301 475 2011\n264 351 2011\n264 513 2011\n264 260 2011\n264 388 2011\n264 140 2011\n634 340 2011\n635 404 2011\n127 58 2011\n127 349 2011\n636 470 2011\n636 637 2011\n638 639 2011\n640 641 2011\n640 601 2011\n642 251 2011\n643 187 2011\n171 172 2011\n644 645 2011\n644 646 2011\n611 565 2011\n226 245 2011\n226 207 2011\n226 230 2011\n226 317 2011\n226 372 2011\n226 231 2011\n647 648 2011\n647 649 2011\n647 650 2011\n510 511 2011\n651 652 2011\n653 654 2011\n653 655 2011\n655 654 2011\n174 373 2011\n321 322 2011\n317 245 2011\n317 208 2011\n656 657 2011\n658 659 2011\n658 660 2011\n661 662 2011\n251 265 2011\n251 602 2011\n453 138 2011\n330 249 2011\n330 74 2011\n330 331 2011\n330 465 2011\n663 1 2011\n332 58 2011\n489 664 2011\n491 665 2011\n491 666 2011\n667 535 2011\n665 666 2011\n388 260 2011\n388 140 2011\n178 339 2011\n178 203 2011\n178 299 2011\n178 281 2011\n178 185 2011\n32 362 2011\n32 314 2011\n32 512 2011\n338 458 2011\n339 202 2011\n339 185 2011\n339 299 2011\n339 468 2011\n339 203 2011\n339 446 2011\n339 164 2011\n383 381 2011\n383 379 2011\n383 668 2011\n383 382 2011\n383 369 2011\n383 356 2011\n669 415 2011\n343 344 2011\n231 372 2011\n231 230 2011\n231 227 2011\n670 671 2011\n4 351 2011\n345 346 2011\n345 347 2011\n345 348 2011\n672 599 2011\n672 340 2011\n494 673 2011\n93 488 2011\n93 578 2011\n180 674 2011\n565 610 2011\n675 265 2011\n163 183 2011\n676 677 2011\n578 488 2011\n420 356 2011\n420 379 2011\n420 369 2011\n664 490 2011\n359 63 2011\n678 398 2011\n678 451 2011\n185 286 2011\n185 287 2011\n679 585 2011\n680 681 2011\n318 398 2011\n318 344 2011\n488 682 2011\n362 314 2011\n683 684 2011\n683 685 2011\n645 646 2011\n686 393 2011\n472 473 2011\n418 628 2011\n518 519 2011\n464 349 2011\n687 688 2011\n689 690 2011\n689 435 2011\n123 81 2011\n123 405 2011\n59 58 2011\n59 372 2011\n59 325 2011\n59 691 2011\n272 485 2011\n369 381 2011\n369 379 2011\n369 356 2011\n369 373 2011\n164 446 2011\n164 202 2011\n692 693 2011\n692 544 2011\n325 372 2011\n325 246 2011\n513 589 2011\n513 522 2011\n372 344 2011\n372 245 2011\n372 246 2011\n694 695 2011\n179 186 2011\n179 277 2011\n179 299 2011\n179 296 2011\n179 696 2011\n183 377 2011\n208 207 2011\n208 246 2011\n506 697 2011\n277 186 2011\n277 296 2011\n698 344 2011\n696 699 2011\n696 186 2011\n446 202 2011\n440 387 2011\n440 700 2011\n440 172 2011\n79 247 2011\n79 387 2011\n701 196 2011\n701 197 2011\n702 390 2011\n702 703 2011\n702 704 2011\n705 706 2011\n396 234 2011\n390 704 2011\n390 707 2011\n599 580 2011\n373 379 2011\n373 356 2011\n344 393 2011\n344 708 2011\n189 190 2011\n189 191 2011\n346 347 2011\n346 348 2011\n709 710 2011\n711 413 2011\n424 597 2011\n246 207 2011\n246 245 2011\n140 260 2011\n58 606 2011\n58 349 2011\n58 278 2011\n194 197 2011\n194 195 2011\n194 412 2011\n668 379 2011\n668 381 2011\n245 207 2011\n468 286 2011\n286 285 2011\n286 287 2011\n286 281 2011\n287 285 2011\n287 281 2011\n712 713 2011\n712 2 2011\n534 695 2011\n405 404 2011\n265 602 2011\n356 379 2011\n356 714 2011\n606 715 2011\n606 451 2011\n606 296 2011\n606 350 2011\n606 349 2011\n716 717 2011\n708 718 2011\n708 719 2011\n718 519 2011\n718 719 2011\n720 412 2011\n649 648 2011\n649 650 2011\n693 544 2011\n381 379 2011\n721 722 2011\n387 247 2011\n432 433 2011\n723 724 2011\n593 594 2011\n725 726 2011\n727 728 2011\n729 434 2011\n522 589 2011\n288 269 2011\n465 470 2011\n730 731 2011\n504 430 2011\n732 733 2011\n331 249 2011\n1 403 2011\n1 217 2011\n463 544 2011\n463 462 2011\n463 734 2011\n2 735 2011\n278 349 2011\n736 737 2011\n738 739 2011\n690 434 2011\n690 435 2011\n728 492 2011\n186 299 2011\n186 296 2011\n740 741 2011\n115 742 2011\n648 650 2011\n572 743 2011\n744 249 2011\n745 414 2011\n581 197 2011\n746 747 2011\n196 197 2011\n196 412 2011\n197 195 2011\n197 605 2011\n197 412 2011\n398 451 2011\n202 217 2011\n202 203 2011\n260 551 2011\n431 322 2011\n605 412 2011\n299 203 2011\n340 310 2011\n267 269 2011\n84 688 2011\n748 749 2011\n495 496 2011\n350 349 2011\n750 742 2011\n751 296 2011\n412 195 2011\n462 544 2011\n652 752 2011\n753 538 2011\n393 234 2011\n311 310 2011\n190 219 2011\n190 191 2011\n191 219 2011\n403 217 2011\n403 203 2011\n217 203 2011\n752 749 2011\n754 106 2011\n755 325 2012\n284 286 2012\n420 173 2012\n756 757 2012\n692 544 2012\n758 548 2012\n547 548 2012\n759 164 2012\n759 202 2012\n759 553 2012\n558 760 2012\n509 508 2012\n218 627 2012\n761 762 2012\n427 428 2012\n466 290 2012\n763 625 2012\n763 634 2012\n763 757 2012\n764 725 2012\n765 126 2012\n766 325 2012\n755 372 2012\n755 325 2012\n755 245 2012\n767 631 2012\n768 591 2012\n769 249 2012\n770 771 2012\n482 483 2012\n541 542 2012\n126 175 2012\n126 202 2012\n284 286 2012\n284 287 2012\n284 281 2012\n284 772 2012\n607 697 2012\n590 760 2012\n616 681 2012\n760 247 2012\n772 286 2012\n772 287 2012\n772 281 2012\n623 624 2012\n625 757 2012\n175 179 2012\n175 186 2012\n175 277 2012\n175 299 2012\n175 202 2012\n175 666 2012\n507 630 2012\n320 632 2012\n320 173 2012\n320 373 2012\n320 174 2012\n632 373 2012\n508 734 2012\n510 511 2012\n174 173 2012\n531 530 2012\n531 532 2012\n323 324 2012\n533 534 2012\n491 665 2012\n491 666 2012\n665 666 2012\n773 727 2012\n178 299 2012\n178 774 2012\n383 381 2012\n383 167 2012\n231 325 2012\n535 536 2012\n775 666 2012\n420 173 2012\n683 776 2012\n472 473 2012\n369 356 2012\n164 202 2012\n164 446 2012\n692 544 2012\n325 372 2012\n666 179 2012\n666 299 2012\n666 727 2012\n666 728 2012\n179 299 2012\n179 777 2012\n506 697 2012\n277 202 2012\n537 538 2012\n281 286 2012\n281 287 2012\n515 778 2012\n167 379 2012\n446 202 2012\n79 387 2012\n502 468 2012\n530 532 2012\n774 299 2012\n286 287 2012\n287 285 2012\n712 2 2012\n227 372 2012\n727 728 2012\n267 269 2012\n543 544 2012\n543 462 2012\n544 462 2012\n373 356 2013\n373 632 2013\n759 553 2013\n317 245 2013\n317 207 2013\n317 779 2013\n419 780 2013\n419 231 2013\n781 631 2013\n491 665 2013\n491 727 2013\n491 775 2013\n491 735 2013\n178 468 2013\n178 774 2013\n782 175 2013\n782 299 2013\n782 186 2013\n782 783 2013\n339 179 2013\n339 203 2013\n784 767 2013\n784 631 2013\n784 297 2013\n771 770 2013\n245 755 2013\n245 785 2013\n202 164 2013\n202 186 2013\n202 446 2013\n383 356 2013\n286 287 2013\n287 284 2013\n287 281 2013\n287 772 2013\n231 372 2013\n231 230 2013\n231 325 2013\n231 766 2013\n499 479 2013\n281 284 2013\n697 627 2013\n697 786 2013\n763 508 2013\n624 623 2013\n775 727 2013\n775 735 2013\n734 462 2013\n766 780 2013\n766 372 2013\n766 325 2013\n755 325 2013\n755 372 2013\n420 356 2013\n420 173 2013\n356 632 2013\n356 173 2013\n267 269 2013\n780 372 2013\n290 164 2013\n290 627 2013\n787 623 2013\n381 379 2013\n543 692 2013\n466 681 2013\n164 446 2013\n320 369 2013\n325 372 2013\n757 508 2013\n126 299 2013\n590 760 2013\n727 728 2013\n186 175 2013\n186 296 2013\n186 179 2013\n175 296 2013\n175 277 2013\n608 506 2013\n179 299 2013\n179 203 2013\n277 296 2013\n299 203 2013\n508 462 2013\n&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ruta</span> <span class="o">=</span> <span class="s1">&#39;reptilia-tortoise-network-fi.edges&#39;</span>
+
+<span class="n">datos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ruta</span><span class="p">,</span> 
+            <span class="c1">#nrows = 10,</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sesion_practica_03_26_0.png" src="../../_images/sesion_practica_03_26_0.png" />
+</div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">nx.connected_components(G)</span></code> devuelve las componentes de la red en un objeto de tipo generador de python. Para su tratamiento basta con convertirlo en una lista.</p>
+<p>Con tal lista de componentes y utilizando la función <code class="docutils literal notranslate"><span class="pre">.subgraph()</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">nx.Graph()</span></code> se puede analizar por separado cada componente. En este caso se hace un bucle sobre todas las componentes y se grafica cada una:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">componentes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El total de componentes de la red es:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">componentes</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">componente</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">componentes</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Componente &#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+  <span class="n">Gs</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">componente</span><span class="p">)</span>
+  <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">Gs</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El total de componentes de la red es: 104
+Componente  0
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_1.png" src="../../_images/sesion_practica_03_28_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  1
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_3.png" src="../../_images/sesion_practica_03_28_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  2
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_5.png" src="../../_images/sesion_practica_03_28_5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  3
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_7.png" src="../../_images/sesion_practica_03_28_7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  4
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_9.png" src="../../_images/sesion_practica_03_28_9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  5
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_11.png" src="../../_images/sesion_practica_03_28_11.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  6
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_13.png" src="../../_images/sesion_practica_03_28_13.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  7
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_15.png" src="../../_images/sesion_practica_03_28_15.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  8
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_17.png" src="../../_images/sesion_practica_03_28_17.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  9
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_19.png" src="../../_images/sesion_practica_03_28_19.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  10
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_21.png" src="../../_images/sesion_practica_03_28_21.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  11
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_23.png" src="../../_images/sesion_practica_03_28_23.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  12
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_25.png" src="../../_images/sesion_practica_03_28_25.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  13
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_27.png" src="../../_images/sesion_practica_03_28_27.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  14
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_29.png" src="../../_images/sesion_practica_03_28_29.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  15
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_31.png" src="../../_images/sesion_practica_03_28_31.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  16
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_33.png" src="../../_images/sesion_practica_03_28_33.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  17
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_35.png" src="../../_images/sesion_practica_03_28_35.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  18
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_37.png" src="../../_images/sesion_practica_03_28_37.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  19
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_39.png" src="../../_images/sesion_practica_03_28_39.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  20
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_41.png" src="../../_images/sesion_practica_03_28_41.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  21
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_43.png" src="../../_images/sesion_practica_03_28_43.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  22
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_45.png" src="../../_images/sesion_practica_03_28_45.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  23
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_47.png" src="../../_images/sesion_practica_03_28_47.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  24
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_49.png" src="../../_images/sesion_practica_03_28_49.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  25
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_51.png" src="../../_images/sesion_practica_03_28_51.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  26
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_53.png" src="../../_images/sesion_practica_03_28_53.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  27
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_55.png" src="../../_images/sesion_practica_03_28_55.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  28
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_57.png" src="../../_images/sesion_practica_03_28_57.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  29
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_59.png" src="../../_images/sesion_practica_03_28_59.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  30
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_61.png" src="../../_images/sesion_practica_03_28_61.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  31
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_63.png" src="../../_images/sesion_practica_03_28_63.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  32
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_65.png" src="../../_images/sesion_practica_03_28_65.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  33
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_67.png" src="../../_images/sesion_practica_03_28_67.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  34
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_69.png" src="../../_images/sesion_practica_03_28_69.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  35
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_71.png" src="../../_images/sesion_practica_03_28_71.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  36
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_73.png" src="../../_images/sesion_practica_03_28_73.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  37
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_75.png" src="../../_images/sesion_practica_03_28_75.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  38
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_77.png" src="../../_images/sesion_practica_03_28_77.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  39
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_79.png" src="../../_images/sesion_practica_03_28_79.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  40
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_81.png" src="../../_images/sesion_practica_03_28_81.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  41
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_83.png" src="../../_images/sesion_practica_03_28_83.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  42
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_85.png" src="../../_images/sesion_practica_03_28_85.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  43
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_87.png" src="../../_images/sesion_practica_03_28_87.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  44
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_89.png" src="../../_images/sesion_practica_03_28_89.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  45
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_91.png" src="../../_images/sesion_practica_03_28_91.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  46
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_93.png" src="../../_images/sesion_practica_03_28_93.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  47
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_95.png" src="../../_images/sesion_practica_03_28_95.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  48
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_97.png" src="../../_images/sesion_practica_03_28_97.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  49
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_99.png" src="../../_images/sesion_practica_03_28_99.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  50
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_101.png" src="../../_images/sesion_practica_03_28_101.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  51
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_103.png" src="../../_images/sesion_practica_03_28_103.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  52
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_105.png" src="../../_images/sesion_practica_03_28_105.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  53
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_107.png" src="../../_images/sesion_practica_03_28_107.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  54
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_109.png" src="../../_images/sesion_practica_03_28_109.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  55
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_111.png" src="../../_images/sesion_practica_03_28_111.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  56
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_113.png" src="../../_images/sesion_practica_03_28_113.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  57
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_115.png" src="../../_images/sesion_practica_03_28_115.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  58
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_117.png" src="../../_images/sesion_practica_03_28_117.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  59
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_119.png" src="../../_images/sesion_practica_03_28_119.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  60
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_121.png" src="../../_images/sesion_practica_03_28_121.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  61
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_123.png" src="../../_images/sesion_practica_03_28_123.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  62
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_125.png" src="../../_images/sesion_practica_03_28_125.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  63
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_127.png" src="../../_images/sesion_practica_03_28_127.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  64
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_129.png" src="../../_images/sesion_practica_03_28_129.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  65
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_131.png" src="../../_images/sesion_practica_03_28_131.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  66
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_133.png" src="../../_images/sesion_practica_03_28_133.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  67
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_135.png" src="../../_images/sesion_practica_03_28_135.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  68
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_137.png" src="../../_images/sesion_practica_03_28_137.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  69
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_139.png" src="../../_images/sesion_practica_03_28_139.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  70
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_141.png" src="../../_images/sesion_practica_03_28_141.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  71
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_143.png" src="../../_images/sesion_practica_03_28_143.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  72
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_145.png" src="../../_images/sesion_practica_03_28_145.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  73
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_147.png" src="../../_images/sesion_practica_03_28_147.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  74
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_149.png" src="../../_images/sesion_practica_03_28_149.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  75
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_151.png" src="../../_images/sesion_practica_03_28_151.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  76
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_153.png" src="../../_images/sesion_practica_03_28_153.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  77
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_155.png" src="../../_images/sesion_practica_03_28_155.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  78
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_157.png" src="../../_images/sesion_practica_03_28_157.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  79
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_159.png" src="../../_images/sesion_practica_03_28_159.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  80
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_161.png" src="../../_images/sesion_practica_03_28_161.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  81
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_163.png" src="../../_images/sesion_practica_03_28_163.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  82
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_165.png" src="../../_images/sesion_practica_03_28_165.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  83
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_167.png" src="../../_images/sesion_practica_03_28_167.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  84
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_169.png" src="../../_images/sesion_practica_03_28_169.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  85
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_171.png" src="../../_images/sesion_practica_03_28_171.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  86
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_173.png" src="../../_images/sesion_practica_03_28_173.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  87
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_175.png" src="../../_images/sesion_practica_03_28_175.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  88
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_177.png" src="../../_images/sesion_practica_03_28_177.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  89
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_179.png" src="../../_images/sesion_practica_03_28_179.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  90
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_181.png" src="../../_images/sesion_practica_03_28_181.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  91
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_183.png" src="../../_images/sesion_practica_03_28_183.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  92
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_185.png" src="../../_images/sesion_practica_03_28_185.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  93
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_187.png" src="../../_images/sesion_practica_03_28_187.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  94
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_189.png" src="../../_images/sesion_practica_03_28_189.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  95
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_191.png" src="../../_images/sesion_practica_03_28_191.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  96
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_193.png" src="../../_images/sesion_practica_03_28_193.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  97
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_195.png" src="../../_images/sesion_practica_03_28_195.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  98
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_197.png" src="../../_images/sesion_practica_03_28_197.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  99
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_199.png" src="../../_images/sesion_practica_03_28_199.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  100
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_201.png" src="../../_images/sesion_practica_03_28_201.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  101
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_203.png" src="../../_images/sesion_practica_03_28_203.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  102
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_205.png" src="../../_images/sesion_practica_03_28_205.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Componente  103
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_28_207.png" src="../../_images/sesion_practica_03_28_207.png" />
+</div>
+</div>
+<p>Para concentrase en la máxima componente se puede aprovechar que la función <code class="docutils literal notranslate"><span class="pre">max()</span></code> de python admite un argument <code class="docutils literal notranslate"><span class="pre">key</span></code> que permite definir la función con la que se medirán los objetos de la lista. En este caso, al introducir la función <code class="docutils literal notranslate"><span class="pre">len</span></code>, que devuelve la longitud de una lista, nos regresará el elemento más largo de la lista de componentes, esto es, la máxima componente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_comp</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">componentes</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="nb">len</span> <span class="p">)</span> <span class="c1">#nodos de la máxima componente</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La máxima componente contiene </span><span class="si">%i</span><span class="s2"> de los </span><span class="si">%i</span><span class="s2"> nodos&quot;</span> <span class="o">%</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">max_comp</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)))</span>
+<span class="n">Gm</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">max_comp</span><span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_kamada_kawai</span><span class="p">(</span><span class="n">Gm</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La máxima componente contiene 496 de los 787 nodos
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_03_30_1.png" src="../../_images/sesion_practica_03_30_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="medidas-promedio-y-otras-medidas-globales">
+<h3><span class="section-number">7.1.2.2. </span>Medidas promedio y otras medidas globales<a class="headerlink" href="#medidas-promedio-y-otras-medidas-globales" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como veremos en la segunda parte del curso, los promedios de las propiedades de los nodos dan mucha información relevante de la red. Algunos vienen implementados en networkx y otros requieren que los calculemos. A continuación algunos ejemplos tanto de medidas promedio como de otras propiedades globales mencionadas en la parte teórica:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El grado promedio de la red es </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">nx</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El clustering promedio de la red es </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">nx</span>.average_clustering(G))
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La distancia promedio en la máxima componente es </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">nx</span>.average_shortest_path_length(Gm))
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El diámetro de la máxima componente es </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">max</span>(nx.eccentricity(Gm).values()))
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El radio de la máxima componente es </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">min</span>(nx.eccentricity(Gm).values()))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El grado promedio de la red es 3.042
+El clustering promedio de la red es 0.268
+La distancia promedio en la máxima componente es 7.933
+El diámetro de la máxima componente es 21.000
+El radio de la máxima componente es 11.000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aprovechemos este cálculo para verificar la que distancia promedio de una red disconexa no está bien definida y marca error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NetworkXError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-66-033aa892eae1&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/networkx/algorithms/shortest_paths/generic.py</span> in <span class="ni">average_shortest_path_length</span><span class="nt">(G, weight, method)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Graph is not weakly connected.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">G</span><span class="o">.</span><span class="n">is_directed</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">389</span>         <span class="k">raise</span> <span class="n">nx</span><span class="o">.</span><span class="n">NetworkXError</span><span class="p">(</span><span class="s2">&quot;Graph is not connected.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> 
+<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="c1"># Compute all-pairs shortest paths.</span>
+
+<span class="ne">NetworkXError</span>: Graph is not connected.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="distribucion-de-probabilidad-de-grado">
+<h3><span class="section-number">7.1.2.3. </span>Distribución de probabilidad de grado<a class="headerlink" href="#distribucion-de-probabilidad-de-grado" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Finalmente, a partir de la función <code class="docutils literal notranslate"><span class="pre">.degree()</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">nx.Graph()</span></code> que devuelve una estructura similar a un diccionario, podemos utilizar el método usual (listas por comprensión) para generar un histograma de los grados de los nodos de la red; contar el número de nodos que tienen cierto grado:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DegreeView({1: 9, 2: 4, 3: 4, 4: 7, 5: 1, 6: 1, 7: 1, 8: 3, 9: 4, 10: 6, 11: 4, 12: 4, 13: 3, 14: 1, 15: 1, 16: 2, 17: 1, 18: 1, 19: 3, 20: 1, 21: 3, 22: 2, 23: 3, 24: 2, 25: 2, 26: 1, 27: 2, 28: 1, 29: 5, 30: 5, 31: 1, 32: 5, 33: 1, 34: 1, 35: 1, 36: 2, 37: 6, 38: 2, 39: 5, 40: 2, 41: 2, 42: 2, 43: 1, 44: 1, 45: 4, 46: 2, 47: 2, 48: 1, 49: 1, 50: 1, 51: 3, 52: 3, 53: 2, 54: 2, 55: 1, 56: 1, 57: 1, 58: 7, 59: 6, 60: 1, 61: 1, 62: 1, 63: 8, 64: 1, 65: 2, 66: 2, 67: 2, 68: 6, 69: 3, 70: 1, 71: 5, 72: 1, 73: 1, 74: 3, 75: 1, 76: 1, 77: 3, 78: 1, 79: 4, 80: 3, 81: 4, 82: 1, 83: 1, 84: 5, 85: 4, 86: 1, 87: 1, 88: 1, 89: 4, 90: 2, 91: 1, 92: 1, 93: 5, 94: 1, 95: 4, 96: 3, 97: 1, 98: 1, 99: 3, 100: 1, 101: 4, 102: 2, 103: 2, 104: 3, 105: 11, 106: 2, 107: 2, 108: 3, 109: 1, 110: 2, 111: 1, 112: 1, 113: 1, 114: 1, 115: 5, 116: 4, 117: 1, 118: 2, 119: 1, 120: 1, 121: 2, 122: 1, 123: 5, 124: 3, 125: 3, 126: 12, 127: 4, 128: 2, 129: 2, 130: 1, 131: 1, 132: 1, 133: 1, 134: 1, 135: 1, 136: 1, 137: 1, 138: 10, 139: 1, 140: 6, 141: 1, 142: 2, 143: 1, 144: 2, 145: 2, 146: 1, 147: 1, 148: 5, 149: 1, 150: 1, 151: 1, 152: 1, 153: 2, 154: 1, 155: 2, 156: 1, 157: 1, 158: 1, 159: 1, 160: 1, 161: 3, 162: 2, 163: 4, 164: 8, 165: 5, 166: 12, 167: 8, 168: 7, 169: 10, 170: 10, 171: 11, 172: 10, 173: 9, 174: 4, 175: 17, 176: 6, 177: 8, 178: 12, 179: 13, 180: 4, 181: 3, 182: 6, 183: 3, 184: 8, 185: 7, 186: 13, 187: 9, 188: 7, 189: 4, 190: 4, 191: 4, 192: 2, 193: 1, 194: 5, 195: 3, 196: 8, 197: 13, 198: 8, 199: 6, 200: 7, 201: 10, 202: 17, 203: 11, 204: 9, 205: 9, 206: 4, 207: 6, 208: 4, 209: 7, 210: 5, 211: 1, 212: 4, 213: 1, 214: 5, 215: 3, 216: 9, 217: 6, 218: 6, 219: 4, 220: 1, 221: 2, 222: 1, 223: 5, 224: 3, 225: 7, 226: 10, 227: 5, 228: 4, 229: 3, 230: 5, 231: 10, 232: 5, 233: 6, 234: 5, 235: 2, 236: 6, 237: 6, 238: 8, 239: 8, 240: 8, 241: 8, 242: 8, 243: 9, 244: 2, 245: 8, 246: 10, 247: 5, 248: 9, 249: 7, 250: 1, 251: 7, 252: 4, 253: 5, 254: 3, 255: 6, 256: 6, 257: 4, 258: 7, 259: 2, 260: 12, 261: 5, 262: 6, 263: 3, 264: 11, 265: 6, 266: 7, 267: 2, 268: 3, 269: 6, 270: 3, 271: 8, 272: 12, 273: 10, 274: 9, 275: 3, 276: 2, 277: 12, 278: 7, 279: 2, 280: 2, 281: 8, 282: 4, 283: 2, 284: 10, 285: 7, 286: 9, 287: 11, 288: 8, 289: 5, 290: 6, 291: 2, 292: 1, 293: 2, 294: 5, 295: 1, 296: 8, 297: 4, 298: 2, 299: 16, 300: 1, 301: 3, 302: 1, 303: 1, 304: 1, 305: 3, 306: 1, 307: 3, 308: 1, 309: 1, 310: 4, 311: 1, 312: 2, 313: 2, 314: 8, 315: 8, 316: 5, 317: 9, 318: 5, 319: 2, 320: 9, 321: 1, 322: 2, 323: 2, 324: 2, 325: 7, 326: 2, 327: 3, 328: 3, 329: 1, 330: 6, 331: 7, 332: 3, 333: 1, 334: 1, 335: 1, 336: 1, 337: 2, 338: 4, 339: 11, 340: 4, 341: 5, 342: 1, 343: 1, 344: 10, 345: 3, 346: 3, 347: 4, 348: 3, 349: 8, 350: 3, 351: 4, 352: 4, 353: 1, 354: 1, 355: 4, 356: 12, 357: 2, 358: 3, 359: 3, 360: 2, 361: 2, 362: 3, 363: 1, 364: 1, 365: 1, 366: 2, 367: 2, 368: 2, 369: 11, 370: 2, 371: 2, 372: 14, 373: 12, 374: 1, 375: 2, 376: 3, 377: 1, 378: 2, 379: 16, 380: 4, 381: 6, 382: 6, 383: 9, 384: 5, 385: 1, 386: 1, 387: 4, 388: 5, 389: 1, 390: 5, 391: 2, 392: 11, 393: 5, 394: 1, 395: 1, 396: 4, 397: 4, 398: 5, 399: 3, 400: 1, 401: 1, 402: 2, 403: 4, 404: 4, 405: 2, 406: 4, 407: 1, 408: 2, 409: 2, 410: 1, 411: 4, 412: 9, 413: 2, 414: 2, 415: 2, 416: 1, 417: 2, 418: 2, 419: 10, 420: 7, 421: 1, 422: 1, 423: 2, 424: 5, 425: 2, 426: 1, 427: 1, 428: 2, 429: 3, 430: 3, 431: 1, 432: 1, 433: 1, 434: 3, 435: 3, 436: 3, 437: 3, 438: 3, 439: 2, 440: 5, 441: 4, 442: 1, 443: 1, 444: 1, 445: 3, 446: 7, 447: 3, 448: 3, 449: 1, 450: 1, 451: 5, 452: 1, 453: 2, 454: 1, 455: 4, 456: 4, 457: 1, 458: 3, 459: 3, 460: 2, 461: 2, 462: 6, 463: 4, 464: 3, 465: 5, 466: 4, 467: 1, 468: 7, 469: 1, 470: 2, 471: 1, 472: 1, 473: 2, 474: 2, 475: 2, 476: 2, 477: 3, 478: 2, 479: 3, 480: 1, 481: 1, 482: 2, 483: 1, 484: 1, 485: 3, 486: 1, 487: 1, 488: 5, 489: 2, 490: 2, 491: 6, 492: 2, 493: 1, 494: 2, 495: 1, 496: 1, 497: 1, 498: 1, 499: 3, 500: 3, 501: 2, 502: 2, 503: 4, 504: 5, 505: 2, 506: 4, 507: 3, 508: 6, 509: 1, 510: 1, 511: 1, 512: 2, 513: 4, 514: 3, 515: 2, 516: 1, 517: 1, 518: 1, 519: 2, 520: 1, 521: 1, 522: 3, 523: 3, 524: 1, 525: 1, 526: 2, 527: 2, 528: 3, 529: 1, 530: 3, 531: 2, 532: 2, 533: 1, 534: 2, 535: 2, 536: 1, 537: 1, 538: 2, 539: 1, 540: 1, 541: 3, 542: 1, 543: 3, 544: 5, 545: 1, 546: 1, 547: 1, 548: 2, 549: 1, 550: 1, 551: 2, 552: 1, 553: 2, 554: 1, 555: 1, 556: 1, 557: 1, 558: 2, 559: 1, 560: 1, 561: 1, 562: 4, 563: 1, 564: 1, 565: 4, 566: 1, 567: 1, 568: 1, 569: 1, 570: 1, 571: 1, 572: 2, 573: 3, 574: 2, 575: 1, 576: 1, 577: 2, 578: 3, 579: 1, 580: 3, 581: 2, 582: 1, 583: 1, 584: 1, 585: 2, 586: 1, 587: 1, 588: 1, 589: 4, 590: 2, 591: 2, 592: 1, 593: 2, 594: 2, 595: 1, 596: 2, 597: 2, 598: 1, 599: 3, 600: 1, 601: 2, 602: 3, 603: 1, 604: 1, 605: 3, 606: 7, 607: 3, 608: 2, 609: 3, 610: 2, 611: 2, 612: 1, 613: 1, 614: 1, 615: 1, 616: 2, 617: 1, 618: 1, 619: 1, 620: 1, 621: 1, 622: 1, 623: 2, 624: 1, 625: 3, 626: 1, 627: 5, 628: 2, 629: 1, 630: 1, 631: 4, 632: 3, 633: 1, 634: 2, 635: 1, 636: 2, 637: 1, 638: 1, 639: 1, 640: 2, 641: 1, 642: 1, 643: 1, 644: 2, 645: 2, 646: 2, 647: 3, 648: 3, 649: 3, 650: 3, 651: 1, 652: 2, 653: 2, 654: 2, 655: 2, 656: 1, 657: 1, 658: 2, 659: 1, 660: 1, 661: 1, 662: 1, 663: 1, 664: 2, 665: 2, 666: 8, 667: 1, 668: 3, 669: 1, 670: 1, 671: 1, 672: 2, 673: 1, 674: 1, 675: 1, 676: 1, 677: 1, 678: 2, 679: 1, 680: 1, 681: 3, 682: 1, 683: 3, 684: 1, 685: 1, 686: 1, 687: 1, 688: 2, 689: 2, 690: 3, 691: 1, 692: 3, 693: 2, 694: 1, 695: 2, 696: 3, 697: 4, 698: 1, 699: 1, 700: 1, 701: 2, 702: 3, 703: 1, 704: 2, 705: 1, 706: 1, 707: 1, 708: 3, 709: 1, 710: 1, 711: 1, 712: 2, 713: 1, 714: 1, 715: 1, 716: 1, 717: 1, 718: 3, 719: 2, 720: 1, 721: 1, 722: 1, 723: 1, 724: 1, 725: 2, 726: 1, 727: 5, 728: 3, 729: 1, 730: 1, 731: 1, 732: 1, 733: 1, 734: 3, 735: 3, 736: 1, 737: 1, 738: 1, 739: 1, 740: 1, 741: 1, 742: 2, 743: 1, 744: 1, 745: 1, 746: 1, 747: 1, 748: 1, 749: 2, 750: 1, 751: 1, 752: 2, 753: 1, 754: 1, 755: 3, 756: 1, 757: 4, 758: 1, 759: 3, 760: 3, 761: 1, 762: 1, 763: 4, 764: 1, 765: 1, 766: 4, 767: 2, 768: 1, 769: 1, 770: 1, 771: 1, 772: 4, 773: 1, 774: 2, 775: 4, 776: 1, 777: 1, 778: 1, 779: 1, 780: 3, 781: 1, 782: 4, 783: 1, 784: 3, 785: 1, 786: 1, 787: 1})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+<span class="n">grados</span> <span class="o">=</span> <span class="p">[</span> <span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">]</span>
+
+
+<span class="n">distribucion</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">grados</span><span class="p">:</span> <span class="c1">#este bucle únicamente genera las claves del diccionario, asignándoles un valor de 0</span>
+  <span class="n">distribucion</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">grados</span><span class="p">:</span> <span class="c1">#este bucle recorre todos los grados y cada vez que un valor aparece, suma uno a la cuenta de ese valor</span>
+  <span class="n">distribucion</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">distribucion</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 309,
+ 2: 156,
+ 3: 101,
+ 4: 63,
+ 5: 41,
+ 6: 26,
+ 7: 20,
+ 8: 21,
+ 9: 14,
+ 10: 12,
+ 11: 8,
+ 12: 8,
+ 13: 3,
+ 14: 1,
+ 16: 2,
+ 17: 2}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">distribucion</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">distribucion</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Grado&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# nodos&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">ticks</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">labels</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sesion_practica_03_40_0.png" src="../../_images/sesion_practica_03_40_0.png" />
+</div>
+</div>
+<p>De este histograma se puede extraer información de la red. Por ejemplo que la mayoría de los nodos tienen grado 1 y predominan nodos con pocos enlaces, mientras que hay unas pocos nodos que tienen 16 y 17 enlaces.
+Tomando en cuenta que se trata de tortugas, podemos sacar conclusiones respecto al comportamiento social de este animal.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./medidas_y_metricas/practica_03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="presentacion.html" title="previous page"><span class="section-number">7. </span>Práctica 3</a>
+    <a class='right-next' id="next-link" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/presentacion.html" title="next page"><span class="section-number">8. </span>Redes aleatorias</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Por Carlos Francisco Betancourt<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

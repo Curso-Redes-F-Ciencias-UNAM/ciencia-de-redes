@@ -1,0 +1,3 @@
+# Medidas de grupos de nodos
+
+En esta lección se presenta una medida relacionada con grupos de nodos adyacentes, el coeficiente de agrupamiento o acumulación (en inglés, clustering coefficient). Asimismo, se da la referencia para que consulten las distintas definiciones de grupos de nodos en una red. Finalmente, se introduce la modularidad de una red, medida de qué tanto los nodos de una red forman comunidades; la modularidad es una cantidad muy importante para varios algoritmos de detección de comunidades. Dicho sea de paso, la detección de comunidades es una de las aplicaciones más populares en el estudio de redes sociales hoy en día por lo que consideramos muy importante que sepan qué es lo que está detrás.

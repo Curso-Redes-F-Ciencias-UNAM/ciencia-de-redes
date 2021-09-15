@@ -1,0 +1,29 @@
+title: "Ciencia de Redes"
+author: "Carlos Francisco Betancourt"
+copyright: "2021"
+logo: "logo-pagina-01.png"
+
+execute:
+    execute_notebooks: off # auto, force, cache, off
+
+html:
+    favicon: "favicon.ico"
+    extra_navbar: "Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>"
+    home_page_in_navbar: false
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+
+sphinx:
+    config:
+        html_theme: sphinx_book_theme
+        # html_theme: furo
+        # html_theme: basic
+        # html_theme_path: ../
+        # html_theme: tema
+        language: es
+        bibtex_reference_style: author_year
+        # html_sidebars: { '**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'] }
+
+bibtex_bibfiles:
+    - references.bib

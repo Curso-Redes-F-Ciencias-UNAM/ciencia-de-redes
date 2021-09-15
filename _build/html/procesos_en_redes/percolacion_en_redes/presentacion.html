@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12. Percolación en redes &#8212; Ciencia de Redes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="13. Redes de información" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html" />
+    <link rel="prev" title="11. Difusión en redes" href="../difusion_en_redes/presentacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-pagina-01.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Prefacio
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../prefacio/presentacion.html">
+   Presentación
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 1: Matemáticas de las redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/presentacion.html">
+   1. Matemáticas de las redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/tipos_de_redes_y_matriz_de_adyacencia.html">
+     1.1. Tipos de redes y matriz de adyacencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/definicion_de_grado.html">
+     1.2. Definición de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/motivacion_y_mas_tipos_de_redes.html">
+     1.3. Motivación y más tipos de redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades.html">
+     1.4. Matríz de adyacencia y sus propiedades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/numero_de_enlaces_de_la_red.html">
+     1.5. Número de enlaces de la red
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/caminos_y_distancia_entre_nodos.html">
+     1.6. Caminos y distancia entre nodos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/presentacion.html">
+   2. Práctica 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/primeros_pasos_python_notebook.html">
+     2.1. Preliminar: primeros pasos con Python (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_notebook.html">
+     2.2. Práctica 1 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_video.html">
+     2.3. Práctica 1 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2: Medidas y métricas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/presentacion.html">
+   3. Medidas de centralidad de los nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
+     3.1. Centralidad de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
+     3.2. Centralidad de cercanía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
+     3.3. Centralidad de intermediación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
+     3.4. Centralidad de eigenvector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
+     3.5. Centralidad de Katz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
+     3.6. Centralidad de Page Rank (opcional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_02/presentacion.html">
+   4. Práctica 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_notebook.html">
+     4.1. Práctica 2 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_video.html">
+     4.2. Práctica 2 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/presentacion.html">
+   5. Medidas de grupos de nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
+     5.1. Coeficiente de agrupamiento/acumulación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/grupos_de_nodos.html">
+     5.2. Grupos de nodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/modularidad.html">
+     5.3. Modularidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/presentacion.html">
+   6. Propiedades globales de la red
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/propiedades_globales.html">
+     6.1. Propiedades globales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/distribucion_de_grado.html">
+     6.2. Distribución de grado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_03/presentacion.html">
+   7. Práctica 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_03/sesion_practica_03.html">
+     7.1. Práctica 3 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3: Redes complejas y sus propiedades
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/presentacion.html">
+   8. Redes aleatorias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
+   9. Redes de mundo pequeño
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
+   10. Redes con independencia de escala (scale-free)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 4: Procesos en redes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../difusion_en_redes/presentacion.html">
+   11. Difusión en redes
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   12. Percolación en redes
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 5: Estudio de redes reales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html">
+   13. Redes de información
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_en_biologia/presentacion.html">
+   14. Redes en biología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_sociales/presentacion.html">
+   15. Redes sociales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/proyectos_finales/presentacion.html">
+   16. Proyectos finales
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Referencias
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../referencias/referencias.html">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/procesos_en_redes/percolacion_en_redes/presentacion.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="percolacion-en-redes">
+<h1><span class="section-number">12. </span>Percolación en redes<a class="headerlink" href="#percolacion-en-redes" title="Enlazar permanentemente con este título">¶</a></h1>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./procesos_en_redes/percolacion_en_redes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../difusion_en_redes/presentacion.html" title="previous page"><span class="section-number">11. </span>Difusión en redes</a>
+    <a class='right-next' id="next-link" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html" title="next page"><span class="section-number">13. </span>Redes de información</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Por Carlos Francisco Betancourt<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

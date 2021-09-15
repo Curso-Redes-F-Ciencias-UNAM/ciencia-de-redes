@@ -1,0 +1,1 @@
+# Redes con independencia de escala (scale-free)
