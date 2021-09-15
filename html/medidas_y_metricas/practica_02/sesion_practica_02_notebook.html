@@ -1,0 +1,1443 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.1. Práctica 2 (notebook) &#8212; Ciencia de Redes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="4.2. Práctica 2 (video)" href="sesion_practica_02_video.html" />
+    <link rel="prev" title="4. Práctica 2" href="presentacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-pagina-01.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Prefacio
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../prefacio/presentacion.html">
+   Presentación
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 1: Matemáticas de las redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/presentacion.html">
+   1. Matemáticas de las redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/tipos_de_redes_y_matriz_de_adyacencia.html">
+     1.1. Tipos de redes y matriz de adyacencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/definicion_de_grado.html">
+     1.2. Definición de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/motivacion_y_mas_tipos_de_redes.html">
+     1.3. Motivación y más tipos de redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades.html">
+     1.4. Matríz de adyacencia y sus propiedades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/numero_de_enlaces_de_la_red.html">
+     1.5. Número de enlaces de la red
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/caminos_y_distancia_entre_nodos.html">
+     1.6. Caminos y distancia entre nodos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/presentacion.html">
+   2. Práctica 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/primeros_pasos_python_notebook.html">
+     2.1. Preliminar: primeros pasos con Python (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_notebook.html">
+     2.2. Práctica 1 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_video.html">
+     2.3. Práctica 1 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2: Medidas y métricas
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/presentacion.html">
+   3. Medidas de centralidad de los nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
+     3.1. Centralidad de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
+     3.2. Centralidad de cercanía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
+     3.3. Centralidad de intermediación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
+     3.4. Centralidad de eigenvector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
+     3.5. Centralidad de Katz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
+     3.6. Centralidad de Page Rank (opcional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="presentacion.html">
+   4. Práctica 2
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. Práctica 2 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sesion_practica_02_video.html">
+     4.2. Práctica 2 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../medidas_de_grupos_de_nodos/presentacion.html">
+   5. Medidas de grupos de nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
+     5.1. Coeficiente de agrupamiento/acumulación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_grupos_de_nodos/grupos_de_nodos.html">
+     5.2. Grupos de nodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../medidas_de_grupos_de_nodos/modularidad.html">
+     5.3. Modularidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../propiedades_globales_de_la_red/presentacion.html">
+   6. Propiedades globales de la red
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../propiedades_globales_de_la_red/propiedades_globales.html">
+     6.1. Propiedades globales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../propiedades_globales_de_la_red/distribucion_de_grado.html">
+     6.2. Distribución de grado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../practica_03/presentacion.html">
+   7. Práctica 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../practica_03/sesion_practica_03.html">
+     7.1. Práctica 3 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3: Redes complejas y sus propiedades
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/presentacion.html">
+   8. Redes aleatorias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
+   9. Redes de mundo pequeño
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
+   10. Redes con independencia de escala (scale-free)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 4: Procesos en redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/presentacion.html">
+   11. Difusión en redes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../procesos_en_redes/percolacion_en_redes/presentacion.html">
+   12. Percolación en redes
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 5: Estudio de redes reales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html">
+   13. Redes de información
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_en_biologia/presentacion.html">
+   14. Redes en biología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_sociales/presentacion.html">
+   15. Redes sociales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/proyectos_finales/presentacion.html">
+   16. Proyectos finales
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Referencias
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../referencias/referencias.html">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/medidas_y_metricas/practica_02/sesion_practica_02_notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/medidas_y_metricas/practica_02/sesion_practica_02_notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/medidas_y_metricas/practica_02/sesion_practica_02_notebook.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trabajo-con-redes-reales-y-medidas-de-centralidad">
+   4.1.1. Trabajo con redes reales y medidas de centralidad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importar-y-procesar-archivos">
+   4.1.2. Importar y procesar archivos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opcion-1">
+     4.1.2.1. Opción 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opcion-2">
+     4.1.2.2. Opción 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#centralidad-de-los-nodos">
+   4.1.3. Centralidad de los nodos
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="practica-2-notebook">
+<h1><span class="section-number">4.1. </span>Práctica 2 (notebook)<a class="headerlink" href="#practica-2-notebook" title="Enlazar permanentemente con este título">¶</a></h1>
+<!-- esta celda no se renderizará en jupyter -->
+<div class="admonition-ejecuta-el-notebook admonition">
+<p class="admonition-title">Ejecuta el notebook</p>
+<p>Para ejecutar este notebook da click en <i class="fas fa-download"></i> y descarga el archivo <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> para correrolo localmente en tu computadora o da click en <i class="fas fa-rocket"></i> para correlo en Binder o Google Colab.</p>
+</div>
+<div class="section" id="trabajo-con-redes-reales-y-medidas-de-centralidad">
+<h2><span class="section-number">4.1.1. </span>Trabajo con redes reales y medidas de centralidad<a class="headerlink" href="#trabajo-con-redes-reales-y-medidas-de-centralidad" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En esta práctica se desarrolla lo siguiente:</p>
+<ul class="simple">
+<li><p>Importar y procesar datos de redes reales para su análisis con NetworkX, tanto en Google Colab como en Jupyter (o código de python en general).</p></li>
+<li><p>Analizar las propiedades de los nodos vistas en el bloque teórico «Medidas de centralidad de los nodos»</p></li>
+<li><p>Visualizar redes pequeñas-medianas a partir de las propiedades de los nodos.</p></li>
+<li><p>Visualizar redes y sus propiedades generales con el programa Gephi</p></li>
+</ul>
+</div>
+<div class="section" id="importar-y-procesar-archivos">
+<h2><span class="section-number">4.1.2. </span>Importar y procesar archivos<a class="headerlink" href="#importar-y-procesar-archivos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para importar y procesar datos de una red (sea que ustedes generaron o que descargaron de algún repositorio) vamos a utilizar una paquetería especializada en análisis de datos llamada Pandas (<a class="reference external" href="https://pandas.pydata.org/">https://pandas.pydata.org/</a>) que ya viene instalada tanto en Colab como en Anaconda.
+Si trabajas en Colab, es necesario instalar otra paquetería que permite cargar y descargar archivos a tu computadora virtual de Google; google.colab.files. Si trabajas en tu compu, en un script the python o un notebook de Jupyter, esto no hace falta.</p>
+<p>Los pasos a seguir para esta primera parte de la práctica son los siguientes:</p>
+<ol class="simple">
+<li><p>Descarga los datos de una red de alguno de los repositorios que les proporcionamos (<a class="reference external" href="https://github.com/Curso-Redes-F-Ciencias-UNAM/recursos/blob/main/repositorios-redes.md">https://github.com/Curso-Redes-F-Ciencias-UNAM/recursos/blob/main/repositorios-redes.md</a>). Si el archivo viene comprimido, debes extraer e identificar e identificar el archivo con los datos.</p></li>
+<li><p>Si trabajas en Jupyter, guarda el archivo de datos en la carpeta de trabajo. Para ello primero te recomendamos trabajar en JupyterLab, que incluye un navegador de archivos, para identificar la carpeta de trabajo.</p></li>
+<li><p>Si trabajas en Colab, simplemente identifica el lugar donde está el archivo, probablemente en tu carpeta de descargas o donde lo hayas guardado, ya que deberas buscarlo en una ventana emergente.</p></li>
+</ol>
+<p>Hecho esto, ya puedes importar las paqueterías para empezar a trabajar. Como apoyo, a continuación está un video para esta primera parte:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># solo para colab</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sólo para quienes trabajan en Colab: la siguiente celda utiliza la función upload, que abre una ventana emergente en la que debes seleccionar el archivo con los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<input type="file" id="files-ac67b1c0-c103-496d-9509-356881901fa5" name="files[]" multiple disabled
+   style="border:none" />
+<output id="result-ac67b1c0-c103-496d-9509-356881901fa5">
+ Upload widget is only available when the cell has been executed in the
+ current browser session. Please rerun this cell to enable.
+ </output>
+ <script src="/nbextensions/google.colab/files.js"></script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving ca-netscience.mtx to ca-netscience.mtx
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ca-netscience.mtx&#39;: b&#39;%MatrixMarket matrix coordinate pattern symmetric \n% 379 379 914\n2 1\n3 1\n4 1\n5 1\n16 1\n44 1\n113 1\n131 1\n250 1\n259 1\n3 2\n5 4\n13 4\n14 4\n15 4\n16 4\n44 4\n45 4\n46 4\n47 4\n61 4\n126 4\n127 4\n128 4\n146 4\n152 4\n153 4\n154 4\n164 4\n165 4\n166 4\n176 4\n177 4\n249 4\n250 4\n274 4\n313 4\n314 4\n323 4\n324 4\n330 4\n371 4\n373 4\n374 4\n15 5\n16 5\n44 5\n45 5\n46 5\n47 5\n176 5\n177 5\n199 5\n201 5\n202 5\n204 5\n231 5\n235 5\n236 5\n237 5\n238 5\n249 5\n250 5\n254 5\n298 5\n313 5\n314 5\n373 5\n374 5\n7 6\n8 6\n8 7\n190 7\n191 7\n192 7\n193 7\n26 8\n62 8\n63 8\n64 8\n65 8\n137 8\n189 8\n342 8\n343 8\n344 8\n10 9\n11 9\n12 9\n11 10\n12 10\n67 10\n68 10\n69 10\n12 11\n14 13\n15 13\n16 13\n17 13\n18 13\n19 13\n20 13\n274 13\n15 14\n16 14\n16 15\n45 15\n46 15\n47 15\n176 15\n177 15\n278 15\n279 15\n334 15\n366 15\n367 15\n368 15\n45 16\n46 16\n47 16\n153 16\n154 16\n176 16\n177 16\n249 16\n250 16\n313 16\n314 16\n323 16\n324 16\n371 16\n373 16\n18 17\n29 17\n58 17\n172 17\n201 17\n258 17\n261 17\n365 17\n58 18\n172 18\n201 18\n258 18\n261 18\n365 18\n20 19\n208 19\n22 21\n23 21\n24 21\n33 21\n109 21\n220 21\n221 21\n232 21\n233 21\n268 21\n287 21\n288 21\n23 22\n24 22\n24 23\n50 23\n51 23\n52 23\n54 23\n55 23\n220 23\n227 23\n228 23\n79 24\n140 24\n220 24\n229 24\n232 24\n233 24\n268 24\n26 25\n27 25\n28 25\n27 26\n28 26\n40 26\n95 26\n104 26\n105 26\n106 26\n107 26\n108 26\n124 26\n125 26\n155 26\n197 26\n198 26\n231 26\n234 26\n251 26\n273 26\n295 26\n296 26\n297 26\n306 26\n315 26\n316 26\n317 26\n28 27\n31 30\n32 30\n33 30\n34 30\n35 30\n36 30\n51 30\n76 30\n219 30\n32 31\n33 31\n34 31\n33 32\n34 32\n35 32\n36 32\n51 32\n76 32\n216 32\n217 32\n218 32\n219 32\n307 32\n369 32\n370 32\n34 33\n35 33\n36 33\n109 33\n219 33\n220 33\n221 33\n36 35\n219 35\n38 37\n304 38\n305 38\n40 39\n173 40\n174 40\n175 40\n239 40\n240 40\n282 40\n326 40\n42 41\n43 41\n241 41\n242 41\n243 41\n244 41\n43 42\n52 42\n170 42\n241 42\n242 42\n243 42\n244 42\n275 42\n276 42\n277 42\n364 42\n275 43\n276 43\n277 43\n66 44\n46 45\n47 45\n176 45\n177 45\n323 45\n324 45\n47 46\n176 46\n177 46\n176 47\n177 47\n49 48\n67 49\n74 49\n181 49\n182 49\n183 49\n226 49\n51 50\n52 50\n53 50\n52 51\n76 51\n95 51\n100 51\n160 51\n169 51\n170 51\n307 51\n308 51\n322 51\n337 51\n76 52\n100 52\n116 52\n117 52\n169 52\n170 52\n266 52\n267 52\n291 52\n364 52\n170 53\n55 54\n57 56\n100 56\n110 56\n194 56\n195 56\n59 58\n60 58\n60 59\n304 60\n357 60\n358 60\n359 60\n164 61\n165 61\n166 61\n63 62\n64 62\n65 62\n64 63\n264 65\n265 65\n299 65\n300 65\n301 65\n302 65\n345 65\n346 65\n100 66\n101 66\n102 66\n110 66\n111 66\n68 67\n69 67\n70 67\n71 67\n72 67\n73 67\n74 67\n75 67\n80 67\n81 67\n121 67\n122 67\n123 67\n169 67\n248 67\n285 67\n363 67\n69 68\n80 68\n81 68\n70 69\n71 69\n75 69\n80 69\n81 69\n285 69\n71 70\n72 70\n73 70\n75 70\n119 70\n150 70\n214 70\n303 70\n328 70\n329 70\n348 70\n349 70\n350 70\n351 70\n378 70\n379 70\n72 71\n73 71\n75 71\n73 72\n119 72\n303 72\n150 73\n285 75\n169 76\n170 76\n78 77\n79 77\n79 78\n81 80\n121 81\n122 81\n123 81\n83 82\n84 82\n85 82\n86 82\n87 82\n88 82\n89 82\n84 83\n85 83\n86 83\n87 83\n88 83\n89 83\n262 83\n263 83\n85 84\n86 84\n87 84\n88 84\n89 84\n86 85\n87 85\n88 85\n89 85\n106 85\n260 85\n262 85\n263 85\n87 86\n88 86\n89 86\n106 86\n260 86\n262 86\n263 86\n88 87\n89 87\n89 88\n106 88\n260 88\n262 88\n263 88\n91 90\n92 90\n92 91\n130 91\n131 91\n132 91\n133 91\n134 91\n188 91\n130 92\n131 92\n132 92\n133 92\n134 92\n188 92\n94 93\n95 93\n96 93\n97 93\n98 93\n99 93\n95 94\n96 94\n97 94\n98 94\n99 94\n96 95\n97 95\n98 95\n99 95\n178 95\n179 95\n180 95\n286 95\n308 95\n337 95\n338 95\n339 95\n362 95\n97 96\n98 96\n99 96\n141 96\n98 97\n99 97\n178 97\n362 97\n99 98\n101 100\n102 100\n103 100\n110 100\n111 100\n145 100\n194 100\n195 100\n102 101\n103 101\n311 101\n159 102\n280 102\n360 102\n361 102\n105 104\n106 104\n107 104\n108 104\n106 105\n107 105\n107 106\n185 106\n260 106\n108 107\n283 107\n284 107\n372 107\n125 108\n155 108\n156 108\n158 108\n111 110\n194 110\n195 110\n113 112\n114 112\n115 112\n114 113\n115 113\n131 113\n135 113\n136 113\n189 113\n259 113\n312 113\n352 113\n353 113\n354 113\n355 113\n356 113\n115 114\n131 114\n135 114\n312 114\n172 115\n347 115\n117 116\n318 116\n319 116\n320 116\n321 116\n119 118\n120 118\n209 118\n120 119\n214 119\n303 119\n348 119\n349 119\n350 119\n351 119\n122 121\n123 121\n123 122\n169 122\n248 122\n125 124\n234 125\n255 125\n256 125\n127 126\n128 126\n129 126\n327 126\n330 126\n128 127\n129 127\n327 127\n330 127\n129 128\n327 128\n330 128\n340 128\n341 128\n131 130\n132 130\n133 130\n134 130\n132 131\n133 131\n134 131\n135 131\n136 131\n259 131\n133 132\n134 132\n188 132\n134 133\n189 135\n352 135\n353 135\n354 135\n355 135\n356 135\n138 137\n342 137\n343 137\n140 139\n206 140\n207 140\n229 140\n230 140\n143 142\n144 142\n145 142\n144 143\n145 143\n145 144\n194 145\n147 146\n148 146\n148 147\n150 149\n151 149\n270 149\n293 149\n151 150\n270 150\n271 150\n293 150\n294 150\n154 153\n156 155\n157 155\n158 155\n161 160\n162 160\n163 160\n322 160\n162 161\n163 162\n165 164\n166 164\n166 165\n168 167\n169 167\n170 167\n169 168\n170 168\n205 168\n170 169\n205 169\n248 169\n289 169\n290 169\n291 169\n292 169\n266 170\n267 170\n336 170\n364 170\n172 171\n325 172\n347 172\n174 173\n175 173\n175 174\n282 175\n177 176\n179 178\n180 178\n182 181\n183 181\n183 182\n226 183\n185 184\n186 184\n187 184\n309 184\n310 184\n186 185\n187 185\n309 185\n310 185\n187 186\n309 186\n310 186\n191 190\n192 190\n193 190\n193 192\n195 194\n196 194\n251 198\n200 199\n201 199\n202 199\n203 199\n204 199\n258 199\n201 200\n202 200\n202 201\n203 201\n204 201\n245 201\n252 201\n253 201\n254 201\n258 201\n298 201\n203 202\n204 202\n258 202\n245 204\n298 204\n207 206\n375 207\n376 207\n377 207\n211 210\n212 210\n213 210\n214 210\n215 210\n212 211\n213 211\n214 211\n215 211\n213 212\n214 212\n215 212\n222 212\n223 212\n224 212\n225 212\n214 213\n215 213\n215 214\n303 214\n348 214\n349 214\n350 214\n351 214\n217 216\n218 216\n218 217\n221 220\n223 222\n224 222\n225 222\n224 223\n225 223\n225 224\n228 227\n232 231\n233 231\n234 231\n235 231\n236 231\n237 231\n238 231\n239 231\n240 231\n246 231\n257 231\n297 231\n233 232\n268 232\n268 233\n237 236\n238 236\n239 236\n240 236\n245 236\n246 236\n247 236\n257 236\n238 237\n240 239\n246 239\n257 239\n326 239\n246 240\n257 240\n326 240\n242 241\n243 241\n244 241\n243 242\n244 242\n244 243\n246 245\n247 245\n298 245\n247 246\n257 246\n313 250\n314 250\n253 252\n256 255\n263 262\n265 264\n299 265\n300 265\n301 265\n302 265\n267 266\n270 269\n271 269\n272 269\n271 270\n272 270\n293 270\n294 270\n294 271\n276 275\n277 275\n277 276\n279 278\n281 280\n360 280\n361 280\n284 283\n288 287\n290 289\n291 290\n292 290\n296 295\n300 299\n301 299\n302 299\n301 300\n328 303\n329 303\n348 303\n349 303\n350 303\n351 303\n378 303\n379 303\n305 304\n357 304\n358 304\n359 304\n337 308\n310 309\n314 313\n316 315\n317 315\n317 316\n319 318\n320 318\n321 318\n320 319\n321 319\n321 320\n324 323\n329 328\n332 331\n333 331\n334 331\n335 331\n333 332\n334 332\n335 332\n334 333\n335 333\n335 334\n366 334\n367 334\n368 334\n339 338\n341 340\n343 342\n346 345\n349 348\n350 348\n351 348\n350 349\n351 349\n351 350\n353 352\n354 352\n355 352\n356 352\n354 353\n355 353\n356 353\n355 354\n356 354\n356 355\n358 357\n359 357\n359 358\n361 360\n367 366\n368 366\n368 367\n370 369\n374 373\n376 375\n377 375\n377 376\n379 378\n&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>La salida de esa celda anterior te indicará la «ruta», en la computadora virtual, donde se encuentra tu archivo. Identifícala para poder generar una variable <code class="docutils literal notranslate"><span class="pre">ruta</span></code>, que es una cadena con la ubicación del archivo.</p>
+<p>Si estás trabajando en jupyter o un script, te recomendamos generar la misma variable <code class="docutils literal notranslate"><span class="pre">ruta</span></code>, que es simplemente el nombre del archivo si lo guardaste en la carpeta de trabajo.</p>
+<p>Posteriormente, en cualquiera de los casos, utilizaremos la función de  pandas <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> que sirve para abrir cualquier archivo de texto y generar una tabla con datos. Como siempre, te recomendamos ir a la documentación de la función para identificar los argumentos y lo que hacen, pero por lo pronto sólo usaremos los que se ven a continuación. En el primer video se explica lo importante del argumento <code class="docutils literal notranslate"><span class="pre">nrows</span></code> y cómo elegir los valores adecuados para <code class="docutils literal notranslate"><span class="pre">skiprows</span></code>, <code class="docutils literal notranslate"><span class="pre">header</span></code> y <code class="docutils literal notranslate"><span class="pre">sep</span></code>, que dependen de la estructura del arhcivo de datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># se genera la cadena con la ruta del archivo. OJO: debes colocar el nombre del archivo que tú hayas descargado</span>
+
+<span class="n">ruta</span> <span class="o">=</span> <span class="s1">&#39;ca-netscience.mtx&#39;</span> 
+
+<span class="c1">#se abre el archivo y la tabla, un objeto tipo DataFrame de pandas, se guarda en la variable datos</span>
+<span class="n">datos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ruta</span><span class="p">,</span>
+            <span class="n">nrows</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="n">skiprows</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="c1">#se muestra la tabla</span>
+<span class="n">datos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>16</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>909</th>
+      <td>374</td>
+      <td>373</td>
+    </tr>
+    <tr>
+      <th>910</th>
+      <td>376</td>
+      <td>375</td>
+    </tr>
+    <tr>
+      <th>911</th>
+      <td>377</td>
+      <td>375</td>
+    </tr>
+    <tr>
+      <th>912</th>
+      <td>377</td>
+      <td>376</td>
+    </tr>
+    <tr>
+      <th>913</th>
+      <td>379</td>
+      <td>378</td>
+    </tr>
+  </tbody>
+</table>
+<p>914 rows × 2 columns</p>
+</div></div></div>
+</div>
+<p>Para generar la red hay dos opciones, una que coincide con como lo hicimos en la práctica 1 haciendo la lista de enlaces y agregando a un objeto tipo <code class="docutils literal notranslate"><span class="pre">Graph()</span></code>, y la otra es utilizando nuevas funciones.</p>
+<div class="section" id="opcion-1">
+<h3><span class="section-number">4.1.2.1. </span>Opción 1<a class="headerlink" href="#opcion-1" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>De la tabla, tomamos las primeras dos columnas, que son los nodos de cada enlace, y con la propiedad <code class="docutils literal notranslate"><span class="pre">.values</span></code> se obtiene un
+arreglo de parejas de nodos que utilizaremos para agregar a un <code class="docutils literal notranslate"><span class="pre">Graph()</span></code> de networkx (ver práctica 1). Este arreglo se guarda
+en la variable <code class="docutils literal notranslate"><span class="pre">enlaces</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enlaces</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">enlaces</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">enlaces</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="opcion-2">
+<h3><span class="section-number">4.1.2.2. </span>Opción 2<a class="headerlink" href="#opcion-2" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La segunda opción es utilizar una función de networkx que directamente lee un DataFrame de pandas y lo convierte en una red. Tal función es <code class="docutils literal notranslate"><span class="pre">from_pandas_edgelist()</span></code> y lo único que hay que indicar es, además de la tabla, las columnas que interpretará como los nodos de origen (source) y destino (target) de cada enlace. En este caso las columnas son 0 y 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En cualquiera de las dos opciones, ya tenemos la red <code class="docutils literal notranslate"><span class="pre">G</span></code> y podemos visualizarla tal y como se hizo en la práctica 1. En la siguiente celda se usan algunos argumentos de la función draw, para que exploren, sin embargo se recomienda ver todos los argumentos directamente en la documentación: <a class="reference external" href="https://networkx.org/documentation/networkx-1.7/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html">https://networkx.org/documentation/networkx-1.7/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">#probar distintos valores: 50, 100, 200</span>
+        <span class="n">node_color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="c1">#probar distintos colores:&#39;g&#39;, &#39;y&#39;, &#39;b&#39;, &#39;r&#39;, &#39;k&#39;</span>
+        <span class="n">node_shape</span> <span class="o">=</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">)</span> <span class="c1">#probar distintos marcadores: &#39;o&#39;, &#39;s&#39;, &#39;8&#39;, &#39;^&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sesion_practica_02_notebook_15_0.png" src="../../_images/sesion_practica_02_notebook_15_0.png" />
+</div>
+</div>
+<p>Igualmente, la matriz de adyacencia (como se hizo en la práctica 1) ya nos da algo de información sobre la estructura de la red. Notar que, como dice Barabasi, la mayoría de las redes son «ralas» (sparse), esto es, tienen muy pocos enlaces en comparación con el número de nodos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;hot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f9eba0e28d0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_02_notebook_17_1.png" src="../../_images/sesion_practica_02_notebook_17_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="centralidad-de-los-nodos">
+<h2><span class="section-number">4.1.3. </span>Centralidad de los nodos<a class="headerlink" href="#centralidad-de-los-nodos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Networkx tiene disponibles todas las centralidades vistas en la parte teórica, y muchas más (ver la <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/centrality.html">documentación</a>). Algunos ejemplos se muestran en la siguiente celda:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="c1">#nx.betweenness_centrality(G)</span>
+<span class="c1">#nx.degree_centrality(G)</span>
+<span class="c1">#nx.pagerank(G)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.21176470588235294,
+ 2: 0.17491901897269782,
+ 3: 0.17491901897269782,
+ 4: 0.21331828442437922,
+ 5: 0.22964763061968407,
+ 6: 0.17838603114676735,
+ 7: 0.17872340425531916,
+ 8: 0.21637092157985116,
+ 9: 0.13705583756345177,
+ 10: 0.15862358371800253,
+ 11: 0.13705583756345177,
+ 12: 0.13705583756345177,
+ 13: 0.18155619596541786,
+ 14: 0.17889256980596308,
+ 15: 0.19434447300771207,
+ 16: 0.1969775924960917,
+ 17: 0.16875,
+ 18: 0.1686746987951807,
+ 19: 0.15390879478827363,
+ 20: 0.15384615384615385,
+ 21: 0.21307779030439683,
+ 22: 0.18947368421052632,
+ 23: 0.2141643059490085,
+ 24: 0.21247892074198987,
+ 25: 0.20454545454545456,
+ 26: 0.25661914460285135,
+ 27: 0.20454545454545456,
+ 28: 0.20454545454545456,
+ 29: 0.14444019870080244,
+ 30: 0.20138518913159298,
+ 31: 0.17516218721038,
+ 32: 0.20203099946552647,
+ 33: 0.18834080717488788,
+ 34: 0.17516218721038,
+ 35: 0.17524339360222532,
+ 36: 0.17516218721038,
+ 37: 0.0926697720029419,
+ 38: 0.10210696920583469,
+ 39: 0.17135086128739802,
+ 40: 0.20667031164570804,
+ 41: 0.1598984771573604,
+ 42: 0.1897590361445783,
+ 43: 0.159830866807611,
+ 44: 0.2223529411764706,
+ 45: 0.19119878603945373,
+ 46: 0.1910055583628095,
+ 47: 0.1910055583628095,
+ 48: 0.13710554951033732,
+ 49: 0.1588235294117647,
+ 50: 0.2036637931034483,
+ 51: 0.24705882352941178,
+ 52: 0.23062843197071384,
+ 53: 0.17605961807172799,
+ 54: 0.17655301261092948,
+ 55: 0.17655301261092948,
+ 56: 0.18956870611835505,
+ 57: 0.15942640236187264,
+ 58: 0.14549653579676675,
+ 59: 0.12740141557128412,
+ 60: 0.1277027027027027,
+ 61: 0.17614165890027958,
+ 62: 0.17889256980596308,
+ 63: 0.17813383600377003,
+ 64: 0.17813383600377003,
+ 65: 0.17940199335548174,
+ 66: 0.2166189111747851,
+ 67: 0.18768619662363456,
+ 68: 0.15855704697986578,
+ 69: 0.16098807495741055,
+ 70: 0.16279069767441862,
+ 71: 0.16057774001699235,
+ 72: 0.1607826456826882,
+ 73: 0.16105666808691946,
+ 74: 0.15849056603773584,
+ 75: 0.16050955414012738,
+ 76: 0.2097669256381798,
+ 77: 0.1495253164556962,
+ 78: 0.1495253164556962,
+ 79: 0.17565055762081785,
+ 80: 0.15829145728643215,
+ 81: 0.15849056603773584,
+ 82: 0.1487603305785124,
+ 83: 0.14887751083103584,
+ 84: 0.1487603305785124,
+ 85: 0.17419354838709677,
+ 86: 0.17419354838709677,
+ 87: 0.1487603305785124,
+ 88: 0.17419354838709677,
+ 89: 0.1487603305785124,
+ 90: 0.1328646748681898,
+ 91: 0.15309842041312272,
+ 92: 0.15309842041312272,
+ 93: 0.20010587612493383,
+ 94: 0.20010587612493383,
+ 95: 0.2490118577075099,
+ 96: 0.20021186440677965,
+ 97: 0.20031796502384738,
+ 98: 0.20010587612493383,
+ 99: 0.20010587612493383,
+ 100: 0.23290203327171904,
+ 101: 0.2021390374331551,
+ 102: 0.20246384574183182,
+ 103: 0.1891891891891892,
+ 104: 0.20723684210526316,
+ 105: 0.20689655172413793,
+ 106: 0.20883977900552486,
+ 107: 0.20757825370675453,
+ 108: 0.20588235294117646,
+ 109: 0.17696629213483145,
+ 110: 0.201815269620929,
+ 111: 0.2012779552715655,
+ 112: 0.161400512382579,
+ 113: 0.1902365374937091,
+ 114: 0.16216216216216217,
+ 115: 0.16349480968858132,
+ 116: 0.18834080717488788,
+ 117: 0.1879661859771258,
+ 118: 0.12389380530973451,
+ 119: 0.14120283899887934,
+ 120: 0.12385321100917432,
+ 121: 0.15829145728643215,
+ 122: 0.18287373004354138,
+ 123: 0.15829145728643215,
+ 124: 0.2046561992420141,
+ 125: 0.20532319391634982,
+ 126: 0.1766355140186916,
+ 127: 0.1766355140186916,
+ 128: 0.17680074836295603,
+ 129: 0.15041782729805014,
+ 130: 0.1529745042492918,
+ 131: 0.17991432651118516,
+ 132: 0.15303643724696356,
+ 133: 0.1529745042492918,
+ 134: 0.1529745042492918,
+ 135: 0.17532467532467533,
+ 136: 0.16050955414012738,
+ 137: 0.17830188679245282,
+ 138: 0.1513816579895875,
+ 139: 0.15011914217633043,
+ 140: 0.17655301261092948,
+ 141: 0.16688741721854305,
+ 142: 0.1596958174904943,
+ 143: 0.1596958174904943,
+ 144: 0.1596958174904943,
+ 145: 0.1897590361445783,
+ 146: 0.17622377622377622,
+ 147: 0.14994049980166602,
+ 148: 0.14994049980166602,
+ 149: 0.1237721021611002,
+ 150: 0.14093959731543623,
+ 151: 0.1236102027468934,
+ 152: 0.1758957654723127,
+ 153: 0.17605961807172799,
+ 154: 0.17605961807172799,
+ 155: 0.20510037981551818,
+ 156: 0.17096336499321574,
+ 157: 0.17027027027027028,
+ 158: 0.17096336499321574,
+ 159: 0.16844919786096257,
+ 160: 0.19894736842105262,
+ 161: 0.16608084358523725,
+ 162: 0.16615384615384615,
+ 163: 0.16608084358523725,
+ 164: 0.17614165890027958,
+ 165: 0.17614165890027958,
+ 166: 0.17614165890027958,
+ 167: 0.17906205589767882,
+ 168: 0.1791469194312796,
+ 169: 0.2158766419189035,
+ 170: 0.21,
+ 171: 0.13079584775086506,
+ 172: 0.15041782729805014,
+ 173: 0.17150635208711434,
+ 174: 0.17150635208711434,
+ 175: 0.17158420335905583,
+ 176: 0.1910055583628095,
+ 177: 0.1910055583628095,
+ 178: 0.19978858350951373,
+ 179: 0.19957761351636746,
+ 180: 0.19957761351636746,
+ 181: 0.13720508166969148,
+ 182: 0.13720508166969148,
+ 183: 0.13725490196078433,
+ 184: 0.14823529411764705,
+ 185: 0.17363344051446947,
+ 186: 0.14823529411764705,
+ 187: 0.1481191222570533,
+ 188: 0.13291139240506328,
+ 189: 0.19595645412130638,
+ 190: 0.15186822016874246,
+ 191: 0.15174628663187475,
+ 192: 0.15180722891566265,
+ 193: 0.15180722891566265,
+ 194: 0.1899497487437186,
+ 195: 0.18947368421052632,
+ 196: 0.1596958174904943,
+ 197: 0.20432432432432432,
+ 198: 0.20443482963764198,
+ 199: 0.1897590361445783,
+ 200: 0.1618150684931507,
+ 201: 0.19275879653238143,
+ 202: 0.1897590361445783,
+ 203: 0.1618150684931507,
+ 204: 0.18985434455047714,
+ 205: 0.1777150916784203,
+ 206: 0.15035799522673032,
+ 207: 0.15053763440860216,
+ 208: 0.13342746205435935,
+ 209: 0.1102683780630105,
+ 210: 0.12430121670503123,
+ 211: 0.12430121670503123,
+ 212: 0.12446493249917683,
+ 213: 0.12430121670503123,
+ 214: 0.14146706586826346,
+ 215: 0.12430121670503123,
+ 216: 0.1682991985752449,
+ 217: 0.1682991985752449,
+ 218: 0.1682991985752449,
+ 219: 0.17516218721038,
+ 220: 0.19081272084805653,
+ 221: 0.17704918032786884,
+ 222: 0.11081794195250659,
+ 223: 0.11081794195250659,
+ 224: 0.11081794195250659,
+ 225: 0.11081794195250659,
+ 226: 0.137155297532656,
+ 227: 0.17655301261092948,
+ 228: 0.17655301261092948,
+ 229: 0.17597765363128492,
+ 230: 0.15011914217633043,
+ 231: 0.24308681672025723,
+ 232: 0.21976744186046512,
+ 233: 0.21976744186046512,
+ 234: 0.2202797202797203,
+ 235: 0.2097669256381798,
+ 236: 0.21176470588235294,
+ 237: 0.21023359288097887,
+ 238: 0.21023359288097887,
+ 239: 0.19769874476987448,
+ 240: 0.19769874476987448,
+ 241: 0.159830866807611,
+ 242: 0.159830866807611,
+ 243: 0.159830866807611,
+ 244: 0.159830866807611,
+ 245: 0.1801715919923737,
+ 246: 0.2,
+ 247: 0.17721518987341772,
+ 248: 0.1826086956521739,
+ 249: 0.18956870611835505,
+ 250: 0.19236641221374046,
+ 251: 0.20443482963764198,
+ 252: 0.16174582798459564,
+ 253: 0.16174582798459564,
+ 254: 0.18928392588883325,
+ 255: 0.17050067658998647,
+ 256: 0.17050067658998647,
+ 257: 0.1969775924960917,
+ 258: 0.1637781629116118,
+ 259: 0.17897727272727273,
+ 260: 0.17363344051446947,
+ 261: 0.1444954128440367,
+ 262: 0.1486433346441211,
+ 263: 0.1486433346441211,
+ 264: 0.15223519935561822,
+ 265: 0.15248083904800322,
+ 266: 0.1880597014925373,
+ 267: 0.1880597014925373,
+ 268: 0.1952479338842975,
+ 269: 0.11033274956217162,
+ 270: 0.12389380530973451,
+ 271: 0.1237721021611002,
+ 272: 0.11030055442077619,
+ 273: 0.20432432432432432,
+ 274: 0.17788235294117646,
+ 275: 0.15976331360946747,
+ 276: 0.15976331360946747,
+ 277: 0.15976331360946747,
+ 278: 0.16286083584661784,
+ 279: 0.16286083584661784,
+ 280: 0.16875,
+ 281: 0.14444019870080244,
+ 282: 0.17142857142857143,
+ 283: 0.17205279927173417,
+ 284: 0.17205279927173417,
+ 285: 0.1582251988279615,
+ 286: 0.19947229551451187,
+ 287: 0.1758139534883721,
+ 288: 0.1758139534883721,
+ 289: 0.1777150916784203,
+ 290: 0.17788235294117646,
+ 291: 0.193945613134941,
+ 292: 0.1777150916784203,
+ 293: 0.1237315875613748,
+ 294: 0.1237315875613748,
+ 295: 0.20443482963764198,
+ 296: 0.20443482963764198,
+ 297: 0.2198952879581152,
+ 298: 0.18966382338183643,
+ 299: 0.15241935483870966,
+ 300: 0.1523579201934704,
+ 301: 0.1523579201934704,
+ 302: 0.1522965350523771,
+ 303: 0.1412556053811659,
+ 304: 0.11358173076923077,
+ 305: 0.10207939508506617,
+ 306: 0.20432432432432432,
+ 307: 0.19968304278922344,
+ 308: 0.2181188690132718,
+ 309: 0.14817718541748334,
+ 310: 0.14817718541748334,
+ 311: 0.16822429906542055,
+ 312: 0.1599661447312738,
+ 313: 0.1897590361445783,
+ 314: 0.1897590361445783,
+ 315: 0.20454545454545456,
+ 316: 0.20454545454545456,
+ 317: 0.20454545454545456,
+ 318: 0.15875682486350273,
+ 319: 0.15875682486350273,
+ 320: 0.15875682486350273,
+ 321: 0.15875682486350273,
+ 322: 0.19863373620599054,
+ 323: 0.17614165890027958,
+ 324: 0.17614165890027958,
+ 325: 0.13079584775086506,
+ 326: 0.1821686746987952,
+ 327: 0.15041782729805014,
+ 328: 0.14015572858731926,
+ 329: 0.14015572858731926,
+ 330: 0.17647058823529413,
+ 331: 0.14078212290502792,
+ 332: 0.14078212290502792,
+ 333: 0.14078212290502792,
+ 334: 0.1635655560363479,
+ 335: 0.14078212290502792,
+ 336: 0.17363344051446947,
+ 337: 0.2181188690132718,
+ 338: 0.19957761351636746,
+ 339: 0.19957761351636746,
+ 340: 0.15035799522673032,
+ 341: 0.15035799522673032,
+ 342: 0.1782178217821782,
+ 343: 0.1782178217821782,
+ 344: 0.17796610169491525,
+ 345: 0.15223519935561822,
+ 346: 0.15223519935561822,
+ 347: 0.1431818181818182,
+ 348: 0.1409921671018277,
+ 349: 0.1409921671018277,
+ 350: 0.1409921671018277,
+ 351: 0.1409921671018277,
+ 352: 0.16023738872403562,
+ 353: 0.16023738872403562,
+ 354: 0.16023738872403562,
+ 355: 0.16023738872403562,
+ 356: 0.16023738872403562,
+ 357: 0.11347943560492345,
+ 358: 0.11347943560492345,
+ 359: 0.11347943560492345,
+ 360: 0.1686746987951807,
+ 361: 0.1686746987951807,
+ 362: 0.19957761351636746,
+ 363: 0.15809284818067754,
+ 364: 0.1889055472263868,
+ 365: 0.1444954128440367,
+ 366: 0.1632829373650108,
+ 367: 0.1632829373650108,
+ 368: 0.1632829373650108,
+ 369: 0.16822429906542055,
+ 370: 0.16822429906542055,
+ 371: 0.17597765363128492,
+ 372: 0.17197452229299362,
+ 373: 0.18966382338183643,
+ 374: 0.18956870611835505,
+ 375: 0.13097713097713098,
+ 376: 0.13097713097713098,
+ 377: 0.13097713097713098,
+ 378: 0.14015572858731926,
+ 379: 0.14015572858731926}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como puedes ver, estas funciones nos regresan los valores de la centralidad en un diccionario que, a cada nodo (identificado por un número), le asocia un valor. Esto permite obtener el valor específico de la centralidad de un nodo específico mediante corchetes, aunque eso no suele ser muy útil:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="c1">#ejemplo, centralidad de cercanía del nodo 5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.22964763061968407
+</pre></div>
+</div>
+</div>
+</div>
+<p>A continuación se describe, paso por paso, cómo convertir esos diccionarios en elementos del gráfico (color y tamaño). Para ello, pueden volver a revisar la <a class="reference external" href="https://networkx.org/documentation/networkx-1.7/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html">documentación</a> de las funciones draw, de networkx, y ver qué tipo de variables reciben los argumentos <code class="docutils literal notranslate"><span class="pre">node_size</span></code> y <code class="docutils literal notranslate"><span class="pre">node_color</span></code>; reciben «scalar or array» y «color string, or array of floats», respectivamente. Esto quiere decir que puedes asignar un tamaño (scalar) o un color (string) para que se aplique igual a todos los nodos, o puedes asignarles un arreglo que le asocie un valor distinto a cada nodo. Obviamente, tal arreglo debe ser de una longitud igual al número de nodos de la red.</p>
+<p>Lo que debemos hacer entonces es convertir los diccionarios en arreglos. Esto lo haremos con los siguientes pasos:</p>
+<ul class="simple">
+<li><p>guardar la centralidad en una variable <code class="docutils literal notranslate"><span class="pre">diccionario</span></code></p></li>
+<li><p>mediante la definición de listas por comprensión (comprehensive lists) haremos una lista con los valores de la centralidad, ordenados según el orden de los nodos.</p></li>
+<li><p>esa lista lo convertiremos en un arreglo de numpy mediante <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> y lo nombraremos <code class="docutils literal notranslate"><span class="pre">sizes</span></code> o <code class="docutils literal notranslate"><span class="pre">colors</span></code>, para meterlos como argumentos de <code class="docutils literal notranslate"><span class="pre">draw</span></code>.</p></li>
+</ul>
+<p>Antes, haremos un paréntesis para familizarnos con las listas por comprensión, una funcionalidad muy útil de python.
+Hay dos formas de crear listas en python: por extensión (como hemos trabajado hasta ahora), definiendo elemento por elemento; y por comprensión, dando la regla que define a cada elemento. Esto es análogo a la definición de conjuntos por extensión y por comprensión. La estructura sería la siguiente:</p>
+<ul class="simple">
+<li><p>por extensión: <code class="docutils literal notranslate"><span class="pre">[elem1,</span> <span class="pre">elem2,</span> <span class="pre">elem3,</span> <span class="pre">...]</span></code></p></li>
+<li><p>por comprensión: <code class="docutils literal notranslate"><span class="pre">[f(i)</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">Conjunto]</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span> <span class="c1"># crea una lista por extensión: definimos manualmente cada elemento</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span> <span class="c1">#por comprensión: los elementos son los cuadrados de los números del 0 al 5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">-</span><span class="mi">3</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span> <span class="c1"># por comprensión</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3, -1, 1, 3, 5, 7]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta es la base para crear una lista, y luego un arreglo, a partir del diccionario, con la siguiente estructura:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[diccionario[nodo]</span> <span class="pre">for</span> <span class="pre">nodo</span> <span class="pre">in</span> <span class="pre">G]</span></code>: el elemento de la lista es el valor del diccionario, para cada nodo, y barre todos los nodos de <code class="docutils literal notranslate"><span class="pre">G</span></code> en orden</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">]</span>
+
+<span class="n">sizes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y a continuación se introduce el arreglo sizes como argumento de la función draw. OJO: como los valores de la centralidad son muy pequeños, multiplicamos el arreglo por 10000 para que los nodos se vean. Ese valor puede variar según la red, deben explorar distintos valores hasta encontrar una visualización que les satisfaga.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10000</span><span class="o">*</span><span class="n">sizes</span><span class="p">)</span> <span class="c1">#jugar con el factor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sesion_practica_02_notebook_30_0.png" src="../../_images/sesion_practica_02_notebook_30_0.png" />
+</div>
+</div>
+<p>Haremos lo mismo pero guardarndo los valores en la variable <code class="docutils literal notranslate"><span class="pre">colors</span></code>, notar que nos brincamos un paso y metemos la lista directo como argumento en  <code class="docutils literal notranslate"><span class="pre">np.array()</span></code>.</p>
+<p>Finalmente, si nos decidimos por definir los colores de los nodos con un arreglo, podemos también determinar la paleta de color (<code class="docutils literal notranslate"><span class="pre">cmap</span></code>) con el que se trabajará. Para elegir una paleta, o mapeo, de colores, puede googlear «cmap python» y seguro encontrarán una página con los nombres posibles. Aquí usaremos «viridis»</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="n">node_color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">,</span>
+        <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sesion_practica_02_notebook_33_0.png" src="../../_images/sesion_practica_02_notebook_33_0.png" />
+</div>
+</div>
+<p>A continuación combinaremos ambas cosas. Asignaremos una centralidad al color y otra al tamaño.</p>
+<p>Igualmente, les recomendamos explorar distintos diseños (layouts) para visualizar las redes. Algunos son más apropiados para ciertas redes. Para ello se pueden usar distintas funcines draw de networkx, algunas son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nx.draw()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nx.draw_circular()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nx.draw_spring()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nx.draw_kamada_kawai()</span></code></p></li>
+</ul>
+<p>Cada una tiene un algoritmo distinto. Se habla un poco de ello en los videos de esta lección.</p>
+<p>Finalmente (sólo para colab), volvemos a utilizar una función de <code class="docutils literal notranslate"><span class="pre">files</span></code>, en este caso <code class="docutils literal notranslate"><span class="pre">files.download()</span></code>, para descargar la imagen generada a su compu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_kamada_kawai</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
+        <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10000</span><span class="o">*</span><span class="n">sizes</span><span class="p">,</span>
+        <span class="n">node_color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;imagen.png&#39;</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;imagen.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+    async function download(id, filename, size) {
+      if (!google.colab.kernel.accessAllowed) {
+        return;
+      }
+      const div = document.createElement('div');
+      const label = document.createElement('label');
+      label.textContent = `Downloading "${filename}": `;
+      div.appendChild(label);
+      const progress = document.createElement('progress');
+      progress.max = size;
+      div.appendChild(progress);
+      document.body.appendChild(div);
+
+      const buffers = [];
+      let downloaded = 0;
+
+      const channel = await google.colab.kernel.comms.open(id);
+      // Send a message to notify the kernel that we're ready.
+      channel.send({})
+
+      for await (const message of channel.messages) {
+        // Send a message to notify the kernel that we're ready.
+        channel.send({})
+        if (message.buffers) {
+          for (const buffer of message.buffers) {
+            buffers.push(buffer);
+            downloaded += buffer.byteLength;
+            progress.value = downloaded;
+          }
+        }
+      }
+      const blob = new Blob(buffers, {type: 'application/binary'});
+      const a = document.createElement('a');
+      a.href = window.URL.createObjectURL(blob);
+      a.download = filename;
+      div.appendChild(a);
+      a.click();
+      div.remove();
+    }
+  </script><script type="application/javascript">download("download_769ad25d-b52b-4ca5-b865-197ad69bd9a7", "imagen.png", 643201)</script><img alt="../../_images/sesion_practica_02_notebook_35_2.png" src="../../_images/sesion_practica_02_notebook_35_2.png" />
+</div>
+</div>
+<p>Un último ejercicio para explorar otra forma de analizar las propiedades de los nodos es visualizar las centralidades no ya como elementos de la gráfica de la red, sino una gráfica x-y donde la abcisa sea el nodo y la ordenada el valor de la centralidad. Esto permite visualizar varias (tantas como quieras) centralidades distintas y ver si están correlacionadas o si hay algún nodo que sea importante para más de una centralidad.</p>
+<p>Para ello únicamente guardamos las centralidades en distintos arreglos, y los graficamos todos con la función <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>; se puede agregar etiquetas para incorporar a la gráfica.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+
+<span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+
+<span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+
+<span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Degree&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Closeness&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Betweenness&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Eigenvector&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9eb7e8f350&gt;
+</pre></div>
+</div>
+<img alt="../../_images/sesion_practica_02_notebook_37_1.png" src="../../_images/sesion_practica_02_notebook_37_1.png" />
+</div>
+</div>
+<p>Observación sobre betweenness</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">G1</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">G1</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">])</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">endpoints</span><span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./medidas_y_metricas/practica_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="presentacion.html" title="previous page"><span class="section-number">4. </span>Práctica 2</a>
+    <a class='right-next' id="next-link" href="sesion_practica_02_video.html" title="next page"><span class="section-number">4.2. </span>Práctica 2 (video)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Por Carlos Francisco Betancourt<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
