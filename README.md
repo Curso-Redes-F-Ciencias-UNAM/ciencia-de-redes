@@ -27,7 +27,13 @@ pip install ghp-import
 ```
 git clone "https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes"
 ```
+O jala la última versión de los cambios a tu repositorio local:
+```
+git pull
+```
+
 2. Realiza las modificaciones necesarias (archivos dentro de la carpeta `/src`).
+
 
 3. Construye el libro (ejecutar desde `/ciencia-de-redes`):
 ```
@@ -36,7 +42,7 @@ jupyter-book build --path-output . src/
 4. Agrega los cambios al repositorio:
 ```
 git add .
-git commit -m "<DESCRIPCIÓN DE LAS MODIFICACIONES REALIZADAS>
+git commit -m "DESCRIPCIÓN DE LAS MODIFICACIONES REALIZADAS"
 git push origin main
 ```
 5. Publica los cambios a GitHub Pages (ejecutar desde `/ciencia-de-redes`):
