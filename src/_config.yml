@@ -1,7 +1,7 @@
 title: "Ciencia de Redes"
 author: "Carlos Francisco Betancourt"
 copyright: "2021"
-logo: "logo-pagina-01.png"
+logo: "logo-pagina-02.png"
 
 execute:
     execute_notebooks: off # auto, force, cache, off
