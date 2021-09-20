@@ -3,12 +3,6 @@
 
 # # Preliminar: primeros pasos con Python (notebook)
 
-# <!-- esta celda no se renderizará en jupyter -->
-# 
-# ```{admonition} Ejecuta el notebook
-# Para ejecutar este notebook [descarga el archivo](./primeros_pasos_python_notebook.ipynb) para correrolo localmente en tu computadora o da click en <i class="fas fa-rocket"></i> para correlo en Binder o Google Colab.
-# ```
-
 # ## Introducción
 # En este curso utilizaremos python mediante el uso de **Notebooks**. Éstos pueden ser de Google Colab (como éste) o pueden ser archivos tipo .ipynb que se abren con Anaconda-Jupyter. Para esto último deben descargar e instalar anaconda. Para ello se recomienda visitar https://www.anaconda.com/ y seguir las instrucciones.
 #  
