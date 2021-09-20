@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Lato&family=Merriweather:wght@300&family=Zilla+Slab:wght@500&display=swap');
+@font-face {
+	font-family: Roboto;
+	src: url(./fonts/Roboto-Regular.ttf);
+}
 
+
+/* Wrappers para videos */
 .iframe-container-out {
 	max-width: 560px;
 	margin: auto;
@@ -18,46 +23,106 @@
 	height: 100%;
 }
 
+/*  */
 
 body{
-	font-family: 'Helvetica', sans-serif;
-	font-size: 12pt;
+	font-family: 'Roboto', sans-serif;
+	font-size: 11pt;
 }
 
 
 h1,h2,h3,h4,h5,h6 {
-	font-family: 'Zilla Slab', serif;
+	/* font-family: 'Zilla Slab', serif; */
+	font-family: 'Roboto',sans-serif;
 	font-weight: 600;
+}
+
+h1{
+	font-size: 22pt;
+}
+
+h2{
+	font-size: 18pt;
+}
+
+h3{
+	font-size: 16pt;
+}
+
+h4{
+	font-size: 14pt;
+}
+
+h5,h6{
+	font-size: 12pt;
 }
 
 .caption-text{
 	text-transform: none;
-	font-family: 'Zilla Slab',serif;
+	/* font-family: 'Zilla Slab',serif; */
+	font-family: 'Roboto',sans-serif;
 	font-weight: 600;
-	font-size: 12pt;
+	font-size: 9.5pt;
 }
 
+li.toctree-l1 > a.reference.internal,li.toctree-l2 > a.reference.internal {
+	font-size: 9.5pt !important;
+}
+
+a.nav-link {
+	font-size:9pt;
+}
+
+/* Botones para cambio de página */
+
 #next-link::before{
-	content: 'Siguiente página' !important;
+	content: 'Página siguiente' !important;
 }
 
 #prev-link::before{
 	content: 'Página previa' !important;
 }
 
+#prev-link::before, #next-link::before, #prev-link,#next-link{
+	font-size: 10pt !important;
+}
+
+
 p > span > a.reference.internal {
 	font-weight: bold;
 }
-
-/* a.current{
-	font-weight: normal !important;
-} */
 
 
 #site-title{
 	display: none;
 }
 
-img.logo{
-	min-height: 230px !important;
+/* íconos */
+.fas{
+	vertical-align: middle;
+}
+
+.fa-download::before{
+	content: url('icons/file-download-outline.svg');
+	color: blue !important;
+}
+
+.fa-rocket::before{
+	content: url('icons/console.svg');
+}
+
+.fa-expand::before{
+	content: url('icons/fullscreen.svg');
+}
+
+.fa-arrow-left::before{
+	content: url('icons/backburger.svg');
+}
+
+.fa-bars::before{
+	content:url('icons/menu.svg');
+}
+
+.fa-list::before{
+	content:url('icons/format-list-checkbox.svg')
 }
