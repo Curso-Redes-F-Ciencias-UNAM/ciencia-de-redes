@@ -3,12 +3,6 @@
 
 # # Práctica 3 (notebook)
 
-# <!-- esta celda no se renderizará en jupyter -->
-# 
-# ```{admonition} Ejecuta el notebook
-# Para ejecutar este notebook da click en <i class="fas fa-download"></i> y descarga el archivo `.ipynb` para correrolo localmente en tu computadora o da click en <i class="fas fa-rocket"></i> para correlo en Binder o Google Colab.
-# ```
-
 # En este notebook se aplican los siguientes conceptos:
 # - Medidas de grupos de nodos
 #   - Coeficiente de agrupamiento (clustering): https://youtu.be/zH5oMNKtVoA
