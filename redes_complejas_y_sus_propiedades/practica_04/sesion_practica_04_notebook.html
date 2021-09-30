@@ -1,0 +1,1130 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.1. Práctica 4 (notebook) &#8212; Ciencia de Redes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="10. Redes de mundo pequeño" href="../redes_de_mundo_pequeno/presentacion.html" />
+    <link rel="prev" title="9. Práctica 4" href="presentacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Prefacio
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../prefacio/presentacion.html">
+   Presentación
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 1: Matemáticas de las redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/presentacion.html">
+   1. Matemáticas de las redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/tipos_de_redes_y_matriz_de_adyacencia.html">
+     1.1. Tipos de redes y matriz de adyacencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/definicion_de_grado.html">
+     1.2. Definición de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/motivacion_y_mas_tipos_de_redes.html">
+     1.3. Motivación y más tipos de redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades.html">
+     1.4. Matríz de adyacencia y sus propiedades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/numero_de_enlaces_de_la_red.html">
+     1.5. Número de enlaces de la red
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/caminos_y_distancia_entre_nodos.html">
+     1.6. Caminos y distancia entre nodos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/presentacion.html">
+   2. Práctica 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/primeros_pasos_python_notebook.html">
+     2.1. Preliminar: primeros pasos con Python (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_notebook.html">
+     2.2. Práctica 1 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_video.html">
+     2.3. Práctica 1 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2: Medidas y métricas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/presentacion.html">
+   3. Medidas de centralidad de los nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
+     3.1. Centralidad de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
+     3.2. Centralidad de cercanía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
+     3.3. Centralidad de intermediación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
+     3.4. Centralidad de eigenvector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
+     3.5. Centralidad de Katz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
+     3.6. Centralidad de Page Rank (opcional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_02/presentacion.html">
+   4. Práctica 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_notebook.html">
+     4.1. Práctica 2 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_video.html">
+     4.2. Práctica 2 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/presentacion.html">
+   5. Medidas de grupos de nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
+     5.1. Coeficiente de agrupamiento/acumulación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/grupos_de_nodos.html">
+     5.2. Grupos de nodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/modularidad.html">
+     5.3. Modularidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/presentacion.html">
+   6. Propiedades globales de la red
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/propiedades_globales.html">
+     6.1. Propiedades globales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/distribucion_de_grado.html">
+     6.2. Distribución de grado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_03/presentacion.html">
+   7. Práctica 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_03/sesion_practica_03_notebook.html">
+     7.1. Práctica 3 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3: Redes complejas y sus propiedades
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../redes_aleatorias/presentacion.html">
+   8. Redes aleatorias
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/actividad_introductoria_redes_aleatorias.html">
+     8.1. Actividad introductoria a las redes aleatorias (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/definicion_de_red_aleatoria.html">
+     8.2. Definición red aleatoria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/distribucion_binomial.html">
+     8.3. Distribución binomial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/numero_de_enlaces.html">
+     8.4. Número de enlaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/grado_promedio_distribucion_de_grado_y_clustering.html">
+     8.5. Grado promedio, distribución de grado y clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/alerta_de_spoiler.html">
+     8.6. Alerta de spoiler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/distribucion_binomial_y_de_poisson.html">
+     8.7. Distribución biniomial y de Poisson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/redes_reales_y_redes_aleatorias.html">
+     8.8. Redes reales y redes aleatorias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="presentacion.html">
+   9. Práctica 4
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     9.1. Práctica 4 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../redes_de_mundo_pequeno/presentacion.html">
+   10. Redes de mundo pequeño
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../redes_con_independencia_de_escala/presentacion.html">
+   11. Redes con independencia de escala (scale-free)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 4: Procesos en redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/presentacion.html">
+   12. Difusión en redes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../procesos_en_redes/percolacion_en_redes/presentacion.html">
+   13. Percolación en redes
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 5: Estudio de redes reales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html">
+   14. Redes de información
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_en_biologia/presentacion.html">
+   15. Redes en biología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_sociales/presentacion.html">
+   16. Redes sociales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/proyectos_finales/presentacion.html">
+   17. Proyectos finales
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Referencias
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../referencias/referencias.html">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribucion-de-probabilidad-de-grado">
+   9.1.1. Distribución (de probabilidad) de grado
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coeficiente-de-acumulacion-agrupamiento-de-los-nodos">
+   9.1.2. Coeficiente de acumulación (agrupamiento) de los nodos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparacion-del-modelo-de-red-aleatoria-con-redes-reales">
+   9.1.3. Comparación del modelo de red aleatoria con redes reales
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coeficiente-de-clustering-promedio">
+     9.1.3.1. Coeficiente de clustering promedio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribucion-de-grado">
+     9.1.3.2. Distribución de grado
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clustering-de-los-nodos">
+     9.1.3.3. Clustering de los nodos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#representacion-1">
+       9.1.3.3.1. Representación 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#representacion-2">
+       9.1.3.3.2. Representación 2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#representacion-3">
+       9.1.3.3.3. Representación 3
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="practica-4-notebook">
+<h1><span class="section-number">9.1. </span>Práctica 4 (notebook)<a class="headerlink" href="#practica-4-notebook" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En este notebook se coninúa el análisis de las redes aleatoria de Erdős-Rényi conocidas como <span class="math notranslate nohighlight">\(G(N,p)\)</span>. Se termina con el análisis de algunas propiedades sobre las que se profundizará en algunos videos esta semana, particularmente:</p>
+<ul class="simple">
+<li><p>la distribución de grado de una red aleatoria satisface una distribución binomial</p></li>
+<li><p>la distribución de grado de una red aleatoria cuando <span class="math notranslate nohighlight">\(\frac{\left&lt; k\right&gt;}{N} \ll 1 \)</span> (condición satisfecha en general por las redes reales) tiende a una distribución de Poisson</p></li>
+</ul>
+<p>Con esto en mente, aplicaremos este primer modelo analítico a la descripción de una red real. La conclusión que podemos adelantar es que casi ninguna de las redes reales de interés son bien modeladas por las redes aleatorias.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se utilizará la primera definición de red aleatoria que se propuso en la práctica anterior, es decir, a partir de la probabilidad de enlace:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">enlaces_aleatorios</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span>
+
+<span class="k">def</span> <span class="nf">red_aleatoria</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+  <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+  <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="c1"># agrega todos los nodos</span>
+  
+  <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span> <span class="n">enlaces_aleatorios</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># agrega los enlaces obedeciendo la probabilidad p</span>
+  
+  <span class="k">return</span> <span class="n">G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="distribucion-de-probabilidad-de-grado">
+<h2><span class="section-number">9.1.1. </span>Distribución (de probabilidad) de grado<a class="headerlink" href="#distribucion-de-probabilidad-de-grado" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Lo último que se hizo la práctica pasada fue el histograma de grados, o distribución de grados, como función de <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(p\)</span>. A continuación se recupera la celda de la práctica anterior con la que se obtuvo <span class="math notranslate nohighlight">\(N_k\)</span>, es decir, el número de nodos que tienen grado <span class="math notranslate nohighlight">\(k\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">101</span>
+<span class="n">p</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="n">corridas</span> <span class="o">=</span> <span class="mi">100</span>
+
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">corridas</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">red_aleatoria</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">([</span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="n">Y</span> <span class="o">+=</span> <span class="n">y</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="o">/</span><span class="n">corridas</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nk&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Red aleatoria, N = </span><span class="si">%i</span><span class="s1">, p = </span><span class="si">%1.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La única modificación que se hará a partir de ahora es aquella referente a pasar de <span class="math notranslate nohighlight">\(N_k\)</span> a <span class="math notranslate nohighlight">\(P_k\)</span>, es decir, pasar del histograma a la distribución de probabilidad mediante <span class="math notranslate nohighlight">\(P_k = N_k / N\)</span>. Esto se puede hacer directamente utilizando el parámetro <code class="docutils literal notranslate"><span class="pre">density</span></code> de la función <code class="docutils literal notranslate"><span class="pre">np.histogram</span></code>.</p>
+<p>Como se verá en los videos, la distribución de probabilidad de grado de la red aleatoria es una distribución binomial, por lo que la importaremos a continuación. De este modo, a la distribución de grado se puede incorporar la binomial correspondiente. Consideraciones:</p>
+<ul class="simple">
+<li><p>la variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, que se crea con la función <code class="docutils literal notranslate"><span class="pre">histogram</span></code>, es un arreglo correspondiente al dominio, es decir, los número naturales hasta <span class="math notranslate nohighlight">\(N-1\)</span>. Por ser un arreglo se le puede aplicar también una función.</p></li>
+<li><p>la función que se le aplica es la función <code class="docutils literal notranslate"><span class="pre">binom.pmf()</span></code>, que dentro del conjunto de funciones que importamos con <code class="docutils literal notranslate"><span class="pre">binom</span></code>, es la que proporciona la <em>probability mass function</em>, es decir, la distribución de probabilidad que nos interesa. Esa es la que graficamos en rojo. Para más información: <a class="reference external" href="https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.binom.html">https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.stats.binom.html</a></p></li>
+</ul>
+<p>Jueguen nuevamente con <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(p\)</span> para ver cómo se relacionan con la distribución de probabilidad. También jueguen con el número de corridas para ver cómo aumentan o disminuyen las fluctuaciones respecto a la línea base; no perder de vista que estamos frente a un experimento estocástico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">binom</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se definen los parámetros</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">101</span>
+<span class="n">p</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="n">corridas</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="c1"># Y es el arreglo en el que se acumularán las observaciones para luego promediarlas</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">corridas</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">red_aleatoria</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">([</span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">Y</span> <span class="o">+=</span> <span class="n">y</span>
+
+<span class="c1"># Se obtiene el promedio sobre todas las corridas</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="o">/</span><span class="n">corridas</span>
+
+
+<span class="c1"># Se genera la gráfica</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="c1"># La distribución de probabilidad como gráfica de barras</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">Y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pk&#39;</span><span class="p">)</span> 
+
+<span class="c1"># La distribución binomial como una línea roja. Se grafica la función binomial de x, contra x.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">p</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Binomial&#39;</span><span class="p">)</span>
+
+<span class="c1"># Se ponen los títulos de los ejes y la gráfica</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Red aleatoria, N = </span><span class="si">%i</span><span class="s1">, p = </span><span class="si">%1.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora se utilizará la expresión que encontraron en la práctica pasada que relaciona al valor esperado del grado promedio* <span class="math notranslate nohighlight">\(\left&lt; k \right&gt;\)</span> con <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(p\)</span>, $<span class="math notranslate nohighlight">\(\left&lt; k \right&gt; = p(N-1)\)</span><span class="math notranslate nohighlight">\( para fijar \)</span>\left&lt; k \right&gt;$ y variar el tamaño de la red. Lo que queremos es una forma de comparar las distribuciones de probabilidad de redes distintas y la mejor forma de hacerlo es obligarlas a tener el centro (el valor esperado) en el mismo punto.</p>
+<p>*Notar que estamos hablando de dos tipos de promedios: <span class="math notranslate nohighlight">\(\left&lt; k \right&gt;\)</span> es el promedio sobre el conjunto de nodos, se toma el grado para cada nodo y se promedia, para cada red. Por otro lado, se está tomando el promedio de esa cantidad sobre un conjunto de corridas o, lo que es lo mismo, un conjunto (ensemble) de redes aleatorias. Por eso hablamos de valor esperado del grado promedio. Se podría usar la notación <span class="math notranslate nohighlight">\(E[\left&lt; k \right&gt;]\)</span> para referirnos a ese valor esperado, pero en los libros de consulta no lo hacen así que llamamos a advertir la diferencia y evitar confusiones.</p>
+<p>Juega con <span class="math notranslate nohighlight">\(\left&lt; k \right&gt;\)</span>, el número de corridas y los tamaños de la red para ver cuál es el efecto sobre la distribución:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># se fija el valor para el grado promedio. La única condición es que debe ser menor que N. </span>
+
+
+<span class="n">corridas</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># se puede variar el número de corridas. Si es demasiado alto puede tardar mucho para redes grandes</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]:</span> <span class="c1">#se tomarán tres redes distintas, para N igual a 100, 500 y 1000. Pueden agregar más grandes pero es posible que tarde mucho</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">corridas</span><span class="p">):</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">red_aleatoria</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">([</span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">)[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">],</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">Y</span> <span class="o">+=</span> <span class="n">y</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span><span class="o">/</span><span class="n">corridas</span>
+
+
+
+    
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;N = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">p</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ya que se verifica que la distribución de probabilidad es una binomial (además se demuestra con todo detalle en uno de los videos) verificaremos que si <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(\left&lt; k \right&gt;\)</span> satisfacen cierta condición podemos trabajar con una distribución de Poisson. Esto se hace ya no con las redes, sino con las correspondientes distibuciones, ya que generar redes aleatorias con más de 10000 nodos puede requerir mucha memoria.</p>
+<p>Lo que se hace a continuación es, nuevamente, fijar la <span class="math notranslate nohighlight">\(\left&lt; k \right&gt;\)</span> y tomar las distribuciones para redes de cuatro órdenes de magnitud. Todas se comparan con la distribución de Poisson correspondiente, para eso importamos <code class="docutils literal notranslate"><span class="pre">poisson</span></code> y usamos <code class="docutils literal notranslate"><span class="pre">poisson.pmf()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">poisson</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Se utilizan cuatro N&#39;s en cuatro órdenes:</span>
+<span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;N = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">N</span><span class="p">))</span>
+
+    
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">50</span><span class="p">),</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Poisson&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribuciones binomiales &lt;k&gt; = 50&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;pmf(k)&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1">#plt.xlim([45, 55])</span>
+<span class="c1">#plt.ylim([0.05, 0.06])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se puede ver que para <span class="math notranslate nohighlight">\(N = 10^4\)</span>, más o menos dos órdenes de magnitud mayor a <span class="math notranslate nohighlight">\(\left&lt; k\right&gt; = 50\)</span>, la distribución binomial es indistinguible de la de Poisson. Para revisar la deducción analítica de este límite, pueden ver los temas avanzados del capítulo 3 del libro de Barabasi : <a class="reference external" href="http://networksciencebook.com/chapter/3#advanced-a">http://networksciencebook.com/chapter/3#advanced-a</a></p>
+</div>
+<div class="section" id="coeficiente-de-acumulacion-agrupamiento-de-los-nodos">
+<h2><span class="section-number">9.1.2. </span>Coeficiente de acumulación (agrupamiento) de los nodos<a class="headerlink" href="#coeficiente-de-acumulacion-agrupamiento-de-los-nodos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En la práctica pasada se vio cómo el coeficiente de acumulación promedio de la red aleatoria coincide con la probabilidad de enlace <span class="math notranslate nohighlight">\(p\)</span>. Sin embargo, esta es una propiedad no sólo del promedio, sino que es equivalente para el mismo coeficiente en cada uno de los nodos. Para verificar eso, a continuación se grafica el coeficiente para cada nodo y se compara con los valores de <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(\left&lt; C \right&gt;\)</span></p>
+<p>De nuevo, jugando con los valores de <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(p\)</span> pueden generar la intuición de que es una propiedad general, aunque se revisará analíticamente en los videos de la semana.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">p</span> <span class="o">=</span> <span class="o">.</span><span class="mi">7</span>
+
+
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">red_aleatoria</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El coeficiente de acumulación promedio es:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La probabilidad de enlace p es:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+
+<span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">[</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;C_i&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">],</span> <span class="p">[</span><span class="n">p</span><span class="p">,</span><span class="n">p</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">],</span> <span class="p">[</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;C (prom)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta propiedad es relevante para cuando queramos aplicar el modelo de redes aleatorias a redes reales, como se hará a continuación.</p>
+</div>
+<div class="section" id="comparacion-del-modelo-de-red-aleatoria-con-redes-reales">
+<h2><span class="section-number">9.1.3. </span>Comparación del modelo de red aleatoria con redes reales<a class="headerlink" href="#comparacion-del-modelo-de-red-aleatoria-con-redes-reales" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El modelo de red aleatoria ha resultado muy útil para aplicar los conceptos matemáticos que hemos venido estudiando hasta ahora. Ahora corresponderá utilizar este modelo para intentar describir el comportamiento de redes reales. La suposición principal detrás de esto sería pensar que las interacciones entre los elementos del sistema están dadas de forma aleatoria. Eso tendría consecuencias particularmente en propiedades como su grado promedio, su distribución de grado y el coeficiente de clustering de los nodos. Esas mismas propiedades son las que analizaremos en las redes reales.</p>
+<p>En la siguiente celda deben seleccionar el archivo de los datos que hayan elegido. Recuerden que si están trabajando en colab, deben utilizar <code class="docutils literal notranslate"><span class="pre">files</span></code> para subir el archivo (líneas comentadas). También recuerden el procedimiento para preparar los datos, descrito en la práctica 2 <a class="reference external" href="https://www.youtube.com/watch?v=tD7-9yM-xLA">https://www.youtube.com/watch?v=tD7-9yM-xLA</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="n">archivo</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ruta</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="n">datos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ruta</span><span class="p">,</span>
+            <span class="n">nrows</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="c1">#skiprows = 0,</span>
+            <span class="c1">#header = None,</span>
+            <span class="c1">#sep = &#39; &#39;,</span>
+            <span class="c1">#usecols = [0,1]</span>
+            <span class="p">)</span>
+<span class="n">datos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ya que se creó la red como objeto de networkx, vamos a encontrar sus propiedades generales (número de nodos, número de enlaces, grado promedio y coeficiente de clustering promedio). Además, a la red le asociaremos la probabilidad de enlace <span class="math notranslate nohighlight">\(p\)</span> <strong>que le correspondería <em>si fuera</em> una red aleatoria</strong>, es decir: $<span class="math notranslate nohighlight">\(p = \frac{\left&lt; k \right&gt;}{N-1}\)</span><span class="math notranslate nohighlight">\( a partir de sus propiedades empíricas \)</span>N<span class="math notranslate nohighlight">\( y \)</span>\left&lt;k\right&gt;$.</p>
+<p>La intención de esto es, a partir de esa <span class="math notranslate nohighlight">\(p\)</span> que junto con <span class="math notranslate nohighlight">\(N\)</span> caracteriza a una red aleatoria <span class="math notranslate nohighlight">\(G(N,p)\)</span>, determinar las propiedades de la red aleatoria equivalente. En otras palabras, calcularemos las propiedades de la red aleatoria (el modelo) que tiene el mismo tamaño y el mismo grado promedio que nuestra red real, para luego compararlas con las propiedades de nuestra red real. Así, podremos ver si el modelo de red aleatoria se ajusta a nuestra red real.  Las propiedades que usaremos para la comparación son:</p>
+<ul class="simple">
+<li><p>Coeficiente de clustering promedio</p></li>
+<li><p>Distribución de grado</p></li>
+<li><p>Coeficiente de clustering por nodo, en distintas representaciones.</p></li>
+</ul>
+<div class="section" id="coeficiente-de-clustering-promedio">
+<h3><span class="section-number">9.1.3.1. </span>Coeficiente de clustering promedio<a class="headerlink" href="#coeficiente-de-clustering-promedio" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Recordemos que el coeficiente de clustering promedio de una red aleatoria es exactamente igual a <span class="math notranslate nohighlight">\(p\)</span>. Compararemos el coeficiente de clustering promedio de la red y lo compararemos con la <span class="math notranslate nohighlight">\(p\)</span> correspondiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="o">/</span><span class="n">N</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">k</span> <span class="o">/</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Propiedades generales de tu red:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- El número de nodos es:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- El número de enlaces es:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;- El grado promedio es:</span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">El coeficiente de clustering promedio de la red es:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">El coeficiente de clustering que tendría la red si fuera aleatoria (es decir p) es:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Pregunta 1</strong>
+Hablando de la primera propiedad a comparar, el coeficiente de clustering promedio:</p>
+<p>¿consideras que el modelo de red aleatoria se ajusta a la red real que estás utilizando?</p>
+</div>
+<div class="section" id="distribucion-de-grado">
+<h3><span class="section-number">9.1.3.2. </span>Distribución de grado<a class="headerlink" href="#distribucion-de-grado" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para analizar las siguientes dos propiedades vamos a hacer una tabla con el grado y el clustering de cada nodo. Para ellos se utilizarán diccionarios y un objeto de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> que se llama <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> que no es más que una tabla, pero con funciones muy útiles implementadas. El procedimiento es el siguiente:</p>
+<ul class="simple">
+<li><p>se generan los diccionarios de las propiedades que nos interesan, en este caso el grado y el clustering, como ya lo hemos venido haciendo. Los grados los convertimos a diccionario aplicando <code class="docutils literal notranslate"><span class="pre">dict()</span></code>, y el clustering (como casi todas las medidas de centralidad) ya es un diccionario.</p></li>
+<li><p>Esos diccionarios se introducen, en una lista, como primer argumento de la funcion <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code> que, como las claves de ambos diccionarios son los mismos nodos, generará una tabla en la que a cada nodo le asocia sus dos propiedades.</p></li>
+<li><p>En la tabla que se genera, las propiedades son los renglones y los nodos son las columnas. No es la forma más conveniente para trabajar, así que la transponemos mediante la instrucción <code class="docutils literal notranslate"><span class="pre">.T</span></code>. Entonces, cada fila será un nodo y las columnas son las propiedades de interés.</p></li>
+<li><p>Se definen los nombres de las columnas, en este caso Degree y Clustering.</p></li>
+<li><p>Todo esto lo guardamos en una variable <code class="docutils literal notranslate"><span class="pre">df</span></code> (de dataframe)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># se generan los diccionarios</span>
+<span class="n">grado_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+<span class="n">clustering_dict</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># se genera el dataframe (la tabla)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">grado_dict</span><span class="p">,</span> <span class="n">clustering_dict</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Degree&#39;</span><span class="p">,</span> <span class="s1">&#39;Clustering&#39;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para analizar la distribución de grado utilizaremos la función histogram que ya hemos usado, pero ahora aplicada a la columna “Degree” de nuestra tabla. Para acceder a una columna completa basta con escribir el nombre de la tabla (en este caso <code class="docutils literal notranslate"><span class="pre">df</span></code>) y, seguido de un punto, el nombre de la columna. Sabemos que <code class="docutils literal notranslate"><span class="pre">np.histogram</span></code> toma como argumento un arreglo de numpy. Para convertir la columna de la tabla en un arreglo, basta con agregarle, seguida de un punto, la instrucción <code class="docutils literal notranslate"><span class="pre">values</span></code>. A continuación puedes ver la columna de la tabla y, si descomentas el resto de la línea, puedes verla convertida en arreglo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Degree</span><span class="c1">#.values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A las columnas de un dataframe también se les pueden aplicar funciones. A continuación le aplicamos la función <code class="docutils literal notranslate"><span class="pre">.max()</span></code> que arroja el grado máximo de la red que utilizaremos para hacer el histograma. Se guardará ese valor como <code class="docutils literal notranslate"><span class="pre">K</span></code> para usarlo después.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Degree</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esto ya se introduce en la función histogram. Notar que ahora el parámetro <code class="docutils literal notranslate"><span class="pre">bins</span></code> será un <code class="docutils literal notranslate"><span class="pre">range</span></code> aplicado a <code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">+</span> <span class="pre">1</span></code>, para que cuente el número de nodos que tienen grado desde 0 hasta <span class="math notranslate nohighlight">\(k_{max}\)</span>. No olvidar que <code class="docutils literal notranslate"><span class="pre">bins</span></code> son las «cajitas» dentro de las cuales cuenta el número de elementos y el <code class="docutils literal notranslate"><span class="pre">+1</span></code> corresponde a que en python suele omitirse el límite superior. Así, <code class="docutils literal notranslate"><span class="pre">range(K+1)</span></code> es la colección [0, 1, 2, …, K].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Degree</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">K</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">density</span><span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ya con el histograma, se grafican tanto la distribución de probabilidad empirica» de la red real, y la distribución de Poisson que correspondería al valor <span class="math notranslate nohighlight">\(p\)</span> calculado. Ésta sería la distribución de probabilidad esperada si la red fuera una red aleatoria.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;pk&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">k</span><span class="p">),</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;poisson&#39;</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.5</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">y</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="mf">1.1</span><span class="o">*</span><span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparación de la red real con la red aleatoria equivalente</span><span class="se">\n</span><span class="s1">(N = </span><span class="si">%i</span><span class="s1">, p = </span><span class="si">%.4f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Pregunta 2</strong></p>
+<p>¿Consideras que la distribución de grado de la red aleatoria correspondiente se ajusta a la distribución de grado de la red real que estás analizando?</p>
+<p>Para algunas redes reales, sobre todo aquellas muy grandes, conviene graficar la distribución de grado en escala «log-log». Volveremos a ello más adelante en el curso, pero por lo pronto se realiza la gráfica en esa escala con algunos parámetros que hace adecuada la visualización:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Pk&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">k</span><span class="p">),</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;poisson&#39;</span><span class="p">)</span>
+
+<span class="c1">#Se aplica escala logarítmica a ambos ejes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+
+<span class="c1">#parámetros adecuados para la visualización:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.5</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">y</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparación de la red real con la red aleatoria equivalente. Escala &quot;log-log&quot;</span><span class="se">\n</span><span class="s1">(N = </span><span class="si">%i</span><span class="s1">, p = </span><span class="si">%.4f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="clustering-de-los-nodos">
+<h3><span class="section-number">9.1.3.3. </span>Clustering de los nodos<a class="headerlink" href="#clustering-de-los-nodos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Finalmente, compararemos el clustering de los nodos medido para nuestra red real con el equivalente para la red aleatoria equivalente. Ya sabemos que para una red aleatoria, el coeficiente de clustering es igual (salvo fluctuaciones) a la probabilidad de enlace <span class="math notranslate nohighlight">\(p\)</span>. A continuación se hace la comparación para tres representaciones distintas del coeficiente de clustering de los nodos.</p>
+<div class="section" id="representacion-1">
+<h4><span class="section-number">9.1.3.3.1. </span>Representación 1<a class="headerlink" href="#representacion-1" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Primero se grafica el coeficiente de clustering de los nodos ordenándolos según su etiqueta. Sabemos que la etiqueta de los nodos es prácticamente arbitraria, por lo que podemos afirmar que no hay un orden en su aparición. Para esta gráfica se utiliza la columna “Clustering” de la tabla antes creada, mediante <code class="docutils literal notranslate"><span class="pre">df.Clustering</span></code> y se le aplica la función <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> con algunos parámetros para su visualización. En la misma gráfica es muestran el valor que predice el modelo de red aleatoria <span class="math notranslate nohighlight">\(\left&lt;C'\right&gt; = p\)</span> y el valor de <span class="math notranslate nohighlight">\(\left&lt;C\right&gt;\)</span> empírico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">Clustering</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;b.&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">],</span> <span class="p">[</span><span class="n">p</span><span class="p">,</span><span class="n">p</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;p = </span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">p</span>)
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">],</span> <span class="p">[</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&lt;C&gt; = </span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">C</span>)
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;nodo i&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;C(i)&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Pregunta 3</strong> ¿El coeficiente de clustering que el modelo predice para cada nodo, se ajusta al coeficiente de clustering de los nodos de tu red?</p>
+</div>
+<div class="section" id="representacion-2">
+<h4><span class="section-number">9.1.3.3.2. </span>Representación 2<a class="headerlink" href="#representacion-2" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>A continuación se hace lo mismo, pero ordenando los nodos según su grado. Esto se hace ordenando los elementos de la tabla <code class="docutils literal notranslate"><span class="pre">df</span></code> según el valor de la columna “Degree” (<code class="docutils literal notranslate"><span class="pre">.sort_values('Degree')</span></code>), reasignando los índices según este nuevo orden (<code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code>), tomando la columna “Clustering” (<code class="docutils literal notranslate"><span class="pre">.Clustering</span></code>) y graficándola (<code class="docutils literal notranslate"><span class="pre">.plot()</span></code>). Nuevamente se compara con los valores del promedio y el modelo.</p>
+<p>Esta representación permitiría observar si hay alguna correlación entre el grado del nodo y su coeficiente de clustering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Degree&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">Clustering</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;b.&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">],</span> <span class="p">[</span><span class="n">p</span><span class="p">,</span><span class="n">p</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;p = </span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">p</span>)
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">],</span> <span class="p">[</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&lt;C&gt; = </span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">C</span>)
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;nodo i&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;C(i)&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Pregunta 4</strong> ¿Detectas alguna correlación o patrón interesante entre el grado y el clustering de los nodos?</p>
+</div>
+<div class="section" id="representacion-3">
+<h4><span class="section-number">9.1.3.3.3. </span>Representación 3<a class="headerlink" href="#representacion-3" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Finalmente, bajo la misma lógica que la anterior, se representan el clustering promedio de los nodos, agrupados según su grado. Esto limpia un poco el ruido de la representación anterior y revelaría de forma más clara si hubiera alguna correlación entre las magnitudes del grado y el clustering de los nodos. Se utiliza otra función muy poderosa de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> llamada <code class="docutils literal notranslate"><span class="pre">groupby</span></code>. Sin entrar en la complejidad de esta función, se explica cada parte del código a continuación por si quieren usarlo en problemas similares:</p>
+<ul class="simple">
+<li><p>se agrupan los elementos de la tabla <code class="docutils literal notranslate"><span class="pre">df</span></code> (i.e. los nodos) según el valor del grado: <code class="docutils literal notranslate"><span class="pre">.groupby('Degree')</span></code></p></li>
+<li><p>de la tabla agrupada, se considera sólo la columna “Clustering”: <code class="docutils literal notranslate"><span class="pre">['Clustering']</span></code></p></li>
+<li><p>de la propiedad “Clustering” de los datos ya agrupados, se calcula el promedio: <code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p></li>
+<li><p>ahora se forman los arreglos correspondientes al grado y al promedio del clustering aplicando tres funciones seguidas: <code class="docutils literal notranslate"><span class="pre">.reset_index().values.T</span></code></p></li>
+<li><p>estos arreglos se guardan como X y Y, respectivamente, para graficarlos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Degree&#39;</span><span class="p">)[</span><span class="s1">&#39;Clustering&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Así, se grafican entonces el coeficiente de clustering promedio del grupo de nodos con grado <span class="math notranslate nohighlight">\(k\)</span>, que denotamos como <span class="math notranslate nohighlight">\(C(k)\)</span>. De nuevo, se indican los valores del promedio empírico y el predicho por el modelo de red aleatoria para sacar conclusiones:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">K</span><span class="p">],</span> <span class="p">[</span><span class="n">p</span><span class="p">,</span><span class="n">p</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;p = </span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">p</span>)
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">K</span><span class="p">],</span> <span class="p">[</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&lt;C&gt; = </span><span class="si">%.4f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">C</span>)
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;C(k)&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Pregunta 5</strong> En esta representación, ¿encuentras alguna correlación o patrón interesante entre los valores de <span class="math notranslate nohighlight">\(k\)</span> y <span class="math notranslate nohighlight">\(C\)</span>?</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./redes_complejas_y_sus_propiedades/practica_04"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="presentacion.html" title="previous page"><span class="section-number">9. </span>Práctica 4</a>
+    <a class='right-next' id="next-link" href="../redes_de_mundo_pequeno/presentacion.html" title="next page"><span class="section-number">10. </span>Redes de mundo pequeño</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
