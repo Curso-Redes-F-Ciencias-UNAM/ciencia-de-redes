@@ -47,11 +47,23 @@ parts:
       - file: medidas_y_metricas/propiedades_globales_de_la_red/distribucion_de_grado
     - file: medidas_y_metricas/practica_03/presentacion
       sections:
-      - file: medidas_y_metricas/practica_03/sesion_practica_03.ipynb
+      - file: medidas_y_metricas/practica_03/sesion_practica_03_notebook
   - caption: "Parte 3: Redes complejas y sus propiedades"
     numbered: True
     chapters: 
     - file: redes_complejas_y_sus_propiedades/redes_aleatorias/presentacion
+      sections: 
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias/actividad_introductoria_redes_aleatorias
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias/definicion_de_red_aleatoria
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias/distribucion_binomial
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias/numero_de_enlaces
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias/grado_promedio_distribucion_de_grado_y_clustering
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias/alerta_de_spoiler
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias/distribucion_binomial_y_de_poisson
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias
+    - file: redes_complejas_y_sus_propiedades/practica_04/presentacion
+      sections:
+      - file: redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook
     - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion
     - file: redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion
   - caption: "Parte 4: Procesos en redes"
