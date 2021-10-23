@@ -1,9 +1,9 @@
 # Ciencia de Redes
 
 
-_versión -0_
+_versión 0.2_
 
-_Editado por última vez el: 30/09/21_
+_Editado por última vez el: 22/10/21_
 
 ---
 
@@ -11,7 +11,7 @@ _Editado por última vez el: 30/09/21_
 
 ![avatar](./_static/img/avatar.png)
 
-### Contacto
+## Contacto
 
 - Carlos Francisco Betancout	
 	- **correo:** cfrancisco@ciencias.unam.mx 

@@ -24,7 +24,7 @@ Les recomendamos consultar, en la [documentación de NetworkX](https://networkx.
 	</div>
 </div>
 
-## \[Opcional\] Detalles sobre intermediación
+## Opcional: Detalles sobre intermediación
 
 En este video se comparan los cálculos hechos a mano, en la parte teórica, de la centralidad de intermediación (betweenness) y la que resulta de calcular con NetworkX, para que identifiquen el porqué de las diferencias y sepan manejarlas a su conveniencia.
 

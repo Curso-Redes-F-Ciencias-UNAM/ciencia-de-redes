@@ -257,7 +257,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -364,8 +364,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias.html">
-     8.8. Redes reales y redes aleatorias
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
@@ -387,10 +397,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
@@ -612,7 +639,7 @@
 <h1><span class="section-number">2.1. </span>Preliminar: primeros pasos con Python (notebook)<a class="headerlink" href="#preliminar-primeros-pasos-con-python-notebook" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="introduccion">
 <h2><span class="section-number">2.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En este curso utilizaremos python mediante el uso de <strong>Notebooks</strong>. Éstos pueden ser de Google Colab (como éste) o pueden ser archivos tipo .ipynb que se abren con Anaconda-Jupyter. Para esto último deben descargar e instalar anaconda. Para ello se recomienda visitar <a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a> y seguir las instrucciones.</p>
+<p>En este curso utilizaremos python mediante el uso de <strong>Notebooks</strong>. Éstos pueden ser de Google Colab (como éste) o pueden ser archivos tipo <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> que se abren con <a class="reference external" href="https://jupyter.org/">Jupyter</a>. La forma más sencilla para installar Jupyter en sus computadoras es a travéz de Anaconda. Para ello se recomienda visitar la <a class="reference external" href="https://www.anaconda.com/">página oficial de Anaconda</a> y seguir las instrucciones.</p>
 <p>En primer lugar, un notebook de jupyter o colab es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y «correr» la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar Shift + Enter</p>
 <p>A continuación se presentan algunas operaciones «comentadas», es decir, antecedidas por el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> (en python, todo lo que esté a la derecha de ese signo será ignorado), puedes borrar el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> al inicio y correr la celda cada vez para obtener cada resultado. Obs. Cada celda puede ser corrida tantas veces como se quiera. Es común que en alguna línea se ponga una explicación con el uso de otro signo <code class="docutils literal notranslate"><span class="pre">#</span></code>; aquí se hace para explicarle a las personas no familiarizadas con algunas operaciones matemáticas los nombres de éstas, pero puede ser un buen hábito comentar el código que generemos (como veremos más adelante).</p>
 <div class="cell docutils container">
@@ -643,9 +670,7 @@
 <div class="section" id="importar-paquetes">
 <h2><span class="section-number">2.1.2. </span>Importar paquetes<a class="headerlink" href="#importar-paquetes" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita <a class="reference external" href="https://numpy.org/">https://numpy.org/</a>).</p>
-<p>Ahora se introduce una forma estándar para importar las librerías. La estructura es:
-<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">[libreria]</span> <span class="pre">as</span> <span class="pre">[clave]</span></code>
-La clave será la forma con la que «invocaremos» a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave np.</p>
+<p>Ahora se introduce una forma estándar para importar las librerías. La estructura es: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;libreria&gt;</span> <span class="pre">as</span> <span class="pre">&lt;clave&gt;</span></code>. La clave será la forma con la que «invocaremos» a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave np.</p>
 <p>Después de haber corrido la siguiente celda, podrás utilizar todas las funciones y objetos de la librería en la misma sesión. Esto significa que no hay que estar importando en todo momento la librería.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -654,7 +679,7 @@ La clave será la forma con la que «invocaremos» a la librería en nuestro có
 </div>
 </div>
 </div>
-<p>Ya habiendo importado la librería, cualquier objeto o función de esa librería se invoca mediante <code class="docutils literal notranslate"><span class="pre">np.[funcion]</span></code></p>
+<p>Ya habiendo importado la librería, cualquier objeto o función de esa librería se invoca mediante <code class="docutils literal notranslate"><span class="pre">np.[funcion]</span></code>.</p>
 <p>A continuación se introducen algunas funciones y constantes matemáticas cargadas en numpy para que empieces a utilizarlas. De nuevo, «descomenta» las líneas para obtener cada resultado.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

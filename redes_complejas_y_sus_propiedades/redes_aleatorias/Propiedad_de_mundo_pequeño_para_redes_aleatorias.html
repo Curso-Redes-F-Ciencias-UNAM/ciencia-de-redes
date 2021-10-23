@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8.8. Redes reales y redes aleatorias &#8212; Ciencia de Redes</title>
+    <title>&lt;no title&gt; &#8212; Ciencia de Redes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,6 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="9. Práctica 4" href="../practica_04/presentacion.html" />
-    <link rel="prev" title="8.7. Distribución biniomial y de Poisson" href="distribucion_binomial_y_de_poisson.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -255,7 +253,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -315,17 +313,17 @@
   Parte 3: Redes complejas y sus propiedades
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="presentacion.html">
    8. Redes aleatorias
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="actividad_introductoria_redes_aleatorias.html">
      8.1. Actividad introductoria a las redes aleatorias (notebook)
@@ -361,9 +359,19 @@
      8.7. Distribución biniomial y de Poisson
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     8.8. Redes reales y redes aleatorias
+   <li class="toctree-l2">
+    <a class="reference internal" href="redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
@@ -385,10 +393,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../redes_con_independencia_de_escala/presentacion.html">
@@ -492,9 +517,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/redes_complejas_y_sus_propiedades/redes_aleatorias/Propiedad_de_mundo_pequeño_para_redes_aleatorias.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -512,11 +537,41 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/redes_complejas_y_sus_propiedades/redes_aleatorias/Propiedad_de_mundo_pequeño_para_redes_aleatorias.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/redes_complejas_y_sus_propiedades/redes_aleatorias/Propiedad_de_mundo_pequeño_para_redes_aleatorias.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -525,13 +580,91 @@
         
               <div>
                 
-  <div class="section" id="redes-reales-y-redes-aleatorias">
-<h1><span class="section-number">8.8. </span>Redes reales y redes aleatorias<a class="headerlink" href="#redes-reales-y-redes-aleatorias" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Como habrán podido ver en el final de la práctica 4, en general las redes aleatorias no son un buen modelo para describir las redes reales. Su importancia en el estudio de redes, en este curso, radica en que son un primer modelo al cual aplicar las propiedades matemáticas desarrolladas en la primera parte del curso, además de iniciar con ese modelo el ejercicio de contrastar las predicciones de un modelo con las características empíricas de las redes reales.</p>
-<p>Particularmente vieron cómo el modelo aleatorio falla al predecir el clustering promedio, el clustering de los nodos y la distribución de grado de las redes reales. Para un ejemplo particular, una red metabólica para la especie C. Elegans, ustedes pueden ver las discrepancias con la red aleatoria correspondiente: ejemplo.</p>
-<div class="danger admonition">
-<p class="admonition-title">TODO</p>
-<p>TODO: Agregar notebook con el ejemplo. Pedirle a Pancho que me envie el notebook de su ejemplo: <a class="reference external" href="https://moodle.fciencias.unam.mx/cursos/pluginfile.php/142180/mod_book/chapter/2917/Pr%C3%A1ctica%20redes%20aleatorias%20%287%29.html">https://moodle.fciencias.unam.mx/cursos/pluginfile.php/142180/mod_book/chapter/2917/Práctica redes aleatorias (7).html</a></p>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1">#dar un valor a k</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">average_distances</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;N</span><span class="se">\t</span><span class="s1">|</span><span class="se">\t</span><span class="s1">log(N)</span><span class="se">\t\t</span><span class="s1">|</span><span class="se">\t</span><span class="s1">&lt;d&gt;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------------------------------------------------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span> 
+    <span class="n">N</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sizes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_graphs</span><span class="o">.</span><span class="n">gnp_random_graph</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_graphs</span><span class="o">.</span><span class="n">gnp_random_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+    <span class="n">average_distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="se">\t</span><span class="s1">|</span><span class="se">\t</span><span class="si">%f</span><span class="se">\t</span><span class="s1">|</span><span class="se">\t</span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">average_distances</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="n">average_distances</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&lt;d&gt;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sizes</span><span class="p">)),</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;log(N)&#39;</span><span class="p">)</span>
+
+<span class="c1">#descomentando la siguiente linea puedes cambiar a escala logaritmica en x, para comparar la distancia y al lotaritmo.</span>
+<span class="c1">#plt.xscale(&#39;log&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;&lt;d&gt;&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si tienen ganas y tiempo, pueden extender un orden de magnitud más el análisis para ver el comportamiento, corriendo la siguiente celda. Puede tomar varios minutos (hasta 30)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span> 
+    <span class="n">N</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sizes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_graphs</span><span class="o">.</span><span class="n">gnp_random_graph</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span><span class="n">is_connected</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_graphs</span><span class="o">.</span><span class="n">gnp_random_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+    <span class="n">average_distances</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="se">\t</span><span class="s1">|</span><span class="se">\t</span><span class="si">%f</span><span class="se">\t</span><span class="s1">|</span><span class="se">\t</span><span class="si">%f</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">average_distances</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="n">average_distances</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&lt;d&gt;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sizes</span><span class="p">)),</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;log(N)&#39;</span><span class="p">)</span>
+
+<span class="c1">#descomentando la siguiente linea puedes cambiar a escala logaritmica en x, para comparar la distancia y al lotaritmo.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;&lt;d&gt;&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -560,8 +693,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="distribucion_binomial_y_de_poisson.html" title="previous page"><span class="section-number">8.7. </span>Distribución biniomial y de Poisson</a>
-    <a class='right-next' id="next-link" href="../practica_04/presentacion.html" title="next page"><span class="section-number">9. </span>Práctica 4</a>
 
         </div>
         

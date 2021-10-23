@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matemáticas de las redes &#8212; Ciencia de Redes</title>
+    <title>8.9. Redes aleatorias y propiedad de mundo pequeño &#8212; Ciencia de Redes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,9 +51,13 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="8.10. Transición de fase en redes aleatorias" href="transicion_de_fase_en_redes_aleatorias.html" />
+    <link rel="prev" title="8.8. Redes aleatorias y redes reales" href="redes_aleatorias_y_redes_reales.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -102,7 +106,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="presentacion.html">
+  <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/presentacion.html">
    1. Matemáticas de las redes
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -112,39 +116,39 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="tipos_de_redes_y_matriz_de_adyacencia.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/tipos_de_redes_y_matriz_de_adyacencia.html">
      1.1. Tipos de redes y matriz de adyacencia
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="definicion_de_grado.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/definicion_de_grado.html">
      1.2. Definición de grado
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="motivacion_y_mas_tipos_de_redes.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/motivacion_y_mas_tipos_de_redes.html">
      1.3. Motivación y más tipos de redes
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="matriz_de_adyacencia_y_sus_propiedades.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades.html">
      1.4. Matríz de adyacencia y sus propiedades
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="numero_de_enlaces_de_la_red.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/numero_de_enlaces_de_la_red.html">
      1.5. Número de enlaces de la red
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="caminos_y_distancia_entre_nodos.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/caminos_y_distancia_entre_nodos.html">
      1.6. Caminos y distancia entre nodos
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../practica_01/presentacion.html">
+  <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/presentacion.html">
    2. Práctica 1
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -154,17 +158,17 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../practica_01/primeros_pasos_python_notebook.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/primeros_pasos_python_notebook.html">
      2.1. Preliminar: primeros pasos con Python (notebook)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../practica_01/sesion_practica_01_notebook.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_notebook.html">
      2.2. Práctica 1 (notebook)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../practica_01/sesion_practica_01_video.html">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_video.html">
      2.3. Práctica 1 (video)
     </a>
    </li>
@@ -253,7 +257,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -313,61 +317,71 @@
   Parte 3: Redes complejas y sus propiedades
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/presentacion.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="presentacion.html">
    8. Redes aleatorias
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/actividad_introductoria_redes_aleatorias.html">
+    <a class="reference internal" href="actividad_introductoria_redes_aleatorias.html">
      8.1. Actividad introductoria a las redes aleatorias (notebook)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/definicion_de_red_aleatoria.html">
+    <a class="reference internal" href="definicion_de_red_aleatoria.html">
      8.2. Definición red aleatoria
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/distribucion_binomial.html">
+    <a class="reference internal" href="distribucion_binomial.html">
      8.3. Distribución binomial
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/numero_de_enlaces.html">
+    <a class="reference internal" href="numero_de_enlaces.html">
      8.4. Número de enlaces
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/grado_promedio_distribucion_de_grado_y_clustering.html">
+    <a class="reference internal" href="grado_promedio_distribucion_de_grado_y_clustering.html">
      8.5. Grado promedio, distribución de grado y clustering
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/alerta_de_spoiler.html">
+    <a class="reference internal" href="alerta_de_spoiler.html">
      8.6. Alerta de spoiler
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/distribucion_binomial_y_de_poisson.html">
+    <a class="reference internal" href="distribucion_binomial_y_de_poisson.html">
      8.7. Distribución biniomial y de Poisson
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias.html">
-     8.8. Redes reales y redes aleatorias
+    <a class="reference internal" href="redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/presentacion.html">
+  <a class="reference internal" href="../practica_04/presentacion.html">
    9. Práctica 4
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -377,19 +391,36 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook.html">
+    <a class="reference internal" href="../practica_04/sesion_practica_04_notebook.html">
      9.1. Práctica 4 (notebook)
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
+  <a class="reference internal" href="../redes_con_independencia_de_escala/presentacion.html">
    11. Redes con independencia de escala (scale-free)
   </a>
  </li>
@@ -490,7 +521,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/matematicas_de_las_redes/matematicas_de_las_redes/matematicas_de_las_redes.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -515,44 +546,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenido
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduccion">
-   Introducción
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tipos-de-redes-y-matriz-de-adyacencia">
-   Tipos de redes y matriz de adyacencia
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#motivacion-y-mas-tipos-de-redes">
-   Motivación y más tipos de redes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matriz-de-adyacencia-y-sus-propiedades">
-   Matríz de adyacencia y sus propiedades
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numero-de-enlaces-de-la-red">
-   Número de enlaces de la red
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#caminos-y-distancia-entre-nodos">
-   Caminos y distancia entre nodos
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -561,85 +554,21 @@
         
               <div>
                 
-  <div class="section" id="matematicas-de-las-redes">
-<h1>Matemáticas de las redes<a class="headerlink" href="#matematicas-de-las-redes" title="Enlazar permanentemente con este título">¶</a></h1>
-<div class="section" id="introduccion">
-<h2>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Este capítulo contiene cinco videos y una lista de referencias para que cada quien adquiera las herramientas matemáticas mínimas necesarias para el análisis de redes y fenómenos que estudiaremos en las siguientes semanas del curso. Los contenidos están ordenados de la siguiente forma:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="tipos_de_redes_y_matriz_de_adyacencia.html"><span class="doc std std-doc">Tipos de redes y matriz de adyacencia</span></a> (video 20 min)</p></li>
-<li><p><a class="reference internal" href="definicion_de_grado.html"><span class="doc std std-doc">Definición de grado</span></a> (video 4 min)</p></li>
-<li><p><a class="reference internal" href="motivacion_y_mas_tipos_de_redes.html"><span class="doc std std-doc">Motivación y más tipos de redes</span></a> (lectura)</p></li>
-<li><p><a class="reference internal" href="matriz_de_adyacencia_y_sus_propiedades.html"><span class="doc std std-doc">Matriz de adyacencia y sus propiedades</span></a> (video 12 min)</p></li>
-<li><p><a class="reference internal" href="numero_de_enlaces_de_la_red.html"><span class="doc std std-doc">Número de nodos y enlaces</span></a> (video 10 min)</p></li>
-<li><p><a class="reference internal" href="caminos_y_distancia_entre_nodos.html"><span class="doc std std-doc">Caminos y distancia entre nodos</span></a> (video 11 min)</p></li>
-</ul>
-</div>
-<div class="section" id="tipos-de-redes-y-matriz-de-adyacencia">
-<h2>Tipos de redes y matriz de adyacencia<a class="headerlink" href="#tipos-de-redes-y-matriz-de-adyacencia" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En el siguiente video (20 min) presentamos la definición de matriz de adyacencia, una representación matemática de las redes que tendrá varias aplicaciones en el análisis de sus propiedades, y se introducen las caracterísiticas de cuatro tipos de redes:</p>
-<ol class="simple">
-<li><p>Redes simples</p></li>
-<li><p>Resdes dirigidas</p></li>
-<li><p><em>Multiredes</em> o redes con multienlaces</p></li>
-<li><p>Redes ponderadas o redes con pesos</p></li>
-</ol>
+  <div class="section" id="redes-aleatorias-y-propiedad-de-mundo-pequeno">
+<h1><span class="section-number">8.9. </span>Redes aleatorias y propiedad de mundo pequeño<a class="headerlink" href="#redes-aleatorias-y-propiedad-de-mundo-pequeno" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Como pudieron ver en la <a class="reference internal" href="../practica_04/sesion_practica_04_notebook.html"><span class="doc std std-doc">Práctica 4</span></a>, el modelo de red aleatoria hace dos predicciones que fallan en la mayoría de las redes generadas a partir de datos reales; a decir un coeficiente de clustering constante (y relativamente bajo) y una distribución de probabilidad de grado tipo Poisson que, dicho sea de paso, subestima los nodos con grado bajo y prohíbe nodos con grados mucho mayores que el promedio. Prácticamente la totalidad de los ejemplos elegidos por ustedes no se ajustan al modelo de red aleatoria por las mismas razones.</p>
+<p>Sin embargo, hay una propiedad de las redes aleatorias que sí parece describir una características de las redes reales: la propiedad de mundo pequeño. En pocas palabras, esta propiedad da cuenta de un <a class="reference external" href="https://en.wikipedia.org/wiki/Six_degrees_of_separation">fenómeno conocido en ciencias sociales</a>; aunque la población de un país, o del mundo entero, es muy grande, es fácil conectar a cualesquiera dos nodos con relativamente pocos enlaces. Es fácil conectar a cualesquiera dos personas en el mundo buscando entre los conocidos de sus conocidos, en menos de 10 pasos, que para una población de más de 6 mil millones de personas, son muy pocos.</p>
+<p>Las redes aleatorias tienen esa propiedad, cuando hacemos crecer mucho el tamaño de la red, la distancia entre cualesquiera dos nodos no crece de forma lineal. Además, como se puede ver en el siguiente video, la red aleatoria nos da un criterio para medir cuándo se puede afirmar que una red tiene la propiedad de mundo pequeño.</p>
 <div class="iframe-container-out">
 	<div class="iframe-container-in">
-		<iframe src="https://www.youtube.com/embed/Qva6zeEppqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe src="https://www.youtube.com/embed/AJHtyr3brD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</div>
 </div>
-</div>
-<div class="section" id="motivacion-y-mas-tipos-de-redes">
-<h2>Motivación y más tipos de redes<a class="headerlink" href="#motivacion-y-mas-tipos-de-redes" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>A continuación se listan algunos apartados breves del libro de Barabasi <span id="id1">[<a class="reference internal" href="../../referencias/referencias.html#id2">Barabási, 2016</a>]</span> para que ustedes lean por su cuenta y profundicen su comprensión de las redes y algunas propiedades de las redes reales. Aunque sería conveniente que revisaran todo el capítulo, algunos de los temas que omitimos en esta selección están contenidos en los videos o serán revisados en las siguientes semanas. Otros no son de tanta importancia para los análisis que haremos en este curso.</p>
-<p>El cuestionario de esta semana estará basado en los ejercicios de este capítulo.</p>
-<p>Contenidos para revisión individual:</p>
-<ul class="simple">
-<li><p>Motivación. <a class="reference external" href="http://networksciencebook.com/chapter/2#bridges">2.1 The Brideges of Königsberg</a></p></li>
-<li><p>Relación redes - gráficas. <a class="reference external" href="http://networksciencebook.com/chapter/2#networks-graphs">2.2 Networks and Graphs</a></p></li>
-<li><p>Redes poco densas. <a class="reference external" href="http://networksciencebook.com/chapter/2#real-networks">2.5 Real Networks are Sparse</a></p></li>
-<li><p>Redes bipartitas. <a class="reference external" href="http://networksciencebook.com/chapter/2#bipartite-networks">2.7 Bipartite Networks</a></p></li>
-<li><p>Conectividad o conexidad. <a class="reference external" href="http://networksciencebook.com/chapter/2#connectedness">2.9 Connectedness</a></p></li>
-</ul>
-<p>Recuerda que cualquier duda que tengas puedes externarla en el foro de dudas. Eso seguro enriquecerá al grupo entero.</p>
-</div>
-<div class="section" id="matriz-de-adyacencia-y-sus-propiedades">
-<h2>Matríz de adyacencia y sus propiedades<a class="headerlink" href="#matriz-de-adyacencia-y-sus-propiedades" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En el siguiente video se analizan algunas propiedades de la matriz de adyacencia para de ella comprender algunas características de las redes de interés para el estudio de redes complejas y redes reales que haremos en las siguientes partes del curso.</p>
-<div class="iframe-container-out">
-	<div class="iframe-container-in">
-		<iframe src="https://www.youtube.com/embed/qo7Ecy0fXAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-</div>
-</div>
-<div class="section" id="numero-de-enlaces-de-la-red">
-<h2>Número de enlaces de la red<a class="headerlink" href="#numero-de-enlaces-de-la-red" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>A continuación se analizan alguna de las condiciones impuestas sobre el número de enlaces de una red, particularmente para una red simple. De ahí se extraen conclusiones en torno al grado promedio de la red, que intuitivamente se puede asociar con su densidad.</p>
-<div class="iframe-container-out">
-	<div class="iframe-container-in">
-		<iframe src="https://www.youtube.com/embed/6jAKmae-D6I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-</div>
-<div class="admonition-material-complementario admonition">
-<p class="admonition-title">Material complementario</p>
-<p>Si les interesa profundizar más en el tema aquí les dejamos unas <a class="reference external" href="https://www.matem.unam.mx/~ilan/2011/1/graficas/Graficas20111-arboles.pdf">notas sobre redes tipo árbol y algunas de sus propiedades matemáticas</a>.</p>
-</div>
-</div>
-<div class="section" id="caminos-y-distancia-entre-nodos">
-<h2>Caminos y distancia entre nodos<a class="headerlink" href="#caminos-y-distancia-entre-nodos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>A partir de las propiedades de la matriz de adyacencia, particularmente sus potencias, se pueden obtener el número de caminos y la distancia entre nodos. Eso se explica en el último video de este bloque.</p>
-<div class="iframe-container-out">
-	<div class="iframe-container-in">
-		<iframe src="https://www.youtube.com/embed/92SEew75HQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-</div>
-<div class="admonition-nota admonition">
-<p class="admonition-title">Nota</p>
-<p>Estas últimas propiedades de las potencias de la matriz de adyacencia también se generalizan sin cambios a las redes dirigidas.</p>
-</div>
-</div>
-</div>
+<p>En resumen, se puede afirmar que una red tiene la propiedad de mundo pequeño si su distancia promedio <span class="math notranslate nohighlight">\(⟨d⟩\)</span> y el número de nodos <span class="math notranslate nohighlight">\(N\)</span> satisfacen</p>
+<div class="math notranslate nohighlight">
+\[⟨d⟩ \sim \frac{\ln N }{\ln ⟨k⟩}\]</div>
+<p>Para generar un poco de intuición al respecto de esta propiedad, en redes aleatorias, pueden jugar con la simulación alojada en este <a href="https://colab.research.google.com/drive/1HdTtz7tdSfO00pZDI18Ad_3CPJK3eWe9?usp=sharing" target="_blank">notebook</a>.</p>
+<!-- TODO: juntar esta página con su respectivo notebook --></div>
 
     <script type="text/x-thebe-config">
     {
@@ -654,7 +583,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./matematicas_de_las_redes/matematicas_de_las_redes"
+            path: "./redes_complejas_y_sus_propiedades/redes_aleatorias"
         },
         predefinedOutput: true
     }
@@ -666,6 +595,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="redes_aleatorias_y_redes_reales.html" title="previous page"><span class="section-number">8.8. </span>Redes aleatorias y redes reales</a>
+    <a class='right-next' id="next-link" href="transicion_de_fase_en_redes_aleatorias.html" title="next page"><span class="section-number">8.10. </span>Transición de fase en redes aleatorias</a>
 
         </div>
         

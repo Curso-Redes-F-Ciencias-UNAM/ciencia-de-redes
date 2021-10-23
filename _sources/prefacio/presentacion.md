@@ -42,4 +42,4 @@ En este curso se revisarán las bases de la teoría de redes-grafos que permitan
 
 Este curso tiene un enfoque teórico y práctico. Cada sección teórica viene acompañada de diversas prácticas de programación en python donde se aplican los conocimientos adquiridos.
 
-Para los alumnos inscritos formalmente al curso, la parte teórica se cubre asincrónicamente, mientras que la parte práctica se realiza de forma sincrónica una vez a la semana por videollamada. El avance se monitoreará mediante la plataforma [moodle de la facultad](https://moodle.fciencias.unam.mx/cursos/course/view.php?id=273)
+Para los alumnos inscritos formalmente al curso, la parte teórica se cubre asincrónicamente, mientras que la parte práctica se realiza de forma sincrónica una vez a la semana por videollamada. El avance se monitoreará mediante la plataforma [moodle de la facultad](https://moodle.fciencias.unam.mx/cursos/course/view.php?id=273).

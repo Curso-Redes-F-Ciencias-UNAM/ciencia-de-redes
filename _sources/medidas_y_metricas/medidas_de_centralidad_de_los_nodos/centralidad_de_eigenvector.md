@@ -1,6 +1,6 @@
 # Centralidad de eigenvector
 
-Se presenta la centralidad de eigenvector y se proporciona una fuente para que ustedes revisen
+En el siguiente video se presenta la centralidad de eigenvector.
 
 <div class="iframe-container-out">
 	<div class="iframe-container-in">
@@ -8,6 +8,6 @@ Se presenta la centralidad de eigenvector y se proporciona una fuente para que u
 	</div>
 </div>
 
-:::{admonition} Nota
-Para profundizar en el tema consulta {cite:t}`newman_2018_networks` (p. 169)
-::::
+```{admonition} Nota
+Para profundizar en el tema recomendamos consultar {cite:t}`newman_2018_networks` (pág 169).
+````

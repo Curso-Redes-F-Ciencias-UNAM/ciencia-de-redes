@@ -8,7 +8,7 @@ En este video se revisa la definición de la centralidad de intermediación y se
 	</div>
 </div>
 
-:::{admonition} Corrección
+```{admonition} Corrección
 :class: danger
-En el minuto 3:50 se hace referencia a *"la notación del artículo de Newman"*, es un error. La referencia correcta es el artículo de {cite:t}`freeman_1978_centrality_in_social` que se proporcionó anteriormente.
-:::
+En el minuto 3:50 se hace referencia a *"la notación del artículo de Newman"*, es un error. La referencia correcta es el artículo de {cite:t}`freeman_1978_centrality_in_social`.
+```

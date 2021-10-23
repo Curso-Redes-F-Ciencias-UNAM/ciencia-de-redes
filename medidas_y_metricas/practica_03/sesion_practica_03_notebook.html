@@ -255,7 +255,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -362,8 +362,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias.html">
-     8.8. Redes reales y redes aleatorias
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
@@ -385,10 +395,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
@@ -598,22 +625,22 @@
 <h1><span class="section-number">7.1. </span>Práctica 3 (notebook)<a class="headerlink" href="#practica-3-notebook" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>En este notebook se aplican los siguientes conceptos:</p>
 <ul class="simple">
-<li><p>Medidas de grupos de nodos</p>
+<li><p><a class="reference internal" href="../medidas_de_grupos_de_nodos/presentacion.html"><span class="doc std std-doc">Medidas de grupos de nodos</span></a></p>
 <ul>
-<li><p>Coeficiente de agrupamiento (clustering): <a class="reference external" href="https://youtu.be/zH5oMNKtVoA">https://youtu.be/zH5oMNKtVoA</a></p></li>
-<li><p>Detección de comunidades: <a class="reference external" href="https://www.youtube.com/watch?v=pG5XKZqyFmk&amp;t">https://www.youtube.com/watch?v=pG5XKZqyFmk&amp;t</a></p></li>
+<li><p>Coeficiente de agrupamiento (clustering)</p></li>
+<li><p>Detección de comunidades</p></li>
 </ul>
 </li>
-<li><p>Propiedades globales: <a class="reference external" href="https://youtu.be/FBu3yA0CdwY">https://youtu.be/FBu3yA0CdwY</a></p>
+<li><p><a class="reference internal" href="../propiedades_globales_de_la_red/presentacion.html"><span class="doc std std-doc">Propiedades globales</span></a></p>
 <ul>
 <li><p>Componentes y máxima componente</p></li>
 <li><p>Medidas promedio</p></li>
-<li><p>Modularidad: <a class="reference external" href="https://www.youtube.com/watch?v=jlAZJqAqlTA&amp;t">https://www.youtube.com/watch?v=jlAZJqAqlTA&amp;t</a></p></li>
-<li><p>Distribución de grado: <a class="reference external" href="https://youtu.be/nUi203c53lA">https://youtu.be/nUi203c53lA</a></p></li>
+<li><p>Modularidad</p></li>
+<li><p>Distribución de grado</p></li>
 </ul>
 </li>
 </ul>
-<p>La única función nueva que se importar para esta práctica es greedy_modularity_communities, se se encuentra en networkx.algorithms.community y es para la detección de comunidades según el algoritmo de Newman, Clauset y Moore (ver <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.modularity_max.greedy_modularity_communities.html#networkx.algorithms.community.modularity_max.greedy_modularity_communities">documentación</a>)</p>
+<p>La única función nueva que se importar para esta práctica es <code class="docutils literal notranslate"><span class="pre">greedy_modularity_communities</span></code>, se se encuentra en <code class="docutils literal notranslate"><span class="pre">networkx.algorithms.community</span></code> y es para la detección de comunidades según el algoritmo de Newman, Clauset y Moore (ver <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.modularity_max.greedy_modularity_communities.html#networkx.algorithms.community.modularity_max.greedy_modularity_communities">documentación</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>

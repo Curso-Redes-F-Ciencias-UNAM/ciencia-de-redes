@@ -1,6 +1,6 @@
 # Centralidad de Katz
 
-Se presenta la centralidad de Katz y se proporciona un artículo con la motivación utilizada en el video (distinta aproximación a la de Newman)
+En el siguiente video se presenta la centralidad de Katz y se proporciona un artículo con la motivación utilizada en el video (distinta aproximación a la de Newman).
 
 <div class="iframe-container-out">
 	<div class="iframe-container-in">
@@ -9,5 +9,5 @@ Se presenta la centralidad de Katz y se proporciona un artículo con la motivaci
 </div>
 
 :::{admonition} Nota
-Para profundizar en el tema consulta {cite:t}`holme_saramaki_2013_temporal_networks`.
+Para profundizar en el tema recomendamos consultar {cite:t}`holme_saramaki_2013_temporal_networks`.
 :::

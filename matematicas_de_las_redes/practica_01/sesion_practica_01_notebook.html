@@ -255,7 +255,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -362,8 +362,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias.html">
-     8.8. Redes reales y redes aleatorias
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
@@ -385,10 +395,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
@@ -545,8 +572,8 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#funciones-utilizadas">
-   2.2.1. Funciones utilizadas:
+  <a class="reference internal nav-link" href="#introduccion">
+   2.2.1. Introducción
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -643,37 +670,39 @@
                 
   <div class="section" id="practica-1-notebook">
 <h1><span class="section-number">2.2. </span>Práctica 1 (notebook)<a class="headerlink" href="#practica-1-notebook" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Videos: <a class="reference external" href="https://youtube.com/playlist?list=PLCTzelSlkHdPKK26tvgFMz3jctFZwAnSX">https://youtube.com/playlist?list=PLCTzelSlkHdPKK26tvgFMz3jctFZwAnSX</a></p>
-<div class="section" id="funciones-utilizadas">
-<h2><span class="section-number">2.2.1. </span>Funciones utilizadas:<a class="headerlink" href="#funciones-utilizadas" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="introduccion">
+<h2><span class="section-number">2.2.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><a class="reference internal" href="sesion_practica_01_video.html"><span class="doc std std-doc">Videos para seguir esta práctica</span></a>.</p>
+<p>En este notebook se revisan las siguientes funciones:</p>
 <ul class="simple">
-<li><p>NetworkX</p>
+<li><p><strong>NetworkX</strong></p>
 <ul>
-<li><p>nx.Graph()</p></li>
-<li><p>nx.draw()</p></li>
-<li><p>G.nodes</p></li>
-<li><p>G.edges</p></li>
-<li><p>G.degree</p></li>
-<li><p>G.add_node()</p></li>
-<li><p>G.add_edges()</p></li>
-<li><p>nx.from_numpy_matrix()</p></li>
-<li><p>nx.DiGraph()</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nx.Graph()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nx.draw()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.nodes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.edges</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.degree</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.add_node()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G.add_edges()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nx.from_numpy_matrix()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nx.DiGraph()</span></code></p></li>
 </ul>
 </li>
-<li><p>Numpy</p>
+<li><p><strong>Numpy</strong></p>
 <ul>
-<li><p>np.array()</p></li>
-<li><p>np.reshape()</p></li>
-<li><p>A.dot(B)</p></li>
-<li><p>roll</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.array()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.reshape()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A.dot(B)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">roll</span></code></p></li>
 </ul>
 </li>
-<li><p>Matplotlib</p>
+<li><p><strong>Matplotlib</strong></p>
 <ul>
-<li><p>plt.imshow()</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code></p></li>
 </ul>
 </li>
 </ul>
+<p>Iniciamos importando las paqueterias necesarias.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -709,6 +738,14 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/sesion_practica_01_notebook_5_0.png" src="../../_images/sesion_practica_01_notebook_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> 
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -758,7 +795,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_10_0.png" src="../../_images/sesion_practica_01_notebook_10_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_11_0.png" src="../../_images/sesion_practica_01_notebook_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -773,7 +810,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_11_0.png" src="../../_images/sesion_practica_01_notebook_11_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_12_0.png" src="../../_images/sesion_practica_01_notebook_12_0.png" />
 </div>
 </div>
 <p>Ya que la red tiene varios nodos, se pueden agregar los enlaces mediante la función <code class="docutils literal notranslate"><span class="pre">add_edge()</span></code>. Notar la estructura de la función que tiene como argumentos los dos nodos que queremos enlazar.</p>
@@ -795,7 +832,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_15_0.png" src="../../_images/sesion_practica_01_notebook_15_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_16_0.png" src="../../_images/sesion_practica_01_notebook_16_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -878,7 +915,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_25_0.png" src="../../_images/sesion_practica_01_notebook_25_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_26_0.png" src="../../_images/sesion_practica_01_notebook_26_0.png" />
 </div>
 </div>
 <div class="section" id="red-lineal">
@@ -903,7 +940,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_28_0.png" src="../../_images/sesion_practica_01_notebook_28_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_29_0.png" src="../../_images/sesion_practica_01_notebook_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -944,7 +981,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_32_0.png" src="../../_images/sesion_practica_01_notebook_32_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_33_0.png" src="../../_images/sesion_practica_01_notebook_33_0.png" />
 </div>
 </div>
 </div>
@@ -976,7 +1013,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_35_0.png" src="../../_images/sesion_practica_01_notebook_35_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_36_0.png" src="../../_images/sesion_practica_01_notebook_36_0.png" />
 </div>
 </div>
 </div>
@@ -1002,7 +1039,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_38_0.png" src="../../_images/sesion_practica_01_notebook_38_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_39_0.png" src="../../_images/sesion_practica_01_notebook_39_0.png" />
 </div>
 </div>
 </div>
@@ -1040,7 +1077,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_41_0.png" src="../../_images/sesion_practica_01_notebook_41_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_42_0.png" src="../../_images/sesion_practica_01_notebook_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1086,7 +1123,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_45_0.png" src="../../_images/sesion_practica_01_notebook_45_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_46_0.png" src="../../_images/sesion_practica_01_notebook_46_0.png" />
 </div>
 </div>
 </div>
@@ -1165,7 +1202,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_53_0.png" src="../../_images/sesion_practica_01_notebook_53_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_54_0.png" src="../../_images/sesion_practica_01_notebook_54_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1196,7 +1233,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.graph.Graph at 0x7f455e55d6d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/sesion_practica_01_notebook_55_1.png" src="../../_images/sesion_practica_01_notebook_55_1.png" />
+<img alt="../../_images/sesion_practica_01_notebook_56_1.png" src="../../_images/sesion_practica_01_notebook_56_1.png" />
 </div>
 </div>
 </div>
@@ -1260,7 +1297,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;networkx.classes.graph.Graph at 0x7f455e43c390&gt;
 </pre></div>
 </div>
-<img alt="../../_images/sesion_practica_01_notebook_60_1.png" src="../../_images/sesion_practica_01_notebook_60_1.png" />
+<img alt="../../_images/sesion_practica_01_notebook_61_1.png" src="../../_images/sesion_practica_01_notebook_61_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1288,7 +1325,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_62_0.png" src="../../_images/sesion_practica_01_notebook_62_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_63_0.png" src="../../_images/sesion_practica_01_notebook_63_0.png" />
 </div>
 </div>
 </div>
@@ -1309,7 +1346,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_64_0.png" src="../../_images/sesion_practica_01_notebook_64_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_65_0.png" src="../../_images/sesion_practica_01_notebook_65_0.png" />
 </div>
 </div>
 </div>
@@ -1355,7 +1392,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_69_0.png" src="../../_images/sesion_practica_01_notebook_69_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_70_0.png" src="../../_images/sesion_practica_01_notebook_70_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1375,7 +1412,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f455c99f2d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/sesion_practica_01_notebook_71_1.png" src="../../_images/sesion_practica_01_notebook_71_1.png" />
+<img alt="../../_images/sesion_practica_01_notebook_72_1.png" src="../../_images/sesion_practica_01_notebook_72_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1397,7 +1434,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f455c90b910&gt;
 </pre></div>
 </div>
-<img alt="../../_images/sesion_practica_01_notebook_74_1.png" src="../../_images/sesion_practica_01_notebook_74_1.png" />
+<img alt="../../_images/sesion_practica_01_notebook_75_1.png" src="../../_images/sesion_practica_01_notebook_75_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1419,7 +1456,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f76e8ca4f50&gt;
 </pre></div>
 </div>
-<img alt="../../_images/sesion_practica_01_notebook_76_1.png" src="../../_images/sesion_practica_01_notebook_76_1.png" />
+<img alt="../../_images/sesion_practica_01_notebook_77_1.png" src="../../_images/sesion_practica_01_notebook_77_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1433,7 +1470,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f76de2c7990&gt;
 </pre></div>
 </div>
-<img alt="../../_images/sesion_practica_01_notebook_77_1.png" src="../../_images/sesion_practica_01_notebook_77_1.png" />
+<img alt="../../_images/sesion_practica_01_notebook_78_1.png" src="../../_images/sesion_practica_01_notebook_78_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1443,7 +1480,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_78_0.png" src="../../_images/sesion_practica_01_notebook_78_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_79_0.png" src="../../_images/sesion_practica_01_notebook_79_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1458,7 +1495,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f76e8798810&gt;
 </pre></div>
 </div>
-<img alt="../../_images/sesion_practica_01_notebook_79_1.png" src="../../_images/sesion_practica_01_notebook_79_1.png" />
+<img alt="../../_images/sesion_practica_01_notebook_80_1.png" src="../../_images/sesion_practica_01_notebook_80_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1491,7 +1528,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sesion_practica_01_notebook_83_0.png" src="../../_images/sesion_practica_01_notebook_83_0.png" />
+<img alt="../../_images/sesion_practica_01_notebook_84_0.png" src="../../_images/sesion_practica_01_notebook_84_0.png" />
 </div>
 </div>
 <p>Igualmente, como sabemos, las potencias de la matriz de adyacencia proporcionan el número de caminos entre parejas de nodos. Esto puede utilizarse mediante la función <code class="docutils literal notranslate"><span class="pre">dot</span></code> de numpy, con la cual podemos obtener las potencias de la matriz de adyacencia. A continuación se obtiene el cubo de <code class="docutils literal notranslate"><span class="pre">A</span></code>, lo que nos daría el número de caminos de longitud tres entre todas las parejas de nodos. Verifica que esta información coincida con la red previamente visualizada (tal vez sean útiles las etiquetas de los nodos).</p>
