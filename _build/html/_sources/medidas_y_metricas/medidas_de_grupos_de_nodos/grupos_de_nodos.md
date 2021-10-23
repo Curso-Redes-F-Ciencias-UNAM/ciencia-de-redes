@@ -6,4 +6,4 @@ Como referencia complementaria, se recomienda revisar las definiciones que da {c
 - Plexes (tuplas)
 - Cores (nucleos)
 - Componentes
-- k-componentes
+- $k$-componentes

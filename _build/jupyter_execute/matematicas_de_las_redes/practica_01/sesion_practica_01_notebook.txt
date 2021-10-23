@@ -13,6 +13,9 @@ G = nx.Graph()
 
 nx.draw(G) 
 
+
+nx.draw(G) 
+
 # Un objeto de tipo Graph tiene una propiedad llamada nodes y es la lista de nodos.
 # En el caso de la red que creamos no es otra cosa que una lista sin elementos:
 

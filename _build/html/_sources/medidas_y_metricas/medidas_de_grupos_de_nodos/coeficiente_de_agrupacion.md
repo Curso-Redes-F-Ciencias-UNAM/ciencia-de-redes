@@ -1,4 +1,4 @@
-# Coeficiente de agrupamiento/acumulación
+# Coeficiente de acumulación
 
 <div class="iframe-container-out">
 	<div class="iframe-container-in">

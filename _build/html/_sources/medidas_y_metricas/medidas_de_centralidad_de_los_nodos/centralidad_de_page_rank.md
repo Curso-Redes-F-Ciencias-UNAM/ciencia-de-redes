@@ -4,6 +4,6 @@ El enfoque del libro de {cite:t}`newman_2018_networks` es interesante por lo sig
 
 La centralidad Page-Rank, llamada así por quien la propuso por primera vez, Larry Page (fundador de Google junto con Sergey Brin; {cite:t}`bin_page_1998_the_anatomy`), tiene importancia histórica por estar detrás del algoritmo de búsqueda de Google. Frente a la pregunta inicial de este bloque, ¿qué tan importante es un nodo en la red?, este algoritmo fue una innovación ya que por primera vez pudo ordenar a todas las páginas de la *WWW* según cierta importancia que tuvo muchas ventajas. Se dice que fue la idea que hizo lo que Google es hoy. 
 
-:::{admonition} Nota
-Recuerda que todos los libros y artículos citados se pueden descargar desde la [lista de Referencias](../../referencias/referencias.md)
-:::
+```{admonition} Nota
+Recuerda que todos los libros y artículos citados se pueden descargar desde la [lista de Referencias](../../referencias/referencias.md).
+```

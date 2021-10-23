@@ -257,7 +257,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -364,8 +364,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../redes_aleatorias/redes_reales_y_redes_aleatorias.html">
-     8.8. Redes reales y redes aleatorias
+    <a class="reference internal" href="../redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
@@ -387,10 +397,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../redes_con_independencia_de_escala/presentacion.html">
@@ -866,7 +893,10 @@
 </div>
 </div>
 </div>
-<p>Ya que se creó la red como objeto de networkx, vamos a encontrar sus propiedades generales (número de nodos, número de enlaces, grado promedio y coeficiente de clustering promedio). Además, a la red le asociaremos la probabilidad de enlace <span class="math notranslate nohighlight">\(p\)</span> <strong>que le correspondería <em>si fuera</em> una red aleatoria</strong>, es decir: $<span class="math notranslate nohighlight">\(p = \frac{\left&lt; k \right&gt;}{N-1}\)</span><span class="math notranslate nohighlight">\( a partir de sus propiedades empíricas \)</span>N<span class="math notranslate nohighlight">\( y \)</span>\left&lt;k\right&gt;$.</p>
+<p>Ya que se creó la red como objeto de networkx, vamos a encontrar sus propiedades generales (número de nodos, número de enlaces, grado promedio y coeficiente de clustering promedio). Además, a la red le asociaremos la probabilidad de enlace <span class="math notranslate nohighlight">\(p\)</span> <strong>que le correspondería <em>si fuera</em> una red aleatoria</strong>, es decir:</p>
+<div class="math notranslate nohighlight">
+\[p = \frac{\left&lt; k \right&gt;}{N-1}\]</div>
+<p>a partir de sus propiedades empíricas <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(\left&lt;k\right&gt;\)</span>.</p>
 <p>La intención de esto es, a partir de esa <span class="math notranslate nohighlight">\(p\)</span> que junto con <span class="math notranslate nohighlight">\(N\)</span> caracteriza a una red aleatoria <span class="math notranslate nohighlight">\(G(N,p)\)</span>, determinar las propiedades de la red aleatoria equivalente. En otras palabras, calcularemos las propiedades de la red aleatoria (el modelo) que tiene el mismo tamaño y el mismo grado promedio que nuestra red real, para luego compararlas con las propiedades de nuestra red real. Así, podremos ver si el modelo de red aleatoria se ajusta a nuestra red real.  Las propiedades que usaremos para la comparación son:</p>
 <ul class="simple">
 <li><p>Coeficiente de clustering promedio</p></li>

@@ -255,7 +255,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -362,8 +362,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias.html">
-     8.8. Redes reales y redes aleatorias
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
@@ -385,10 +395,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
@@ -607,7 +634,7 @@ Si trabajas en Colab, es necesario instalar otra paquetería que permite cargar 
 <p>Hecho esto, ya puedes importar las paqueterías para empezar a trabajar. Como apoyo, a continuación está un video para esta primera parte:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -621,7 +648,7 @@ Si trabajas en Colab, es necesario instalar otra paquetería que permite cargar 
 <p>Sólo para quienes trabajan en Colab: la siguiente celda utiliza la función upload, que abre una ventana emergente en la que debes seleccionar el archivo con los datos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -646,7 +673,7 @@ Si trabajas en Colab, es necesario instalar otra paquetería que permite cargar 
 <p>Posteriormente, en cualquiera de los casos, utilizaremos la función de  pandas <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> que sirve para abrir cualquier archivo de texto y generar una tabla con datos. Como siempre, te recomendamos ir a la documentación de la función para identificar los argumentos y lo que hacen, pero por lo pronto sólo usaremos los que se ven a continuación. En el primer video se explica lo importante del argumento <code class="docutils literal notranslate"><span class="pre">nrows</span></code> y cómo elegir los valores adecuados para <code class="docutils literal notranslate"><span class="pre">skiprows</span></code>, <code class="docutils literal notranslate"><span class="pre">header</span></code> y <code class="docutils literal notranslate"><span class="pre">sep</span></code>, que dependen de la estructura del arhcivo de datos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># se genera la cadena con la ruta del archivo. OJO: debes colocar el nombre del archivo que tú hayas descargado</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># se genera la cadena con la ruta del archivo. OJO: debes colocar el nombre del archivo que tú hayas descargado</span>
 
 <span class="n">ruta</span> <span class="o">=</span> <span class="s1">&#39;ca-netscience.mtx&#39;</span> 
 
@@ -753,7 +780,7 @@ arreglo de parejas de nodos que utilizaremos para agregar a un <code class="docu
 en la variable <code class="docutils literal notranslate"><span class="pre">enlaces</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">enlaces</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enlaces</span> <span class="o">=</span> <span class="n">datos</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">enlaces</span>
 </pre></div>
 </div>
@@ -761,7 +788,7 @@ en la variable <code class="docutils literal notranslate"><span class="pre">enla
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">enlaces</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -773,7 +800,7 @@ en la variable <code class="docutils literal notranslate"><span class="pre">enla
 <p>La segunda opción es utilizar una función de networkx que directamente lee un DataFrame de pandas y lo convierte en una red. Tal función es <code class="docutils literal notranslate"><span class="pre">from_pandas_edgelist()</span></code> y lo único que hay que indicar es, además de la tabla, las columnas que interpretará como los nodos de origen (source) y destino (target) de cada enlace. En este caso las columnas son 0 y 1:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span> <span class="n">source</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -781,7 +808,7 @@ en la variable <code class="docutils literal notranslate"><span class="pre">enla
 <p>En cualquiera de las dos opciones, ya tenemos la red <code class="docutils literal notranslate"><span class="pre">G</span></code> y podemos visualizarla tal y como se hizo en la práctica 1. En la siguiente celda se usan algunos argumentos de la función draw, para que exploren, sin embargo se recomienda ver todos los argumentos directamente en la documentación: <a class="reference external" href="https://networkx.org/documentation/networkx-1.7/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html">https://networkx.org/documentation/networkx-1.7/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
         <span class="n">node_size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">#probar distintos valores: 50, 100, 200</span>
         <span class="n">node_color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="c1">#probar distintos colores:&#39;g&#39;, &#39;y&#39;, &#39;b&#39;, &#39;r&#39;, &#39;k&#39;</span>
@@ -796,7 +823,7 @@ en la variable <code class="docutils literal notranslate"><span class="pre">enla
 <p>Igualmente, la matriz de adyacencia (como se hizo en la práctica 1) ya nos da algo de información sobre la estructura de la red. Notar que, como dice Barabasi, la mayoría de las redes son «ralas» (sparse), esto es, tienen muy pocos enlaces en comparación con el número de nodos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_array</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;hot&#39;</span><span class="p">)</span>
@@ -815,9 +842,9 @@ en la variable <code class="docutils literal notranslate"><span class="pre">enla
 <div class="section" id="centralidad-de-los-nodos">
 <h2><span class="section-number">4.1.3. </span>Centralidad de los nodos<a class="headerlink" href="#centralidad-de-los-nodos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Networkx tiene disponibles todas las centralidades vistas en la parte teórica, y muchas más (ver la <a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/centrality.html">documentación</a>). Algunos ejemplos se muestran en la siguiente celda:</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="c1">#nx.betweenness_centrality(G)</span>
 <span class="c1">#nx.degree_centrality(G)</span>
 <span class="c1">#nx.pagerank(G)</span>
@@ -1211,7 +1238,7 @@ en la variable <code class="docutils literal notranslate"><span class="pre">enla
 <p>Como puedes ver, estas funciones nos regresan los valores de la centralidad en un diccionario que, a cada nodo (identificado por un número), le asocia un valor. Esto permite obtener el valor específico de la centralidad de un nodo específico mediante corchetes, aunque eso no suele ser muy útil:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="c1">#ejemplo, centralidad de cercanía del nodo 5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="c1">#ejemplo, centralidad de cercanía del nodo 5</span>
 </pre></div>
 </div>
 </div>
@@ -1236,7 +1263,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span> <span class="c1"># crea una lista por extensión: definimos manualmente cada elemento</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span> <span class="c1"># crea una lista por extensión: definimos manualmente cada elemento</span>
 </pre></div>
 </div>
 </div>
@@ -1248,7 +1275,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span> <span class="c1">#por comprensión: los elementos son los cuadrados de los números del 0 al 5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span> <span class="c1">#por comprensión: los elementos son los cuadrados de los números del 0 al 5</span>
 </pre></div>
 </div>
 </div>
@@ -1260,7 +1287,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">-</span><span class="mi">3</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span> <span class="c1"># por comprensión</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">-</span><span class="mi">3</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)]</span> <span class="c1"># por comprensión</span>
 </pre></div>
 </div>
 </div>
@@ -1276,7 +1303,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 
 <span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">]</span>
 
@@ -1288,7 +1315,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 <p>Y a continuación se introduce el arreglo sizes como argumento de la función draw. OJO: como los valores de la centralidad son muy pequeños, multiplicamos el arreglo por 10000 para que los nodos se vean. Ese valor puede variar según la red, deben explorar distintos valores hasta encontrar una visualización que les satisfaga.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span> <span class="p">)</span>
 
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
         <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10000</span><span class="o">*</span><span class="n">sizes</span><span class="p">)</span> <span class="c1">#jugar con el factor</span>
@@ -1303,7 +1330,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 <p>Finalmente, si nos decidimos por definir los colores de los nodos con un arreglo, podemos también determinar la paleta de color (<code class="docutils literal notranslate"><span class="pre">cmap</span></code>) con el que se trabajará. Para elegir una paleta, o mapeo, de colores, puede googlear «cmap python» y seguro encontrarán una página con los nombres posibles. Aquí usaremos «viridis»</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1311,7 +1338,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
         <span class="n">node_size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
@@ -1336,7 +1363,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 <p>Finalmente (sólo para colab), volvemos a utilizar una función de <code class="docutils literal notranslate"><span class="pre">files</span></code>, en este caso <code class="docutils literal notranslate"><span class="pre">files.download()</span></code>, para descargar la imagen generada a su compu.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span> <span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span> <span class="p">)</span>
 
 <span class="n">nx</span><span class="o">.</span><span class="n">draw_kamada_kawai</span><span class="p">(</span><span class="n">G</span><span class="p">,</span>
         <span class="n">node_size</span> <span class="o">=</span> <span class="mi">10000</span><span class="o">*</span><span class="n">sizes</span><span class="p">,</span>
@@ -1394,7 +1421,7 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 <p>Para ello únicamente guardamos las centralidades en distintos arreglos, y los graficamos todos con la función <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>; se puede agregar etiquetas para incorporar a la gráfica.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">diccionario</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
 
 <span class="n">diccionario</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
@@ -1427,19 +1454,18 @@ Hay dos formas de crear listas en python: por extensión (como hemos trabajado h
 <p>Observación sobre betweenness</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="n">G1</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
 <span class="n">G1</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">])</span>
 
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">with_labels</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">endpoints</span><span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">endpoints</span><span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

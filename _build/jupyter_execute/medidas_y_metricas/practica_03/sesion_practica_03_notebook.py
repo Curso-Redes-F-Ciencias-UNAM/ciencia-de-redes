@@ -4,17 +4,18 @@
 # # Práctica 3 (notebook)
 
 # En este notebook se aplican los siguientes conceptos:
-# - Medidas de grupos de nodos
-#   - Coeficiente de agrupamiento (clustering): https://youtu.be/zH5oMNKtVoA
-#   - Detección de comunidades: https://www.youtube.com/watch?v=pG5XKZqyFmk&t
-# - Propiedades globales: https://youtu.be/FBu3yA0CdwY
+# 
+# - [Medidas de grupos de nodos](../medidas_de_grupos_de_nodos/presentacion.md)
+#   - Coeficiente de agrupamiento (clustering)
+#   - Detección de comunidades
+# - [Propiedades globales](../propiedades_globales_de_la_red/presentacion.md)
 #   - Componentes y máxima componente
 #   - Medidas promedio
-#   - Modularidad: https://www.youtube.com/watch?v=jlAZJqAqlTA&t
-#   - Distribución de grado: https://youtu.be/nUi203c53lA
+#   - Modularidad
+#   - Distribución de grado
 # 
 # 
-# La única función nueva que se importar para esta práctica es greedy_modularity_communities, se se encuentra en networkx.algorithms.community y es para la detección de comunidades según el algoritmo de Newman, Clauset y Moore (ver [documentación](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.modularity_max.greedy_modularity_communities.html#networkx.algorithms.community.modularity_max.greedy_modularity_communities))
+# La única función nueva que se importar para esta práctica es `greedy_modularity_communities`, se se encuentra en `networkx.algorithms.community` y es para la detección de comunidades según el algoritmo de Newman, Clauset y Moore (ver [documentación](https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.modularity_max.greedy_modularity_communities.html#networkx.algorithms.community.modularity_max.greedy_modularity_communities))
 
 # In[ ]:
 

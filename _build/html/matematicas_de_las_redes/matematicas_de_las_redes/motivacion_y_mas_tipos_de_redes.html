@@ -255,7 +255,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -362,8 +362,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias.html">
-     8.8. Redes reales y redes aleatorias
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
@@ -385,10 +395,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
@@ -527,17 +554,20 @@
                 
   <div class="section" id="motivacion-y-mas-tipos-de-redes">
 <h1><span class="section-number">1.3. </span>Motivación y más tipos de redes<a class="headerlink" href="#motivacion-y-mas-tipos-de-redes" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>A continuación se listan algunos apartados breves del libro de Barabasi <span id="id1">[<a class="reference internal" href="../../referencias/referencias.html#id2">Barabási, 2016</a>]</span> para que ustedes lean por su cuenta y profundicen su comprensión de las redes y algunas propiedades de las redes reales. Aunque sería conveniente que revisaran todo el capítulo, algunos de los temas que omitimos en esta selección están contenidos en los videos o serán revisados en las siguientes semanas. Otros no son de tanta importancia para los análisis que haremos en este curso.</p>
+<p>A continuación se listan algunos apartados breves del libro de <span id="id1">Barabási [<a class="reference internal" href="../../referencias/referencias.html#id2">2016</a>]</span> para que ustedes lean por su cuenta y profundicen su comprensión de las redes y algunas propiedades de las redes reales. Aunque sería conveniente que revisaran todo el capítulo, algunos de los temas que omitimos en esta selección están contenidos en los videos o serán revisados en las siguientes semanas. Otros no son de tanta importancia para los análisis que haremos en este curso.</p>
 <p>El cuestionario de esta semana estará basado en los ejercicios de este capítulo.</p>
 <p>Contenidos para revisión individual:</p>
 <ul class="simple">
-<li><p>Motivación. <a class="reference external" href="http://networksciencebook.com/chapter/2#bridges">2.1 The Brideges of Königsberg</a></p></li>
-<li><p>Relación redes - gráficas. <a class="reference external" href="http://networksciencebook.com/chapter/2#networks-graphs">2.2 Networks and Graphs</a></p></li>
-<li><p>Redes poco densas. <a class="reference external" href="http://networksciencebook.com/chapter/2#real-networks">2.5 Real Networks are Sparse</a></p></li>
-<li><p>Redes bipartitas. <a class="reference external" href="http://networksciencebook.com/chapter/2#bipartite-networks">2.7 Bipartite Networks</a></p></li>
-<li><p>Conectividad o conexidad. <a class="reference external" href="http://networksciencebook.com/chapter/2#connectedness">2.9 Connectedness</a></p></li>
+<li><p>Motivación: <a class="reference external" href="http://networksciencebook.com/chapter/2#bridges">2.1 The Brideges of Königsberg</a></p></li>
+<li><p>Relación redes-gráficas: <a class="reference external" href="http://networksciencebook.com/chapter/2#networks-graphs">2.2 Networks and Graphs</a></p></li>
+<li><p>Redes poco densas: <a class="reference external" href="http://networksciencebook.com/chapter/2#real-networks">2.5 Real Networks are Sparse</a></p></li>
+<li><p>Redes bipartitas: <a class="reference external" href="http://networksciencebook.com/chapter/2#bipartite-networks">2.7 Bipartite Networks</a></p></li>
+<li><p>Conectividad o conexidad: <a class="reference external" href="http://networksciencebook.com/chapter/2#connectedness">2.9 Connectedness</a></p></li>
 </ul>
-<p>Recuerda que cualquier duda que tengas puedes externarla en el foro de dudas. Eso seguro enriquecerá al grupo entero.</p>
+<div class="tip admonition">
+<p class="admonition-title">Sugerencia</p>
+<p>Cualquier duda que tengas puedes externarla en el foro de dudas. Eso seguro enriquecerá al grupo entero.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

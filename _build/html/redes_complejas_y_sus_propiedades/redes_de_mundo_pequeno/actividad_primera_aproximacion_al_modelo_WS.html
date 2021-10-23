@@ -1,0 +1,1105 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.2. Primera aproximación al modelo Watts-Strogatz (notebook) &#8212; Ciencia de Redes</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="11. Redes con independencia de escala (scale-free)" href="../redes_con_independencia_de_escala/presentacion.html" />
+    <link rel="prev" title="10.1. Introducción al modelo Watts-Strogatz" href="introduccion_al_modelo_watts_strogatz.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  Prefacio
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../prefacio/presentacion.html">
+   Presentación
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 1: Matemáticas de las redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/presentacion.html">
+   1. Matemáticas de las redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/tipos_de_redes_y_matriz_de_adyacencia.html">
+     1.1. Tipos de redes y matriz de adyacencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/definicion_de_grado.html">
+     1.2. Definición de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/motivacion_y_mas_tipos_de_redes.html">
+     1.3. Motivación y más tipos de redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades.html">
+     1.4. Matríz de adyacencia y sus propiedades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/numero_de_enlaces_de_la_red.html">
+     1.5. Número de enlaces de la red
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/caminos_y_distancia_entre_nodos.html">
+     1.6. Caminos y distancia entre nodos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/presentacion.html">
+   2. Práctica 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/primeros_pasos_python_notebook.html">
+     2.1. Preliminar: primeros pasos con Python (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_notebook.html">
+     2.2. Práctica 1 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_video.html">
+     2.3. Práctica 1 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2: Medidas y métricas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/presentacion.html">
+   3. Medidas de centralidad de los nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
+     3.1. Centralidad de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
+     3.2. Centralidad de cercanía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
+     3.3. Centralidad de intermediación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
+     3.4. Centralidad de eigenvector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
+     3.5. Centralidad de Katz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
+     3.6. Centralidad de Page Rank (opcional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_02/presentacion.html">
+   4. Práctica 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_notebook.html">
+     4.1. Práctica 2 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_video.html">
+     4.2. Práctica 2 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/presentacion.html">
+   5. Medidas de grupos de nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
+     5.1. Coeficiente de acumulación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/grupos_de_nodos.html">
+     5.2. Grupos de nodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/modularidad.html">
+     5.3. Modularidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/presentacion.html">
+   6. Propiedades globales de la red
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/propiedades_globales.html">
+     6.1. Propiedades globales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/distribucion_de_grado.html">
+     6.2. Distribución de grado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_03/presentacion.html">
+   7. Práctica 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_03/sesion_practica_03_notebook.html">
+     7.1. Práctica 3 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3: Redes complejas y sus propiedades
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../redes_aleatorias/presentacion.html">
+   8. Redes aleatorias
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/actividad_introductoria_redes_aleatorias.html">
+     8.1. Actividad introductoria a las redes aleatorias (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/definicion_de_red_aleatoria.html">
+     8.2. Definición red aleatoria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/distribucion_binomial.html">
+     8.3. Distribución binomial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/numero_de_enlaces.html">
+     8.4. Número de enlaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/grado_promedio_distribucion_de_grado_y_clustering.html">
+     8.5. Grado promedio, distribución de grado y clustering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/alerta_de_spoiler.html">
+     8.6. Alerta de spoiler
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/distribucion_binomial_y_de_poisson.html">
+     8.7. Distribución biniomial y de Poisson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../practica_04/presentacion.html">
+   9. Práctica 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../practica_04/sesion_practica_04_notebook.html">
+     9.1. Práctica 4 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="presentacion.html">
+   10. Redes de mundo pequeño
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../redes_con_independencia_de_escala/presentacion.html">
+   11. Redes con independencia de escala (scale-free)
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 4: Procesos en redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/presentacion.html">
+   12. Difusión en redes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../procesos_en_redes/percolacion_en_redes/presentacion.html">
+   13. Percolación en redes
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Parte 5: Estudio de redes reales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html">
+   14. Redes de información
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_en_biologia/presentacion.html">
+   15. Redes en biología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_sociales/presentacion.html">
+   16. Redes sociales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/proyectos_finales/presentacion.html">
+   17. Proyectos finales
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Referencias
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../referencias/referencias.html">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcion-anillo">
+   10.2.1. Función anillo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matriz-de-distancia-distancia-promedio-y-diametro">
+   10.2.2. Matriz de distancia, distancia promedio y diámetro
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcion-cambio-de-enlaces">
+   10.2.3. Función cambio de enlaces
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#varias-veces">
+     10.2.3.1. Varias veces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comportamiento-de-diametro-distancia-media-y-clustering">
+     10.2.3.2. Comportamiento de diámetro, distancia media y clustering
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-experimento-de-watts-strogatz">
+   10.2.4. El «experimento» de Watts-Strogatz
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="primera-aproximacion-al-modelo-watts-strogatz-notebook">
+<h1><span class="section-number">10.2. </span>Primera aproximación al modelo Watts-Strogatz (notebook)<a class="headerlink" href="#primera-aproximacion-al-modelo-watts-strogatz-notebook" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Watts y Strogatz parten de una red regular similar a la que generamos en las primeras sesiones prácticas. Le llamamos red anillo y tiene la característica de que su coeficiente de clustering es constante e independiente de <span class="math notranslate nohighlight">\(N\)</span>. Mediante esa estructura se puede generar una red tan grande como quiera.</p>
+<div class="section" id="funcion-anillo">
+<h2><span class="section-number">10.2.1. </span>Función anillo<a class="headerlink" href="#funcion-anillo" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En la siguiente celda puedes decidir la cantidad de nodos adyacentes en el anillo con los que cada nodo estará conectado. Se necesita que estén conectados, como mínimo, a segundos vecinos para que el coeficiente de clustering sea distinto de cero. Juega con esa variable descomentando las líneas (o generando nuevas) y con el número de nodos de la red para ver cómo se comporta el coeficiente de clustering de los nodos.</p>
+<p>Notar que se modificó un poco la definición de la red anillo, introduciendo un segundo parámetro (<code class="docutils literal notranslate"><span class="pre">l</span></code>) para determinar con cuántos «l-vecinos» estará conectado cada nodo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Red Anillo regular</span>
+
+<span class="k">def</span> <span class="nf">Anillo</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">nodos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span> <span class="n">nodos</span> <span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span> <span class="nb">zip</span><span class="p">(</span> <span class="n">nodos</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">nodos</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># juega con ambos parámetros para ver la estructura y el coeficiente de clustering</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">Anillo</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;el coeficiente de clustering de la red es : &#39;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora se presenta la misma red pero se distingue al primer nodo añadido, sólo con la intención de que lo distingan y lo utilicen como referencia cuando la red empiece a ser modificada. Ese es el nodo 0. En la siguiente celda también se calcula el diámetro de la red. Hasta ahora, como pueden verificarlo, el diámetro de la red es una función lineal del tamaño de los nodos; no tiene, en absoluto, la propiedad de mundo pequeño.</p>
+<p>¿Cómo se relaciona el diámetro con la definición de la red, es decir, si los nodos se conectan a segundos, terceros, cuartos, etc., vecinos?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">Anillo</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">tamanos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">300</span><span class="p">]</span>
+<span class="n">tamanos</span> <span class="o">=</span> <span class="n">tamanos</span> <span class="o">+</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="mi">25</span><span class="p">]</span>
+<span class="n">colores</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">]</span>
+<span class="n">colores</span> <span class="o">=</span> <span class="n">colores</span> <span class="o">+</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="n">tamanos</span><span class="p">,</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">colores</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Clustering = &#39;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diametro = &#39;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matriz-de-distancia-distancia-promedio-y-diametro">
+<h2><span class="section-number">10.2.2. </span>Matriz de distancia, distancia promedio y diámetro<a class="headerlink" href="#matriz-de-distancia-distancia-promedio-y-diametro" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ahora, para visualizar el comportamiento de las distancias entre cualquier pareja de nodos, utilizamos una representación gráfica (mediante <code class="docutils literal notranslate"><span class="pre">imshow</span></code>) de la matriz de distancias entre nodos.
+Para ello se genera una matriz cuadrada de <span class="math notranslate nohighlight">\(N \times N\)</span> y se asigna a cada entrada <span class="math notranslate nohighlight">\((i,j)\)</span> la distancia <span class="math notranslate nohighlight">\(d_{ij}\)</span> entre los nodos <span class="math notranslate nohighlight">\((i,j)\)</span>.</p>
+<p>Después, mediante el uso de la función <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> se visualizan la matriz de adyacencia y la red juntas. Utilicen esta representación para comprender la estructura de la matriz de distancias y cómo se relacionan el diámetro y la distancia promedio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matriz de distancias y distancias caracteristicas</span>
+
+<span class="n">MatD0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">MatD0</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="n">dmin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">MatD0</span><span class="p">)</span>
+<span class="n">dmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">MatD0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="o">.</span><span class="mi">6</span> <span class="c1">#parametro para jugar con el tamaño de la imagen</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mi">7</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> 
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="n">tamanos</span><span class="p">,</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">colores</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">)</span>
+
+
+<span class="n">pos</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">MatD0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">dmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">dmax</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distancias&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Nodo j&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Nodo i&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distancia máxima entre nodos (diámetro): </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">MatD0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distancia promedio entre nodos: </span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MatD0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coeficiente de clustering promedio de la red: </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funcion-cambio-de-enlaces">
+<h2><span class="section-number">10.2.3. </span>Función cambio de enlaces<a class="headerlink" href="#funcion-cambio-de-enlaces" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La idea principal de Watts y Strogatz fue reducir la distancia entre todas las parejas de nodos cambiando de forma aleatoria enlaces. Esto generaría «puentes» entre enlaces que originalmente están lejanos pero que podrían modificar la estructura completa de las distancias. Veamos esto con detalle.</p>
+<p>Primero hay que definir una red <code class="docutils literal notranslate"><span class="pre">cambio_enlace</span></code> que hace lo siguiente:</p>
+<ul class="simple">
+<li><p>selecciona un nodo aleatorio de la red mediante la función <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code> que toma un objeto iterable y regresa un elemento al azar.</p></li>
+<li><p>selecciona un nodo entre los vecinos del primer nodo.</p></li>
+<li><p>remueve el enlace entre esos dos nodos</p></li>
+<li><p>de los nodos restantes, elije uno al azar. Para esto se utiliza la estructura de conjuntos en python. Los conjuntos pueden restarse para sacar los elementos de un conjunto de entre los elementos de otro. Aquí se toma el conjunto de los nodos de G mediante <code class="docutils literal notranslate"><span class="pre">set(G)</span></code> y se le quitan dos conjuntos: el conjunto de los vecinos del nodo original, mediante <code class="docutils literal notranslate"><span class="pre">set(G[nodo1])</span></code> y el conjunto cuyo único elemento es el nodo original <code class="docutils literal notranslate"><span class="pre">set([nodo1])</span></code>.</p></li>
+<li><p>se establece el nuevo enlace entre el nodo original y el nuevo nodo.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cambio_enlace</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+  <span class="c1"># ojo con el uso de los conjutos (set)</span>
+  <span class="n">nodo1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+  <span class="n">nodo2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span> <span class="n">G</span><span class="p">[</span><span class="n">nodo1</span><span class="p">]</span> <span class="p">)</span>
+  <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">nodo1</span><span class="p">,</span> <span class="n">nodo2</span><span class="p">)</span>
+  <span class="n">seleccion</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">nodo1</span><span class="p">])</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">nodo1</span><span class="p">])</span>
+  
+  <span class="n">nuevo_nodo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="n">seleccion</span><span class="p">)</span> <span class="p">)</span>
+  
+  <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">nodo1</span><span class="p">,</span> <span class="n">nuevo_nodo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para aplicarlo a una red y luego comparar las modificaciones, se genera una red y su copia, y se le aplica el reenlace y se visualizan la red y la matriz de distancias.</p>
+<ul class="simple">
+<li><p>Genera una red anillo con los parámetros que elijas.</p></li>
+<li><p>Luego corre la casilla que dice «Modificación de la red». Esa casilla puedes correrla muchas veces para ver qué ocurre con la red y con la matriz si se modifican uno, dos, tres, cuatro, etc., enlaces.</p></li>
+<li><p>Para reiniciar debes volver a correr la casilla que dice «Generar redes»</p></li>
+</ul>
+<p>Algunas preguntas para orientar la observación:</p>
+<ul class="simple">
+<li><p>¿Por qué la primera modificación del enlace no disminuye el diámetro?</p></li>
+<li><p>¿Qué característica tienen los nuevos enlaces que disminuyen más la distancia promedio?</p></li>
+<li><p>¿Qué característica tienen los nuevos enlaces que casi no disminuyen la distancia promedio?</p></li>
+<li><p>¿Cuántos cambios de enlace debes realizar para que el coeficiente de clustering disminuya a la mitad? ¿Qué pasó en ese caso con la distancia promedio y el diámetro?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generar redes</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">Anillo</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+
+<span class="n">G2</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modificación de la red</span>
+
+<span class="n">cambio_enlace</span><span class="p">(</span><span class="n">G2</span><span class="p">)</span>
+
+<span class="n">MatD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">MatD</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+        
+        
+<span class="n">h</span> <span class="o">=</span> <span class="o">.</span><span class="mi">6</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mi">7</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> 
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="n">tamanos</span><span class="p">,</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">colores</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">)</span>
+
+
+<span class="c1">#fig, ax = plt.subplots(figsize = (10*h,7*h)) </span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">MatD</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">dmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">dmax</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distancias&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Nodo j&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Nodo i&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diametro: </span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">MatD0</span><span class="p">),</span> <span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">MatD</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distancia media: </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MatD0</span><span class="p">),</span> <span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MatD</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Clustering: </span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para responder a las preguntas anteriores se puede hacer el proceso de forma más sistemática si se usa un bucle para aplicar la función varias veces. Juega con eso en la siguiente casilla. Como puedes ver, el bucle sólo toma cinco líneas, el resto son instrucciones para la visualización y comparación de las redes y las matrices, inciales y finales.</p>
+<div class="section" id="varias-veces">
+<h3><span class="section-number">10.2.3.1. </span>Varias veces<a class="headerlink" href="#varias-veces" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G2</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">veces</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">veces</span><span class="p">):</span>
+    <span class="n">cambio_enlace</span><span class="p">(</span><span class="n">G2</span><span class="p">)</span>
+
+
+<span class="n">MatD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">MatD</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+        
+        
+<span class="n">h</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mi">7</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> 
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="n">tamanos</span><span class="p">,</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">colores</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">)</span>
+
+
+<span class="c1">#fig, ax = plt.subplots(figsize = (10*h,7*h)) </span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">MatD0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">dmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">dmax</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distancias&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Nodo j&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Nodo i&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="mi">7</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> 
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="n">tamanos</span><span class="p">,</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">colores</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">)</span>
+
+
+<span class="c1">#fig, ax = plt.subplots(figsize = (10*h,7*h)) </span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">MatD</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">dmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">dmax</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distancias&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Nodo j&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Nodo i&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diametro: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">MatD0</span><span class="p">),</span> <span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">MatD</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distancia media: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MatD0</span><span class="p">),</span> <span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">MatD</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Clustering: &#39;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="s1">&#39;--&gt;&#39;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comportamiento-de-diametro-distancia-media-y-clustering">
+<h3><span class="section-number">10.2.3.2. </span>Comportamiento de diámetro, distancia media y clustering<a class="headerlink" href="#comportamiento-de-diametro-distancia-media-y-clustering" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como ejercicio. Genera ahora unas gráficas de diámetro, distancia media y clustering en función del número de enlaces que se modificaron en la red. Lo que se quiere es visualizar cuál disminuye más rápido, y qué tan rápido.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Genera la red anillo</span>
+<span class="c1">#### INICIO EJERCICIO</span>
+
+<span class="n">N</span> <span class="o">=</span> 
+<span class="n">l</span> <span class="o">=</span> 
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">Anillo</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+
+<span class="n">G2</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1">#### FINAL  EJERCICIO      </span>
+<span class="c1"># Generar una lista para cada variable. El primer elemento de cada lista es el valor inicial del diámetro</span>
+<span class="c1"># la distancia promedio y el coeficiente de clustering promedio de la red.</span>
+
+<span class="n">Diam</span> <span class="o">=</span> <span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">diameter</span><span class="p">(</span><span class="n">G2</span><span class="p">)]</span>
+<span class="n">Dist</span> <span class="o">=</span> <span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G2</span><span class="p">)]</span>
+<span class="n">Clus</span> <span class="o">=</span> <span class="p">[</span><span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G2</span><span class="p">)]</span>
+
+
+
+<span class="c1"># Aplica la fucnión cambio_enlace varias veces (define cuantas veces), y cada vez que lo apliques, calcula los nuevos valores </span>
+<span class="c1"># y agrégalos a la lista usando lista.append(valor). Para ello haz un bucle usando k</span>
+
+<span class="n">k</span> <span class="o">=</span>  <span class="c1">#numero de veces que se aplicará la función</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="c1">### INICIO EJERCICIO</span>
+    <span class="c1"># aplica la funcion</span>
+    
+    <span class="c1"># agrega los valores a las correspondientes listas</span>
+    
+    
+    <span class="c1">### FINAL EJERCICIO</span>
+    
+
+    <span class="c1"># Las siguientes líneas hacen una gráfica simple de las listas de valores generados. </span>
+<span class="c1"># El diámetro y la distancia promedio se grafican juntas, el clustering aparte.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Diam</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Dist</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Clus</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>¿Qué puedes decir respecto al comportamiento de las distancias y el clustering? ¿Cómo decaen? ¿Cuál decae más rápido?</p>
+<p>Para disminuir las fluctuaciones, puedes hacer varias corridas, guardar toda la información de cada corrida y al final promediarlo. A continuación se les proporciona el inicio y el final del proceso, en medio deben rellenar con el procedimiento que hicieron antes:</p>
+<p>(se les recomiendan 15 corridas, para que no tarde tanto)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se generan las listas donde se introducirán las listas de los valores de cada corrida.</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">Anillo</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+
+
+<span class="n">DIAM</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">DIST</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">CLUS</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">corridas</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">corridas</span><span class="p">):</span>
+    <span class="c1">#### INICIO EJERCICIO Haz lo mismo que hiciste en la casilla anterior, pero ahora dentro de este bucle para que se haga varias veces</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1">#crea las listas de cada variable aplicada a G2</span>
+
+
+    
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># numero de cambio de enlaces</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+      <span class="c1">#aplica la función cambio de enlace y agrega las nuevas propiedades de la red a las listas</span>
+
+
+
+    <span class="c1">#### FINAL EJERCICIO</span>
+    
+    <span class="c1">#las siguientes lineas agregan la información de cada corrida a una lista</span>
+    <span class="n">DIAM</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Diam</span><span class="p">)</span>
+    <span class="n">DIST</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Dist</span><span class="p">)</span>
+    <span class="n">CLUS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Clus</span><span class="p">)</span>
+  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mediante la función de numpy <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code> aclarando el eje sobre el que aplicaremos el promedio, se hace el promedio sobre todas las corridas de los valores correspondientes a cada entrada de las listas. Dicho de otro modo, se obtiene el promedio de todas las corridas para el valor cada vez que aplicamos la función de cambio de enlace</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">DIAM</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">Y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">DIST</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">Y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">CLUS</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="kc">None</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Distancias&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="kc">None</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Clustering&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De nuevo. ¿Qué puedes decir respecto al comportamiento de las distancias y el clustering? ¿Cómo decaen? ¿Cuál decae más rápido?</p>
+</div>
+</div>
+<div class="section" id="el-experimento-de-watts-strogatz">
+<h2><span class="section-number">10.2.4. </span>El «experimento» de Watts-Strogatz<a class="headerlink" href="#el-experimento-de-watts-strogatz" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ahora que se ha generado un poco de intuición, se genera una nueva función más apegada a la propuesta de Watts y Strogatz. En esta, se parte de una red regular (que hemos llamado anillo) se le cambian un porcentaje de enlaces dados por una probabilidad <span class="math notranslate nohighlight">\(0 \le p \le 1\)</span>.</p>
+<p>A continucación se les proporciona la función <code class="docutils literal notranslate"><span class="pre">re_enlazar</span></code> que:</p>
+<ul class="simple">
+<li><p>toma la red y el parámetro <span class="math notranslate nohighlight">\(p\)</span></p></li>
+<li><p>recorre todos los enlaces (originales) y con probabilidad <span class="math notranslate nohighlight">\(p\)</span> los modifica.</p></li>
+</ul>
+<p>El principio es el mismo que como se trabajó antes. Revisen el código con cuidado y jueguen con los parámetros.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">re_enlazar</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+  <span class="n">nodos</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+  
+  <span class="k">for</span> <span class="n">enlace</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+      <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">enlace</span>
+      <span class="n">eleccion</span> <span class="o">=</span> <span class="n">nodos</span> <span class="o">-</span><span class="p">{</span><span class="n">u</span><span class="p">}</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+      <span class="n">nuevo_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span> <span class="nb">list</span><span class="p">(</span><span class="n">eleccion</span><span class="p">)</span> <span class="p">)</span>
+      <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+      <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">nuevo_v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">Anillo</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+
+<span class="n">re_enlazar</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="introduccion_al_modelo_watts_strogatz.html" title="previous page"><span class="section-number">10.1. </span>Introducción al modelo Watts-Strogatz</a>
+    <a class='right-next' id="next-link" href="../redes_con_independencia_de_escala/presentacion.html" title="next page"><span class="section-number">11. </span>Redes con independencia de escala (scale-free)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

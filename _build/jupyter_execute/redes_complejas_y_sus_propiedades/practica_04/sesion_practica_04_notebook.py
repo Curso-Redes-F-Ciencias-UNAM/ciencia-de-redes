@@ -261,7 +261,11 @@ datos
 G = nx.from_pandas_edgelist(datos, source = 0, target = 1)
 
 
-# Ya que se creó la red como objeto de networkx, vamos a encontrar sus propiedades generales (número de nodos, número de enlaces, grado promedio y coeficiente de clustering promedio). Además, a la red le asociaremos la probabilidad de enlace $p$ **que le correspondería *si fuera* una red aleatoria**, es decir: $$p = \frac{\left< k \right>}{N-1}$$ a partir de sus propiedades empíricas $N$ y $\left<k\right>$. 
+# Ya que se creó la red como objeto de networkx, vamos a encontrar sus propiedades generales (número de nodos, número de enlaces, grado promedio y coeficiente de clustering promedio). Además, a la red le asociaremos la probabilidad de enlace $p$ **que le correspondería *si fuera* una red aleatoria**, es decir: 
+# 
+# $$p = \frac{\left< k \right>}{N-1}$$ 
+# 
+# a partir de sus propiedades empíricas $N$ y $\left<k\right>$. 
 # 
 # La intención de esto es, a partir de esa $p$ que junto con $N$ caracteriza a una red aleatoria $G(N,p)$, determinar las propiedades de la red aleatoria equivalente. En otras palabras, calcularemos las propiedades de la red aleatoria (el modelo) que tiene el mismo tamaño y el mismo grado promedio que nuestra red real, para luego compararlas con las propiedades de nuestra red real. Así, podremos ver si el modelo de red aleatoria se ajusta a nuestra red real.  Las propiedades que usaremos para la comparación son:
 # - Coeficiente de clustering promedio

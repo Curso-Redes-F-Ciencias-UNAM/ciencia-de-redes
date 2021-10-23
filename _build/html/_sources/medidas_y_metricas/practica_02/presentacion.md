@@ -2,8 +2,9 @@
 
 Los contenidos de esta sesión práctica son:
 
-- Importar datos: video (17 minutos)
-- Visualización de centralidades: video (27 minutos)
-- Comparación de centralidades: video (8 minutos)
-- \[Opcional\] Aclaraciones sobre intermediación: video (11 minutos)
-- Complemento: Introducción a Gephi: video (27 minutos)
+- Importar datos
+- Visualización de centralidades
+- Comparación de centralidades
+- Aclaraciones sobre intermediación (video 10 min)
+
+Además como material complementario opcional se ofrece un video introductorio a Gephi.

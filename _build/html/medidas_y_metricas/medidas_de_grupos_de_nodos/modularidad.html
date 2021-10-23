@@ -255,7 +255,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="coeficiente_de_agrupacion.html">
-     5.1. Coeficiente de agrupamiento/acumulación
+     5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
@@ -362,8 +362,18 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_reales_y_redes_aleatorias.html">
-     8.8. Redes reales y redes aleatorias
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+     8.8. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     8.9. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+     8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
@@ -385,10 +395,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     10.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
@@ -533,8 +560,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mazimizacion-de-la-modularidad">
-   5.3.3. Mazimización de la modularidad
+  <a class="reference internal nav-link" href="#maximizacion-de-la-modularidad">
+   5.3.3. Maximización de la modularidad
   </a>
  </li>
 </ul>
@@ -550,6 +577,7 @@
                 
   <div class="section" id="modularidad">
 <h1><span class="section-number">5.3. </span>Modularidad<a class="headerlink" href="#modularidad" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>La modularidad es una medida de qué tanto los nodos de una red forman comunidades, ésta es una cantidad muy importante para varios algoritmos de detección de comunidades. Dicho sea de paso, la detección de comunidades es una de las aplicaciones más populares en el estudio de redes hoy en día por lo que consideramos muy importante que sepan qué es lo que está detrás.</p>
 <div class="section" id="introduccion">
 <h2><span class="section-number">5.3.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="iframe-container-out">
@@ -569,13 +597,13 @@
 <p class="admonition-title">Nota</p>
 <p>Para profundizar en el tema se sugiere consultar:</p>
 <ul class="simple">
-<li><p>Apartado <em>7.13 Homophily and assortative mixing</em> del libro de <span id="id1">Newman [<a class="reference internal" href="../../referencias/referencias.html#id3">2018</a>]</span></p></li>
+<li><p>Apartado 7.13 <em>Homophily and assortative mixing</em> del libro de <span id="id1">Newman [<a class="reference internal" href="../../referencias/referencias.html#id3">2018</a>]</span></p></li>
 <li><p>Preprint de <span id="id2">Clauset <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id7">2004</a>]</span> en el que introducen la modularidad</p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="mazimizacion-de-la-modularidad">
-<h2><span class="section-number">5.3.3. </span>Mazimización de la modularidad<a class="headerlink" href="#mazimizacion-de-la-modularidad" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="maximizacion-de-la-modularidad">
+<h2><span class="section-number">5.3.3. </span>Maximización de la modularidad<a class="headerlink" href="#maximizacion-de-la-modularidad" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="iframe-container-out">
 	<div class="iframe-container-in">
 		<iframe src="https://www.youtube.com/embed/pG5XKZqyFmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -583,7 +611,12 @@
 </div>
 <div class="admonition-nota admonition">
 <p class="admonition-title">Nota</p>
-<p>Para profundizar consultar: <span id="id3">Blondel <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id8">2008</a>]</span>, <span id="id4">Clauset <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id7">2004</a>]</span> y <span id="id5">Girvan and Newman [<a class="reference internal" href="../../referencias/referencias.html#id9">2002</a>]</span>.</p>
+<p>Para profundizar se recomienda consultar las siguientes referencias:</p>
+<ul class="simple">
+<li><p><span id="id3">Blondel <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id8">2008</a>]</span></p></li>
+<li><p><span id="id4">Clauset <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id7">2004</a>]</span></p></li>
+<li><p><span id="id5">Girvan and Newman [<a class="reference internal" href="../../referencias/referencias.html#id9">2002</a>]</span>.</p></li>
+</ul>
 </div>
 </div>
 </div>
