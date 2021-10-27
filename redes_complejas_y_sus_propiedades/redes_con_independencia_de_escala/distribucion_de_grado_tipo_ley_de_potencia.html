@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.4. Centralidad de eigenvector &#8212; Ciencia de Redes</title>
+    <title>11.4. Distribución de grado tipo ley de potencia &#8212; Ciencia de Redes</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="3.5. Centralidad de Katz" href="centralidad_de_katz.html" />
-    <link rel="prev" title="3.3. Centralidad de intermediación" href="centralidad_de_intermediacion.html" />
+    <link rel="next" title="12. Difusión en redes" href="../../procesos_en_redes/difusion_en_redes/presentacion.html" />
+    <link rel="prev" title="11.3. Propiedades de la ley de potencia" href="propiedades_de_la_ley_de_potencia.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -178,51 +178,51 @@
   Parte 2: Medidas y métricas
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="presentacion.html">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/presentacion.html">
    3. Medidas de centralidad de los nodos
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="centralidad_de_grado.html">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
      3.1. Centralidad de grado
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="centralidad_de_cercania.html">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
      3.2. Centralidad de cercanía
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="centralidad_de_intermediacion.html">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
      3.3. Centralidad de intermediación
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
      3.4. Centralidad de eigenvector
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="centralidad_de_katz.html">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
      3.5. Centralidad de Katz
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="centralidad_de_page_rank.html">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
      3.6. Centralidad de Page Rank (opcional)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../practica_02/presentacion.html">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_02/presentacion.html">
    4. Práctica 2
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -232,19 +232,19 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../practica_02/sesion_practica_02_notebook.html">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_notebook.html">
      4.1. Práctica 2 (notebook)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../practica_02/sesion_practica_02_video.html">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_video.html">
      4.2. Práctica 2 (video)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../medidas_de_grupos_de_nodos/presentacion.html">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/presentacion.html">
    5. Medidas de grupos de nodos
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -254,24 +254,24 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
      5.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../medidas_de_grupos_de_nodos/grupos_de_nodos.html">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/grupos_de_nodos.html">
      5.2. Grupos de nodos
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../medidas_de_grupos_de_nodos/modularidad.html">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/modularidad.html">
      5.3. Modularidad
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../propiedades_globales_de_la_red/presentacion.html">
+  <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/presentacion.html">
    6. Propiedades globales de la red
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -281,19 +281,19 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../propiedades_globales_de_la_red/propiedades_globales.html">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/propiedades_globales.html">
      6.1. Propiedades globales
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../propiedades_globales_de_la_red/distribucion_de_grado.html">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/distribucion_de_grado.html">
      6.2. Distribución de grado
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../practica_03/presentacion.html">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_03/presentacion.html">
    7. Práctica 3
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -303,7 +303,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../practica_03/sesion_practica_03_notebook.html">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_03/sesion_practica_03_notebook.html">
      7.1. Práctica 3 (notebook)
     </a>
    </li>
@@ -315,9 +315,9 @@
   Parte 3: Redes complejas y sus propiedades
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/presentacion.html">
+  <a class="reference internal" href="../redes_aleatorias/presentacion.html">
    8. Redes aleatorias
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -327,59 +327,59 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/actividad_introductoria_redes_aleatorias.html">
+    <a class="reference internal" href="../redes_aleatorias/actividad_introductoria_redes_aleatorias.html">
      8.1. Actividad introductoria a las redes aleatorias (notebook)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/definicion_de_red_aleatoria.html">
+    <a class="reference internal" href="../redes_aleatorias/definicion_de_red_aleatoria.html">
      8.2. Definición red aleatoria
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/distribucion_binomial.html">
+    <a class="reference internal" href="../redes_aleatorias/distribucion_binomial.html">
      8.3. Distribución binomial
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/numero_de_enlaces.html">
+    <a class="reference internal" href="../redes_aleatorias/numero_de_enlaces.html">
      8.4. Número de enlaces
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/grado_promedio_distribucion_de_grado_y_clustering.html">
+    <a class="reference internal" href="../redes_aleatorias/grado_promedio_distribucion_de_grado_y_clustering.html">
      8.5. Grado promedio, distribución de grado y clustering
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/alerta_de_spoiler.html">
+    <a class="reference internal" href="../redes_aleatorias/alerta_de_spoiler.html">
      8.6. Alerta de spoiler
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/distribucion_binomial_y_de_poisson.html">
+    <a class="reference internal" href="../redes_aleatorias/distribucion_binomial_y_de_poisson.html">
      8.7. Distribución biniomial y de Poisson
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_redes_reales.html">
+    <a class="reference internal" href="../redes_aleatorias/redes_aleatorias_y_redes_reales.html">
      8.8. Redes aleatorias y redes reales
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+    <a class="reference internal" href="../redes_aleatorias/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
      8.9. Redes aleatorias y propiedad de mundo pequeño
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
+    <a class="reference internal" href="../redes_aleatorias/transicion_de_fase_en_redes_aleatorias.html">
      8.10. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/presentacion.html">
+  <a class="reference internal" href="../practica_04/presentacion.html">
    9. Práctica 4
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -389,14 +389,14 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook.html">
+    <a class="reference internal" href="../practica_04/sesion_practica_04_notebook.html">
      9.1. Práctica 4 (notebook)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
+  <a class="reference internal" href="../redes_de_mundo_pequeno/presentacion.html">
    10. Redes de mundo pequeño
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -406,49 +406,49 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
      10.1. Introducción al modelo Watts-Strogatz
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
      10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/experimento_ws.html">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/experimento_ws.html">
      10.3. Experimento W-S
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="presentacion.html">
    11. Redes con independencia de escala (scale-free)
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/definicion_general.html">
+    <a class="reference internal" href="definicion_general.html">
      11.1. Definición general
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/actividad_introductoria_a_redes_con_independencia_de_escala.html">
+    <a class="reference internal" href="actividad_introductoria_a_redes_con_independencia_de_escala.html">
      11.2. Actividad introductoria a redes con independencia de escala
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/propiedades_de_la_ley_de_potencia.html">
+    <a class="reference internal" href="propiedades_de_la_ley_de_potencia.html">
      11.3. Propiedades de la ley de potencia
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/distribucion_de_grado_tipo_ley_de_potencia.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      11.4. Distribución de grado tipo ley de potencia
     </a>
    </li>
@@ -551,7 +551,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/distribucion_de_grado_tipo_ley_de_potencia.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -576,6 +576,44 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importar-redes-pesadas">
+   11.4.1. Importar redes pesadas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inspeccion-y-pdf">
+   11.4.2. Inspección y PDF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ccdf-funcion-de-distribucion-complementaria-acumulada">
+   11.4.3. CCDF: función de distribución complementaria acumulada
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-por-maxima-verosimilitud">
+   11.4.4. Estimación por máxima verosimilitud
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementacion-de-la-estimacion">
+   11.4.5. Implementación de la estimación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#paqueteria-powerlaw">
+   11.4.6. Paquetería powerlaw
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -584,17 +622,66 @@
         
               <div>
                 
-  <div class="section" id="centralidad-de-eigenvector">
-<h1><span class="section-number">3.4. </span>Centralidad de eigenvector<a class="headerlink" href="#centralidad-de-eigenvector" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>En el siguiente video se presenta la centralidad de eigenvector.</p>
+  <div class="section" id="distribucion-de-grado-tipo-ley-de-potencia">
+<h1><span class="section-number">11.4. </span>Distribución de grado tipo ley de potencia<a class="headerlink" href="#distribucion-de-grado-tipo-ley-de-potencia" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En esta sección se implementan las funciones para verificar si la distribución de grado de una red real satisface una ley de potencia y, si es el caso, se calcula el parámetro α obtenido del ajuste de los datos.</p>
+<p>Estos videos mezclan las explicaciones teóricas con la implementación computacional. La idea es que ustedes reproduzcan la implementación con la red que eligieron y que produzca un <a class="reference external" href="https://colab.research.google.com/drive/1oGSWm6w661Pt7fwhz75hHDPvbiscs63S?usp=sharing">notebook como el que se construye en los videos</a>.</p>
+<div class="section" id="importar-redes-pesadas">
+<h2><span class="section-number">11.4.1. </span>Importar redes pesadas<a class="headerlink" href="#importar-redes-pesadas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Lo primero que se hace es mejorar todavía más el procedimiento para importar los datos del grado, que es lo que nos importa en esta parte, optimizando los recursos con los que disponemos.</p>
 <div class="iframe-container-out">
 	<div class="iframe-container-in">
-		<iframe src="https://www.youtube.com/embed/wXZC-04vhwA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe src="https://www.youtube.com/embed/Yti5CVRpoeQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+</div>
+<div class="section" id="inspeccion-y-pdf">
+<h2><span class="section-number">11.4.2. </span>Inspección y PDF<a class="headerlink" href="#inspeccion-y-pdf" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="iframe-container-out">
+	<div class="iframe-container-in">
+		<iframe src="https://www.youtube.com/embed/Yt24plMYQTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+</div>
+<div class="section" id="ccdf-funcion-de-distribucion-complementaria-acumulada">
+<h2><span class="section-number">11.4.3. </span>CCDF: función de distribución complementaria acumulada<a class="headerlink" href="#ccdf-funcion-de-distribucion-complementaria-acumulada" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="iframe-container-out">
+	<div class="iframe-container-in">
+		<iframe src="https://www.youtube.com/embed/rfpt_Tn5Xc4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+</div>
+<div class="section" id="estimacion-por-maxima-verosimilitud">
+<h2><span class="section-number">11.4.4. </span>Estimación por máxima verosimilitud<a class="headerlink" href="#estimacion-por-maxima-verosimilitud" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="iframe-container-out">
+	<div class="iframe-container-in">
+		<iframe src="https://www.youtube.com/embed/He3zAbTdirQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</div>
 </div>
 <div class="admonition-nota admonition">
 <p class="admonition-title">Nota</p>
-<p>Para profundizar en el tema recomendamos consultar <span id="id1">Newman [<a class="reference internal" href="../../referencias/referencias.html#id3">2018</a>]</span> (pág 169).</p>
+<p>Para profundizar más en el tema se recomienda revisar <span id="id1">Clauset <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id11">2009</a>]</span>.</p>
+</div>
+</div>
+<div class="section" id="implementacion-de-la-estimacion">
+<h2><span class="section-number">11.4.5. </span>Implementación de la estimación<a class="headerlink" href="#implementacion-de-la-estimacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="iframe-container-out">
+	<div class="iframe-container-in">
+		<iframe src="https://www.youtube.com/embed/q4UjNbrcdr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+</div>
+<div class="section" id="paqueteria-powerlaw">
+<h2><span class="section-number">11.4.6. </span>Paquetería powerlaw<a class="headerlink" href="#paqueteria-powerlaw" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="iframe-container-out">
+	<div class="iframe-container-in">
+		<iframe src="https://www.youtube.com/embed/8h2TqIBnLvo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+<div class="admonition-nota admonition">
+<p class="admonition-title">Nota</p>
+<p>Para profundizar en el tema se recomienda consultar <span id="id2">Alstott <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id12">2014</a>]</span> y la <a class="reference external" href="https://pypi.org/project/powerlaw/">documentación oficial de <code class="docutils literal notranslate"><span class="pre">powerlaw</span></code></a></p>
+</div>
 </div>
 </div>
 
@@ -611,7 +698,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./medidas_y_metricas/medidas_de_centralidad_de_los_nodos"
+            path: "./redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala"
         },
         predefinedOutput: true
     }
@@ -623,8 +710,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="centralidad_de_intermediacion.html" title="previous page"><span class="section-number">3.3. </span>Centralidad de intermediación</a>
-    <a class='right-next' id="next-link" href="centralidad_de_katz.html" title="next page"><span class="section-number">3.5. </span>Centralidad de Katz</a>
+    <a class='left-prev' id="prev-link" href="propiedades_de_la_ley_de_potencia.html" title="previous page"><span class="section-number">11.3. </span>Propiedades de la ley de potencia</a>
+    <a class='right-next' id="next-link" href="../../procesos_en_redes/difusion_en_redes/presentacion.html" title="next page"><span class="section-number">12. </span>Difusión en redes</a>
 
         </div>
         

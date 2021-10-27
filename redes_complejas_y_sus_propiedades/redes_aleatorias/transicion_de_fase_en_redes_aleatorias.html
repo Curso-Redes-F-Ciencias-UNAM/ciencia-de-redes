@@ -417,12 +417,44 @@
      10.2. Primera aproximación al modelo Watts-Strogatz (notebook)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_de_mundo_pequeno/experimento_ws.html">
+     10.3. Experimento W-S
+    </a>
+   </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../redes_con_independencia_de_escala/presentacion.html">
    11. Redes con independencia de escala (scale-free)
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_con_independencia_de_escala/definicion_general.html">
+     11.1. Definición general
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_con_independencia_de_escala/actividad_introductoria_a_redes_con_independencia_de_escala.html">
+     11.2. Actividad introductoria a redes con independencia de escala
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_con_independencia_de_escala/propiedades_de_la_ley_de_potencia.html">
+     11.3. Propiedades de la ley de potencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../redes_con_independencia_de_escala/distribucion_de_grado_tipo_ley_de_potencia.html">
+     11.4. Distribución de grado tipo ley de potencia
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption" role="heading">
@@ -561,7 +593,7 @@
 <p>Aquí, se observa que la red aleatoria posee una componente gigante (cuyo tamaño es comparable con el número de nodos de la red) a partir de que <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(p\)</span> cumplen</p>
 <div class="math notranslate nohighlight">
 \[1≤⟨k⟩=p(N−1)≃pN\]</div>
-<p>teniendo, en el límite <span class="math notranslate nohighlight">\(N→∞\)</span>, una transición de fase en <span class="math notranslate nohighlight">\(⟨k⟩=1\)</span>, analizada por <a class="reference external" href="https://www.renyi.hu/~p_erdos/1959-11.pdf">Erdős y Renyi en su artículo de 1959</a>. Para un análisis más detallado de la transición de fase se recomienda el apartado 12.5 (Giant component) del <a class="reference external" href="https://www.dropbox.com/s/14xchb0u9hlbigz/Mark%20Newman-Networks_%20An%20%20Introduction-Oxford%20University%20Press%20%282010%29.pdf?dl=0">libro de Newman</a>. Estos análisis arrojan que el tamaño de la máxima componente es igual a <span class="math notranslate nohighlight">\(N\)</span> con alta probabilidad cuando se cumple la condición $<span class="math notranslate nohighlight">\(⟨k⟩≥\ln N\)</span>$ que sería la respuesta a la pregunta del cuestionario introductorio.</p>
+<p>teniendo, en el límite <span class="math notranslate nohighlight">\(N→∞\)</span>, una transición de fase en <span class="math notranslate nohighlight">\(⟨k⟩=1\)</span>, analizada por <a class="reference external" href="https://www.renyi.hu/~p_erdos/1959-11.pdf">Erdős y Renyi en su artículo de 1959</a>. Para un análisis más detallado de la transición de fase se recomienda el apartado 12.5 (Giant component) del <a class="reference external" href="https://www.dropbox.com/s/14xchb0u9hlbigz/Mark%20Newman-Networks_%20An%20%20Introduction-Oxford%20University%20Press%20%282010%29.pdf?dl=0">libro de Newman</a>. Estos análisis arrojan que el tamaño de la máxima componente es igual a <span class="math notranslate nohighlight">\(N\)</span> con alta probabilidad cuando se cumple la condición <span class="math notranslate nohighlight">\(⟨k⟩≥\ln N\)</span> que sería la respuesta a la pregunta del cuestionario introductorio.</p>
 <p>En el notebook, para optimizar el tiempo de cálculo, se juega con el tamaño de los ensembles y el tamaño de la red pues para redes con muchos nodos, networkx tarda en correr los algoritmos de selección de componentes. En él encontrarán el comportamiento de las redes para <span class="math notranslate nohighlight">\(N\)</span> en cinco órdenes de magnitud.</p>
 </div>
 
