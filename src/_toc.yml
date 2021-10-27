@@ -70,7 +70,13 @@ parts:
       sections:
       - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz
       - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS
+      - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/experimento_ws
     - file: redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion
+      sections:
+      - file: redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/definicion_general
+      - file: redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/actividad_introductoria_a_redes_con_independencia_de_escala
+      - file: redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/propiedades_de_la_ley_de_potencia
+      - file: redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/distribucion_de_grado_tipo_ley_de_potencia
   - caption: "Parte 4: Procesos en redes"
     numbered: True
     chapters:

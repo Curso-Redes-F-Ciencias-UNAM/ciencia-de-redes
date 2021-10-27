@@ -9,5 +9,5 @@ En esta práctica se continúa con el análisis de las redes aleatorias de Erdő
 ```{admonition} Recomendación
 :class: tip
 
-Se recomienda realizar esta práctica antes de leer las dos últimas secciones del capítulo anterior.
+Se recomienda realizar esta práctica antes de leer las cuatro últimas secciones del capítulo anterior (secciones 8.8 a 8.10).
 ```
