@@ -1,7 +1,5 @@
 # Experimento W-S
 
-<!-- TODO: pasar esta actividad al moodle -->
-
 De lo que se trata esta actividad es que utilicen la última función introducida en el Notebook pasado, `re_enlazar(G,p)`, para **reproducir** el siguiente resultado publicado por Watts y Strogatz en su artículo:
 
 ![Resultado del experimento W-S](../../_static/img/resultado-experimento-WS.png)
