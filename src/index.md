@@ -1,9 +1,9 @@
 # Ciencia de Redes
 
 
-_versión 0.2_
+_versión 0.3_
 
-_Editado por última vez el: 26/10/21_
+_Editado por última vez el: 29/11/21_
 
 ---
 
