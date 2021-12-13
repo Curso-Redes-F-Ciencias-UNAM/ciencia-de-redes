@@ -86,6 +86,8 @@ parts:
       - file: procesos_en_redes/difusion_en_redes/propiedades_de_L
       - file: procesos_en_redes/difusion_en_redes/ejemplo_resuelto
     - file: procesos_en_redes/percolacion_en_redes/presentacion
+      sections:
+      - file: procesos_en_redes/percolacion_en_redes/percolacion-sin-respuestas
   - caption: "Parte 5: Estudio de redes reales"
     numbered: True
     chapters:
