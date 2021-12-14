@@ -491,7 +491,7 @@ plt.show()
 # 
 # Por lo tanto aquí tenemos una disyuntiva entre robustes ante ataques o a fallas. Si quisiéramos diseñar una red robusta ante ambos eventos ¿cómo debería ser su estructura? Esto se discute en la [sección 8.7](http://networksciencebook.com/chapter/8#buildin-robustness) del libro de Barabasi. Evidentemente la red más robusta sería aquella donde todos los nodos esten conectados con todos, sin embargo, mantener una red así sería muy costoso y poco realista. A grandes rasgos una solución más óptima a este problema sería a través de una red con una distribución bimodal, donde se tuviera un nodo con grado $k_{max}$ altamente conectado y el resto de los nodos tuvieran grado $k_{min}$.
 
-# ## Ejercicios
+# ## Ejercicios opcionales
 # 
 # ### Ejercicio 1: Percolación en redes reales
 # 
