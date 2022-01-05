@@ -75,26 +75,8 @@ a.nav-link {
 
 /* Botones para cambio de página */
 
-#next-link::before{
-	content: 'Página siguiente' !important;
-}
-
-#prev-link::before{
-	content: 'Página previa' !important;
-}
-
 #prev-link::before, #next-link::before, #prev-link,#next-link{
 	font-size: 10pt !important;
-}
-
-
-p > span > a.reference.internal {
-	font-weight: bold;
-}
-
-
-#site-title{
-	display: none;
 }
 
 /* íconos */

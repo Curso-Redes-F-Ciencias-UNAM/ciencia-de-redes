@@ -491,17 +491,19 @@ plt.show()
 # 
 # Por lo tanto aquí tenemos una disyuntiva entre robustes ante ataques o a fallas. Si quisiéramos diseñar una red robusta ante ambos eventos ¿cómo debería ser su estructura? Esto se discute en la [sección 8.7](http://networksciencebook.com/chapter/8#buildin-robustness) del libro de Barabasi. Evidentemente la red más robusta sería aquella donde todos los nodos esten conectados con todos, sin embargo, mantener una red así sería muy costoso y poco realista. A grandes rasgos una solución más óptima a este problema sería a través de una red con una distribución bimodal, donde se tuviera un nodo con grado $k_{max}$ altamente conectado y el resto de los nodos tuvieran grado $k_{min}$.
 
-# ## Ejercicios opcionales
+# ## Ejercicios
 # 
 # ### Ejercicio 1: Percolación en redes reales
 # 
-# **Dificultad: Fácil**
+# **Dificultad: Baja**
 # 
 # **Carga los datos de una red real y utilizando las funciones definidas en la sección anterior explora como se comporta ante fallas y ataques y grafica tus resultados.** 
 # 
 # ¿La red es robusta ante fallas aleatorias? ¿Qué tan sensible es a los ataques? ¿Qué implicaciones podría tener este comportamiento para el sistema real que representa la red?
+# 
+# **Tip**: para usar la función `experimento_percolacion_redes` definida anteriormente se requiere una función "callback" para crear la red. Para pasarle la red real puedes definir una [función anónima o lambda](https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/) que reciba como único parámetro una red y retorne la red y a ésta pasarle una copia de la red real.
 
-# In[ ]:
+# In[19]:
 
 
 # cargar datos...
@@ -522,13 +524,13 @@ plt.show()
 # 
 # En este notebook solamente se discutió la percolación por nodos o sitios, es decir, el proceso donde se quitan una fracción de nodos junto con sus enlaces. Pero... ¿qué pasa si en lugar de quitar nodos quitamos enlaces? Para investigarlo define una función llamada `percolacion_red_enclaces()` análoga a la función `percolacion_red()` definida anteriormente, pero que en lugar de quitar una fracción $f$ de nodos, quite una fracción $f$ de enlaces.
 # 
-# Nota: Para simular ataques en este caso podemos utilizar una medida de _centralidad de enlaces_, por ejemplo, la centralidad de intermediación de enlace implementada en NetworkX a través de la función: `edge_betweenness_centrality`. Sin embargo, este es un cálculo muy demandande computacionalmente (sobre todo en redes muy grandes), por lo que sugerimos solamente explorar el caso donde se quitan enlaces de forma aleatoria y compararlo con el caso donde se quitan nodos de forma aleatoria.
-# 
 # **Obtener una gráfica donde se compare la percolación por nodos y por enlaces para una red aleatoria y una red libre de escala**.
 # 
 # ¿Qué comportamiento observas? ¿A través de cuál de los dos tipos de percolación se rompe más rápido la red? ¿Obtienes valores críticos diferentes de $f$ para cada tipo de percolación? ¿Cómo se comporta la red real que exploraste en el ejercicio anterior a la percolación por enlaces?
+# 
+# **Tip**: Para simular ataques en este caso podemos utilizar una medida de _centralidad de enlaces_, por ejemplo, la centralidad de intermediación de enlace implementada en NetworkX a través de la función: `edge_betweenness_centrality`. Sin embargo, este es un cálculo muy demandande computacionalmente (sobre todo en redes muy grandes), por lo que sugerimos solamente explorar el caso donde se quitan enlaces de forma aleatoria y compararlo con el caso donde se quitan nodos de forma aleatoria.
 
-# In[ ]:
+# In[21]:
 
 
 # define la función para percolar por enlaces
@@ -549,19 +551,19 @@ plt.show()
 # 
 # Otra forma de encontrar las componentes ocupadas es a través del [**algoritmo de Hoshen-Kopelman**](https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm) que es una aplicación especial del [algoritmo de _union-find_](https://www.youtube.com/watch?v=ayW5B2W9hfo). A grandes rasgos este algoritmo recorre cada una de las celadas de la látice y para las celdas ocupadas verifica si al vecino de arriba y al de la izquierda ya se les asignó una componente. Aquí pueden pasar varias cosas: 
 # 1. si no se les ha asignado se le asigna una nueva; 
-# 2. si la de arriba ya tiene componente asignada entonces le asigna esa;
-# 3. si la de la izquierda ya tiene componente asignada se le asigna esa; y
-# 4. si la de arriba y la de la izquierda ya tienen entonces se registra que deben ser componentes iguales (se unen las componentes) y se le asigna la componente de alguna de ellas. 
+# 2. si la de arriba ya tiene componente asignada entonces le asigna esa (a través de la función `find()`);
+# 3. si la de la izquierda ya tiene componente asignada se le asigna esa (a través de la función `find()`); y
+# 4. si la de arriba y la de la izquierda ya tienen entonces se registra que deben ser componentes iguales (se unen las componentes; a través de la función `union()`) y se le asigna la componente de alguna de ellas (con `find()`). 
 # 
-# Así de este algoritmo obtenemos una látice con algunas vecindades/componentes y una lista que indica cuáles componentes son la misma.
+# Así de este algoritmo obtenemos una látice con algunas vecindades/componentes.
 # 
 # **Implementa el algrotimo de Hoshen-Kopelman para buscar las componentes conectadas en una látice regular de una dimensión**.
 # 
-# Puedes basarte en el [pseudocódigo descrito en Wikipedia](https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm#Pseudocode) y revisar esta [explicación más detallada del algoritmo](https://www.ocf.berkeley.edu/~fricke/projects/hoshenkopelman/hoshenkopelman.html)
+# **Tip**: Puedes basarte en el [pseudocódigo descrito en Wikipedia](https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm#Pseudocode). Como se describe en esta [explicación más detallada del algoritmo](https://www.ocf.berkeley.edu/~fricke/projects/hoshenkopelman/hoshenkopelman.html) para obtener la matriz con las componentes finales asignadas a cada celda se pueden recorrer una segunda vez todas las celdas con la función `find()`.
 # 
 # 
 
-# In[ ]:
+# In[23]:
 
 
 # definir funciones union y find
