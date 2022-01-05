@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>13.1. Percolación en redes &#8212; Ciencia de Redes</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -43,23 +43,26 @@
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="14. Redes de información" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html" />
     <link rel="prev" title="13. Percolación en redes" href="presentacion.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -76,6 +79,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
       
       
@@ -85,9 +92,9 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption" role="heading">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Prefacio
  </span>
@@ -99,7 +106,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Parte 1: Matemáticas de las redes
  </span>
@@ -175,7 +182,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Parte 2: Medidas y métricas
  </span>
@@ -312,7 +319,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Parte 3: Redes complejas y sus propiedades
  </span>
@@ -457,7 +464,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Parte 4: Procesos en redes
  </span>
@@ -508,7 +515,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Parte 5: Estudio de redes reales
  </span>
@@ -535,7 +542,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Referencias
  </span>
@@ -587,12 +594,12 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/procesos_en_redes/percolacion_en_redes/percolacion-sin-respuestas.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -612,7 +619,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/procesos_en_redes/percolacion_en_redes/percolacion-sin-respuestas.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -620,7 +627,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/procesos_en_redes/percolacion_en_redes/percolacion-sin-respuestas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -632,12 +639,12 @@
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contenido
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduccion">
@@ -655,8 +662,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicios-opcionales">
-   13.1.4. Ejercicios opcionales
+  <a class="reference internal nav-link" href="#ejercicios">
+   13.1.4. Ejercicios
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -684,10 +691,65 @@
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Percolación en redes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   13.1.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#percolacion-en-latices-cuadradas">
+   13.1.2. Percolación en látices cuadradas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   13.1.3. Percolación en redes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   13.1.4. Ejercicios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1-percolacion-en-redes-reales">
+     13.1.4.1. Ejercicio 1: Percolación en redes reales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2-percolacion-por-enlaces">
+     13.1.4.2. Ejercicio 2: Percolación por enlaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-3-algoritmo-de-hoshen-kopelman">
+     13.1.4.3. Ejercicio 3: Algoritmo de Hoshen-Kopelman
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
               <div>
                 
-  <div class="section" id="percolacion-en-redes">
+  <div class="tex2jax_ignore mathjax_ignore section" id="percolacion-en-redes">
 <h1><span class="section-number">13.1. </span>Percolación en redes<a class="headerlink" href="#percolacion-en-redes" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="introduccion">
 <h2><span class="section-number">13.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -734,7 +796,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_6_0.png" src="../../_images/percolacion-sin-respuestas_6_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_6_0.png" src="../../_images/percolacion_sin_respuestas_6_0.png" />
 </div>
 </div>
 <p>Supongamos que se vierte un material desde el extremo superior de la látice. Si suponemos que el material puede fluir por los sitios ocupados (activos), entonces si este material logra encontrar un camino hasta alcanzar el extremo inferior de la látice, decimos que el material <em>percola</em>. Por ejemplo, supongamos cada sitio ocupado representa un árbol en un bosque y también supongamos que un arbol que se quema también quema a sus 4 vecinos. Si se quemaran todos los árboles en el extremo superior de la látice (primera fila) y el fuego lograra llegar al extremo inferior de la látice (última fila), diríamos que el fuego <em>percoló</em> a travéz del bosque.</p>
@@ -809,7 +871,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_10_0.png" src="../../_images/percolacion-sin-respuestas_10_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_10_0.png" src="../../_images/percolacion_sin_respuestas_10_0.png" />
 </div>
 </div>
 <p>Ahora, para saber si un material podría percolar verticalmente en nuestra látice, se revisa si hay componentes que inicien en el extremo superior y termine en el extremo inferior del arreglo. Para ello definimos una función que retorna las componentes que percolan verticalmente obteniendo los elementos que se compartan entre la primera y la última fila de nuestro arreglo de componentes (se omite el <code class="docutils literal notranslate"><span class="pre">0</span></code>, ya que este representa los sitios vacios).</p>
@@ -848,7 +910,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_14_0.png" src="../../_images/percolacion-sin-respuestas_14_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_14_0.png" src="../../_images/percolacion_sin_respuestas_14_0.png" />
 </div>
 </div>
 <p>Otra variable relevante a estudiar en nuestra látice regular (y la variable que monitorearemos cuando estudiemos la percolación en redes) es el <strong>tamaño de nuestra máxima componente</strong>. Para hacer esto, definimos una nueva función <code class="docutils literal notranslate"><span class="pre">obtener_tamanio_max_comp()</span></code> que calcula dicho valor a partir de un diccionario con el tamaño de todas las componentes registradas en nuestro arreglo de componentes.</p>
@@ -897,7 +959,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_18_0.png" src="../../_images/percolacion-sin-respuestas_18_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_18_0.png" src="../../_images/percolacion_sin_respuestas_18_0.png" />
 </div>
 </div>
 <p>Ahora que ya tenemos todos los elementos necesarios podemos explorar cómo se comportan la <strong>probabilidad de percolación</strong> y el <strong>tamaño de la máxima componente</strong> para múltiples valores de la probabilidad de ocupación, <span class="math notranslate nohighlight">\(p\)</span>. Para ello vamos a integrar todas las funciones que definimos en las subsecciones anteriores en una sola función llamada <code class="docutils literal notranslate"><span class="pre">percolacion()</span></code> y vamos a realizar un experimento donde exploramos múltiples valores de la probabilidad de ocupación con múltiples repeticiones para cada valor.</p>
@@ -956,7 +1018,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_22_0.png" src="../../_images/percolacion-sin-respuestas_22_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_22_0.png" src="../../_images/percolacion_sin_respuestas_22_0.png" />
 </div>
 </div>
 <p>Al ver estos resultados podemos ver claramente que <strong>existe un valor crítico (<span class="math notranslate nohighlight">\(p_c\)</span>) de la probabilidad de ocupación</strong> que permite identificar dos comportamientos distintos en el sistema:</p>
@@ -985,7 +1047,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_24_0.png" src="../../_images/percolacion-sin-respuestas_24_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_24_0.png" src="../../_images/percolacion_sin_respuestas_24_0.png" />
 </div>
 </div>
 </div>
@@ -1067,7 +1129,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_30_0.png" src="../../_images/percolacion-sin-respuestas_30_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_30_0.png" src="../../_images/percolacion_sin_respuestas_30_0.png" />
 </div>
 </div>
 <p>Ahora experimentemos para ver cómo cambia el tamaño de la máxima componente con distintos valores de <span class="math notranslate nohighlight">\(f\)</span> y en distintos tipos de redes: en redes aleatorias con distribución de poisson (Erdös-Rényi) y en redes libres de escala (Barabási-Albert). Para crear nuestras redes utilizaremos las funciones de NetworkX <code class="docutils literal notranslate"><span class="pre">gnm_random_graph(N,L)</span></code>, que crea una red aleatoria Erdös-Rényi con <span class="math notranslate nohighlight">\(N\)</span> nodos y <span class="math notranslate nohighlight">\(L\)</span> enlaces, y <code class="docutils literal notranslate"><span class="pre">barabasi_albert_graph(N,m)</span></code>, que crea una red libre de escala con <span class="math notranslate nohighlight">\(N\)</span> nodos a partir de ir creciendo una red tipo estrella (con <span class="math notranslate nohighlight">\(m+1\)</span> nodos y <span class="math notranslate nohighlight">\(m\)</span> enlaces) agregando <span class="math notranslate nohighlight">\(m\)</span> enlaces con cada nuevo nodo que se introduce. Para que esta comparación sea apropiada debemos correr los experimentos con redes con el mismo número de nodos y enlaces, por lo que a partir de <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(m\)</span> calculamos el valor de <span class="math notranslate nohighlight">\(L\)</span> (una red de Barabási-Albert tiene <span class="math notranslate nohighlight">\(L=m(N-m)\)</span> enlaces).</p>
@@ -1093,7 +1155,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_32_0.png" src="../../_images/percolacion-sin-respuestas_32_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_32_0.png" src="../../_images/percolacion_sin_respuestas_32_0.png" />
 </div>
 </div>
 <p>Ahora definamos una función para experimentar que corra nuestros experimentos. Esta función nos retornará un DataFrame de pandas y recibirá los siguientes argumentos:</p>
@@ -1178,7 +1240,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/percolacion-sin-respuestas_36_0.png" src="../../_images/percolacion-sin-respuestas_36_0.png" />
+<img alt="../../_images/percolacion_sin_respuestas_36_0.png" src="../../_images/percolacion_sin_respuestas_36_0.png" />
 </div>
 </div>
 <p>Estos resultados muestran varias cosas interesantes.</p>
@@ -1191,13 +1253,14 @@
 <p>Pero… ¿qué pasa si en lugar de remover los nodos aleatoriamente atacamos primero a los <em>hubs</em>? En el caso de la percolación por ataques vemos el comportamiento contrario, es decir, <strong>ante los ataques las redes aleatorias son más robustas que las libres de escala</strong>. Esto se debe a que en este último tipo de redes la conectividad está mantenida por unos cuantos nodos que al ser removidos rompen rápidamente la red en pequeños clusters. En contraste, la red aleatoria muestra una mayor tolerancia ya que todos sus nodos aportan de forma similar a la conectividad de la red. Este resultado puede tener interesantes implicaciones en sistemas reales, por ejemplo, si queremos evitar que se propague una enfermedad una estrategia más eficiente que vacunar de forma aleatoria a la población sería primero vacunar a los <em>hubs</em> o superpropagadores.</p>
 <p>Por lo tanto aquí tenemos una disyuntiva entre robustes ante ataques o a fallas. Si quisiéramos diseñar una red robusta ante ambos eventos ¿cómo debería ser su estructura? Esto se discute en la <a class="reference external" href="http://networksciencebook.com/chapter/8#buildin-robustness">sección 8.7</a> del libro de Barabasi. Evidentemente la red más robusta sería aquella donde todos los nodos esten conectados con todos, sin embargo, mantener una red así sería muy costoso y poco realista. A grandes rasgos una solución más óptima a este problema sería a través de una red con una distribución bimodal, donde se tuviera un nodo con grado <span class="math notranslate nohighlight">\(k_{max}\)</span> altamente conectado y el resto de los nodos tuvieran grado <span class="math notranslate nohighlight">\(k_{min}\)</span>.</p>
 </div>
-<div class="section" id="ejercicios-opcionales">
-<h2><span class="section-number">13.1.4. </span>Ejercicios opcionales<a class="headerlink" href="#ejercicios-opcionales" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="ejercicios">
+<h2><span class="section-number">13.1.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="section" id="ejercicio-1-percolacion-en-redes-reales">
 <h3><span class="section-number">13.1.4.1. </span>Ejercicio 1: Percolación en redes reales<a class="headerlink" href="#ejercicio-1-percolacion-en-redes-reales" title="Enlazar permanentemente con este título">¶</a></h3>
-<p><strong>Dificultad: Fácil</strong></p>
+<p><strong>Dificultad: Baja</strong></p>
 <p><strong>Carga los datos de una red real y utilizando las funciones definidas en la sección anterior explora como se comporta ante fallas y ataques y grafica tus resultados.</strong></p>
 <p>¿La red es robusta ante fallas aleatorias? ¿Qué tan sensible es a los ataques? ¿Qué implicaciones podría tener este comportamiento para el sistema real que representa la red?</p>
+<p><strong>Tip</strong>: para usar la función <code class="docutils literal notranslate"><span class="pre">experimento_percolacion_redes</span></code> definida anteriormente se requiere una función «callback» para crear la red. Para pasarle la red real puedes definir una <a class="reference external" href="https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/">función anónima o lambda</a> que reciba como único parámetro una red y retorne la red y a ésta pasarle una copia de la red real.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cargar datos...</span>
@@ -1219,9 +1282,9 @@
 <h3><span class="section-number">13.1.4.2. </span>Ejercicio 2: Percolación por enlaces<a class="headerlink" href="#ejercicio-2-percolacion-por-enlaces" title="Enlazar permanentemente con este título">¶</a></h3>
 <p><strong>Dificultad: Media</strong></p>
 <p>En este notebook solamente se discutió la percolación por nodos o sitios, es decir, el proceso donde se quitan una fracción de nodos junto con sus enlaces. Pero… ¿qué pasa si en lugar de quitar nodos quitamos enlaces? Para investigarlo define una función llamada <code class="docutils literal notranslate"><span class="pre">percolacion_red_enclaces()</span></code> análoga a la función <code class="docutils literal notranslate"><span class="pre">percolacion_red()</span></code> definida anteriormente, pero que en lugar de quitar una fracción <span class="math notranslate nohighlight">\(f\)</span> de nodos, quite una fracción <span class="math notranslate nohighlight">\(f\)</span> de enlaces.</p>
-<p>Nota: Para simular ataques en este caso podemos utilizar una medida de <em>centralidad de enlaces</em>, por ejemplo, la centralidad de intermediación de enlace implementada en NetworkX a través de la función: <code class="docutils literal notranslate"><span class="pre">edge_betweenness_centrality</span></code>. Sin embargo, este es un cálculo muy demandande computacionalmente (sobre todo en redes muy grandes), por lo que sugerimos solamente explorar el caso donde se quitan enlaces de forma aleatoria y compararlo con el caso donde se quitan nodos de forma aleatoria.</p>
 <p><strong>Obtener una gráfica donde se compare la percolación por nodos y por enlaces para una red aleatoria y una red libre de escala</strong>.</p>
 <p>¿Qué comportamiento observas? ¿A través de cuál de los dos tipos de percolación se rompe más rápido la red? ¿Obtienes valores críticos diferentes de <span class="math notranslate nohighlight">\(f\)</span> para cada tipo de percolación? ¿Cómo se comporta la red real que exploraste en el ejercicio anterior a la percolación por enlaces?</p>
+<p><strong>Tip</strong>: Para simular ataques en este caso podemos utilizar una medida de <em>centralidad de enlaces</em>, por ejemplo, la centralidad de intermediación de enlace implementada en NetworkX a través de la función: <code class="docutils literal notranslate"><span class="pre">edge_betweenness_centrality</span></code>. Sin embargo, este es un cálculo muy demandande computacionalmente (sobre todo en redes muy grandes), por lo que sugerimos solamente explorar el caso donde se quitan enlaces de forma aleatoria y compararlo con el caso donde se quitan nodos de forma aleatoria.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define la función para percolar por enlaces</span>
@@ -1243,13 +1306,13 @@
 <p>Otra forma de encontrar las componentes ocupadas es a través del <a class="reference external" href="https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm"><strong>algoritmo de Hoshen-Kopelman</strong></a> que es una aplicación especial del <a class="reference external" href="https://www.youtube.com/watch?v=ayW5B2W9hfo">algoritmo de <em>union-find</em></a>. A grandes rasgos este algoritmo recorre cada una de las celadas de la látice y para las celdas ocupadas verifica si al vecino de arriba y al de la izquierda ya se les asignó una componente. Aquí pueden pasar varias cosas:</p>
 <ol class="simple">
 <li><p>si no se les ha asignado se le asigna una nueva;</p></li>
-<li><p>si la de arriba ya tiene componente asignada entonces le asigna esa;</p></li>
-<li><p>si la de la izquierda ya tiene componente asignada se le asigna esa; y</p></li>
-<li><p>si la de arriba y la de la izquierda ya tienen entonces se registra que deben ser componentes iguales (se unen las componentes) y se le asigna la componente de alguna de ellas.</p></li>
+<li><p>si la de arriba ya tiene componente asignada entonces le asigna esa (a través de la función <code class="docutils literal notranslate"><span class="pre">find()</span></code>);</p></li>
+<li><p>si la de la izquierda ya tiene componente asignada se le asigna esa (a través de la función <code class="docutils literal notranslate"><span class="pre">find()</span></code>); y</p></li>
+<li><p>si la de arriba y la de la izquierda ya tienen entonces se registra que deben ser componentes iguales (se unen las componentes; a través de la función <code class="docutils literal notranslate"><span class="pre">union()</span></code>) y se le asigna la componente de alguna de ellas (con <code class="docutils literal notranslate"><span class="pre">find()</span></code>).</p></li>
 </ol>
-<p>Así de este algoritmo obtenemos una látice con algunas vecindades/componentes y una lista que indica cuáles componentes son la misma.</p>
+<p>Así de este algoritmo obtenemos una látice con algunas vecindades/componentes.</p>
 <p><strong>Implementa el algrotimo de Hoshen-Kopelman para buscar las componentes conectadas en una látice regular de una dimensión</strong>.</p>
-<p>Puedes basarte en el <a class="reference external" href="https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm#Pseudocode">pseudocódigo descrito en Wikipedia</a> y revisar esta <a class="reference external" href="https://www.ocf.berkeley.edu/~fricke/projects/hoshenkopelman/hoshenkopelman.html">explicación más detallada del algoritmo</a></p>
+<p><strong>Tip</strong>: Puedes basarte en el <a class="reference external" href="https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm#Pseudocode">pseudocódigo descrito en Wikipedia</a>. Como se describe en esta <a class="reference external" href="https://www.ocf.berkeley.edu/~fricke/projects/hoshenkopelman/hoshenkopelman.html">explicación más detallada del algoritmo</a> para obtener la matriz con las componentes finales asignadas a cada celda se pueden recorrer una segunda vez todas las celdas con la función <code class="docutils literal notranslate"><span class="pre">find()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># definir funciones union y find</span>
@@ -1292,34 +1355,42 @@
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="presentacion.html" title="previous page"><span class="section-number">13. </span>Percolación en redes</a>
-    <a class='right-next' id="next-link" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html" title="next page"><span class="section-number">14. </span>Redes de información</a>
-
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="presentacion.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">13. </span>Percolación en redes</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Redes de información</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
-        
-            &copy; Derechos de autor 2021.<br/>
-      </p>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>
+    
+      Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
 </main>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
