@@ -1,0 +1,1755 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>14.1. Percolación en redes &#8212; Ciencia de Redes</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="15. Redes de información" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html" />
+    <link rel="prev" title="14. Percolación en redes" href="presentacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Prefacio
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../prefacio/presentacion.html">
+   Presentación
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 1: Matemáticas de las redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/presentacion.html">
+   1. Matemáticas de las redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/tipos_de_redes_y_matriz_de_adyacencia.html">
+     1.1. Tipos de redes y matriz de adyacencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/definicion_de_grado.html">
+     1.2. Definición de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/motivacion_y_mas_tipos_de_redes.html">
+     1.3. Motivación y más tipos de redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades.html">
+     1.4. Matríz de adyacencia y sus propiedades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/numero_de_enlaces_de_la_red.html">
+     1.5. Número de enlaces de la red
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/matematicas_de_las_redes/caminos_y_distancia_entre_nodos.html">
+     1.6. Caminos y distancia entre nodos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/presentacion.html">
+   2. Práctica 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/primeros_pasos_python_notebook.html">
+     2.1. Preliminar: primeros pasos con Python (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_notebook.html">
+     2.2. Práctica 1 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../matematicas_de_las_redes/practica_01/sesion_practica_01_video.html">
+     2.3. Práctica 1 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2: Medidas y métricas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/presentacion.html">
+   3. Medidas de centralidad de los nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
+     3.1. Centralidad de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
+     3.2. Centralidad de cercanía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
+     3.3. Centralidad de intermediación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
+     3.4. Centralidad de eigenvector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
+     3.5. Centralidad de Katz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
+     3.6. Centralidad de Page Rank (opcional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_02/presentacion.html">
+   4. Práctica 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_notebook.html">
+     4.1. Práctica 2 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_video.html">
+     4.2. Práctica 2 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/presentacion.html">
+   5. Medidas de grupos de nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
+     5.1. Coeficiente de acumulación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/grupos_de_nodos.html">
+     5.2. Grupos de nodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/modularidad.html">
+     5.3. Modularidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/presentacion.html">
+   6. Propiedades globales de la red
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/propiedades_globales.html">
+     6.1. Propiedades globales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/distribucion_de_grado.html">
+     6.2. Distribución de grado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_03/presentacion.html">
+   7. Práctica 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_03/sesion_practica_03_notebook.html">
+     7.1. Práctica 3 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3: Redes complejas y sus propiedades
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/presentacion.html">
+   8. Redes aleatorias
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/actividad_introductoria_redes_aleatorias.html">
+     8.1. Actividad introductoria a las redes aleatorias (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/definicion_de_red_aleatoria.html">
+     8.2. Definición red aleatoria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/distribucion_binomial.html">
+     8.3. Distribución binomial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/numero_de_enlaces.html">
+     8.4. Número de enlaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/grado_promedio_distribucion_de_grado_y_clustering.html">
+     8.5. Grado promedio, distribución de grado y clustering
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/presentacion.html">
+   9. Práctica 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook.html">
+     9.1. Práctica 4 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/presentacion.html">
+   10. Redes aleatorias 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/distribucion_binomial_y_de_poisson.html">
+     10.1. Distribución biniomial y de Poisson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/redes_aleatorias_y_redes_reales.html">
+     10.2. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     10.3. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/transicion_de_fase_en_redes_aleatorias.html">
+     10.4. Transición de fase en redes aleatorias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
+   11. Redes de mundo pequeño
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     11.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     11.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/experimento_ws.html">
+     11.3. Experimento W-S
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
+   12. Redes con independencia de escala (scale-free)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/definicion_general.html">
+     12.1. Definición general
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/actividad_introductoria_a_redes_con_independencia_de_escala.html">
+     12.2. Actividad introductoria a redes con independencia de escala
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/propiedades_de_la_ley_de_potencia.html">
+     12.3. Propiedades de la ley de potencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/distribucion_de_grado_tipo_ley_de_potencia.html">
+     12.4. Distribución de grado tipo ley de potencia
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 4: Procesos en redes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../difusion_en_redes/presentacion.html">
+   13. Difusión en redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../difusion_en_redes/ecuacion_de_difusion_y_laplaciano_en_redes.html">
+     13.1. Ecuación de difusión y laplaciano en redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../difusion_en_redes/propiedades_de_L.html">
+     13.2. Propiedades de L
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../difusion_en_redes/ejemplo_resuelto.html">
+     13.3. Ejemplo resuelto
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="presentacion.html">
+   14. Percolación en redes
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     14.1. Percolación en redes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 5: Estudio de redes reales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html">
+   15. Redes de información
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_en_biologia/presentacion.html">
+   16. Redes en biología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_sociales/presentacion.html">
+   17. Redes sociales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/proyectos_finales/presentacion.html">
+   18. Proyectos finales
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Referencias
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../referencias/referencias.html">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/procesos_en_redes/percolacion_en_redes/percolacion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/procesos_en_redes/percolacion_en_redes/percolacion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/procesos_en_redes/percolacion_en_redes/percolacion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   14.1.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#percolacion-en-latices-cuadradas">
+   14.1.2. Percolación en látices cuadradas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   14.1.3. Percolación en redes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   14.1.4. Ejercicios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1-percolacion-en-redes-reales">
+     14.1.4.1. Ejercicio 1: Percolación en redes reales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2-percolacion-por-enlaces">
+     14.1.4.2. Ejercicio 2: Percolación por enlaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-3-algoritmo-de-hoshen-kopelman">
+     14.1.4.3. Ejercicio 3: Algoritmo de Hoshen-Kopelman
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Percolación en redes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   14.1.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#percolacion-en-latices-cuadradas">
+   14.1.2. Percolación en látices cuadradas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   14.1.3. Percolación en redes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   14.1.4. Ejercicios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1-percolacion-en-redes-reales">
+     14.1.4.1. Ejercicio 1: Percolación en redes reales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2-percolacion-por-enlaces">
+     14.1.4.2. Ejercicio 2: Percolación por enlaces
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-3-algoritmo-de-hoshen-kopelman">
+     14.1.4.3. Ejercicio 3: Algoritmo de Hoshen-Kopelman
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="percolacion-en-redes">
+<h1><span class="section-number">14.1. </span>Percolación en redes<a class="headerlink" href="#percolacion-en-redes" title="Enlazar permanentemente con este título">#</a></h1>
+<section id="introduccion">
+<h2><span class="section-number">14.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">#</a></h2>
+<p>¿Cuántos enrutadores deben fallar para que la Internet se convierta en un conjunto de computadoras incapaces de comunicarse entre ellas? ¿Cuántas especies deben extinguirse para que un ecosistema pierda sus funciones ecológicas? ¿Cuántos individuos deben de estar vacunados para evitar la propagación de una enfermedad? ¿Cómo diseñar una red que sea robusta ante fallas o ataques de sus nodos?</p>
+<p>En redes la <strong>percolación es el proceso en el que se quita una fracción de nodos junto con sus enlaces</strong>. Este proceso se puede utilizar para estudiar una gran diversidad de fenómenos reales, como los descritos por las preguntas anteriores.</p>
+<p>Como se muestra en la siguiente figura, quitar un solo nodo de forma aleatoria tiene un efecto limitado sobre la estructura de la red. Sin embargo, si se quitan varios nodos la red se puede romper en múltiples componentes.</p>
+<p><img alt="percolación de una red" src="https://i.imgur.com/sl4D8uv.png" /></p>
+<p>Así pues, una de las preguntas centrales al estudiar la percolación de redes es: <em><strong>¿cuántos nodos tengo que eliminar para fragmentar una red en componentes aislados?</strong></em> El objetivo de este notebook es tratar de contestar a esta pregunta. Para ello primero repasemos algunos de los resultados de la Teoría de Percolación a través de su forma más habitual: una látice cuadrada en dos dimensiones.</p>
+</section>
+<section id="percolacion-en-latices-cuadradas">
+<h2><span class="section-number">14.1.2. </span>Percolación en látices cuadradas<a class="headerlink" href="#percolacion-en-latices-cuadradas" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Para iniciar importemos las librerias necesarias en esta sección:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora definimos una función que crea un arreglo booleano de  <span class="math notranslate nohighlight">\(N \times N\)</span> que representa la látice. Cada sitio (o celda) de la látice puede estar en uno de dos posibles estados: «ocupado» (activo) o «vacío» (desactivo). Un sitio estará ocupado con una probabilidad <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">crear_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">latice</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">p</span> <span class="p">)</span><span class="o">*</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">latice</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Graficamos unos ejemplos de látices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">p_valores</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">p_valores</span><span class="p">),</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">p_valores</span><span class="p">)):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">crear_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p_valores</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set3&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;p = </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">p_valores</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_6_0.png" src="../../_images/percolacion_6_0.png" />
+</div>
+</div>
+<p>Supongamos que se vierte un material desde el extremo superior de la látice. Si suponemos que el material puede fluir por los sitios ocupados (activos), entonces si este material logra encontrar un camino hasta alcanzar el extremo inferior de la látice, decimos que el material <em>percola</em>. Por ejemplo, supongamos cada sitio ocupado representa un árbol en un bosque y también supongamos que un arbol que se quema también quema a sus 4 vecinos. Si se quemaran todos los árboles en el extremo superior de la látice (primera fila) y el fuego lograra llegar al extremo inferior de la látice (última fila), diríamos que el fuego <em>percoló</em> a travéz del bosque.</p>
+<p>Para explorar si un material podría percolar a través de nuestra látice primero identifiquemos todas las <strong>componentes</strong> que se forman en nuestra látice. Es decir, identifiquemos aquellos grupos de sitios ocupados que sean vecinos entre sí. Para ello construimos un arreglo que registra la componente de cada sitio utilizando dos funciones:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">formar_componentes()</span></code>: la cual recibe una látice de <span class="math notranslate nohighlight">\(N \times N\)</span> y retorna un arreglo de <span class="math notranslate nohighlight">\(N \times N\)</span> que indica el número de componente a la que pertence cada sitio ocupado (<code class="docutils literal notranslate"><span class="pre">0</span></code> es el valor que reciben los sitios «vacios»). Para construir este arreglo se recorren los sitios de la látice y se les asigna un número de componente con la función <code class="docutils literal notranslate"><span class="pre">asignar_componente()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asignar_componente()</span></code>: esta función revisa si un sitio está ocupado y en caso de no tener una componente asignada se le asigna una y se le pide a sus cuatro vecinos que hagan lo mismo recursivamente.</p></li>
+</ul>
+<p><strong>Nota:</strong> Dado que python no es un lenguaje funcional la programación recursiva puede provocar algunos errores. Por ejemplo, para látices grandes con alta ocupación (valores grandes de <code class="docutils literal notranslate"><span class="pre">N</span></code> con valores altos de <code class="docutils literal notranslate"><span class="pre">p</span></code>) el gran número de veces que la función <code class="docutils literal notranslate"><span class="pre">asignar_componente()</span></code> es invocada puede arrojar un error que indica que hemos alcanzado la máxima profundidad de recusión permitida <code class="docutils literal notranslate"><span class="pre">RecursionError:</span> <span class="pre">maximum</span> <span class="pre">recursion</span> <span class="pre">depth</span> <span class="pre">exceeded</span> <span class="pre">in</span> <span class="pre">comparison</span></code>. Existen otros algoritmos más eficientes no recursivos para calcular las componentes conectadas en látices regulares como se describe en los ejercicios finales del notebook. Además, existen paquetes y funciones especializadas para hacer estos cálculos como la función <a class="reference external" href="https://docs.scipy.org/doc/scipy-0.16.0/reference/generated/scipy.ndimage.measurements.label.html"><code class="docutils literal notranslate"><span class="pre">measurements.label()</span></code></a> de la paquetería <code class="docutils literal notranslate"><span class="pre">scipy.ndimage</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">formar_componentes</span><span class="p">(</span><span class="n">latice</span><span class="p">):</span>
+    <span class="c1"># arreglo donde se registran las componentes a las que </span>
+    <span class="c1"># pertenece cada sitio de la látice (se inicializa </span>
+    <span class="c1"># con 0, valor que representa sitios no ocupados)</span>
+    <span class="n">componentes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> 
+
+    <span class="n">num_componente</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># se recorren los indices de la látice</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="c1"># cuando se encuentra un sitio &quot;ocupado&quot; sin </span>
+            <span class="c1"># componente se le asigna una</span>
+            <span class="k">if</span> <span class="n">latice</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">componentes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">asignar_componente</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">componentes</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">num_componente</span><span class="p">)</span>
+                <span class="n">num_componente</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">componentes</span>
+
+<span class="c1"># esta función recibe una látice, un arreglo de componentes, </span>
+<span class="c1"># la posición de la entrada del sitio (i,j) y el numero </span>
+<span class="c1"># de componente que se le asignará</span>
+<span class="k">def</span> <span class="nf">asignar_componente</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">componentes</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">num_componente</span><span class="p">):</span>
+    <span class="c1"># si estoy fuera de los índices del arreglo, no hago nada</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span><span class="o">&gt;=</span><span class="nb">len</span><span class="p">(</span><span class="n">latice</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">j</span><span class="o">&gt;=</span><span class="nb">len</span><span class="p">(</span><span class="n">latice</span><span class="p">)):</span>
+        <span class="k">return</span>
+    <span class="c1"># si no soy un sitio &quot;ocupado&quot;, no hago nada</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">latice</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
+        <span class="k">return</span>
+    <span class="c1"># si ya tengo asignada una componente, no hago nada</span>
+    <span class="k">if</span> <span class="n">componentes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
+        <span class="k">return</span>
+    <span class="c1"># si estoy ocupado y no se me haya asignado componente</span>
+    <span class="c1"># se me asigna una y le pido a mis cuatro vecinos que </span>
+    <span class="c1"># hagan lo mismo recursivamente</span>
+    <span class="n">componentes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">num_componente</span>
+    <span class="n">asignar_componente</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">componentes</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">num_componente</span><span class="p">)</span> <span class="c1"># vecino de arriba</span>
+    <span class="n">asignar_componente</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">componentes</span><span class="p">,</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">num_componente</span><span class="p">)</span> <span class="c1"># vecino de la derecha</span>
+    <span class="n">asignar_componente</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">componentes</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span>  <span class="p">,</span><span class="n">num_componente</span><span class="p">)</span> <span class="c1"># vecino de abajo</span>
+    <span class="n">asignar_componente</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">componentes</span><span class="p">,</span><span class="n">i</span>  <span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">num_componente</span><span class="p">)</span> <span class="c1"># vecino de la izquierda</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veamos un ejemplo de cómo se obtienen las componentes para una látice:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.6</span>
+
+<span class="n">latice</span> <span class="o">=</span> <span class="n">crear_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">componentes</span> <span class="o">=</span> <span class="n">formar_componentes</span><span class="p">(</span><span class="n">latice</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set3&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="n">num_componente</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">componentes</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num_componente</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">num_componente</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Componentes </span><span class="se">\n</span><span class="s1"> (p = </span><span class="si">%.2f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_10_0.png" src="../../_images/percolacion_10_0.png" />
+</div>
+</div>
+<p>Ahora, para saber si un material podría percolar verticalmente en nuestra látice, se revisa si hay componentes que inicien en el extremo superior y termine en el extremo inferior del arreglo. Para ello definimos una función que retorna las componentes que percolan verticalmente obteniendo los elementos que se compartan entre la primera y la última fila de nuestro arreglo de componentes (se omite el <code class="docutils literal notranslate"><span class="pre">0</span></code>, ya que este representa los sitios vacios).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">obtener_componentes_que_percolan_verticalmente</span><span class="p">(</span><span class="n">componentes</span><span class="p">):</span>
+    <span class="n">primera_fila</span> <span class="o">=</span> <span class="n">componentes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ultima_fila</span> <span class="o">=</span> <span class="n">componentes</span><span class="p">[</span> <span class="nb">len</span><span class="p">(</span><span class="n">componentes</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="p">]</span>
+    <span class="n">componentes_que_percolan_verticalmente</span> <span class="o">=</span> <span class="p">[</span><span class="n">comp</span> <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">intersect1d</span><span class="p">(</span><span class="n">primera_fila</span><span class="p">,</span><span class="n">ultima_fila</span><span class="p">))</span> <span class="k">if</span> <span class="n">comp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">componentes_que_percolan_verticalmente</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dibujemos un ejemplo de cómo funciona esta nueva función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.6</span>
+
+<span class="n">latice</span> <span class="o">=</span> <span class="n">crear_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">componentes</span> <span class="o">=</span> <span class="n">formar_componentes</span><span class="p">(</span><span class="n">latice</span><span class="p">)</span>
+<span class="n">componentes_que_percolan_verticalmente</span> <span class="o">=</span> <span class="n">obtener_componentes_que_percolan_verticalmente</span><span class="p">(</span><span class="n">componentes</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set3&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="n">num_componente</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">componentes</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num_componente</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num_componente</span> <span class="ow">in</span> <span class="n">componentes_que_percolan_verticalmente</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">num_componente</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E85160&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">num_componente</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;¿Percola verticalmente? : </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">componentes_que_percolan_verticalmente</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_14_0.png" src="../../_images/percolacion_14_0.png" />
+</div>
+</div>
+<p>Otra variable relevante a estudiar en nuestra látice regular (y la variable que monitorearemos cuando estudiemos la percolación en redes) es el <strong>tamaño de nuestra máxima componente</strong>. Para hacer esto, definimos una nueva función <code class="docutils literal notranslate"><span class="pre">obtener_tamanio_max_comp()</span></code> que calcula dicho valor a partir de un diccionario con el tamaño de todas las componentes registradas en nuestro arreglo de componentes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">obtener_tamanio_max_comp</span><span class="p">(</span><span class="n">componentes</span><span class="p">):</span>
+    <span class="c1"># se obtiene una lista con los números de las componentes</span>
+    <span class="c1"># y otra que cuenta cuantas veces aparecen en la látice </span>
+    <span class="c1"># (i.e., el tamaño de cada una)</span>
+    <span class="n">valores</span><span class="p">,</span> <span class="n">conteo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">componentes</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cuenta</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">valores</span><span class="p">,</span><span class="n">conteo</span><span class="p">))</span>
+    
+    <span class="c1"># se quitan los sitios no ocupados del </span>
+    <span class="c1"># diccionario</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">cuenta</span><span class="p">:</span>
+        <span class="n">cuenta</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">tamanio_max_componente</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">cuenta</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">max_comps</span> <span class="o">=</span> <span class="p">[</span> <span class="n">num_comp</span> <span class="k">for</span> <span class="n">num_comp</span><span class="p">,</span> <span class="n">tamanio</span> <span class="ow">in</span> <span class="n">cuenta</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">tamanio</span> <span class="o">==</span> <span class="n">tamanio_max_componente</span> <span class="p">]</span>
+    <span class="k">return</span> <span class="n">tamanio_max_componente</span><span class="p">,</span> <span class="n">max_comps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veamos un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.6</span>
+
+<span class="n">latice</span> <span class="o">=</span> <span class="n">crear_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">componentes</span> <span class="o">=</span> <span class="n">formar_componentes</span><span class="p">(</span><span class="n">latice</span><span class="p">)</span> 
+<span class="n">tamanio_max_componente</span><span class="p">,</span> <span class="n">max_componentes</span> <span class="o">=</span> <span class="n">obtener_tamanio_max_comp</span><span class="p">(</span><span class="n">componentes</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set3&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="n">num_componente</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">componentes</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num_componente</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num_componente</span> <span class="ow">in</span> <span class="n">max_componentes</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">num_componente</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">num_componente</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;La máxima componente es la número </span><span class="si">%i</span><span class="s1"> y mide </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">max_componentes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tamanio_max_componente</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_18_0.png" src="../../_images/percolacion_18_0.png" />
+</div>
+</div>
+<p>Ahora que ya tenemos todos los elementos necesarios podemos explorar cómo se comportan la <strong>probabilidad de percolación</strong> y el <strong>tamaño de la máxima componente</strong> para múltiples valores de la probabilidad de ocupación, <span class="math notranslate nohighlight">\(p\)</span>. Para ello vamos a integrar todas las funciones que definimos en las subsecciones anteriores en una sola función llamada <code class="docutils literal notranslate"><span class="pre">percolacion()</span></code> y vamos a realizar un experimento donde exploramos múltiples valores de la probabilidad de ocupación con múltiples repeticiones para cada valor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">percolacion_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">latice</span> <span class="o">=</span> <span class="n">crear_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">componentes</span> <span class="o">=</span> <span class="n">formar_componentes</span><span class="p">(</span><span class="n">latice</span><span class="p">)</span>
+    <span class="n">percola</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">obtener_componentes_que_percolan_verticalmente</span><span class="p">(</span><span class="n">componentes</span><span class="p">))</span>
+    <span class="n">tamanio_max_comp</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">obtener_tamanio_max_comp</span><span class="p">(</span><span class="n">componentes</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">latice</span><span class="p">,</span> <span class="n">componentes</span><span class="p">,</span> <span class="n">percola</span><span class="p">,</span> <span class="n">tamanio_max_comp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora corramos experimentos. Para ello primero definimos una lista con todos los valores de <span class="math notranslate nohighlight">\(p\)</span> que vamos a explorar. Luego para cada valor de <span class="math notranslate nohighlight">\(p\)</span> creamos <code class="docutils literal notranslate"><span class="pre">repeticiones</span></code> número de látices y para cada una calculamos el tamaño de la máxima componente y si percola y promediamos los resultados de todas las repeticiones. Finalmente graficamos los resultados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># tamaño de la látice</span>
+
+<span class="n">probs_ocupacion</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span> <span class="c1"># valores de probabilidad de ocupación a explorar</span>
+<span class="n">repeticiones</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1"># listas donde se guardarán los resultados de las simulaciones</span>
+<span class="n">promedios_tamanio_max_comp</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">promedios_percola</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">prob</span> <span class="ow">in</span> <span class="n">probs_ocupacion</span><span class="p">:</span>
+    <span class="n">resultados_repeticion_tamanio_max_comp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">resultados_repeticion_percola</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">repeticion</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">repeticiones</span><span class="p">):</span>
+        <span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="p">,</span> <span class="n">percola</span><span class="p">,</span> <span class="n">tamanio_comp</span> <span class="o">=</span> <span class="n">percolacion_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">prob</span><span class="p">)</span>
+        <span class="n">resultados_repeticion_tamanio_max_comp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tamanio_comp</span><span class="p">)</span>
+        <span class="n">resultados_repeticion_percola</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">percola</span><span class="p">)</span>
+
+    <span class="n">promedio_tamanio_max_comp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">resultados_repeticion_tamanio_max_comp</span><span class="p">)</span>
+    <span class="n">promedios_tamanio_max_comp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">promedio_tamanio_max_comp</span><span class="p">)</span>
+    <span class="n">promedio_percola</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">resultados_repeticion_percola</span><span class="p">)</span>
+    <span class="n">promedios_percola</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">promedio_percola</span><span class="p">)</span>
+
+<span class="c1"># se grafican los resultados</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">probs_ocupacion</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">promedios_percola</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">promedios_tamanio_max_comp</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;probabilidad de percolación&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E85160&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;tamaño maxima componente&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#75AAFF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.593</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tamaño relativo máxima componene </span><span class="se">\n</span><span class="s1"> Probabilidad de percolación&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Probabilidad de ocupación (p)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_22_0.png" src="../../_images/percolacion_22_0.png" />
+</div>
+</div>
+<p>Al ver estos resultados podemos ver claramente que <strong>existe un valor crítico (<span class="math notranslate nohighlight">\(p_c\)</span>) de la probabilidad de ocupación</strong> que permite identificar dos comportamientos distintos en el sistema:</p>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(p &gt; p_c\)</span> entonces el sistema percola y se forma una componente grande.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(p &lt; p_c\)</span> entonces el sistema no percola y solamente se forman múltiples componentes muy pequeñas.</p></li>
+</ul>
+<p>En el caso de la látice cuadrada tenemos que <span class="math notranslate nohighlight">\(p_c \approx 0.593\)</span> (línea punteada en la figura). Sin embargo, este valor depende del tipo de látice (e.g., <span class="math notranslate nohighlight">\(p_c = \frac{1}{2}\)</span> para látices triangulares) y de la dimensión del sistema (e.g., <span class="math notranslate nohighlight">\(p_c \approx 0.3116\)</span> para una látice cúbica).</p>
+<p>Estos resultado se pueden reinterpretar para el caso de la percolación en redes. Consideremos a esta látice como una red regular donde cada «sitio» representa un nodo concectado a sus vecinos ocupados:</p>
+<p><img alt="Latice cuadrada como una red" src="https://i.imgur.com/QVmqf2o.png" /></p>
+<p>Ahora, si en lugar de considerar a la probabilidad de ocupación (<span class="math notranslate nohighlight">\(p\)</span>) consideramos la fracción de nodos removidos (<span class="math notranslate nohighlight">\(f = 1 - p\)</span>), entonces podemos concluir que existe un valor critico <span class="math notranslate nohighlight">\(f_c\)</span>, tal que (ver siguiente figura):</p>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(f &lt; f_c\)</span> entonces tenemos una componente gigante</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f &gt; f_c\)</span> entonces la componente gigante desaparece y la red se rompe en múltiples componentes pequeñas</p></li>
+</ul>
+<p>Pero… ¿qué pasa cuando las redes no son regulares?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;tamaño maxima componente&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#75AAFF&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.593</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tamaño relativo máxima componene&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fracción de nodos removidos (f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_24_0.png" src="../../_images/percolacion_24_0.png" />
+</div>
+</div>
+</section>
+<section id="id1">
+<h2><span class="section-number">14.1.3. </span>Percolación en redes<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Hay multiples formas como podríamos ir quitando los nodos de nuestra red. La forma más simple es elegir aleatoriamente dichos nodos, lo cual puede representar <strong>fallas</strong> aleatorias de los elementos de nuestro sistema (e.g., una error en el funcionamiento de un generador eléctrico o de un enrutador). Otra forma es realizando <strong>ataques</strong> a nuestra red con el objetivo de hacerle daño, por lo que en lugar de remover nodos aleatoriamente se quitan con base en su importancia para el sistema (i.e., por su alta centralidad).</p>
+<p>En el caso de las redes como no tenemos «extremos» espacialmente definidos que nos indiquen si un material podría percolar a traves de nuestro sistema, <strong>la variable que exploraremos es el tamaño de la máxima componente</strong> (<span class="math notranslate nohighlight">\(S\)</span>).</p>
+<p>A diferencia de la exploración que hicimos de la percolación de la látice cuadrada (donde implementamos todo manualmente), simular la percolación en redes resulta muy sencillo gracias a todos los métodos que nos ofrece NetworkX. Comencemos importando las librerias necesarias para esta sección.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Definamos una función que simula la percolación. Esta función recibe una red cualquiera, un valor <span class="math notranslate nohighlight">\(f\)</span>, la proporción de nodos que se le van a remover y un valor booleano que determina si queremos simular la remoción de nodos por ataques o por fallas (como valor predeterminado le decimos que simule fallas). Primero se calculan la cantidad de nodos a remover, luego, de acuerdo al método de percolación se seleccionan los nodos a remover. En el caso de las <em>fallas</em> se seleccionan aleatoriamente los nodos y en caso de los <em>ataques</em> se ordenan los nodos por su centralidad de grado y se seleccionan primero aquellos con mayores valores. Finalmente se remueven los nodos y se calcula y retorna el tamaño de la componente más grande.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">percolacion_red</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">ataque</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">num_nodos_a_remover</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">())</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">ataque</span><span class="p">):</span>
+        <span class="n">nodos</span> <span class="o">=</span> <span class="p">[</span><span class="n">nodo</span> <span class="k">for</span> <span class="n">nodo</span><span class="p">,</span><span class="n">grado</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(),</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+        <span class="n">nodos_a_remover</span> <span class="o">=</span> <span class="n">nodos</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">num_nodos_a_remover</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">nodos</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+        <span class="n">nodos_a_remover</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">nodos</span><span class="p">,</span><span class="n">num_nodos_a_remover</span><span class="p">)</span>
+
+    <span class="n">G</span><span class="o">.</span><span class="n">remove_nodes_from</span><span class="p">(</span><span class="n">nodos_a_remover</span><span class="p">)</span>
+    <span class="n">tamanio_max_comp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">G</span><span class="p">),</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">tamanio_max_comp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veamos gráficamente como funciona nuestra nueva función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="mf">0.6</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gnp_random_graph</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">G_1</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">G_2</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="c1"># se calcula el tamaño de la máxima componente</span>
+<span class="c1"># y se grafica previo a la percolación (f=0)</span>
+<span class="n">tamanio_max_comp</span> <span class="o">=</span> <span class="n">percolacion_red</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;G previo a la percolación </span><span class="se">\n</span><span class="s1"> f = </span><span class="si">%.2f</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> S = </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tamanio_max_comp</span><span class="p">))</span>
+
+<span class="c1"># se corre la percolación por fallas en esa </span>
+<span class="c1"># misma red y se grafica</span>
+<span class="n">tamanio_max_comp</span> <span class="o">=</span> <span class="n">percolacion_red</span><span class="p">(</span><span class="n">G_1</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># se grafican enlaces originales como referencia</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span> <span class="c1"># se grafican nodos originales como referencia</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G_1</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;G después de la percolación por fallas </span><span class="se">\n</span><span class="s1"> f = </span><span class="si">%.2f</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> S = </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">tamanio_max_comp</span><span class="p">))</span>
+
+<span class="c1"># se corre la percolación por ataques en una</span>
+<span class="c1"># copia de la red original</span>
+<span class="n">tamanio_max_comp</span> <span class="o">=</span> <span class="n">percolacion_red</span><span class="p">(</span><span class="n">G_2</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">ataque</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># se grafican enlaces originales como referencia</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span> <span class="c1"># se grafican nodos originales como referencia</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G_2</span><span class="p">,</span><span class="n">pos</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;G después de la percolación por ataques </span><span class="se">\n</span><span class="s1"> f = </span><span class="si">%.2f</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> S = </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">tamanio_max_comp</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_30_0.png" src="../../_images/percolacion_30_0.png" />
+</div>
+</div>
+<p>Ahora experimentemos para ver cómo cambia el tamaño de la máxima componente con distintos valores de <span class="math notranslate nohighlight">\(f\)</span> y en distintos tipos de redes: en redes aleatorias con distribución de poisson (Erdös-Rényi) y en redes libres de escala (Barabási-Albert). Para crear nuestras redes utilizaremos las funciones de NetworkX <code class="docutils literal notranslate"><span class="pre">gnm_random_graph(N,L)</span></code>, que crea una red aleatoria Erdös-Rényi con <span class="math notranslate nohighlight">\(N\)</span> nodos y <span class="math notranslate nohighlight">\(L\)</span> enlaces, y <code class="docutils literal notranslate"><span class="pre">barabasi_albert_graph(N,m)</span></code>, que crea una red libre de escala con <span class="math notranslate nohighlight">\(N\)</span> nodos a partir de ir creciendo una red tipo estrella (con <span class="math notranslate nohighlight">\(m+1\)</span> nodos y <span class="math notranslate nohighlight">\(m\)</span> enlaces) agregando <span class="math notranslate nohighlight">\(m\)</span> enlaces con cada nuevo nodo que se introduce. Para que esta comparación sea apropiada debemos correr los experimentos con redes con el mismo número de nodos y enlaces, por lo que a partir de <span class="math notranslate nohighlight">\(N\)</span> y <span class="math notranslate nohighlight">\(m\)</span> calculamos el valor de <span class="math notranslate nohighlight">\(L\)</span> (una red de Barabási-Albert tiene <span class="math notranslate nohighlight">\(L=m(N-m)\)</span> enlaces).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># se grafican ejemplos</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">gnm_random_graph</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">barabasi_albert_graph</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+<span class="n">posG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">posH</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">kamada_kawai_layout</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">posG</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;#75AAFF&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red aleatoria (Erdös-Rényi) </span><span class="se">\n</span><span class="s1"> L=</span><span class="si">%i</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> &lt;k&gt;=</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">(),</span><span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">posH</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">node_size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;#E85160&quot;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red libre de escala (Barabasi-Alberts) </span><span class="se">\n</span><span class="s1"> L=</span><span class="si">%i</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> &lt;k&gt;=</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">(),</span><span class="n">H</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span><span class="o">/</span><span class="n">N</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_32_0.png" src="../../_images/percolacion_32_0.png" />
+</div>
+</div>
+<p>Ahora definamos una función para experimentar que corra nuestros experimentos. Esta función nos retornará un DataFrame de pandas y recibirá los siguientes argumentos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f_valores</span></code>: los valores de <span class="math notranslate nohighlight">\(f\)</span> que vamos a explorar</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repeticiones</span></code>: el número de repreticiones que vamos a realizar para cada valor de <span class="math notranslate nohighlight">\(f\)</span> a explorar</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ataque</span></code>: una cadena texto indique si queremos que la percolación se corra por «ataque» o «falla»</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generar_red_callback</span></code>: una función que genera las redes que queremos percolar. Un callback es una función que es pasada a otra función para que esta última la ejecute cuando la necesite, es un concepto muy útil en progamacion. En este paso nuestro callback serán las funciones de NetworkX <code class="docutils literal notranslate"><span class="pre">gnm_random_graph</span></code> y <code class="docutils literal notranslate"><span class="pre">barabasi_albert_graph</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*args</span></code>: los argumentos que utiliza la función <code class="docutils literal notranslate"><span class="pre">generar_red_callback</span></code> cuando es ejecutada (e.g., <code class="docutils literal notranslate"><span class="pre">N</span></code>,<code class="docutils literal notranslate"><span class="pre">L</span></code>,<code class="docutils literal notranslate"><span class="pre">m</span></code> dependiendo de nuestro callback)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="n">ataque</span><span class="p">,</span><span class="n">generar_red_callback</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># listas donde se guardaran los resultados </span>
+    <span class="c1"># de las simulaciones</span>
+    <span class="n">promedios_tamanio_max_comp</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">f_valores</span><span class="p">:</span>
+        <span class="n">resultados_repeticiones_tamanio_max_comp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">repeticion</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">repeticiones</span><span class="p">):</span>
+            <span class="c1"># se crea una red ejecutando el callback</span>
+            <span class="c1"># y pasándole los argumentos que necesita</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">generar_red_callback</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span> 
+            <span class="n">tamanio_comp</span> <span class="o">=</span> <span class="n">percolacion_red</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">ataque</span><span class="p">)</span>
+            <span class="n">resultados_repeticiones_tamanio_max_comp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tamanio_comp</span><span class="p">)</span>
+
+        <span class="n">promedio_tamanio_max_comp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">resultados_repeticiones_tamanio_max_comp</span><span class="p">)</span>
+        <span class="n">promedios_tamanio_max_comp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">promedio_tamanio_max_comp</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">promedios_tamanio_max_comp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finalmente, definamos nuestros parámetros de la red y de los experimentos, corrámosolo y grafiquemos nuestros resultados:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># parámetros de las redes</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># nodos</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">m</span><span class="p">)</span> 
+
+<span class="c1"># parámetros experimentos</span>
+<span class="n">f_valores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="n">repeticiones</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># corremos los experimentos y los guardamos</span>
+<span class="n">resultado_ER_falla</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">gnm_random_graph</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">resultado_SF_falla</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">barabasi_albert_graph</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+<span class="n">resultado_ER_ataque</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">gnm_random_graph</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">resultado_SF_ataque</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">barabasi_albert_graph</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># graficamos los resultados</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">f_valores</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_ER_falla</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_SF_falla</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_ER_ataque</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">y4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_SF_ataque</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;falla&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;ataque&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red aleatoria (Erdös-Rényi)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Tamaño relativo máxima componente&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fracción de nodos removidos (f)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;falla&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E85160&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y4</span><span class="p">,</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;ataque&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E85160&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red libre de escala (Barabási-Albert)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Tamaño relativo máxima componente&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fracción de nodos removidos (f)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_36_0.png" src="../../_images/percolacion_36_0.png" />
+</div>
+</div>
+<p>Estos resultados muestran varias cosas interesantes.</p>
+<p>Si primero nos fijamos en la percolacion por fallas vemos que la red aleatora Erdös-Rényi presenta un comportamiento similar al de la látice, ya que presenta un valor crítico <span class="math notranslate nohighlight">\(f_c\)</span> (para este ejemplo <span class="math notranslate nohighlight">\(f_c \approx 0.75\)</span>; ver <a class="reference external" href="http://networksciencebook.com/chapter/8#advanced-8c">seccion 8.C</a> y <a class="reference external" href="http://networksciencebook.com/chapter/8#advanced-8f">seccion 8.F</a> del libro de Barrabási para ver cómo se pueden calcular estos valores críticos) que define dos comportamientos:</p>
+<ul class="simple">
+<li><p>si <span class="math notranslate nohighlight">\(f&gt;f_c\)</span> entonces solamente hay pequeños clusters y no existe una componente gigante</p></li>
+<li><p>si <span class="math notranslate nohighlight">\(f&lt;f_c\)</span> entonces aparece una componente gigante que crece de acuerdo a la candidad de nodos presentes</p></li>
+</ul>
+<p>En contraste, en el caso de la red libre de escala la componente gigante solo desaparece cuando <span class="math notranslate nohighlight">\(f\)</span> está muy cerca de 1, es decir, cuando se remueve casi la totalidad de los nodos (en el caso de redes libre de escala <em>infinitas</em> no existe un valor crítico; todo esto lo discute analíticamente Newman en el capítulo 16 de su libro). Así pues, <strong>ante las fallas las redes libres de escala son más robustas que las redes aleatorias</strong>. Esta propiedad de las redes libre de escala permite explicar la alta tolerancia a errores que caracteriza a varios sistemas reales. Por ejemplo, el mantenimiento de las funciones de los organismos a pesar de errores en su metabolismo, o la robustes de la Internet a pesar del recurrente fallo en el funcionamiento de enrutadores. Estas ideas fueron exploradas por primera vez por <a class="reference external" href="https://www.nature.com/articles/35019019">Albert, Jeong y Barabási (2000)</a> (la figura 3 de este articulo es similar a la que construimos, sin embargo, nota que dicha figura tiene <a class="reference external" href="https://www.nature.com/articles/35054111">un error que posteriormente corrigieron los autores</a> en la red aleatoria ante fallas).</p>
+<p>Pero… ¿qué pasa si en lugar de remover los nodos aleatoriamente atacamos primero a los <em>hubs</em>? En el caso de la percolación por ataques vemos el comportamiento contrario, es decir, <strong>ante los ataques las redes aleatorias son más robustas que las libres de escala</strong>. Esto se debe a que en este último tipo de redes la conectividad está mantenida por unos cuantos nodos que al ser removidos rompen rápidamente la red en pequeños clusters. En contraste, la red aleatoria muestra una mayor tolerancia ya que todos sus nodos aportan de forma similar a la conectividad de la red. Este resultado puede tener interesantes implicaciones en sistemas reales, por ejemplo, si queremos evitar que se propague una enfermedad una estrategia más eficiente que vacunar de forma aleatoria a la población sería primero vacunar a los <em>hubs</em> o superpropagadores.</p>
+<p>Por lo tanto aquí tenemos una disyuntiva entre robustes ante ataques o a fallas. Si quisiéramos diseñar una red robusta ante ambos eventos ¿cómo debería ser su estructura? Esto se discute en la <a class="reference external" href="http://networksciencebook.com/chapter/8#buildin-robustness">sección 8.7</a> del libro de Barabasi. Evidentemente la red más robusta sería aquella donde todos los nodos esten conectados con todos, sin embargo, mantener una red así sería muy costoso y poco realista. A grandes rasgos una solución más óptima a este problema sería a través de una red con una distribución bimodal, donde se tuviera un nodo con grado <span class="math notranslate nohighlight">\(k_{max}\)</span> altamente conectado y el resto de los nodos tuvieran grado <span class="math notranslate nohighlight">\(k_{min}\)</span>.</p>
+</section>
+<section id="ejercicios">
+<h2><span class="section-number">14.1.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Enlazar permanentemente con este título">#</a></h2>
+<section id="ejercicio-1-percolacion-en-redes-reales">
+<h3><span class="section-number">14.1.4.1. </span>Ejercicio 1: Percolación en redes reales<a class="headerlink" href="#ejercicio-1-percolacion-en-redes-reales" title="Enlazar permanentemente con este título">#</a></h3>
+<p><strong>Dificultad: Baja</strong></p>
+<p><strong>Carga los datos de una red real y utilizando las funciones definidas en la sección anterior explora como se comporta ante fallas y ataques y grafica tus resultados.</strong></p>
+<p>¿La red es robusta ante fallas aleatorias? ¿Qué tan sensible es a los ataques? ¿Qué implicaciones podría tener este comportamiento para el sistema real que representa la red?</p>
+<p><strong>Tip</strong>: para usar la función <code class="docutils literal notranslate"><span class="pre">experimento_percolacion_redes</span></code> definida anteriormente se requiere una función «callback» para crear la red. Para pasarle la red real puedes definir una <a class="reference external" href="https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/">función anónima o lambda</a> que reciba como único parámetro una red y retorne la red y a ésta pasarle una copia de la red real.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cargar datos...</span>
+
+
+<span class="c1"># crear red...</span>
+
+
+<span class="c1"># correr experimento de percolación</span>
+
+
+<span class="c1"># graficar resultados</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cargar datos...</span>
+
+<span class="c1"># datos de rutas aereas: https://raw.githubusercontent.com/Curso-Redes-F-Ciencias-UNAM/recursos/main/otros-recuros/enlaces.csv</span>
+<span class="n">datos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;enlaces.csv&#39;</span><span class="p">)</span>
+<span class="n">datos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="c1"># crear red...</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;Source&#39;</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s1">&#39;Target&#39;</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+
+<span class="c1"># correr experimento de percolación</span>
+
+<span class="c1"># parámetros experimentos</span>
+<span class="n">f_valores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="n">repeticiones</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># corremos los experimentos y los guardamos</span>
+<span class="c1"># a la función experimento_percolacion_redes se le pasa como argumento</span>
+<span class="c1"># &quot;generar_red_callback&quot; una función anónima o lambda que recibe una red como único argumento </span>
+<span class="c1"># y regresa la misma red. A esta función anónima se le pasa una copia de la red creada</span>
+<span class="n">resultado_real_falla</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="k">lambda</span> <span class="n">red</span><span class="p">:</span> <span class="n">red</span><span class="p">,</span><span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+<span class="n">resultado_real_ataque</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="k">lambda</span> <span class="n">red</span><span class="p">:</span> <span class="n">red</span><span class="p">,</span><span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+
+<span class="c1"># graficar resultados</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">f_valores</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_real_falla</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_real_ataque</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;falla&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;ataque&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Red de rutas aereas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Tamaño relativo máxima componente&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fracción de nodos removidos (f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.09</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_40_0.png" src="../../_images/percolacion_40_0.png" />
+</div>
+</div>
+</section>
+<section id="ejercicio-2-percolacion-por-enlaces">
+<h3><span class="section-number">14.1.4.2. </span>Ejercicio 2: Percolación por enlaces<a class="headerlink" href="#ejercicio-2-percolacion-por-enlaces" title="Enlazar permanentemente con este título">#</a></h3>
+<p><strong>Dificultad: Media</strong></p>
+<p>En este notebook solamente se discutió la percolación por nodos o sitios, es decir, el proceso donde se quitan una fracción de nodos junto con sus enlaces. Pero… ¿qué pasa si en lugar de quitar nodos quitamos enlaces? Para investigarlo define una función llamada <code class="docutils literal notranslate"><span class="pre">percolacion_red_enclaces()</span></code> análoga a la función <code class="docutils literal notranslate"><span class="pre">percolacion_red()</span></code> definida anteriormente, pero que en lugar de quitar una fracción <span class="math notranslate nohighlight">\(f\)</span> de nodos, quite una fracción <span class="math notranslate nohighlight">\(f\)</span> de enlaces.</p>
+<p><strong>Obtener una gráfica donde se compare la percolación por nodos y por enlaces para una red aleatoria y una red libre de escala</strong>.</p>
+<p>¿Qué comportamiento observas? ¿A través de cuál de los dos tipos de percolación se rompe más rápido la red? ¿Obtienes valores críticos diferentes de <span class="math notranslate nohighlight">\(f\)</span> para cada tipo de percolación? ¿Cómo se comporta la red real que exploraste en el ejercicio anterior a la percolación por enlaces?</p>
+<p><strong>Tip</strong>: Para simular ataques en este caso podemos utilizar una medida de <em>centralidad de enlaces</em>, por ejemplo, la centralidad de intermediación de enlace implementada en NetworkX a través de la función: <code class="docutils literal notranslate"><span class="pre">edge_betweenness_centrality</span></code>. Sin embargo, este es un cálculo muy demandande computacionalmente (sobre todo en redes muy grandes), por lo que sugerimos solamente explorar el caso donde se quitan enlaces de forma aleatoria y compararlo con el caso donde se quitan nodos de forma aleatoria.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define la función para percolar por enlaces</span>
+
+
+<span class="c1"># realiza experimentos</span>
+
+
+<span class="c1"># grafica los resultados comparando con la percolación por nodos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define la función para percolar por enlaces</span>
+<span class="k">def</span> <span class="nf">percolacion_red_enlaces</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">ataque</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">num_enlaces_a_remover</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">())</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">ataque</span><span class="p">):</span>
+        <span class="n">enlaces</span> <span class="o">=</span> <span class="p">[</span><span class="n">enlace</span> <span class="k">for</span> <span class="n">enlace</span><span class="p">,</span><span class="n">centralidad</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">edge_betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+        <span class="n">enlaces_a_remover</span> <span class="o">=</span> <span class="n">enlaces</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">num_enlaces_a_remover</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">enlaces</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">)</span>
+        <span class="n">enlaces_a_remover</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">enlaces</span><span class="p">,</span><span class="n">num_enlaces_a_remover</span><span class="p">)</span>
+
+    <span class="n">G</span><span class="o">.</span><span class="n">remove_edges_from</span><span class="p">(</span><span class="n">enlaces_a_remover</span><span class="p">)</span>
+    <span class="n">tamanio_max_comp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">connected_components</span><span class="p">(</span><span class="n">G</span><span class="p">),</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">tamanio_max_comp</span>
+
+<span class="c1"># define la función para experimentar</span>
+<span class="k">def</span> <span class="nf">experimento_percolacion_redes_enlace</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="n">ataque</span><span class="p">,</span><span class="n">generar_red_callback</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">promedios_tamanio_max_comp</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">f_valores</span><span class="p">:</span>
+        <span class="n">resultados_repeticiones_tamanio_max_comp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">repeticion</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">repeticiones</span><span class="p">):</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="n">generar_red_callback</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span> 
+            <span class="n">tamanio_comp</span> <span class="o">=</span> <span class="n">percolacion_red_enlaces</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">ataque</span><span class="p">)</span>
+            <span class="n">resultados_repeticiones_tamanio_max_comp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tamanio_comp</span><span class="p">)</span>
+
+        <span class="n">promedio_tamanio_max_comp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">resultados_repeticiones_tamanio_max_comp</span><span class="p">)</span>
+        <span class="n">promedios_tamanio_max_comp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">promedio_tamanio_max_comp</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">promedios_tamanio_max_comp</span>
+
+
+<span class="c1"># correr experimentos</span>
+
+<span class="c1"># parámetros de las redes</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># nodos</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="n">m</span><span class="p">)</span> 
+
+<span class="c1"># parámetros experimentos</span>
+<span class="n">f_valores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<span class="n">repeticiones</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># corremos los experimentos y los guardamos</span>
+<span class="n">resultado_ER_enlace</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes_enlace</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">gnm_random_graph</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">resultado_SF_enlace</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes_enlace</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">barabasi_albert_graph</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+<span class="n">resultado_ER</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">gnm_random_graph</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">resultado_SF</span> <span class="o">=</span> <span class="n">experimento_percolacion_redes</span><span class="p">(</span><span class="n">f_valores</span><span class="p">,</span><span class="n">repeticiones</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">barabasi_albert_graph</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># grafica los resultados</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">f_valores</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_ER_enlace</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_SF_enlace</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_ER</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">y4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">resultado_SF</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;enlace&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;nodo&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#75AAFF&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red aleatoria (Erdös-Rényi)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Tamaño relativo máxima componente&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fracción de nodos removidos (f)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="c1"># axs[0].axvline(x=0.35,color=&quot;#CFCFCC&quot;,linestyle=&#39;:&#39;)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;enlace&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E85160&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y4</span><span class="p">,</span><span class="s1">&#39;^&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;nodo&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E85160&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Red libre de escala (Barabási-Albert)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Tamaño relativo máxima componente&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fracción de nodos removidos (f)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#CFCFCC&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="c1"># axs[1].axvline(x=0.15,color=&quot;#CFCFCC&quot;,linestyle=&#39;:&#39;)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_43_0.png" src="../../_images/percolacion_43_0.png" />
+</div>
+</div>
+</section>
+<section id="ejercicio-3-algoritmo-de-hoshen-kopelman">
+<h3><span class="section-number">14.1.4.3. </span>Ejercicio 3: Algoritmo de Hoshen-Kopelman<a class="headerlink" href="#ejercicio-3-algoritmo-de-hoshen-kopelman" title="Enlazar permanentemente con este título">#</a></h3>
+<p><strong>Dificultad: Alta</strong></p>
+<p>Cuando exploramos la percolación en la látice cuadrada de una dimensión al comienzo de este notebook construimos las funciones <code class="docutils literal notranslate"><span class="pre">formar_componentes()</span></code> y <code class="docutils literal notranslate"><span class="pre">asignar_componente()</span></code> para identificar las componentes conectadas en nuestra látice. Lo que hacen estas dos funciones es recorrer celda por celda y cuando encuentran una celda ocupada se le asigna una componente y ésta celda le pide a sus cuatro celadas vecinas que si están ocupadas también se les asigne una componente y que repita el procedimiento con sus vecinas y así sucesivamente. Esta implementación sigue la lógica de los algoritmos de <a class="reference external" href="https://www.youtube.com/watch?v=7fujbpJ0LB4"><strong>búsqueda en profundiad o <em>Depth First Search (DFS)</em></strong></a>. Sin embargo, este algoritmo es muy poco eficiente y con látices grandes nos puede generar un error: <code class="docutils literal notranslate"><span class="pre">RecursionError:</span> <span class="pre">maximum</span> <span class="pre">recursion</span> <span class="pre">depth</span> <span class="pre">exceeded</span> <span class="pre">in</span> <span class="pre">comparison</span></code>.</p>
+<p>Otra forma de encontrar las componentes ocupadas es a través del <a class="reference external" href="https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm"><strong>algoritmo de Hoshen-Kopelman</strong></a> que es una aplicación especial del <a class="reference external" href="https://www.youtube.com/watch?v=ayW5B2W9hfo">algoritmo de <em>union-find</em></a>. A grandes rasgos este algoritmo recorre cada una de las celadas de la látice y para las celdas ocupadas verifica si al vecino de arriba y al de la izquierda ya se les asignó una componente. Aquí pueden pasar varias cosas:</p>
+<ol class="simple">
+<li><p>si no se les ha asignado se le asigna una nueva;</p></li>
+<li><p>si la de arriba ya tiene componente asignada entonces le asigna esa (a través de la función <code class="docutils literal notranslate"><span class="pre">find()</span></code>);</p></li>
+<li><p>si la de la izquierda ya tiene componente asignada se le asigna esa (a través de la función <code class="docutils literal notranslate"><span class="pre">find()</span></code>); y</p></li>
+<li><p>si la de arriba y la de la izquierda ya tienen entonces se registra que deben ser componentes iguales (se unen las componentes; a través de la función <code class="docutils literal notranslate"><span class="pre">union()</span></code>) y se le asigna la componente de alguna de ellas (con <code class="docutils literal notranslate"><span class="pre">find()</span></code>).</p></li>
+</ol>
+<p>Así de este algoritmo obtenemos una látice con algunas vecindades/componentes.</p>
+<p><strong>Implementa el algrotimo de Hoshen-Kopelman para buscar las componentes conectadas en una látice regular de una dimensión</strong>.</p>
+<p><strong>Tip</strong>: Puedes basarte en el <a class="reference external" href="https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm#Pseudocode">pseudocódigo descrito en Wikipedia</a>. Como se describe en esta <a class="reference external" href="https://www.ocf.berkeley.edu/~fricke/projects/hoshenkopelman/hoshenkopelman.html">explicación más detallada del algoritmo</a> para obtener la matriz con las componentes finales asignadas a cada celda se pueden recorrer una segunda vez todas las celdas con la función <code class="docutils literal notranslate"><span class="pre">find()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># definir funciones union y find</span>
+
+
+<span class="c1"># implementa algoritmo de Hoshen-Kopelman...</span>
+
+
+<span class="c1"># junta las componentes que son la misma</span>
+
+
+<span class="c1"># grafica un ejemplo de látice junto con sus etiquetas de componentes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># definir funciones union y find</span>
+
+<span class="c1"># Esta función requiere que exista una lista llamada &quot;etiquetas&quot; que</span>
+<span class="c1"># consista de &quot;punteros&quot; (donde el valor de cada</span>
+<span class="c1"># entrada &quot;apunta&quot; a otra entrada en la lista). En esta lista son </span>
+<span class="c1"># clases distintas aquellos grupos de nodos que &quot;apunten&quot;</span>
+<span class="c1"># a sitios distintos.</span>
+<span class="c1"># La función retorna el representante de clase del elemento x</span>
+<span class="c1"># (el puntero que apunta hacia sí mismo), y</span>
+<span class="c1"># le da a los valores para llegar al representante desde el elemento x </span>
+<span class="c1"># (&quot;punteros hacia el representante&quot;) el valor de dicha clase.</span>
+<span class="k">def</span> <span class="nf">encontrar</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="c1"># este while retorna el valor de la lista </span>
+    <span class="c1"># que corresponde a su valor de índice (apunta a si mismo)</span>
+    <span class="c1"># y lo asigna a la varibale &quot;y&quot;</span>
+    <span class="c1"># este valor es el representante de la clase de la entrada de la función</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">etiquetas</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">!=</span> <span class="n">y</span><span class="p">):</span>  
+        <span class="n">y</span> <span class="o">=</span> <span class="n">etiquetas</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> 
+    <span class="c1"># este while vuelve a recorrer todo el camino recorrido </span>
+    <span class="c1"># para encontrar al representante y le asigna a cada entrada</span>
+    <span class="c1"># dicho valor </span>
+    <span class="k">while</span><span class="p">(</span><span class="n">etiquetas</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">etiquetas</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+        <span class="n">etiquetas</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">z</span>
+<span class="c1">#     print(&#39;Encontrar retorna y =&#39;,y)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="c1"># Esta función hace que el representante del elemento </span>
+<span class="c1"># x apunte hacia el el representante del elemento y, uniendo</span>
+<span class="c1"># así ambas clases</span>
+<span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">etiquetas</span><span class="p">[</span><span class="n">encontrar</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="n">encontrar</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    
+<span class="c1"># ejemplo de como funcionan encontrar y union</span>
+<span class="c1"># etiquetas = [5,4,2,1,4,2]</span>
+
+<span class="c1"># print(encontrar(0))</span>
+<span class="c1"># print(encontrar(3))</span>
+<span class="c1"># union(0,3)</span>
+
+
+<span class="c1"># implementa algoritmo de Hoshen-Kopelman...</span>
+
+<span class="c1"># se define la látice sobre la que se trabaja</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">latice</span> <span class="o">=</span> <span class="n">crear_latice</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+
+<span class="c1"># se implementa el algoritmo</span>
+
+<span class="n">etiqueta_max</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># componente que se asigna</span>
+<span class="n">etiqueta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="c1"># matriz que guarda las componentes</span>
+<span class="n">etiquetas</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">N</span><span class="p">))</span> <span class="c1"># lista numerada del 0 al número de celdas. Representa todas las posibles componentes que podrían haber. Esta lista es modificada en el algoritmo para &quot;guardar&quot; todas las clases (componentes) equivalentes a través de &quot;punteros&quot;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> <span class="c1"># recorro filas</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span> <span class="c1"># recorro columnas</span>
+        <span class="k">if</span> <span class="n">latice</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span> <span class="c1"># si la celda está ocupada entonces...</span>
+            <span class="n">atras</span> <span class="o">=</span> <span class="n">etiqueta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># el valor de la compontne de la celda de atras (notar que para las céldas en primera fila o columna siempre se obtiene cero ya que no se han recorrido las celdas que se retronan por lo que son cero)</span>
+            <span class="n">arriba</span> <span class="o">=</span> <span class="n">etiqueta</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="c1"># el valor de la componente de la celda de arriba</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">atras</span> <span class="o">==</span> <span class="mi">0</span>  <span class="ow">and</span> <span class="n">arriba</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># si no tienen componente atras y arriba</span>
+<span class="c1">#                 print(&#39;Se creó nueva componente, i =&#39;,i,&#39;, j =&#39;,j)</span>
+                <span class="n">etiqueta_max</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># crear una nueva componente</span>
+                <span class="n">etiqueta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">etiqueta_max</span> <span class="c1"># asignarle ese nuevo valor de componente</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">atras</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">arriba</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># hay vecino atras</span>
+<span class="c1">#                 print(&#39;Tiene vecino atrás, i =&#39;,i,&#39;, j =&#39;,j)</span>
+                <span class="n">etiqueta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">encontrar</span><span class="p">(</span><span class="n">atras</span><span class="p">)</span> <span class="c1"># ponerle la comp del de atras</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">atras</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">arriba</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span> <span class="c1">#hay vecino arriba</span>
+<span class="c1">#                 print(&#39;Tiene vecino arriba, i =&#39;,i,&#39;, j =&#39;,j)</span>
+                <span class="n">etiqueta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">encontrar</span><span class="p">(</span><span class="n">arriba</span><span class="p">)</span> <span class="c1">#ponerle la comp del de arriba</span>
+            <span class="k">else</span><span class="p">:</span> <span class="c1">#hay vecino atras y arriba</span>
+<span class="c1">#                 print(&#39;Tiene vecinos arriba y atrás, i =&#39;,i,&#39;, j =&#39;,j)</span>
+                <span class="n">union</span><span class="p">(</span><span class="n">atras</span><span class="p">,</span><span class="n">arriba</span><span class="p">)</span> <span class="c1"># unir los vecinos de atras y arriba</span>
+                <span class="n">etiqueta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">encontrar</span><span class="p">(</span><span class="n">atras</span><span class="p">)</span> <span class="c1">#ponerle la comp del de atras</span>
+<span class="c1">#             print(etiqueta)</span>
+<span class="c1">#             print(etiquetas)</span>
+<span class="c1">#             print(&#39;--------------------------------------------&#39;)</span>
+
+
+<span class="c1"># junta las componentes que son la misma</span>
+
+<span class="c1"># se recorren de nuevo todas las celdas llamando a la función encontrar</span>
+<span class="c1"># para que ésta actualice el valor de componente final que le toca a cada</span>
+<span class="c1"># celda</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">etiqueta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">encontrar</span><span class="p">(</span><span class="n">etiqueta</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        
+<span class="c1"># grafica un ejemplo de látice junto con sus etiquetas de componentes</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">latice</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set3&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="n">num_componente</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">ndenumerate</span><span class="p">(</span><span class="n">etiqueta</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num_componente</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">num_componente</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Componentes </span><span class="se">\n</span><span class="s1"> (p = </span><span class="si">%.2f</span><span class="s1">)&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/percolacion_46_0.png" src="../../_images/percolacion_46_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./procesos_en_redes/percolacion_en_redes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="presentacion.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">14. </span>Percolación en redes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Redes de información</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
