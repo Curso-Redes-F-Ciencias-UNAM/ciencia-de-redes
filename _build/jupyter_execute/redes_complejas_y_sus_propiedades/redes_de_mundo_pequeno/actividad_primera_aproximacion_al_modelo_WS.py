@@ -22,8 +22,6 @@ import matplotlib.pyplot as plt
 # In[ ]:
 
 
-
-
 #Red Anillo regular
 
 def Anillo(N, l = 2):
@@ -361,7 +359,6 @@ for l in range(corridas):
 # Mediante la función de numpy ```np.mean()``` aclarando el eje sobre el que aplicaremos el promedio, se hace el promedio sobre todas las corridas de los valores correspondientes a cada entrada de las listas. Dicho de otro modo, se obtiene el promedio de todas las corridas para el valor cada vez que aplicamos la función de cambio de enlace
 
 # In[ ]:
-
 
 
 Y1 = np.mean(np.array(DIAM), axis = 0)

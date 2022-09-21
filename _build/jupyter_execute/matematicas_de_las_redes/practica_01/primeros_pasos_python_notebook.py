@@ -213,7 +213,6 @@ for numero in lista:
 # In[ ]:
 
 
-
 lista2 = ['Esta', 'es', 'una', 'lista', 'de', 'cadenas', 'las', 'cadenas', 'deben', 'ir', 'entre', 'comillas.']
 
 for cadena in lista2:

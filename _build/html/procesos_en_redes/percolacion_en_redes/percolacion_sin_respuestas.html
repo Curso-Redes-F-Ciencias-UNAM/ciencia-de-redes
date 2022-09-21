@@ -4,11 +4,13 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>13.1. Percolación en redes &#8212; Ciencia de Redes</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
@@ -65,7 +66,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -74,9 +89,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,7 +107,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -556,96 +572,182 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
-                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
-        title="Modo de pantalla completa"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenido
+            <div class="navbar_extra_footer">
+            Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/procesos_en_redes/percolacion_en_redes/percolacion_sin_respuestas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduccion">
    13.1.1. Introducción
@@ -685,12 +787,11 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Percolación en redes</h1>
@@ -699,7 +800,7 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contenido </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -746,21 +847,22 @@
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="percolacion-en-redes">
-<h1><span class="section-number">13.1. </span>Percolación en redes<a class="headerlink" href="#percolacion-en-redes" title="Enlazar permanentemente con este título">¶</a></h1>
-<div class="section" id="introduccion">
-<h2><span class="section-number">13.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="percolacion-en-redes">
+<h1><span class="section-number">13.1. </span>Percolación en redes<a class="headerlink" href="#percolacion-en-redes" title="Enlazar permanentemente con este título">#</a></h1>
+<section id="introduccion">
+<h2><span class="section-number">13.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">#</a></h2>
 <p>¿Cuántos enrutadores deben fallar para que la Internet se convierta en un conjunto de computadoras incapaces de comunicarse entre ellas? ¿Cuántas especies deben extinguirse para que un ecosistema pierda sus funciones ecológicas? ¿Cuántos individuos deben de estar vacunados para evitar la propagación de una enfermedad? ¿Cómo diseñar una red que sea robusta ante fallas o ataques de sus nodos?</p>
 <p>En redes la <strong>percolación es el proceso en el que se quita una fracción de nodos junto con sus enlaces</strong>. Este proceso se puede utilizar para estudiar una gran diversidad de fenómenos reales, como los descritos por las preguntas anteriores.</p>
 <p>Como se muestra en la siguiente figura, quitar un solo nodo de forma aleatoria tiene un efecto limitado sobre la estructura de la red. Sin embargo, si se quitan varios nodos la red se puede romper en múltiples componentes.</p>
 <p><img alt="percolación de una red" src="https://i.imgur.com/sl4D8uv.png" /></p>
 <p>Así pues, una de las preguntas centrales al estudiar la percolación de redes es: <em><strong>¿cuántos nodos tengo que eliminar para fragmentar una red en componentes aislados?</strong></em> El objetivo de este notebook es tratar de contestar a esta pregunta. Para ello primero repasemos algunos de los resultados de la Teoría de Percolación a través de su forma más habitual: una látice cuadrada en dos dimensiones.</p>
-</div>
-<div class="section" id="percolacion-en-latices-cuadradas">
-<h2><span class="section-number">13.1.2. </span>Percolación en látices cuadradas<a class="headerlink" href="#percolacion-en-latices-cuadradas" title="Enlazar permanentemente con este título">¶</a></h2>
+</section>
+<section id="percolacion-en-latices-cuadradas">
+<h2><span class="section-number">13.1.2. </span>Percolación en látices cuadradas<a class="headerlink" href="#percolacion-en-latices-cuadradas" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Para iniciar importemos las librerias necesarias en esta sección:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1050,9 +1152,9 @@
 <img alt="../../_images/percolacion_sin_respuestas_24_0.png" src="../../_images/percolacion_sin_respuestas_24_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h2><span class="section-number">13.1.3. </span>Percolación en redes<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h2>
+</section>
+<section id="id1">
+<h2><span class="section-number">13.1.3. </span>Percolación en redes<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Hay multiples formas como podríamos ir quitando los nodos de nuestra red. La forma más simple es elegir aleatoriamente dichos nodos, lo cual puede representar <strong>fallas</strong> aleatorias de los elementos de nuestro sistema (e.g., una error en el funcionamiento de un generador eléctrico o de un enrutador). Otra forma es realizando <strong>ataques</strong> a nuestra red con el objetivo de hacerle daño, por lo que en lugar de remover nodos aleatoriamente se quitan con base en su importancia para el sistema (i.e., por su alta centralidad).</p>
 <p>En el caso de las redes como no tenemos «extremos» espacialmente definidos que nos indiquen si un material podría percolar a traves de nuestro sistema, <strong>la variable que exploraremos es el tamaño de la máxima componente</strong> (<span class="math notranslate nohighlight">\(S\)</span>).</p>
 <p>A diferencia de la exploración que hicimos de la percolación de la látice cuadrada (donde implementamos todo manualmente), simular la percolación en redes resulta muy sencillo gracias a todos los métodos que nos ofrece NetworkX. Comencemos importando las librerias necesarias para esta sección.</p>
@@ -1252,11 +1354,11 @@
 <p>En contraste, en el caso de la red libre de escala la componente gigante solo desaparece cuando <span class="math notranslate nohighlight">\(f\)</span> está muy cerca de 1, es decir, cuando se remueve casi la totalidad de los nodos (en el caso de redes libre de escala <em>infinitas</em> no existe un valor crítico; todo esto lo discute analíticamente Newman en el capítulo 16 de su libro). Así pues, <strong>ante las fallas las redes libres de escala son más robustas que las redes aleatorias</strong>. Esta propiedad de las redes libre de escala permite explicar la alta tolerancia a errores que caracteriza a varios sistemas reales. Por ejemplo, el mantenimiento de las funciones de los organismos a pesar de errores en su metabolismo, o la robustes de la Internet a pesar del recurrente fallo en el funcionamiento de enrutadores. Estas ideas fueron exploradas por primera vez por <a class="reference external" href="https://www.nature.com/articles/35019019">Albert, Jeong y Barabási (2000)</a> (la figura 3 de este articulo es similar a la que construimos, sin embargo, nota que dicha figura tiene <a class="reference external" href="https://www.nature.com/articles/35054111">un error que posteriormente corrigieron los autores</a> en la red aleatoria ante fallas).</p>
 <p>Pero… ¿qué pasa si en lugar de remover los nodos aleatoriamente atacamos primero a los <em>hubs</em>? En el caso de la percolación por ataques vemos el comportamiento contrario, es decir, <strong>ante los ataques las redes aleatorias son más robustas que las libres de escala</strong>. Esto se debe a que en este último tipo de redes la conectividad está mantenida por unos cuantos nodos que al ser removidos rompen rápidamente la red en pequeños clusters. En contraste, la red aleatoria muestra una mayor tolerancia ya que todos sus nodos aportan de forma similar a la conectividad de la red. Este resultado puede tener interesantes implicaciones en sistemas reales, por ejemplo, si queremos evitar que se propague una enfermedad una estrategia más eficiente que vacunar de forma aleatoria a la población sería primero vacunar a los <em>hubs</em> o superpropagadores.</p>
 <p>Por lo tanto aquí tenemos una disyuntiva entre robustes ante ataques o a fallas. Si quisiéramos diseñar una red robusta ante ambos eventos ¿cómo debería ser su estructura? Esto se discute en la <a class="reference external" href="http://networksciencebook.com/chapter/8#buildin-robustness">sección 8.7</a> del libro de Barabasi. Evidentemente la red más robusta sería aquella donde todos los nodos esten conectados con todos, sin embargo, mantener una red así sería muy costoso y poco realista. A grandes rasgos una solución más óptima a este problema sería a través de una red con una distribución bimodal, donde se tuviera un nodo con grado <span class="math notranslate nohighlight">\(k_{max}\)</span> altamente conectado y el resto de los nodos tuvieran grado <span class="math notranslate nohighlight">\(k_{min}\)</span>.</p>
-</div>
-<div class="section" id="ejercicios">
-<h2><span class="section-number">13.1.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Enlazar permanentemente con este título">¶</a></h2>
-<div class="section" id="ejercicio-1-percolacion-en-redes-reales">
-<h3><span class="section-number">13.1.4.1. </span>Ejercicio 1: Percolación en redes reales<a class="headerlink" href="#ejercicio-1-percolacion-en-redes-reales" title="Enlazar permanentemente con este título">¶</a></h3>
+</section>
+<section id="ejercicios">
+<h2><span class="section-number">13.1.4. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Enlazar permanentemente con este título">#</a></h2>
+<section id="ejercicio-1-percolacion-en-redes-reales">
+<h3><span class="section-number">13.1.4.1. </span>Ejercicio 1: Percolación en redes reales<a class="headerlink" href="#ejercicio-1-percolacion-en-redes-reales" title="Enlazar permanentemente con este título">#</a></h3>
 <p><strong>Dificultad: Baja</strong></p>
 <p><strong>Carga los datos de una red real y utilizando las funciones definidas en la sección anterior explora como se comporta ante fallas y ataques y grafica tus resultados.</strong></p>
 <p>¿La red es robusta ante fallas aleatorias? ¿Qué tan sensible es a los ataques? ¿Qué implicaciones podría tener este comportamiento para el sistema real que representa la red?</p>
@@ -1277,9 +1379,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ejercicio-2-percolacion-por-enlaces">
-<h3><span class="section-number">13.1.4.2. </span>Ejercicio 2: Percolación por enlaces<a class="headerlink" href="#ejercicio-2-percolacion-por-enlaces" title="Enlazar permanentemente con este título">¶</a></h3>
+</section>
+<section id="ejercicio-2-percolacion-por-enlaces">
+<h3><span class="section-number">13.1.4.2. </span>Ejercicio 2: Percolación por enlaces<a class="headerlink" href="#ejercicio-2-percolacion-por-enlaces" title="Enlazar permanentemente con este título">#</a></h3>
 <p><strong>Dificultad: Media</strong></p>
 <p>En este notebook solamente se discutió la percolación por nodos o sitios, es decir, el proceso donde se quitan una fracción de nodos junto con sus enlaces. Pero… ¿qué pasa si en lugar de quitar nodos quitamos enlaces? Para investigarlo define una función llamada <code class="docutils literal notranslate"><span class="pre">percolacion_red_enclaces()</span></code> análoga a la función <code class="docutils literal notranslate"><span class="pre">percolacion_red()</span></code> definida anteriormente, pero que en lugar de quitar una fracción <span class="math notranslate nohighlight">\(f\)</span> de nodos, quite una fracción <span class="math notranslate nohighlight">\(f\)</span> de enlaces.</p>
 <p><strong>Obtener una gráfica donde se compare la percolación por nodos y por enlaces para una red aleatoria y una red libre de escala</strong>.</p>
@@ -1298,9 +1400,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ejercicio-3-algoritmo-de-hoshen-kopelman">
-<h3><span class="section-number">13.1.4.3. </span>Ejercicio 3: Algoritmo de Hoshen-Kopelman<a class="headerlink" href="#ejercicio-3-algoritmo-de-hoshen-kopelman" title="Enlazar permanentemente con este título">¶</a></h3>
+</section>
+<section id="ejercicio-3-algoritmo-de-hoshen-kopelman">
+<h3><span class="section-number">13.1.4.3. </span>Ejercicio 3: Algoritmo de Hoshen-Kopelman<a class="headerlink" href="#ejercicio-3-algoritmo-de-hoshen-kopelman" title="Enlazar permanentemente con este título">#</a></h3>
 <p><strong>Dificultad: Alta</strong></p>
 <p>Cuando exploramos la percolación en la látice cuadrada de una dimensión al comienzo de este notebook construimos las funciones <code class="docutils literal notranslate"><span class="pre">formar_componentes()</span></code> y <code class="docutils literal notranslate"><span class="pre">asignar_componente()</span></code> para identificar las componentes conectadas en nuestra látice. Lo que hacen estas dos funciones es recorrer celda por celda y cuando encuentran una celda ocupada se le asigna una componente y ésta celda le pide a sus cuatro celadas vecinas que si están ocupadas también se les asigne una componente y que repita el procedimiento con sus vecinas y así sucesivamente. Esta implementación sigue la lógica de los algoritmos de <a class="reference external" href="https://www.youtube.com/watch?v=7fujbpJ0LB4"><strong>búsqueda en profundiad o <em>Depth First Search (DFS)</em></strong></a>. Sin embargo, este algoritmo es muy poco eficiente y con látices grandes nos puede generar un error: <code class="docutils literal notranslate"><span class="pre">RecursionError:</span> <span class="pre">maximum</span> <span class="pre">recursion</span> <span class="pre">depth</span> <span class="pre">exceeded</span> <span class="pre">in</span> <span class="pre">comparison</span></code>.</p>
 <p>Otra forma de encontrar las componentes ocupadas es a través del <a class="reference external" href="https://en.wikipedia.org/wiki/Hoshen%E2%80%93Kopelman_algorithm"><strong>algoritmo de Hoshen-Kopelman</strong></a> que es una aplicación especial del <a class="reference external" href="https://www.youtube.com/watch?v=ayW5B2W9hfo">algoritmo de <em>union-find</em></a>. A grandes rasgos este algoritmo recorre cada una de las celadas de la látice y para las celdas ocupadas verifica si al vecino de arriba y al de la izquierda ya se les asignó una componente. Aquí pueden pasar varias cosas:</p>
@@ -1329,9 +1431,9 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1355,9 +1457,11 @@
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="presentacion.html" title="anterior página">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1373,24 +1477,28 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
     
-      Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
-    
-        &copy; Derechos de autor 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

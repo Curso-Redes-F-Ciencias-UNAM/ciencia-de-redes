@@ -542,6 +542,7 @@ plt.show()
 # grafica los resultados comparando con la percolación por nodos
 
 
+
 # ### Ejercicio 3: Algoritmo de Hoshen-Kopelman
 # 
 # **Dificultad: Alta**

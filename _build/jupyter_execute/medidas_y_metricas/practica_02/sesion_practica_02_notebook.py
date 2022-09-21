@@ -284,6 +284,7 @@ G1.add_edges_from([ (1,2), (1,3), (2,3), (2,4), (2,5), (3,5), (5,6) ])
 nx.draw(G1, with_labels = True)
 
 
+
 # In[ ]:
 
 

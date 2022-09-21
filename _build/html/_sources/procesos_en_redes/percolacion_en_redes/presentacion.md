@@ -2,4 +2,4 @@
 
 En este capítulo se discute la percolación en redes. El contenido está organizado de la siguiente manera:
 
-- [Percolación en redes](percolacion_sin_respuestas.ipynb) (notebook)
+- [Percolación en redes](percolacion.ipynb) (notebook)
