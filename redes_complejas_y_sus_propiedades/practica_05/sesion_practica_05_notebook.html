@@ -811,7 +811,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="practica-5-notebook">
 <h1><span class="section-number">13.1. </span>Práctica 5 (notebook)<a class="headerlink" href="#practica-5-notebook" title="Enlazar permanentemente con este título">#</a></h1>
-<p>En esta práctica se implementa el modelo de Barabasi-Albert que genera una red con independencia de escala. El modelo fue propuesto por Lászlo Barabási y Réka Albert (<a class="reference external" href="https://web.archive.org/web/20120417112354/http://www.nd.edu/~networks/Publication%20Categories/03%20Journal%20Articles/Physics/EmergenceRandom_Science%20286,%20509-512%20(1999).pdf">artículo</a>) en 1999.</p>
+<p>En esta práctica se implementa el modelo de Barabasi-Albert que genera una red con independencia de escala. El modelo fue propuesto por Lászlo Barabási y Réka Albert en 1999 (<a class="reference external" href="https://web.archive.org/web/20120417112354/http://www.nd.edu/~networks/Publication%20Categories/03%20Journal%20Articles/Physics/EmergenceRandom_Science%20286,%20509-512%20(1999).pdf">artículo</a>).</p>
 <p>Esta implementación hace lo siguiente:</p>
 <ol class="simple">
 <li><p>Generar una red inicial con <code class="docutils literal notranslate"><span class="pre">m0</span></code> nodos. No importa su número de nodos ni su forma, sólo debe ser conexa.</p></li>
@@ -835,11 +835,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Con la siguiente celda se genera la semilla, la red inicial sobre la que se agregarán nodos. Puedes jugar con el tamaño de la semilla y el número de enlaces que tendrá cada nuevo nodo</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 
-<span class="n">m0</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">#tamano de la semilla</span>
+<span class="n">m0</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">#tamano de la semilla</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#numero de enlaces que tiene cada nuevo nodo</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 
@@ -847,8 +848,36 @@ title="Print to PDF"
     <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">permutations</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">),</span><span class="mi">2</span><span class="p">)))</span> <span class="c1">#se hace una red completa de tamano m0</span>
 
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la siguiente celda se agrega un nodo según la regla de enlace preferencial respecto al grado. Primero se genera el arreglo de los grados de los nodos, se normaliza para que sea una probabilidad de enlace y se utiliza para seleccionar los nodos con los que se enlazará. Puedes correr la celda cada vez para ver el nodo agregado y la evolución de la red</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grados</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">nodo</span><span class="p">)</span> <span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="n">G</span><span class="p">))</span>
+<span class="n">probabilidades</span> <span class="o">=</span> <span class="n">grados</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">grados</span><span class="p">)</span>
+<span class="n">nodos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">probabilidades</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">nodos</span><span class="p">:</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">),</span><span class="mi">10000</span><span class="p">):</span> <span class="c1">#para 100000 ya tarda un rato</span>
+<span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="p">]</span>
+<span class="n">color</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span>
+<span class="n">tamanio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">nodo</span><span class="p">)</span> <span class="k">for</span> <span class="n">nodo</span> <span class="ow">in</span> <span class="n">G</span><span class="p">))</span>
+<span class="n">tamanio</span> <span class="o">=</span> <span class="n">tamanio</span><span class="o">/</span><span class="n">tamanio</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_kamada_kawai</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">color</span><span class="p">,</span> <span class="n">node_size</span> <span class="o">=</span> <span class="mi">250</span><span class="o">*</span><span class="n">tamanio</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">),</span><span class="mi">10000</span><span class="p">):</span> <span class="c1">#para 100000 ya tarda un rato</span>
     <span class="n">grados</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
     <span class="n">probabilidades</span> <span class="o">=</span> <span class="n">grados</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">grados</span><span class="p">)</span>
     <span class="n">nodos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">probabilidades</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
