@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# En esta práctica se implementa el modelo de Barabasi-Albert que genera una red con independencia de escala. El modelo fue propuesto por Lászlo Barabási y Réka Albert ([artículo](https://web.archive.org/web/20120417112354/http://www.nd.edu/~networks/Publication%20Categories/03%20Journal%20Articles/Physics/EmergenceRandom_Science%20286,%20509-512%20(1999).pdf)) en 1999.
+# # Práctica 5 (notebook)
+# 
+# En esta práctica se implementa el modelo de Barabasi-Albert que genera una red con independencia de escala. El modelo fue propuesto por Lászlo Barabási y Réka Albert en 1999 ([artículo](https://web.archive.org/web/20120417112354/http://www.nd.edu/~networks/Publication%20Categories/03%20Journal%20Articles/Physics/EmergenceRandom_Science%20286,%20509-512%20(1999).pdf)).
 # 
 # Esta implementación hace lo siguiente:
 # 
@@ -21,16 +23,59 @@ import matplotlib.pyplot as plt
 from itertools import permutations
 
 
+# Con la siguiente celda se genera la semilla, la red inicial sobre la que se agregarán nodos. Puedes jugar con el tamaño de la semilla y el número de enlaces que tendrá cada nuevo nodo
+
 # In[ ]:
 
 
-m0 = 4 #tamano de la semilla
+m0 = 3 #tamano de la semilla
 m = 1 #numero de enlaces que tiene cada nuevo nodo
 G = nx.Graph()
 
 for i in range(m0):
     G.add_node(i)
 G.add_edges_from(list(permutations(list(G),2))) #se hace una red completa de tamano m0
+
+plt.figure(figsize = [3,3])
+nx.draw(G)
+
+
+# En la siguiente celda se agrega un nodo según la regla de enlace preferencial respecto al grado. Primero se genera el arreglo de los grados de los nodos, se normaliza para que sea una probabilidad de enlace y se utiliza para seleccionar los nodos con los que se enlazará. Puedes correr la celda cada vez para ver el nodo agregado y la evolución de la red
+
+# In[ ]:
+
+
+grados = np.array(list(G.degree(nodo) for nodo in G))
+probabilidades = grados / sum(grados)
+nodos = np.random.choice(list(G), size = m, p = probabilidades, replace = False)
+i = len(G)
+G.add_node(i)
+for j in nodos:
+    G.add_edge(i, j)
+
+color = ['b' for i in G]
+color[-1] = 'r'
+tamanio = np.array(list(G.degree(nodo) for nodo in G))
+tamanio = tamanio/tamanio.sum()
+plt.figure(figsize = [3,3])
+nx.draw_kamada_kawai(G, node_color = color, node_size = 250*tamanio+50, edgecolors='black')
+plt.show()
+
+plt.figure(figsize = [3,2])
+grados = np.array(list(G.degree(nodo) for nodo in G))
+plt.hist(grados, bins = range(1,max(grados)+1))
+plt.show()
+
+
+# In[ ]:
+
+
+
+
+
+# Ahora se puede correr muchas veces, 10000 por ejemplo
+
+# In[ ]:
 
 
 for i in range(len(G),10000): #para 100000 ya tarda un rato
@@ -42,7 +87,7 @@ for i in range(len(G),10000): #para 100000 ya tarda un rato
         G.add_edge(i, j)
 
 
-# # Análisis de grado
+# ## Análisis de grado
 
 # In[ ]:
 
