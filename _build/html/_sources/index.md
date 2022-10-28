@@ -3,7 +3,7 @@
 
 _versión 0.3_
 
-_Editado por última vez el: 21/09/22_
+_Editado por última vez el: 28/10/22_
 
 ---
 
