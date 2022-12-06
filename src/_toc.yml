@@ -16,9 +16,11 @@ parts:
       - file: matematicas_de_las_redes/matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades
       - file: matematicas_de_las_redes/matematicas_de_las_redes/numero_de_enlaces_de_la_red
       - file: matematicas_de_las_redes/matematicas_de_las_redes/caminos_y_distancia_entre_nodos
+    - file: matematicas_de_las_redes/practica_00/presentacion
+      sections:
+      - file: matematicas_de_las_redes/practica_00/primeros_pasos_python_notebook
     - file: matematicas_de_las_redes/practica_01/presentacion
       sections:
-      - file: matematicas_de_las_redes/practica_01/primeros_pasos_python_notebook
       - file: matematicas_de_las_redes/practica_01/sesion_practica_01_notebook
       - file: matematicas_de_las_redes/practica_01/sesion_practica_01_video
   - caption: "Parte 2: Medidas y métricas"

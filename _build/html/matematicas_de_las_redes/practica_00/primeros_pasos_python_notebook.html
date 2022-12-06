@@ -1,0 +1,1690 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.1. Preliminar: primeros pasos con Python (notebook) &#8212; Ciencia de Redes</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="3. Práctica 1" href="../practica_01/presentacion.html" />
+    <link rel="prev" title="2. Práctica 0" href="presentacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Prefacio
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../prefacio/presentacion.html">
+   Presentación
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 1: Matemáticas de las redes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../matematicas_de_las_redes/presentacion.html">
+   1. Matemáticas de las redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../matematicas_de_las_redes/tipos_de_redes_y_matriz_de_adyacencia.html">
+     1.1. Tipos de redes y matriz de adyacencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../matematicas_de_las_redes/definicion_de_grado.html">
+     1.2. Definición de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../matematicas_de_las_redes/motivacion_y_mas_tipos_de_redes.html">
+     1.3. Motivación y más tipos de redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../matematicas_de_las_redes/matriz_de_adyacencia_y_sus_propiedades.html">
+     1.4. Matríz de adyacencia y sus propiedades
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../matematicas_de_las_redes/numero_de_enlaces_de_la_red.html">
+     1.5. Número de enlaces de la red
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../matematicas_de_las_redes/caminos_y_distancia_entre_nodos.html">
+     1.6. Caminos y distancia entre nodos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="presentacion.html">
+   2. Práctica 0
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Preliminar: primeros pasos con Python (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../practica_01/presentacion.html">
+   3. Práctica 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../practica_01/sesion_practica_01_notebook.html">
+     3.1. Práctica 1 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../practica_01/sesion_practica_01_video.html">
+     3.2. Práctica 1 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2: Medidas y métricas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/presentacion.html">
+   4. Medidas de centralidad de los nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
+     4.1. Centralidad de grado
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
+     4.2. Centralidad de cercanía
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
+     4.3. Centralidad de intermediación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
+     4.4. Centralidad de eigenvector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
+     4.5. Centralidad de Katz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
+     4.6. Centralidad de Page Rank (opcional)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_02/presentacion.html">
+   5. Práctica 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_notebook.html">
+     5.1. Práctica 2 (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_video.html">
+     5.2. Práctica 2 (video)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/presentacion.html">
+   6. Medidas de grupos de nodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
+     6.1. Coeficiente de acumulación
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/grupos_de_nodos.html">
+     6.2. Grupos de nodos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/modularidad.html">
+     6.3. Modularidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/presentacion.html">
+   7. Propiedades globales de la red
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/propiedades_globales.html">
+     7.1. Propiedades globales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/distribucion_de_grado.html">
+     7.2. Distribución de grado
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../medidas_y_metricas/practica_03/presentacion.html">
+   8. Práctica 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../medidas_y_metricas/practica_03/sesion_practica_03_notebook.html">
+     8.1. Práctica 3 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3: Redes complejas y sus propiedades
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/presentacion.html">
+   9. Redes aleatorias 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/actividad_introductoria_redes_aleatorias.html">
+     9.1. Actividad introductoria a las redes aleatorias (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/definicion_de_red_aleatoria.html">
+     9.2. Definición red aleatoria
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/distribucion_binomial.html">
+     9.3. Distribución binomial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/numero_de_enlaces.html">
+     9.4. Número de enlaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/grado_promedio_distribucion_de_grado_y_clustering.html">
+     9.5. Grado promedio, distribución de grado y clustering
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/presentacion.html">
+   10. Práctica 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook.html">
+     10.1. Práctica 4 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/presentacion.html">
+   11. Redes aleatorias 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/distribucion_binomial_y_de_poisson.html">
+     11.1. Distribución biniomial y de Poisson
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/redes_aleatorias_y_redes_reales.html">
+     11.2. Redes aleatorias y redes reales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
+     11.3. Redes aleatorias y propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/transicion_de_fase_en_redes_aleatorias.html">
+     11.4. Transición de fase en redes aleatorias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
+   12. Redes de mundo pequeño
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
+     12.1. Introducción al modelo Watts-Strogatz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
+     12.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/experimento_ws.html">
+     12.3. Experimento W-S
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
+   13. Redes con independencia de escala (scale-free)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/actividad_introductoria_a_redes_con_independencia_de_escala.html">
+     13.1. Actividad introductoria a redes con independencia de escala
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/definicion_general.html">
+     13.2. Definición general
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/propiedades_de_la_ley_de_potencia.html">
+     13.3. Propiedades de la ley de potencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/distribucion_de_grado_tipo_ley_de_potencia.html">
+     13.4. Distribución de grado tipo ley de potencia
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_05/presentacion.html">
+   14. Práctica 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_05/sesion_practica_05_notebook.html">
+     14.1. Práctica 5 (notebook)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 4: Procesos en redes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/presentacion.html">
+   15. Difusión en redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/ecuacion_de_difusion_y_laplaciano_en_redes.html">
+     15.1. Ecuación de difusión y laplaciano en redes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/propiedades_de_L.html">
+     15.2. Propiedades de L
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/ejemplo_resuelto.html">
+     15.3. Ejemplo resuelto
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../procesos_en_redes/percolacion_en_redes/presentacion.html">
+   16. Percolación en redes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../procesos_en_redes/percolacion_en_redes/percolacion.html">
+     16.1. Percolación en redes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 5: Estudio de redes reales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html">
+   17. Redes de información
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_en_biologia/presentacion.html">
+   18. Redes en biología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/redes_sociales/presentacion.html">
+   19. Redes sociales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../estudio_de_redes_reales/proyectos_finales/presentacion.html">
+   20. Proyectos finales
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Referencias
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../referencias/referencias.html">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/main?urlpath=tree/src/matematicas_de_las_redes/practica_00/primeros_pasos_python_notebook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/matematicas_de_las_redes/practica_00/primeros_pasos_python_notebook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/matematicas_de_las_redes/practica_00/primeros_pasos_python_notebook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   2.1.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importar-paquetes">
+   2.1.2. Importar paquetes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bucle-for">
+   2.1.3. Bucle «for»
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios-for">
+     2.1.3.1. Ejercicios «for»
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listas">
+   2.1.4. Listas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios-de-listas">
+     2.1.4.1. Ejercicios de listas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arreglos-de-numpy">
+   2.1.5. Arreglos de numpy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios-de-arreglos">
+     2.1.5.1. Ejercicios de arreglos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importar-networkx-y-matplotlib">
+   2.1.6. Importar NetworkX y Matplotlib
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Preliminar: primeros pasos con Python (notebook)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   2.1.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importar-paquetes">
+   2.1.2. Importar paquetes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bucle-for">
+   2.1.3. Bucle «for»
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios-for">
+     2.1.3.1. Ejercicios «for»
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listas">
+   2.1.4. Listas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios-de-listas">
+     2.1.4.1. Ejercicios de listas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arreglos-de-numpy">
+   2.1.5. Arreglos de numpy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios-de-arreglos">
+     2.1.5.1. Ejercicios de arreglos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importar-networkx-y-matplotlib">
+   2.1.6. Importar NetworkX y Matplotlib
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="preliminar-primeros-pasos-con-python-notebook">
+<h1><span class="section-number">2.1. </span>Preliminar: primeros pasos con Python (notebook)<a class="headerlink" href="#preliminar-primeros-pasos-con-python-notebook" title="Enlazar permanentemente con este título">#</a></h1>
+<section id="introduccion">
+<h2><span class="section-number">2.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">#</a></h2>
+<p>En este curso utilizaremos python mediante el uso de <strong>Notebooks</strong>. Éstos pueden ser de Google Colab (como éste) o pueden ser archivos tipo <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> que se abren con <a class="reference external" href="https://jupyter.org/">Jupyter</a>. La forma más sencilla para installar Jupyter en sus computadoras es a travéz de Anaconda. Para ello se recomienda visitar la <a class="reference external" href="https://www.anaconda.com/">página oficial de Anaconda</a> y seguir las instrucciones.</p>
+<p>En primer lugar, un notebook de jupyter o colab es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y «correr» la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar Shift + Enter</p>
+<p>A continuación se presentan algunas operaciones «comentadas», es decir, antecedidas por el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> (en python, todo lo que esté a la derecha de ese signo será ignorado), puedes borrar el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> al inicio y correr la celda cada vez para obtener cada resultado. Obs. Cada celda puede ser corrida tantas veces como se quiera. Es común que en alguna línea se ponga una explicación con el uso de otro signo <code class="docutils literal notranslate"><span class="pre">#</span></code>; aquí se hace para explicarle a las personas no familiarizadas con algunas operaciones matemáticas los nombres de éstas, pero puede ser un buen hábito comentar el código que generemos (como veremos más adelante).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#8*5  </span>
+
+<span class="c1">#5+6+7</span>
+
+<span class="c1">#8/2</span>
+
+<span class="c1">#8**6   #potencia</span>
+
+<span class="c1">#(5*8 + 6)**2/100</span>
+
+<span class="c1">#13 // 5 #parte entera de la division</span>
+
+<span class="c1">#13 % 5  #residuo de la division</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>262144
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importar-paquetes">
+<h2><span class="section-number">2.1.2. </span>Importar paquetes<a class="headerlink" href="#importar-paquetes" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita <a class="reference external" href="https://numpy.org/">https://numpy.org/</a>).</p>
+<p>Ahora se introduce una forma estándar para importar las librerías. La estructura es: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;libreria&gt;</span> <span class="pre">as</span> <span class="pre">&lt;clave&gt;</span></code>. La clave será la forma con la que «invocaremos» a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave np.</p>
+<p>Después de haber corrido la siguiente celda, podrás utilizar todas las funciones y objetos de la librería en la misma sesión. Esto significa que no hay que estar importando en todo momento la librería.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ya habiendo importado la librería, cualquier objeto o función de esa librería se invoca mediante <code class="docutils literal notranslate"><span class="pre">np.[funcion]</span></code>.</p>
+<p>A continuación se introducen algunas funciones y constantes matemáticas cargadas en numpy para que empieces a utilizarlas. De nuevo, «descomenta» las líneas para obtener cada resultado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## FUNCIONES</span>
+
+<span class="c1">#np.cos(50) #coseno</span>
+
+<span class="c1">#np.exp(5) #exponencial</span>
+
+<span class="c1">#np.sqrt(10) #raiz cuadrada</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>148.4131591025766
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## CONSTANTES</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">pi</span>  <span class="c1">#numero pi</span>
+
+<span class="c1">#np.e   #constante de Euler</span>
+
+
+<span class="c1">#np.cos(2*np.pi)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bucle-for">
+<h2><span class="section-number">2.1.3. </span>Bucle «for»<a class="headerlink" href="#bucle-for" title="Enlazar permanentemente con este título">#</a></h2>
+<p>La estructura básica de python que hace falta dominar, al menos para toda la primera parte de este curso, es el bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> que comprenderemos a partir del ejemplo de la siguiente celda:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como podrás ver, lo único que ocurrió es que se mostraron los números del 0 al 9. Los elementos importantes son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">range(N)</span></code> es una estructura que genera una «iteración» de <code class="docutils literal notranslate"><span class="pre">N</span></code> números empezando por el cero.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> función cuyo argumento se muestra en la pantalla</p></li>
+</ul>
+<p>Así, la instrucción del bucle podría leerse entonces como «para cada elemento de la lista [0, …, 9], muestra dicho elemento».</p>
+<p>En general, el bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> tiene la siguiente estructura:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+   <span class="n">función</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>los dos puntos de la primera línea y la sangría de la instrucción son importantes (esta última se genera de forma automática en jupyter y casi cualquier editor de textos, pero puede ser causa de errores).
+Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes, puedes «descomentar» y comentar cada línea para ver cómo cambia el resultado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+  <span class="c1">#print(i)</span>
+  <span class="c1">#print(i-1)</span>
+  <span class="c1">#print(2*i)</span>
+  <span class="c1">#print(i**2)</span>
+  <span class="c1">#print(2**i)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ejercicios-for">
+<h3><span class="section-number">2.1.3.1. </span>Ejercicios «for»<a class="headerlink" href="#ejercicios-for" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Mediante el uso de las estructuras <code class="docutils literal notranslate"><span class="pre">for</span></code> y <code class="docutils literal notranslate"><span class="pre">range()</span></code>, genera un bucle que produzca los siguientes resultados:</p>
+<ol class="simple">
+<li><p>Imprimir todos los números del 0 al 15</p></li>
+<li><p>Imprimir todos los números del 1 al 15</p></li>
+<li><p>Imprimir los números pares menores que 20</p></li>
+<li><p>Imprimir los números impares menores e iguales a 25.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="listas">
+<h2><span class="section-number">2.1.4. </span>Listas<a class="headerlink" href="#listas" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Otra estructura de python que utilizaremos son las listas. Las listas se construyen con corchetes y sus elementos se separan con comas. Las listas pueden contener números enteros, números flotantes (con punto decimal), cadenas alfanuméricas o cualquier otra estructura de python, inclusive listas.</p>
+<p>En los primeros ejercicios de este curso las utilizaremos para hacer listas de nodos y luego emplearlas para construir enlaces de forma ordenada.</p>
+<p>A continuación se detallan algunos aspectos sobre el empleo de listas en python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># se construye una lista de diez elementos</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para acceder a cualquier elemento de la lista se puede escribir su nombre y, entre corchetes, indicar la entrada (el índice) que quieres extraer.</p>
+<p>Nota: en python, cuando se habla de índices se inicia a contar desde el cero, esto es, el 0 indica el primer elemento, el 1 el segundo, y así sucesivmente.</p>
+<p>En la siguiente celda descomenta los distintos renglones para ver el resultado, y compáralo con la lista creada más arriba.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#lista[1]</span>
+<span class="c1">#lista[8]</span>
+<span class="c1">#lista[10]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como habrás notado, y por lo dicho antes, la lista tiene diez elementos, pero sus índices llegan hasta el 9 por haber iniciado en 0. Si introduces un índice mayor al tamaño de la lista obtendras un error.</p>
+<p>Uno de los aspectos de las listas que nos resultarán más útiles en la primera práctica es la posibilidad de acceder a sus elementos mediante índices negativos. El -1 corresponde al último, el -2 al penúltimo, y así el resto.</p>
+<p>En la siguiente celda vuelve a hacer lo mismo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1">#lista[-8]</span>
+<span class="c1">#lista[-10]</span>
+<span class="c1">#lista[-11]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Utilizando los mismos índices, es posible extraer «subconjuntos# de la lista mediante el uso de el símbolo «:» y la estructura</p>
+<p><code class="docutils literal notranslate"><span class="pre">[limite</span> <span class="pre">inferior:limite</span> <span class="pre">superior]</span></code></p>
+<p>Observa que el subconjunto siempre <strong>contiene</strong> al límite inferior y <strong>no contiene</strong> al superior:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="c1">#lista[6:9]</span>
+<span class="c1">#lista[:5]</span>
+<span class="c1">#lista[-4:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 4, 8, 7]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nota: Como puedes ver en los últimos dos ejemplos, no indicar el límite inferior o el límite superior se entiende como «todos los elementos a la izquierda que», o «a la derecha que», respectivamente.</p>
+<p>Las listas, por contener elementos «iterables», se puede utilizar dentro de la estructura <code class="docutils literal notranslate"><span class="pre">for</span></code> para realizar las operaciones dentro del bucle. A continuación se ponen dos ejemplos, uno de con números y otro con cadenas. Notar la flexibilidad de la estructura <code class="docutils literal notranslate"><span class="pre">for</span></code> que permite elegir el nombre del iterable  (no es necesario que sea <code class="docutils literal notranslate"><span class="pre">i</span></code> como hasta ahora hemos hecho).
+También se muestra cómo imprimir varias cosas en una misma línea, introduciendo varios argumentos separados por comas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El elemento es&#39;</span><span class="p">,</span> <span class="n">numero</span><span class="p">,</span> <span class="s1">&#39;y su cuadrado es&#39;</span><span class="p">,</span> <span class="n">numero</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El elemento es 1 y su cuadrado es 1
+El elemento es 5 y su cuadrado es 25
+El elemento es 9 y su cuadrado es 81
+El elemento es 4 y su cuadrado es 16
+El elemento es 8 y su cuadrado es 64
+El elemento es 7 y su cuadrado es 49
+El elemento es 2 y su cuadrado es 4
+El elemento es 6 y su cuadrado es 36
+El elemento es 3 y su cuadrado es 9
+El elemento es 0 y su cuadrado es 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Esta&#39;</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;una&#39;</span><span class="p">,</span> <span class="s1">&#39;lista&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;cadenas&#39;</span><span class="p">,</span> <span class="s1">&#39;las&#39;</span><span class="p">,</span> <span class="s1">&#39;cadenas&#39;</span><span class="p">,</span> <span class="s1">&#39;deben&#39;</span><span class="p">,</span> <span class="s1">&#39;ir&#39;</span><span class="p">,</span> <span class="s1">&#39;entre&#39;</span><span class="p">,</span> <span class="s1">&#39;comillas.&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">cadena</span> <span class="ow">in</span> <span class="n">lista2</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">)</span>
+  <span class="c1">#print(2*cadena)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Esta
+es
+una
+lista
+de
+cadenas
+las
+cadenas
+deben
+ir
+entre
+comillas.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nota la diferencia entre multiplicar números y multiplicar números por cadenas.</p>
+<p>La función en python para agregar nuevos elementos a una lista antes creada es <strong>append()</strong></p>
+<p>A continuación se muestra su uso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># se crea una lista vacía, sin elementos</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+[5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+  <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 0, 1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para finalizar con las listas, observemos qué resulta al sumar listas o al multiplicarlas por un éntero:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">+</span> <span class="n">lista2</span>
+<span class="c1">#lista+lista</span>
+<span class="c1">#2*lista2</span>
+<span class="c1">#2*A+lista</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1,
+ 5,
+ 9,
+ 4,
+ 8,
+ 7,
+ 2,
+ 6,
+ 3,
+ 0,
+ &#39;Esta&#39;,
+ &#39;es&#39;,
+ &#39;una&#39;,
+ &#39;lista&#39;,
+ &#39;de&#39;,
+ &#39;cadenas&#39;,
+ &#39;las&#39;,
+ &#39;cadenas&#39;,
+ &#39;deben&#39;,
+ &#39;ir&#39;,
+ &#39;entre&#39;,
+ &#39;comillas.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ejercicios-de-listas">
+<h3><span class="section-number">2.1.4.1. </span>Ejercicios de listas<a class="headerlink" href="#ejercicios-de-listas" title="Enlazar permanentemente con este título">#</a></h3>
+<ol class="simple">
+<li><p>Define dos listas vacías, una llamada pares y otra impares</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ejercicio 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Mediante el uso de <code class="docutils literal notranslate"><span class="pre">for</span></code> y la función <code class="docutils literal notranslate"><span class="pre">append</span></code>, agrega a la lista <code class="docutils literal notranslate"><span class="pre">pares</span></code> el cero y los números pares <strong>menores</strong> que 20</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Igual que el inciso anterior, agrega a la lista <code class="docutils literal notranslate"><span class="pre">impares</span></code> los números impares <strong>menores o iguales</strong> que 21.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Ejercicio 3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="arreglos-de-numpy">
+<h2><span class="section-number">2.1.5. </span>Arreglos de numpy<a class="headerlink" href="#arreglos-de-numpy" title="Enlazar permanentemente con este título">#</a></h2>
+<p>La estructura básica de numpy que utilizaremos es <code class="docutils literal notranslate"><span class="pre">array()</span></code> (arreglo) que recoge muchas de las propiedades de los vectores y las matrices.</p>
+<p>En primer lugar, cualquier lista puede usarse para definir un arreglo y cambiar sus propiedades, particularmente en lo que se refiere a la multiplicación y la suma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="n">arreglo</span> <span class="c1">#notar la diferencia con el caso de 2*lista</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2, 10, 18,  8, 16, 14,  4, 12,  6,  0])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si dos arreglos tienen el mismo tamaño, su suma y su resta tienen un sentido vectorial:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">arreglo2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo1</span> <span class="o">+</span> <span class="n">arreglo2</span>
+<span class="c1">#arreglo1 - arreglo2</span>
+<span class="c1">#arreglo1 * arreglo2</span>
+<span class="c1">#arreglo1**2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3,  6,  9, 12, 15, 18])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Analizando los últimos dos ejemplos, ¿qué interpretación tiene2 la multiplicación de dos arreglos o el cuadrado de un arreglo?</p>
+<p>Si se quiere recoger el sentido del producto (interno) de vectores se puede usar la función <code class="docutils literal notranslate"><span class="pre">np.dot()</span></code> o la función</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">arreglo1</span><span class="p">,</span> <span class="n">arreglo2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>182
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como se dijo antes, una lista puede tener listas como elementos. Si una estructura así se convierte en un arreglo se obtiene algo como una matriz:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Lista2d</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span> <span class="c1">#una lista de tres listas, cada una con tres elementos</span>
+
+<span class="n">Arreglo2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Lista2d</span><span class="p">)</span> <span class="c1">#matriz de tres por tres</span>
+
+<span class="n">Arreglo2d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2, 3],
+       [6, 5, 4],
+       [7, 8, 9]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="n">Arreglo2d</span>
+<span class="c1">#-1*Arreglo2d</span>
+<span class="c1">#Arreglo2d**2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2,  4,  6],
+       [12, 10,  8],
+       [14, 16, 18]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Algunos arreglos de interés vienen como funciones de numpy, particularmente</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.zeros([n,m])</span></code> (arreglo de <span class="math notranslate nohighlight">\(n\times m\)</span> hecho de puros ceros)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.ones([n,m])</span></code> (arreglo hecho de puros unos)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.rand(n,m)</span></code> arreglo de números aleatorios entre 0 y 1</p></li>
+</ul>
+<p>para más información, visitar <a class="reference external" href="https://numpy.org/">https://numpy.org/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1., 1., 1.],
+       [1., 1., 1.]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.02965291, 0.66362005, 0.89810665, 0.35040668],
+       [0.02197988, 0.77170597, 0.37176291, 0.89399768],
+       [0.49727576, 0.04336152, 0.77399226, 0.9515908 ],
+       [0.43590011, 0.7329924 , 0.90863052, 0.64074909],
+       [0.18502402, 0.77687432, 0.87938893, 0.56922961]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mediante la misma estructura de índices que en las listas, se pueden acceder a los elementos de un arreglo con la ventaja de que para arreglos de dimensión 2 y mayores, se puede utilizar la notación que usamos para matrices. A continuación un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.69620064 0.10288754 0.48893753 0.19570101]
+ [0.4774959  0.55684671 0.17316504 0.49474334]
+ [0.10297379 0.75366418 0.53179006 0.26792589]
+ [0.38225938 0.07172527 0.30005596 0.32844507]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Descomentando cada línea, verifica qué resultado se obtiene con los distintos índices de la matriz generada:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#R[1]</span>
+<span class="c1">#R[2]</span>
+<span class="c1">#R[1,3]</span>
+<span class="c1">#R[3,1]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.69620064, 0.10288754, 0.48893753, 0.19570101])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mediante el uso de los índices se puede sustituir el valor de una de las entradas de un arreglo. Como ejemplo, a continuación se modifica un elemento del arrelgo <code class="docutils literal notranslate"><span class="pre">R</span></code> antes creado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+
+<span class="n">R</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.69620064 0.10288754 0.48893753 0.19570101]
+ [0.4774959  0.55684671 0.17316504 0.49474334]
+ [0.10297379 0.75366418 0.53179006 0.26792589]
+ [0.38225938 0.07172527 0.30005596 0.32844507]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.69620064  0.10288754  0.48893753  0.19570101]
+ [ 0.4774959  10.          0.17316504  0.49474334]
+ [ 0.10297379  0.75366418  0.53179006  0.26792589]
+ [ 0.38225938  0.07172527  0.30005596  0.32844507]]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ejercicios-de-arreglos">
+<h3><span class="section-number">2.1.5.1. </span>Ejercicios de arreglos<a class="headerlink" href="#ejercicios-de-arreglos" title="Enlazar permanentemente con este título">#</a></h3>
+<ol class="simple">
+<li><p>Genera los arreglos <code class="docutils literal notranslate"><span class="pre">arreglo_pares</span></code> y <code class="docutils literal notranslate"><span class="pre">arreglo_impares</span></code> convirtiendo las listas generadas en los ejercicios anteriores en arreglos.</p></li>
+<li><p>Suma, resta, multiplica y <strong>divide</strong> ambos arreglos.</p></li>
+<li><p>Contesta: ¿qué significado tiene la división de arreglos de numpy?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Genera un arreglo cuya entrada <code class="docutils literal notranslate"><span class="pre">[i,j]</span></code> sea la multiplicación de la entrada <code class="docutils literal notranslate"><span class="pre">[i]</span></code> del arreglo <code class="docutils literal notranslate"><span class="pre">arreglo_pares</span></code> y la entrada <code class="docutils literal notranslate"><span class="pre">[j]</span></code> del arreglo <code class="docutils literal notranslate"><span class="pre">arreglo_impares</span></code>.
+Recomendación:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Identifica la longitud de los arreglos y llámalo <code class="docutils literal notranslate"><span class="pre">L</span></code></p></li>
+<li><p>Genera un arreglo de puros ceros de dimensión <span class="math notranslate nohighlight">\(L \times L\)</span> y llámalo <code class="docutils literal notranslate"><span class="pre">A</span></code></p></li>
+<li><p>Mediante un for dentro de otro for, sustituye los elementos de <code class="docutils literal notranslate"><span class="pre">A</span></code> por los productos de las entradas de los arreglos (este último paso se pone a continuación, tú debes hacer los primeros dos pasos):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## haz los primeros pasos</span>
+
+
+<span class="c1">## a continuacion se proporciona el tercer paso</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arreglo_pares</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">arreglo_pares</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-82-97b8841c1922&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## a continuacion se proporciona el tercer paso</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arreglo_pares</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">arreglo_pares</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;L&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="importar-networkx-y-matplotlib">
+<h2><span class="section-number">2.1.6. </span>Importar NetworkX y Matplotlib<a class="headerlink" href="#importar-networkx-y-matplotlib" title="Enlazar permanentemente con este título">#</a></h2>
+<p>En la primera parte de este curso, además de Numpy, serán fundamentales otras dos librerías que ya están integradas en anaconda: en NetworkX están definidos todos los objetos y funciones de redes que usaremos y en Pyplot hay muchas funciones para visualizar información. Pyplot está contenida en otra librería llamada Matplotlib.
+Más información en <a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a> y <a class="reference external" href="https://networkx.org/">https://networkx.org/</a></p>
+<p>En la siguiente celda se importan ambas librerías con sus claves convencionales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En los siguientes notebooks y videos se explican las funciones más importantes relacionadas con las redes que utilizaremos.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./matematicas_de_las_redes/practica_00"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="presentacion.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Práctica 0</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../practica_01/presentacion.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Práctica 1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+  
+      &copy; Copyright 2021.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
