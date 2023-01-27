@@ -13,39 +13,52 @@ Este repositorio consta de 2 carpteras:
 
 ## Requisitos
 
-Para construir este libro se requiere de jupyter book y ghp-import:
-
+Instalar [ghp-import](https://pypi.org/project/ghp-import/):
 ```
-pip install -U jupyter-book
-pip install ghp-import
+python -m pip install ghp-import
 ```
 
-## Uso
+Para evitar conflictos se recomienda trabajar en un [ambiente virtual](https://docs.python.org/3/tutorial/venv.html).
+
+Crear ambiente virtual:
+```
+python -m venv .venv
+source .venv/bin/activate
+```
+Instalar paquetes de python requeridos:
+```
+python -m install -r requirements.txt
+```
+
+## Edición de página
 
 1. Clona este repositorio:
-
 ```
 git clone "https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes"
 ```
-O jala la última versión de los cambios a tu repositorio local:
+2. Realiza las modificaciones necesarias (en la carpeta `/src`).
+3. Construye el libro:
 ```
-git pull
+source .venv/bin/activate # activar ambiente virtual
+cd ../ciencia-de-redes # ubicarse en directorio ciencia-de-redes
+jupyter-book build --path-output . src/ # crear libro
+```
+4. Visualizar cambios localmente:
+```
+cd ./_build/html/
+python -m http.server # inicializa un servidor en localhost:8000
 ```
 
-2. Realiza las modificaciones necesarias (archivos dentro de la carpeta `/src`).
+## Desplegar
 
-
-3. Construye el libro (ejecutar desde `/ciencia-de-redes`):
-```
-jupyter-book build --path-output . src/
-```
-4. Agrega los cambios al repositorio:
+1. Agrega los cambios al repositorio:
 ```
 git add .
 git commit -m "DESCRIPCIÓN DE LAS MODIFICACIONES REALIZADAS"
 git push origin main
 ```
-5. Publica los cambios a GitHub Pages (ejecutar desde `/ciencia-de-redes`):
+2. Publica los cambios a GitHub Pages:
 ```
+cd ciencia-de-redes
 ghp-import -n -p -f _build/html
 ```

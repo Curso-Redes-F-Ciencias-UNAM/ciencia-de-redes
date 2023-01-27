@@ -1,6 +1,6 @@
 title: "Ciencia de Redes"
 author: "Carlos Francisco Betancourt y Luis Guillermo García Jácome"
-copyright: "2021"
+copyright: "2022"
 logo: "logo-pagina-02.png"
 
 execute:
@@ -26,10 +26,12 @@ sphinx:
         # html_theme: furo
         # html_theme: basic
         # html_theme_path: ../
-        # html_theme: tema
         language: es
         bibtex_reference_style: author_year
         # html_sidebars: { '**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'] }
+        html_static_path: ['_static']
+        html_theme_options: { 'search_bar_text': "Buscar..." }
+
 
 bibtex_bibfiles:
     - references.bib
