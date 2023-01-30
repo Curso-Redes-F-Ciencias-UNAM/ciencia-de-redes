@@ -8,38 +8,23 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Mode plein écran"
+
+msgid "Toggle navigation"
+msgstr "Basculer la navigation"
+
 msgid "Download this page"
 msgstr "Téléchargez cette page"
 
-msgid "Download notebook file"
-msgstr "Télécharger le fichier notebook"
-
-msgid "Open an issue"
-msgstr "Ouvrez un problème"
-
-msgid "repository"
-msgstr "dépôt"
-
-msgid "Theme by the"
-msgstr "Thème par le"
-
-msgid "Contents"
-msgstr "Contenu"
+msgid "By the"
+msgstr "Par le"
 
 msgid "next page"
 msgstr "page suivante"
 
-msgid "Last updated on"
-msgstr "Dernière mise à jour le"
-
-msgid "Launch"
-msgstr "lancement"
-
 msgid "Edit this page"
 msgstr "Modifier cette page"
-
-msgid "Source repository"
-msgstr "Dépôt source"
 
 msgid "Download source file"
 msgstr "Télécharger le fichier source"
@@ -47,14 +32,44 @@ msgstr "Télécharger le fichier source"
 msgid "Sphinx Book Theme"
 msgstr "Thème du livre Sphinx"
 
-msgid "Copyright"
-msgstr "droits d'auteur"
+msgid "Download notebook file"
+msgstr "Télécharger le fichier notebook"
 
-msgid "Fullscreen mode"
-msgstr "Mode plein écran"
+msgid "Print to PDF"
+msgstr "Imprimer au format PDF"
+
+msgid "Theme by the"
+msgstr "Thème par le"
+
+msgid "previous page"
+msgstr "page précédente"
+
+msgid "By"
+msgstr "Par"
 
 msgid "Search the docs ..."
 msgstr "Rechercher dans les documents ..."
+
+msgid "Contents"
+msgstr "Contenu"
+
+msgid "Launch"
+msgstr "lancement"
+
+msgid "Source repository"
+msgstr "Dépôt source"
+
+msgid "repository"
+msgstr "dépôt"
+
+msgid "Copyright"
+msgstr "droits d'auteur"
+
+msgid "Last updated on"
+msgstr "Dernière mise à jour le"
+
+msgid "open issue"
+msgstr "signaler un problème"
 
 msgid "suggest edit"
 msgstr "suggestion de modification"
@@ -62,20 +77,5 @@ msgstr "suggestion de modification"
 msgid "Search this book..."
 msgstr "Rechercher dans ce livre ..."
 
-msgid "By"
-msgstr "Par"
-
-msgid "open issue"
-msgstr "signaler un problème"
-
-msgid "Print to PDF"
-msgstr "Imprimer au format PDF"
-
-msgid "previous page"
-msgstr "page précédente"
-
-msgid "Toggle navigation"
-msgstr "Basculer la navigation"
-
-msgid "By the"
-msgstr "Par le"
+msgid "Open an issue"
+msgstr "Ouvrez un problème"

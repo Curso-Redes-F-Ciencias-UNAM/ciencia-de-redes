@@ -8,38 +8,23 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Koko näytön tila"
+
+msgid "Toggle navigation"
+msgstr "Vaihda navigointia"
+
 msgid "Download this page"
 msgstr "Lataa tämä sivu"
 
-msgid "Download notebook file"
-msgstr "Lataa muistikirjatiedosto"
-
-msgid "Open an issue"
-msgstr "Avaa ongelma"
-
-msgid "repository"
-msgstr "arkisto"
-
-msgid "Theme by the"
-msgstr "Teeman tekijä"
-
-msgid "Contents"
-msgstr "Sisällys"
+msgid "By the"
+msgstr "Mukaan"
 
 msgid "next page"
 msgstr "seuraava sivu"
 
-msgid "Last updated on"
-msgstr "Viimeksi päivitetty"
-
-msgid "Launch"
-msgstr "Tuoda markkinoille"
-
 msgid "Edit this page"
 msgstr "Muokkaa tätä sivua"
-
-msgid "Source repository"
-msgstr "Lähteen arkisto"
 
 msgid "Download source file"
 msgstr "Lataa lähdetiedosto"
@@ -47,14 +32,44 @@ msgstr "Lataa lähdetiedosto"
 msgid "Sphinx Book Theme"
 msgstr "Sphinx-kirjan teema"
 
-msgid "Copyright"
-msgstr "Tekijänoikeus"
+msgid "Download notebook file"
+msgstr "Lataa muistikirjatiedosto"
 
-msgid "Fullscreen mode"
-msgstr "Koko näytön tila"
+msgid "Print to PDF"
+msgstr "Tulosta PDF-tiedostoon"
+
+msgid "Theme by the"
+msgstr "Teeman tekijä"
+
+msgid "previous page"
+msgstr "Edellinen sivu"
+
+msgid "By"
+msgstr "Tekijä"
 
 msgid "Search the docs ..."
 msgstr "Hae dokumenteista ..."
+
+msgid "Contents"
+msgstr "Sisällys"
+
+msgid "Launch"
+msgstr "Tuoda markkinoille"
+
+msgid "Source repository"
+msgstr "Lähteen arkisto"
+
+msgid "repository"
+msgstr "arkisto"
+
+msgid "Copyright"
+msgstr "Tekijänoikeus"
+
+msgid "Last updated on"
+msgstr "Viimeksi päivitetty"
+
+msgid "open issue"
+msgstr "avoin ongelma"
 
 msgid "suggest edit"
 msgstr "ehdottaa muokkausta"
@@ -62,20 +77,5 @@ msgstr "ehdottaa muokkausta"
 msgid "Search this book..."
 msgstr "Hae tästä kirjasta ..."
 
-msgid "By"
-msgstr "Tekijä"
-
-msgid "open issue"
-msgstr "avoin ongelma"
-
-msgid "Print to PDF"
-msgstr "Tulosta PDF-tiedostoon"
-
-msgid "previous page"
-msgstr "Edellinen sivu"
-
-msgid "Toggle navigation"
-msgstr "Vaihda navigointia"
-
-msgid "By the"
-msgstr "Mukaan"
+msgid "Open an issue"
+msgstr "Avaa ongelma"

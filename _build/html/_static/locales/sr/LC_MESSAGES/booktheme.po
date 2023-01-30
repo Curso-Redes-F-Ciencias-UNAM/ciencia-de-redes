@@ -8,38 +8,23 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Режим целог екрана"
+
+msgid "Toggle navigation"
+msgstr "Укључи / искључи навигацију"
+
 msgid "Download this page"
 msgstr "Преузмите ову страницу"
 
-msgid "Download notebook file"
-msgstr "Преузмите датотеку бележнице"
-
-msgid "Open an issue"
-msgstr "Отворите издање"
-
-msgid "repository"
-msgstr "спремиште"
-
-msgid "Theme by the"
-msgstr "Тхеме би"
-
-msgid "Contents"
-msgstr "Садржај"
+msgid "By the"
+msgstr "Од"
 
 msgid "next page"
 msgstr "Следећа страна"
 
-msgid "Last updated on"
-msgstr "Последње ажурирање"
-
-msgid "Launch"
-msgstr "Лансирање"
-
 msgid "Edit this page"
 msgstr "Уредите ову страницу"
-
-msgid "Source repository"
-msgstr "Изворно спремиште"
 
 msgid "Download source file"
 msgstr "Преузми изворну датотеку"
@@ -47,14 +32,44 @@ msgstr "Преузми изворну датотеку"
 msgid "Sphinx Book Theme"
 msgstr "Тема књиге Спхинк"
 
-msgid "Copyright"
-msgstr "Ауторско право"
+msgid "Download notebook file"
+msgstr "Преузмите датотеку бележнице"
 
-msgid "Fullscreen mode"
-msgstr "Режим целог екрана"
+msgid "Print to PDF"
+msgstr "Испис у ПДФ"
+
+msgid "Theme by the"
+msgstr "Тхеме би"
+
+msgid "previous page"
+msgstr "Претходна страница"
+
+msgid "By"
+msgstr "Од стране"
 
 msgid "Search the docs ..."
 msgstr "Претражите документе ..."
+
+msgid "Contents"
+msgstr "Садржај"
+
+msgid "Launch"
+msgstr "Лансирање"
+
+msgid "Source repository"
+msgstr "Изворно спремиште"
+
+msgid "repository"
+msgstr "спремиште"
+
+msgid "Copyright"
+msgstr "Ауторско право"
+
+msgid "Last updated on"
+msgstr "Последње ажурирање"
+
+msgid "open issue"
+msgstr "отворено издање"
 
 msgid "suggest edit"
 msgstr "предложи уређивање"
@@ -62,20 +77,5 @@ msgstr "предложи уређивање"
 msgid "Search this book..."
 msgstr "Претражите ову књигу ..."
 
-msgid "By"
-msgstr "Од стране"
-
-msgid "open issue"
-msgstr "отворено издање"
-
-msgid "Print to PDF"
-msgstr "Испис у ПДФ"
-
-msgid "previous page"
-msgstr "Претходна страница"
-
-msgid "Toggle navigation"
-msgstr "Укључи / искључи навигацију"
-
-msgid "By the"
-msgstr "Од"
+msgid "Open an issue"
+msgstr "Отворите издање"

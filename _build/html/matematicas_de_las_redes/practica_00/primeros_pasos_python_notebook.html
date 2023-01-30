@@ -5,10 +5,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.1. Preliminar: primeros pasos con Python (notebook) &#8212; Ciencia de Redes</title>
+    <title>2.1. Práctica 0: primeros pasos con Python (notebook) &#8212; Ciencia de Redes</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,22 +19,17 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/estilos.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -41,13 +37,14 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -68,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">⚠️ Este libro está en constante actualización. Para poder visualizar los últimos cambios se recomienda borrar el caché del navegador. ⚠️</div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -77,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -94,7 +106,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar" aria-label="Buscar" autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -169,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.1. Preliminar: primeros pasos con Python (notebook)
+     2.1. Práctica 0: primeros pasos con Python (notebook)
     </a>
    </li>
   </ul>
@@ -205,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/presentacion.html">
-   4. Medidas de centralidad de los nodos
+   1. Medidas de centralidad de los nodos
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -215,39 +227,39 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_grado.html">
-     4.1. Centralidad de grado
+     1.1. Centralidad de grado
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_cercania.html">
-     4.2. Centralidad de cercanía
+     1.2. Centralidad de cercanía
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_intermediacion.html">
-     4.3. Centralidad de intermediación
+     1.3. Centralidad de intermediación
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_eigenvector.html">
-     4.4. Centralidad de eigenvector
+     1.4. Centralidad de eigenvector
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_katz.html">
-     4.5. Centralidad de Katz
+     1.5. Centralidad de Katz
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html">
-     4.6. Centralidad de Page Rank (opcional)
+     1.6. Centralidad de Page Rank (opcional)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../medidas_y_metricas/practica_02/presentacion.html">
-   5. Práctica 2
+   2. Práctica 2
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
@@ -257,19 +269,19 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_notebook.html">
-     5.1. Práctica 2 (notebook)
+     2.1. Práctica 2 (notebook)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/practica_02/sesion_practica_02_video.html">
-     5.2. Práctica 2 (video)
+     2.2. Práctica 2 (video)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/presentacion.html">
-   6. Medidas de grupos de nodos
+   3. Medidas de grupos de nodos
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -279,24 +291,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion.html">
-     6.1. Coeficiente de acumulación
+     3.1. Coeficiente de acumulación
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/grupos_de_nodos.html">
-     6.2. Grupos de nodos
+     3.2. Grupos de nodos
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/medidas_de_grupos_de_nodos/modularidad.html">
-     6.3. Modularidad
+     3.3. Modularidad
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/presentacion.html">
-   7. Propiedades globales de la red
+   4. Propiedades globales de la red
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -306,19 +318,19 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/propiedades_globales.html">
-     7.1. Propiedades globales
+     4.1. Propiedades globales
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/propiedades_globales_de_la_red/distribucion_de_grado.html">
-     7.2. Distribución de grado
+     4.2. Distribución de grado
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../medidas_y_metricas/practica_03/presentacion.html">
-   8. Práctica 3
+   5. Práctica 3
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -328,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../medidas_y_metricas/practica_03/sesion_practica_03_notebook.html">
-     8.1. Práctica 3 (notebook)
+     5.1. Práctica 3 (notebook)
     </a>
    </li>
   </ul>
@@ -342,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/presentacion.html">
-   9. Redes aleatorias 1
+   1. Redes aleatorias 1
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -352,34 +364,34 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/actividad_introductoria_redes_aleatorias.html">
-     9.1. Actividad introductoria a las redes aleatorias (notebook)
+     1.1. Actividad introductoria a las redes aleatorias (notebook)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/definicion_de_red_aleatoria.html">
-     9.2. Definición red aleatoria
+     1.2. Definición red aleatoria
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/distribucion_binomial.html">
-     9.3. Distribución binomial
+     1.3. Distribución binomial
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/numero_de_enlaces.html">
-     9.4. Número de enlaces
+     1.4. Número de enlaces
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_01/grado_promedio_distribucion_de_grado_y_clustering.html">
-     9.5. Grado promedio, distribución de grado y clustering
+     1.5. Grado promedio, distribución de grado y clustering
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/presentacion.html">
-   10. Práctica 4
+   2. Práctica 4
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
@@ -389,14 +401,14 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook.html">
-     10.1. Práctica 4 (notebook)
+     2.1. Práctica 4 (notebook)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/presentacion.html">
-   11. Redes aleatorias 2
+   3. Redes aleatorias 2
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
   <label for="toctree-checkbox-11">
@@ -406,29 +418,29 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/distribucion_binomial_y_de_poisson.html">
-     11.1. Distribución biniomial y de Poisson
+     3.1. Distribución biniomial y de Poisson
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/redes_aleatorias_y_redes_reales.html">
-     11.2. Redes aleatorias y redes reales
+     3.2. Redes aleatorias y redes reales
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/redes_aleatorias_y_propiedad_de_mundo_pequenio.html">
-     11.3. Redes aleatorias y propiedad de mundo pequeño
+     3.3. Redes aleatorias y propiedad de mundo pequeño
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_aleatorias_02/transicion_de_fase_en_redes_aleatorias.html">
-     11.4. Transición de fase en redes aleatorias
+     3.4. Transición de fase en redes aleatorias
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion.html">
-   12. Redes de mundo pequeño
+   4. Redes de mundo pequeño
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -438,24 +450,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz.html">
-     12.1. Introducción al modelo Watts-Strogatz
+     4.1. Introducción al modelo Watts-Strogatz
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS.html">
-     12.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+     4.2. Primera aproximación al modelo Watts-Strogatz (notebook)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/experimento_ws.html">
-     12.3. Experimento W-S
+     4.3. Experimento W-S
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html">
-   13. Redes con independencia de escala (scale-free)
+   5. Redes con independencia de escala (scale-free)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -465,29 +477,29 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/actividad_introductoria_a_redes_con_independencia_de_escala.html">
-     13.1. Actividad introductoria a redes con independencia de escala
+     5.1. Actividad introductoria a redes con independencia de escala
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/definicion_general.html">
-     13.2. Definición general
+     5.2. Definición general
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/propiedades_de_la_ley_de_potencia.html">
-     13.3. Propiedades de la ley de potencia
+     5.3. Propiedades de la ley de potencia
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/distribucion_de_grado_tipo_ley_de_potencia.html">
-     13.4. Distribución de grado tipo ley de potencia
+     5.4. Distribución de grado tipo ley de potencia
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_05/presentacion.html">
-   14. Práctica 5
+   6. Práctica 5
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
@@ -497,7 +509,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../redes_complejas_y_sus_propiedades/practica_05/sesion_practica_05_notebook.html">
-     14.1. Práctica 5 (notebook)
+     6.1. Práctica 5 (notebook)
     </a>
    </li>
   </ul>
@@ -511,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/presentacion.html">
-   15. Difusión en redes
+   1. Difusión en redes
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -521,24 +533,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/ecuacion_de_difusion_y_laplaciano_en_redes.html">
-     15.1. Ecuación de difusión y laplaciano en redes
+     1.1. Ecuación de difusión y laplaciano en redes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/propiedades_de_L.html">
-     15.2. Propiedades de L
+     1.2. Propiedades de L
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../procesos_en_redes/difusion_en_redes/ejemplo_resuelto.html">
-     15.3. Ejemplo resuelto
+     1.3. Ejemplo resuelto
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../procesos_en_redes/percolacion_en_redes/presentacion.html">
-   16. Percolación en redes
+   2. Percolación en redes
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
   <label for="toctree-checkbox-16">
@@ -548,7 +560,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../procesos_en_redes/percolacion_en_redes/percolacion.html">
-     16.1. Percolación en redes
+     2.1. Percolación en redes
     </a>
    </li>
   </ul>
@@ -562,22 +574,22 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../estudio_de_redes_reales/redes_de_informacion/presentacion.html">
-   17. Redes de información
+   1. Redes de información
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../estudio_de_redes_reales/redes_en_biologia/presentacion.html">
-   18. Redes en biología
+   2. Redes en biología
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../estudio_de_redes_reales/redes_sociales/presentacion.html">
-   19. Redes sociales
+   3. Redes sociales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../estudio_de_redes_reales/proyectos_finales/presentacion.html">
-   20. Proyectos finales
+   4. Proyectos finales
   </a>
  </li>
 </ul>
@@ -595,12 +607,17 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
 </div>
 
 
@@ -608,61 +625,146 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
-                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+    <div class="header-article row sticky-top noprint">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/matematicas_de_las_redes/practica_00/primeros_pasos_python_notebook.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Navegación de palanca"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/blob/main/src/matematicas_de_las_redes/practica_00/primeros_pasos_python_notebook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Modo de pantalla completa"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/matematicas_de_las_redes/practica_00/primeros_pasos_python_notebook.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Descargar archivo fuente"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Imprimir en PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
-        title="Modo de pantalla completa"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenido
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contenido
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduccion">
    2.1.1. Introducción
@@ -675,12 +777,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bucle-for">
-   2.1.3. Bucle «for»
+   2.1.3. Bucle
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ejercicios-for">
-     2.1.3.1. Ejercicios «for»
+     2.1.3.1. Ejercicios
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
     </a>
    </li>
   </ul>
@@ -716,15 +828,14 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Preliminar: primeros pasos con Python (notebook)</h1>
+                <h1>Práctica 0: primeros pasos con Python (notebook)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -746,12 +857,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bucle-for">
-   2.1.3. Bucle «for»
+   2.1.3. Bucle
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ejercicios-for">
-     2.1.3.1. Ejercicios «for»
+     2.1.3.1. Ejercicios
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
     </a>
    </li>
   </ul>
@@ -791,16 +912,17 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="preliminar-primeros-pasos-con-python-notebook">
-<h1><span class="section-number">2.1. </span>Preliminar: primeros pasos con Python (notebook)<a class="headerlink" href="#preliminar-primeros-pasos-con-python-notebook" title="Enlazar permanentemente con este título">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-0-primeros-pasos-con-python-notebook">
+<h1><span class="section-number">2.1. </span>Práctica 0: primeros pasos con Python (notebook)<a class="headerlink" href="#practica-0-primeros-pasos-con-python-notebook" title="Enlazar permanentemente con este título">#</a></h1>
 <div class="section" id="introduccion">
-<h2><span class="section-number">2.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En este curso utilizaremos python mediante el uso de <strong>Notebooks</strong>. Éstos pueden ser de Google Colab (como éste) o pueden ser archivos tipo <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> que se abren con <a class="reference external" href="https://jupyter.org/">Jupyter</a>. La forma más sencilla para installar Jupyter en sus computadoras es a travéz de Anaconda. Para ello se recomienda visitar la <a class="reference external" href="https://www.anaconda.com/">página oficial de Anaconda</a> y seguir las instrucciones.</p>
-<p>En primer lugar, un notebook de jupyter o colab es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y «correr» la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar Shift + Enter</p>
-<p>A continuación se presentan algunas operaciones «comentadas», es decir, antecedidas por el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> (en python, todo lo que esté a la derecha de ese signo será ignorado), puedes borrar el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> al inicio y correr la celda cada vez para obtener cada resultado. Obs. Cada celda puede ser corrida tantas veces como se quiera. Es común que en alguna línea se ponga una explicación con el uso de otro signo <code class="docutils literal notranslate"><span class="pre">#</span></code>; aquí se hace para explicarle a las personas no familiarizadas con algunas operaciones matemáticas los nombres de éstas, pero puede ser un buen hábito comentar el código que generemos (como veremos más adelante).</p>
+<h2><span class="section-number">2.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">#</a></h2>
+<p>En este curso utilizaremos python mediante el uso de <strong>notebooks</strong>. Éstos se pueden abrir en Google Colab o pueden ser archivos tipo <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> que se abren con <a class="reference external" href="https://jupyter.org/">Jupyter</a>. La forma más sencilla para installar Jupyter en sus computadoras es a travéz de Anaconda (una distribución de python). Para ello se recomienda visitar la <a class="reference external" href="https://www.anaconda.com/">página oficial de Anaconda</a> y seguir las instrucciones.</p>
+<p>En primer lugar, un notebook es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y «correr» la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>.</p>
+<p>A continuación se presentan algunas operaciones «comentadas», es decir, antecedidas por el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> (en python, todo lo que esté a la derecha de ese signo será ignorado), puedes borrar el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> al inicio y correr la celda cada vez para obtener cada resultado. Nóta que cada celda puede ser corrida tantas veces como quieras. Es común que en alguna línea se ponga una explicación con el uso de otro signo <code class="docutils literal notranslate"><span class="pre">#</span></code>; aquí se hace para explicarle a las personas no familiarizadas con algunas operaciones matemáticas los nombres de éstas, pero puede ser un buen hábito comentar el código que generemos (como veremos más adelante).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#8*5  </span>
@@ -827,10 +949,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="importar-paquetes">
-<h2><span class="section-number">2.1.2. </span>Importar paquetes<a class="headerlink" href="#importar-paquetes" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita <a class="reference external" href="https://numpy.org/">https://numpy.org/</a>).</p>
-<p>Ahora se introduce una forma estándar para importar las librerías. La estructura es: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;libreria&gt;</span> <span class="pre">as</span> <span class="pre">&lt;clave&gt;</span></code>. La clave será la forma con la que «invocaremos» a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave np.</p>
-<p>Después de haber corrido la siguiente celda, podrás utilizar todas las funciones y objetos de la librería en la misma sesión. Esto significa que no hay que estar importando en todo momento la librería.</p>
+<h2><span class="section-number">2.1.2. </span>Importar paquetes<a class="headerlink" href="#importar-paquetes" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita <a class="reference external" href="https://numpy.org/">la página oficial de numpy</a>)</p>
+<p>Ahora se introduce una forma estándar para importar las librerías. La estructura es: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;libreria&gt;</span> <span class="pre">as</span> <span class="pre">&lt;clave&gt;</span></code>. La clave será la forma con la que «invocaremos» a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave <code class="docutils literal notranslate"><span class="pre">np</span></code>.</p>
+<p>Después correr la siguiente celda, podrás utilizar todas las funciones y objetos de la librería durante la misma sesión. Esto significa que no hay que estar importando en todo momento la librería.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -879,12 +1001,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="bucle-for">
-<h2><span class="section-number">2.1.3. </span>Bucle «for»<a class="headerlink" href="#bucle-for" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>La estructura básica de python que hace falta dominar, al menos para toda la primera parte de este curso, es el bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> que comprenderemos a partir del ejemplo de la siguiente celda:</p>
+<h2><span class="section-number">2.1.3. </span>Bucle <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#bucle-for" title="Enlazar permanentemente con este título">#</a></h2>
+<p>La estructura básica de python que hace falta dominar (al menos para toda la primera parte de este curso) es el bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> que comprenderemos a partir del ejemplo de la siguiente celda:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -906,7 +1028,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Como podrás ver, lo único que ocurrió es que se mostraron los números del 0 al 9. Los elementos importantes son:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">range(N)</span></code> es una estructura que genera una «iteración» de <code class="docutils literal notranslate"><span class="pre">N</span></code> números empezando por el cero.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> función cuyo argumento se muestra en la pantalla</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> es una función cuyo argumento se muestra en la pantalla</p></li>
 </ul>
 <p>Así, la instrucción del bucle podría leerse entonces como «para cada elemento de la lista [0, …, 9], muestra dicho elemento».</p>
 <p>En general, el bucle <code class="docutils literal notranslate"><span class="pre">for</span></code> tiene la siguiente estructura:</p>
@@ -914,7 +1036,7 @@ const thebe_selector_output = ".output, .cell_output"
    <span class="n">función</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>los dos puntos de la primera línea y la sangría de la instrucción son importantes (esta última se genera de forma automática en jupyter y casi cualquier editor de textos, pero puede ser causa de errores).
+<p>Los dos puntos de la primera línea y la sangría de la instrucción son importantes (esta última se genera de forma automática en jupyter y casi cualquier editor de textos, pero puede ser causa de errores).
 Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes, puedes «descomentar» y comentar cada línea para ver cómo cambia el resultado:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -943,7 +1065,7 @@ Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes,
 </div>
 </div>
 <div class="section" id="ejercicios-for">
-<h3><span class="section-number">2.1.3.1. </span>Ejercicios «for»<a class="headerlink" href="#ejercicios-for" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3><span class="section-number">2.1.3.1. </span>Ejercicios <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ejercicios-for" title="Enlazar permanentemente con este título">#</a></h3>
 <p>Mediante el uso de las estructuras <code class="docutils literal notranslate"><span class="pre">for</span></code> y <code class="docutils literal notranslate"><span class="pre">range()</span></code>, genera un bucle que produzca los siguientes resultados:</p>
 <ol class="simple">
 <li><p>Imprimir todos los números del 0 al 15</p></li>
@@ -982,7 +1104,7 @@ Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes,
 </div>
 </div>
 <div class="section" id="listas">
-<h2><span class="section-number">2.1.4. </span>Listas<a class="headerlink" href="#listas" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2><span class="section-number">2.1.4. </span>Listas<a class="headerlink" href="#listas" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Otra estructura de python que utilizaremos son las listas. Las listas se construyen con corchetes y sus elementos se separan con comas. Las listas pueden contener números enteros, números flotantes (con punto decimal), cadenas alfanuméricas o cualquier otra estructura de python, inclusive listas.</p>
 <p>En los primeros ejercicios de este curso las utilizaremos para hacer listas de nodos y luego emplearlas para construir enlaces de forma ordenada.</p>
 <p>A continuación se detallan algunos aspectos sobre el empleo de listas en python.</p>
@@ -1172,7 +1294,7 @@ comillas.
 </div>
 </div>
 <div class="section" id="ejercicios-de-listas">
-<h3><span class="section-number">2.1.4.1. </span>Ejercicios de listas<a class="headerlink" href="#ejercicios-de-listas" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3><span class="section-number">2.1.4.1. </span>Ejercicios de listas<a class="headerlink" href="#ejercicios-de-listas" title="Enlazar permanentemente con este título">#</a></h3>
 <ol class="simple">
 <li><p>Define dos listas vacías, una llamada pares y otra impares</p></li>
 </ol>
@@ -1206,7 +1328,7 @@ comillas.
 </div>
 </div>
 <div class="section" id="arreglos-de-numpy">
-<h2><span class="section-number">2.1.5. </span>Arreglos de numpy<a class="headerlink" href="#arreglos-de-numpy" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2><span class="section-number">2.1.5. </span>Arreglos de numpy<a class="headerlink" href="#arreglos-de-numpy" title="Enlazar permanentemente con este título">#</a></h2>
 <p>La estructura básica de numpy que utilizaremos es <code class="docutils literal notranslate"><span class="pre">array()</span></code> (arreglo) que recoge muchas de las propiedades de los vectores y las matrices.</p>
 <p>En primer lugar, cualquier lista puede usarse para definir un arreglo y cambiar sus propiedades, particularmente en lo que se refiere a la multiplicación y la suma:</p>
 <div class="cell docutils container">
@@ -1418,7 +1540,7 @@ comillas.
 </div>
 </div>
 <div class="section" id="ejercicios-de-arreglos">
-<h3><span class="section-number">2.1.5.1. </span>Ejercicios de arreglos<a class="headerlink" href="#ejercicios-de-arreglos" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3><span class="section-number">2.1.5.1. </span>Ejercicios de arreglos<a class="headerlink" href="#ejercicios-de-arreglos" title="Enlazar permanentemente con este título">#</a></h3>
 <ol class="simple">
 <li><p>Genera los arreglos <code class="docutils literal notranslate"><span class="pre">arreglo_pares</span></code> y <code class="docutils literal notranslate"><span class="pre">arreglo_impares</span></code> convirtiendo las listas generadas en los ejercicios anteriores en arreglos.</p></li>
 <li><p>Suma, resta, multiplica y <strong>divide</strong> ambos arreglos.</p></li>
@@ -1484,7 +1606,7 @@ Recomendación:</p></li>
 </div>
 </div>
 <div class="section" id="importar-networkx-y-matplotlib">
-<h2><span class="section-number">2.1.6. </span>Importar NetworkX y Matplotlib<a class="headerlink" href="#importar-networkx-y-matplotlib" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2><span class="section-number">2.1.6. </span>Importar NetworkX y Matplotlib<a class="headerlink" href="#importar-networkx-y-matplotlib" title="Enlazar permanentemente con este título">#</a></h2>
 <p>En la primera parte de este curso, además de Numpy, serán fundamentales otras dos librerías que ya están integradas en anaconda: en NetworkX están definidos todos los objetos y funciones de redes que usaremos y en Pyplot hay muchas funciones para visualizar información. Pyplot está contenida en otra librería llamada Matplotlib.
 Más información en <a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a> y <a class="reference external" href="https://networkx.org/">https://networkx.org/</a></p>
 <p>En la siguiente celda se importan ambas librerías con sus claves convencionales:</p>
@@ -1522,9 +1644,11 @@ Más información en <a class="reference external" href="https://matplotlib.org/
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="presentacion.html" title="anterior página">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1540,24 +1664,28 @@ Más información en <a class="reference external" href="https://matplotlib.org/
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+  
+      &copy; Derechos de autor 2023.<br/>
+</p>
+        </footer>
+    </div>
     
-      Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
-    
-        &copy; Derechos de autor 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

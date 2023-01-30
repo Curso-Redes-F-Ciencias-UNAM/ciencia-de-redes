@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Preliminar: primeros pasos con Python (notebook)
+# # Práctica 0: primeros pasos con Python (notebook)
 
 # ## Introducción
-# En este curso utilizaremos python mediante el uso de **Notebooks**. Éstos pueden ser de Google Colab (como éste) o pueden ser archivos tipo `.ipynb` que se abren con [Jupyter](https://jupyter.org/). La forma más sencilla para installar Jupyter en sus computadoras es a travéz de Anaconda. Para ello se recomienda visitar la [página oficial de Anaconda](https://www.anaconda.com/) y seguir las instrucciones.
+# En este curso utilizaremos python mediante el uso de **notebooks**. Éstos se pueden abrir en Google Colab o pueden ser archivos tipo `.ipynb` que se abren con [Jupyter](https://jupyter.org/). La forma más sencilla para installar Jupyter en sus computadoras es a travéz de Anaconda (una distribución de python). Para ello se recomienda visitar la [página oficial de Anaconda](https://www.anaconda.com/) y seguir las instrucciones.
 #  
-# En primer lugar, un notebook de jupyter o colab es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y "correr" la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar Shift + Enter
+# En primer lugar, un notebook es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y "correr" la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar `Shift + Enter`.
 #  
-# A continuación se presentan algunas operaciones "comentadas", es decir, antecedidas por el signo `#` (en python, todo lo que esté a la derecha de ese signo será ignorado), puedes borrar el signo `#` al inicio y correr la celda cada vez para obtener cada resultado. Obs. Cada celda puede ser corrida tantas veces como se quiera. Es común que en alguna línea se ponga una explicación con el uso de otro signo `#`; aquí se hace para explicarle a las personas no familiarizadas con algunas operaciones matemáticas los nombres de éstas, pero puede ser un buen hábito comentar el código que generemos (como veremos más adelante).
+# A continuación se presentan algunas operaciones "comentadas", es decir, antecedidas por el signo `#` (en python, todo lo que esté a la derecha de ese signo será ignorado), puedes borrar el signo `#` al inicio y correr la celda cada vez para obtener cada resultado. Nóta que cada celda puede ser corrida tantas veces como quieras. Es común que en alguna línea se ponga una explicación con el uso de otro signo `#`; aquí se hace para explicarle a las personas no familiarizadas con algunas operaciones matemáticas los nombres de éstas, pero puede ser un buen hábito comentar el código que generemos (como veremos más adelante).
 
 # In[ ]:
 
@@ -29,11 +29,11 @@
 
 
 # ## Importar paquetes
-# Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita https://numpy.org/). 
+# Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita [la página oficial de numpy](https://numpy.org/)) 
 # 
-# Ahora se introduce una forma estándar para importar las librerías. La estructura es: `import <libreria> as <clave>`. La clave será la forma con la que "invocaremos" a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave np.
+# Ahora se introduce una forma estándar para importar las librerías. La estructura es: `import <libreria> as <clave>`. La clave será la forma con la que "invocaremos" a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave `np`.
 # 
-# Después de haber corrido la siguiente celda, podrás utilizar todas las funciones y objetos de la librería en la misma sesión. Esto significa que no hay que estar importando en todo momento la librería.
+# Después correr la siguiente celda, podrás utilizar todas las funciones y objetos de la librería durante la misma sesión. Esto significa que no hay que estar importando en todo momento la librería.
 
 # In[ ]:
 
@@ -71,19 +71,19 @@ np.pi  #numero pi
 #np.cos(2*np.pi)
 
 
-# ## Bucle "for"
-# La estructura básica de python que hace falta dominar, al menos para toda la primera parte de este curso, es el bucle ```for``` que comprenderemos a partir del ejemplo de la siguiente celda:
+# ## Bucle `for`
+# La estructura básica de python que hace falta dominar (al menos para toda la primera parte de este curso) es el bucle ```for``` que comprenderemos a partir del ejemplo de la siguiente celda:
 
 # In[ ]:
 
 
 for i in range(10):
-  print(i)
+    print(i)
 
 
 # Como podrás ver, lo único que ocurrió es que se mostraron los números del 0 al 9. Los elementos importantes son:
 # - ```range(N)``` es una estructura que genera una "iteración" de ```N``` números empezando por el cero.
-# - ```print()``` función cuyo argumento se muestra en la pantalla
+# - ```print()``` es una función cuyo argumento se muestra en la pantalla
 # 
 # Así, la instrucción del bucle podría leerse entonces como "para cada elemento de la lista [0, ..., 9], muestra dicho elemento".
 # 
@@ -92,8 +92,8 @@ for i in range(10):
 # ```
 # for elemento in iterable:
 #    función(elemento)
-#    ```
-# los dos puntos de la primera línea y la sangría de la instrucción son importantes (esta última se genera de forma automática en jupyter y casi cualquier editor de textos, pero puede ser causa de errores).
+# ```
+# Los dos puntos de la primera línea y la sangría de la instrucción son importantes (esta última se genera de forma automática en jupyter y casi cualquier editor de textos, pero puede ser causa de errores).
 # Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes, puedes "descomentar" y comentar cada línea para ver cómo cambia el resultado:
 
 # In[ ]:
@@ -107,7 +107,7 @@ for i in range(10):
   #print(2**i)
 
 
-# ### Ejercicios "for"
+# ### Ejercicios `for`
 # Mediante el uso de las estructuras ```for``` y ```range()```, genera un bucle que produzca los siguientes resultados:
 # 1. Imprimir todos los números del 0 al 15
 # 2. Imprimir todos los números del 1 al 15

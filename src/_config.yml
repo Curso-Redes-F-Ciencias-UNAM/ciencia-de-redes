@@ -1,37 +1,36 @@
 title: "Ciencia de Redes"
 author: "Carlos Francisco Betancourt y Luis Guillermo García Jácome"
-copyright: "2022"
+copyright: "2023"
 logo: "logo-pagina-02.png"
+only_build_toc_files: true
 
 execute:
-    execute_notebooks: off # auto, force, cache, off
-
-html:
-    favicon: "favicon.ico"
-    extra_navbar: "Hecho con <a href='https://jupyterbook.org'>Jupyter Book</a>"
-    home_page_in_navbar: false
+    execute_notebooks: "off"
 
 repository:
-  url: https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes
-  path_to_book: src/
-  branch: main
+  url: "https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes"
+  path_to_book: "src"
+  branch: "main"
 
 launch_buttons:
-  binderhub_url: "https://mybinder.org"
+  notebook_interface: "classic"
+  binderhub_url: ""
   colab_url: "https://colab.research.google.com"
+  
+html:
+    # use_repository_button: true
+    # use_issues_button: true
+    use_multitoc_numbering: false
+    home_page_in_navbar: false
+    favicon: "favicon.ico"
+    announcement: "⚠️ Este libro está en constante actualización. Para poder visualizar los últimos cambios se recomienda borrar el caché del navegador. ⚠️"
+    extran_navbar: 'Creado con <a href="https://jupyterbook.org">Jupyter Book</a>' # no funciona
 
 sphinx:
-    config:
-        html_theme: sphinx_book_theme
-        # html_theme: furo
-        # html_theme: basic
-        # html_theme_path: ../
-        language: es
-        bibtex_reference_style: author_year
-        # html_sidebars: { '**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'] }
-        html_static_path: ['_static']
-        html_theme_options: { 'search_bar_text': "Buscar..." }
-
+  config:
+    language: es
+    # html_theme_options: { "search_bar_text": "Buscar..." } # esto si funciona pero rompe bontones de launch
+    # html_theme_options: { "extra_navbar": 'Creado con <a href="https://jupyterbook.org">Jupyter Book</a>'} # esto si funciona pero también rompe botones de launch 
 
 bibtex_bibfiles:
     - references.bib

@@ -8,38 +8,23 @@ msgstr ""
 "Language: id\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Mode layar penuh"
+
+msgid "Toggle navigation"
+msgstr "Alihkan navigasi"
+
 msgid "Download this page"
 msgstr "Unduh halaman ini"
 
-msgid "Download notebook file"
-msgstr "Unduh file notebook"
-
-msgid "Open an issue"
-msgstr "Buka masalah"
-
-msgid "repository"
-msgstr "gudang"
-
-msgid "Theme by the"
-msgstr "Tema oleh"
-
-msgid "Contents"
-msgstr "Isi"
+msgid "By the"
+msgstr "Oleh"
 
 msgid "next page"
 msgstr "halaman selanjutnya"
 
-msgid "Last updated on"
-msgstr "Terakhir diperbarui saat"
-
-msgid "Launch"
-msgstr "Meluncurkan"
-
 msgid "Edit this page"
 msgstr "Edit halaman ini"
-
-msgid "Source repository"
-msgstr "Repositori sumber"
 
 msgid "Download source file"
 msgstr "Unduh file sumber"
@@ -47,14 +32,44 @@ msgstr "Unduh file sumber"
 msgid "Sphinx Book Theme"
 msgstr "Tema Buku Sphinx"
 
-msgid "Copyright"
-msgstr "hak cipta"
+msgid "Download notebook file"
+msgstr "Unduh file notebook"
 
-msgid "Fullscreen mode"
-msgstr "Mode layar penuh"
+msgid "Print to PDF"
+msgstr "Cetak ke PDF"
+
+msgid "Theme by the"
+msgstr "Tema oleh"
+
+msgid "previous page"
+msgstr "halaman sebelumnya"
+
+msgid "By"
+msgstr "Oleh"
 
 msgid "Search the docs ..."
 msgstr "Telusuri dokumen ..."
+
+msgid "Contents"
+msgstr "Isi"
+
+msgid "Launch"
+msgstr "Meluncurkan"
+
+msgid "Source repository"
+msgstr "Repositori sumber"
+
+msgid "repository"
+msgstr "gudang"
+
+msgid "Copyright"
+msgstr "hak cipta"
+
+msgid "Last updated on"
+msgstr "Terakhir diperbarui saat"
+
+msgid "open issue"
+msgstr "masalah terbuka"
 
 msgid "suggest edit"
 msgstr "menyarankan edit"
@@ -62,20 +77,5 @@ msgstr "menyarankan edit"
 msgid "Search this book..."
 msgstr "Telusuri buku ini ..."
 
-msgid "By"
-msgstr "Oleh"
-
-msgid "open issue"
-msgstr "masalah terbuka"
-
-msgid "Print to PDF"
-msgstr "Cetak ke PDF"
-
-msgid "previous page"
-msgstr "halaman sebelumnya"
-
-msgid "Toggle navigation"
-msgstr "Alihkan navigasi"
-
-msgid "By the"
-msgstr "Oleh"
+msgid "Open an issue"
+msgstr "Buka masalah"

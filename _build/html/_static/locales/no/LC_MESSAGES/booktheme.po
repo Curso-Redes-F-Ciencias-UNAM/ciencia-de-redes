@@ -8,38 +8,23 @@ msgstr ""
 "Language: no\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Fullskjerm-modus"
+
+msgid "Toggle navigation"
+msgstr "Bytt navigasjon"
+
 msgid "Download this page"
 msgstr "Last ned denne siden"
 
-msgid "Download notebook file"
-msgstr "Last ned notatbokfilen"
-
-msgid "Open an issue"
-msgstr "Åpne et problem"
-
-msgid "repository"
-msgstr "oppbevaringssted"
-
-msgid "Theme by the"
-msgstr "Tema av"
-
-msgid "Contents"
-msgstr "Innhold"
+msgid "By the"
+msgstr "Ved"
 
 msgid "next page"
 msgstr "neste side"
 
-msgid "Last updated on"
-msgstr "Sist oppdatert den"
-
-msgid "Launch"
-msgstr "Start"
-
 msgid "Edit this page"
 msgstr "Rediger denne siden"
-
-msgid "Source repository"
-msgstr "Kildedepot"
 
 msgid "Download source file"
 msgstr "Last ned kildefilen"
@@ -47,14 +32,44 @@ msgstr "Last ned kildefilen"
 msgid "Sphinx Book Theme"
 msgstr "Sphinx boktema"
 
-msgid "Copyright"
-msgstr "opphavsrett"
+msgid "Download notebook file"
+msgstr "Last ned notatbokfilen"
 
-msgid "Fullscreen mode"
-msgstr "Fullskjerm-modus"
+msgid "Print to PDF"
+msgstr "Skriv ut til PDF"
+
+msgid "Theme by the"
+msgstr "Tema av"
+
+msgid "previous page"
+msgstr "forrige side"
+
+msgid "By"
+msgstr "Av"
 
 msgid "Search the docs ..."
 msgstr "Søk i dokumentene ..."
+
+msgid "Contents"
+msgstr "Innhold"
+
+msgid "Launch"
+msgstr "Start"
+
+msgid "Source repository"
+msgstr "Kildedepot"
+
+msgid "repository"
+msgstr "oppbevaringssted"
+
+msgid "Copyright"
+msgstr "opphavsrett"
+
+msgid "Last updated on"
+msgstr "Sist oppdatert den"
+
+msgid "open issue"
+msgstr "åpent nummer"
 
 msgid "suggest edit"
 msgstr "foreslå redigering"
@@ -62,20 +77,5 @@ msgstr "foreslå redigering"
 msgid "Search this book..."
 msgstr "Søk i denne boken ..."
 
-msgid "By"
-msgstr "Av"
-
-msgid "open issue"
-msgstr "åpent nummer"
-
-msgid "Print to PDF"
-msgstr "Skriv ut til PDF"
-
-msgid "previous page"
-msgstr "forrige side"
-
-msgid "Toggle navigation"
-msgstr "Bytt navigasjon"
-
-msgid "By the"
-msgstr "Ved"
+msgid "Open an issue"
+msgstr "Åpne et problem"
