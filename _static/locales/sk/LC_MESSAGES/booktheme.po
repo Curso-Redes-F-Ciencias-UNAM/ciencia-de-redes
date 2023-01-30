@@ -8,38 +8,23 @@ msgstr ""
 "Language: sk\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Režim celej obrazovky"
+
+msgid "Toggle navigation"
+msgstr "Prepnúť navigáciu"
+
 msgid "Download this page"
 msgstr "Stiahnite si túto stránku"
 
-msgid "Download notebook file"
-msgstr "Stiahnite si zošit"
-
-msgid "Open an issue"
-msgstr "Otvorte problém"
-
-msgid "repository"
-msgstr "Úložisko"
-
-msgid "Theme by the"
-msgstr "Téma od"
-
-msgid "Contents"
-msgstr "Obsah"
+msgid "By the"
+msgstr "Podľa"
 
 msgid "next page"
 msgstr "ďalšia strana"
 
-msgid "Last updated on"
-msgstr "Posledná aktualizácia dňa"
-
-msgid "Launch"
-msgstr "Spustiť"
-
 msgid "Edit this page"
 msgstr "Upraviť túto stránku"
-
-msgid "Source repository"
-msgstr "Zdrojové úložisko"
 
 msgid "Download source file"
 msgstr "Stiahnite si zdrojový súbor"
@@ -47,14 +32,44 @@ msgstr "Stiahnite si zdrojový súbor"
 msgid "Sphinx Book Theme"
 msgstr "Téma knihy Sfinga"
 
-msgid "Copyright"
-msgstr "Autorské práva"
+msgid "Download notebook file"
+msgstr "Stiahnite si zošit"
 
-msgid "Fullscreen mode"
-msgstr "Režim celej obrazovky"
+msgid "Print to PDF"
+msgstr "Tlač do PDF"
+
+msgid "Theme by the"
+msgstr "Téma od"
+
+msgid "previous page"
+msgstr "predchádzajúca strana"
+
+msgid "By"
+msgstr "Autor:"
 
 msgid "Search the docs ..."
 msgstr "Hľadať v dokumentoch ..."
+
+msgid "Contents"
+msgstr "Obsah"
+
+msgid "Launch"
+msgstr "Spustiť"
+
+msgid "Source repository"
+msgstr "Zdrojové úložisko"
+
+msgid "repository"
+msgstr "Úložisko"
+
+msgid "Copyright"
+msgstr "Autorské práva"
+
+msgid "Last updated on"
+msgstr "Posledná aktualizácia dňa"
+
+msgid "open issue"
+msgstr "otvorené vydanie"
 
 msgid "suggest edit"
 msgstr "navrhnúť úpravu"
@@ -62,20 +77,5 @@ msgstr "navrhnúť úpravu"
 msgid "Search this book..."
 msgstr "Hľadať v tejto knihe ..."
 
-msgid "By"
-msgstr "Autor:"
-
-msgid "open issue"
-msgstr "otvorené vydanie"
-
-msgid "Print to PDF"
-msgstr "Tlač do PDF"
-
-msgid "previous page"
-msgstr "predchádzajúca strana"
-
-msgid "Toggle navigation"
-msgstr "Prepnúť navigáciu"
-
-msgid "By the"
-msgstr "Podľa"
+msgid "Open an issue"
+msgstr "Otvorte problém"

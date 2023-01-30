@@ -8,38 +8,23 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Celozaslonski način"
+
+msgid "Toggle navigation"
+msgstr "Preklopi navigacijo"
+
 msgid "Download this page"
 msgstr "Prenesite to stran"
 
-msgid "Download notebook file"
-msgstr "Prenesite datoteko zvezka"
-
-msgid "Open an issue"
-msgstr "Odprite številko"
-
-msgid "repository"
-msgstr "odlagališče"
-
-msgid "Theme by the"
-msgstr "Tema avtorja"
-
-msgid "Contents"
-msgstr "Vsebina"
+msgid "By the"
+msgstr "Avtor"
 
 msgid "next page"
 msgstr "Naslednja stran"
 
-msgid "Last updated on"
-msgstr "Nazadnje posodobljeno dne"
-
-msgid "Launch"
-msgstr "Kosilo"
-
 msgid "Edit this page"
 msgstr "Uredite to stran"
-
-msgid "Source repository"
-msgstr "Izvorno skladišče"
 
 msgid "Download source file"
 msgstr "Prenesite izvorno datoteko"
@@ -47,14 +32,44 @@ msgstr "Prenesite izvorno datoteko"
 msgid "Sphinx Book Theme"
 msgstr "Tema knjige Sphinx"
 
-msgid "Copyright"
-msgstr "avtorske pravice"
+msgid "Download notebook file"
+msgstr "Prenesite datoteko zvezka"
 
-msgid "Fullscreen mode"
-msgstr "Celozaslonski način"
+msgid "Print to PDF"
+msgstr "Natisni v PDF"
+
+msgid "Theme by the"
+msgstr "Tema avtorja"
+
+msgid "previous page"
+msgstr "Prejšnja stran"
+
+msgid "By"
+msgstr "Avtor"
 
 msgid "Search the docs ..."
 msgstr "Poiščite dokumente ..."
+
+msgid "Contents"
+msgstr "Vsebina"
+
+msgid "Launch"
+msgstr "Kosilo"
+
+msgid "Source repository"
+msgstr "Izvorno skladišče"
+
+msgid "repository"
+msgstr "odlagališče"
+
+msgid "Copyright"
+msgstr "avtorske pravice"
+
+msgid "Last updated on"
+msgstr "Nazadnje posodobljeno dne"
+
+msgid "open issue"
+msgstr "odprto vprašanje"
 
 msgid "suggest edit"
 msgstr "predlagajte urejanje"
@@ -62,20 +77,5 @@ msgstr "predlagajte urejanje"
 msgid "Search this book..."
 msgstr "Poiščite to knjigo ..."
 
-msgid "By"
-msgstr "Avtor"
-
-msgid "open issue"
-msgstr "odprto vprašanje"
-
-msgid "Print to PDF"
-msgstr "Natisni v PDF"
-
-msgid "previous page"
-msgstr "Prejšnja stran"
-
-msgid "Toggle navigation"
-msgstr "Preklopi navigacijo"
-
-msgid "By the"
-msgstr "Avtor"
+msgid "Open an issue"
+msgstr "Odprite številko"

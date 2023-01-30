@@ -8,38 +8,23 @@ msgstr ""
 "Language: eo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Plenekrana reĝimo"
+
+msgid "Toggle navigation"
+msgstr "Ŝalti navigadon"
+
 msgid "Download this page"
 msgstr "Elŝutu ĉi tiun paĝon"
 
-msgid "Download notebook file"
-msgstr "Elŝutu kajeran dosieron"
-
-msgid "Open an issue"
-msgstr "Malfermu numeron"
-
-msgid "repository"
-msgstr "deponejo"
-
-msgid "Theme by the"
-msgstr "Temo de la"
-
-msgid "Contents"
-msgstr "Enhavo"
+msgid "By the"
+msgstr "Per la"
 
 msgid "next page"
 msgstr "sekva paĝo"
 
-msgid "Last updated on"
-msgstr "Laste ĝisdatigita la"
-
-msgid "Launch"
-msgstr "Lanĉo"
-
 msgid "Edit this page"
 msgstr "Redaktu ĉi tiun paĝon"
-
-msgid "Source repository"
-msgstr "Fonto-deponejo"
 
 msgid "Download source file"
 msgstr "Elŝutu fontodosieron"
@@ -47,14 +32,44 @@ msgstr "Elŝutu fontodosieron"
 msgid "Sphinx Book Theme"
 msgstr "Sfinksa Libro-Temo"
 
-msgid "Copyright"
-msgstr "Kopirajto"
+msgid "Download notebook file"
+msgstr "Elŝutu kajeran dosieron"
 
-msgid "Fullscreen mode"
-msgstr "Plenekrana reĝimo"
+msgid "Print to PDF"
+msgstr "Presi al PDF"
+
+msgid "Theme by the"
+msgstr "Temo de la"
+
+msgid "previous page"
+msgstr "antaŭa paĝo"
+
+msgid "By"
+msgstr "De"
 
 msgid "Search the docs ..."
 msgstr "Serĉu la dokumentojn ..."
+
+msgid "Contents"
+msgstr "Enhavo"
+
+msgid "Launch"
+msgstr "Lanĉo"
+
+msgid "Source repository"
+msgstr "Fonto-deponejo"
+
+msgid "repository"
+msgstr "deponejo"
+
+msgid "Copyright"
+msgstr "Kopirajto"
+
+msgid "Last updated on"
+msgstr "Laste ĝisdatigita la"
+
+msgid "open issue"
+msgstr "malferma numero"
 
 msgid "suggest edit"
 msgstr "sugesti redaktadon"
@@ -62,20 +77,5 @@ msgstr "sugesti redaktadon"
 msgid "Search this book..."
 msgstr "Serĉu ĉi tiun libron ..."
 
-msgid "By"
-msgstr "De"
-
-msgid "open issue"
-msgstr "malferma numero"
-
-msgid "Print to PDF"
-msgstr "Presi al PDF"
-
-msgid "previous page"
-msgstr "antaŭa paĝo"
-
-msgid "Toggle navigation"
-msgstr "Ŝalti navigadon"
-
-msgid "By the"
-msgstr "Per la"
+msgid "Open an issue"
+msgstr "Malfermu numeron"

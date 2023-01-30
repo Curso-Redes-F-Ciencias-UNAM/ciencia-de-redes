@@ -8,38 +8,23 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Fullscreen mode"
+msgstr "Vollbildmodus"
+
+msgid "Toggle navigation"
+msgstr "Navigation umschalten"
+
 msgid "Download this page"
 msgstr "Laden Sie diese Seite herunter"
 
-msgid "Download notebook file"
-msgstr "Notebook-Datei herunterladen"
-
-msgid "Open an issue"
-msgstr "Öffnen Sie ein Problem"
-
-msgid "repository"
-msgstr "Repository"
-
-msgid "Theme by the"
-msgstr "Thema von der"
-
-msgid "Contents"
-msgstr "Inhalt"
+msgid "By the"
+msgstr "Bis zum"
 
 msgid "next page"
 msgstr "Nächste Seite"
 
-msgid "Last updated on"
-msgstr "Zuletzt aktualisiert am"
-
-msgid "Launch"
-msgstr "Starten"
-
 msgid "Edit this page"
 msgstr "Bearbeite diese Seite"
-
-msgid "Source repository"
-msgstr "Quell-Repository"
 
 msgid "Download source file"
 msgstr "Quelldatei herunterladen"
@@ -47,14 +32,44 @@ msgstr "Quelldatei herunterladen"
 msgid "Sphinx Book Theme"
 msgstr "Sphinx-Buch-Thema"
 
-msgid "Copyright"
-msgstr "Urheberrechte ©"
+msgid "Download notebook file"
+msgstr "Notebook-Datei herunterladen"
 
-msgid "Fullscreen mode"
-msgstr "Vollbildmodus"
+msgid "Print to PDF"
+msgstr "In PDF drucken"
+
+msgid "Theme by the"
+msgstr "Thema von der"
+
+msgid "previous page"
+msgstr "vorherige Seite"
+
+msgid "By"
+msgstr "Durch"
 
 msgid "Search the docs ..."
 msgstr "Durchsuchen Sie die Dokumente ..."
+
+msgid "Contents"
+msgstr "Inhalt"
+
+msgid "Launch"
+msgstr "Starten"
+
+msgid "Source repository"
+msgstr "Quell-Repository"
+
+msgid "repository"
+msgstr "Repository"
+
+msgid "Copyright"
+msgstr "Urheberrechte ©"
+
+msgid "Last updated on"
+msgstr "Zuletzt aktualisiert am"
+
+msgid "open issue"
+msgstr "offenes Thema"
 
 msgid "suggest edit"
 msgstr "vorschlagen zu bearbeiten"
@@ -62,20 +77,5 @@ msgstr "vorschlagen zu bearbeiten"
 msgid "Search this book..."
 msgstr "Dieses Buch durchsuchen ..."
 
-msgid "By"
-msgstr "Durch"
-
-msgid "open issue"
-msgstr "offenes Thema"
-
-msgid "Print to PDF"
-msgstr "In PDF drucken"
-
-msgid "previous page"
-msgstr "vorherige Seite"
-
-msgid "Toggle navigation"
-msgstr "Navigation umschalten"
-
-msgid "By the"
-msgstr "Bis zum"
+msgid "Open an issue"
+msgstr "Öffnen Sie ein Problem"
