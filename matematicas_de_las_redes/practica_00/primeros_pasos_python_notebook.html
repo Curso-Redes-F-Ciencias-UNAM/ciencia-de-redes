@@ -77,7 +77,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">⚠️ Este libro está en constante actualización. Para poder visualizar los últimos cambios se recomienda borrar el caché del navegador. ⚠️</div>
+<div class="announcement header-item noprint"><span class="anuncio">⚠️ Para poder ver siempre los últimos cambios se recomienda recargar constantemente la página sin el caché: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> o <kbd>Ctrl</kbd>+<kbd>F5</kbd> ⚠️</span></div>
 <div class="header header-item noprint"></div>
 
     
@@ -98,15 +98,13 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
+      <img src="../../_static/logo-pagina-03.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar..." aria-label="Buscar..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -612,7 +610,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Creado con <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
             
         </div>
@@ -642,7 +640,7 @@ const thebe_selector_output = ".output, .cell_output"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="right"
-title="Navegación de palanca"
+title="Toggle navigation"
 >
   
 
@@ -688,7 +686,7 @@ title="Launch on Colab"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="bottom"
-title="Modo de pantalla completa"
+title="Fullscreen mode"
 >
   
 
@@ -697,6 +695,51 @@ title="Modo de pantalla completa"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/issues/new?title=Issue%20on%20page%20%2Fmatematicas_de_las_redes/practica_00/primeros_pasos_python_notebook.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -710,7 +753,7 @@ title="Modo de pantalla completa"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Descargar archivo fuente"
+title="Download source file"
 >
   
 
@@ -728,7 +771,7 @@ title="Descargar archivo fuente"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="left"
-title="Imprimir en PDF"
+title="Print to PDF"
 >
   
 
@@ -761,7 +804,7 @@ title="Imprimir en PDF"
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
     <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contenido
+        <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
@@ -841,7 +884,7 @@ title="Imprimir en PDF"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contenido </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -921,7 +964,8 @@ title="Imprimir en PDF"
 <div class="section" id="introduccion">
 <h2><span class="section-number">2.1.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">#</a></h2>
 <p>En este curso utilizaremos python mediante el uso de <strong>notebooks</strong>. Éstos se pueden abrir en Google Colab o pueden ser archivos tipo <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> que se abren con <a class="reference external" href="https://jupyter.org/">Jupyter</a>. La forma más sencilla para installar Jupyter en sus computadoras es a travéz de Anaconda (una distribución de python). Para ello se recomienda visitar la <a class="reference external" href="https://www.anaconda.com/">página oficial de Anaconda</a> y seguir las instrucciones.</p>
-<p>En primer lugar, un notebook es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y «correr» la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>.</p>
+<hr class="docutils" />
+<p>En primer lugar, un notebook es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y «correr» la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar <code class="docutils literal notranslate"><span class="pre">Shift</span></code>+<code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p>
 <p>A continuación se presentan algunas operaciones «comentadas», es decir, antecedidas por el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> (en python, todo lo que esté a la derecha de ese signo será ignorado), puedes borrar el signo <code class="docutils literal notranslate"><span class="pre">#</span></code> al inicio y correr la celda cada vez para obtener cada resultado. Nóta que cada celda puede ser corrida tantas veces como quieras. Es común que en alguna línea se ponga una explicación con el uso de otro signo <code class="docutils literal notranslate"><span class="pre">#</span></code>; aquí se hace para explicarle a las personas no familiarizadas con algunas operaciones matemáticas los nombres de éstas, pero puede ser un buen hábito comentar el código que generemos (como veremos más adelante).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -950,7 +994,7 @@ title="Imprimir en PDF"
 </div>
 <div class="section" id="importar-paquetes">
 <h2><span class="section-number">2.1.2. </span>Importar paquetes<a class="headerlink" href="#importar-paquetes" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita <a class="reference external" href="https://numpy.org/">la página oficial de numpy</a>)</p>
+<p>Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita <a class="reference external" href="https://numpy.org/">la página oficial de numpy</a>).</p>
 <p>Ahora se introduce una forma estándar para importar las librerías. La estructura es: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">&lt;libreria&gt;</span> <span class="pre">as</span> <span class="pre">&lt;clave&gt;</span></code>. La clave será la forma con la que «invocaremos» a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave <code class="docutils literal notranslate"><span class="pre">np</span></code>.</p>
 <p>Después correr la siguiente celda, podrás utilizar todas las funciones y objetos de la librería durante la misma sesión. Esto significa que no hay que estar importando en todo momento la librería.</p>
 <div class="cell docutils container">
@@ -1041,11 +1085,11 @@ Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes,
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-  <span class="c1">#print(i)</span>
-  <span class="c1">#print(i-1)</span>
-  <span class="c1">#print(2*i)</span>
-  <span class="c1">#print(i**2)</span>
-  <span class="c1">#print(2**i)</span>
+    <span class="c1">#print(i)</span>
+    <span class="c1">#print(i-1)</span>
+    <span class="c1">#print(2*i)</span>
+    <span class="c1">#print(i**2)</span>
+    <span class="c1">#print(2**i)</span>
 </pre></div>
 </div>
 </div>
@@ -1069,9 +1113,6 @@ Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes,
 <p>Mediante el uso de las estructuras <code class="docutils literal notranslate"><span class="pre">for</span></code> y <code class="docutils literal notranslate"><span class="pre">range()</span></code>, genera un bucle que produzca los siguientes resultados:</p>
 <ol class="simple">
 <li><p>Imprimir todos los números del 0 al 15</p></li>
-<li><p>Imprimir todos los números del 1 al 15</p></li>
-<li><p>Imprimir los números pares menores que 20</p></li>
-<li><p>Imprimir los números impares menores e iguales a 25.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1080,6 +1121,9 @@ Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes,
 </div>
 </div>
 </div>
+<ol class="simple">
+<li><p>Imprimir todos los números del 1 al 15</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 2</span>
@@ -1087,6 +1131,9 @@ Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes,
 </div>
 </div>
 </div>
+<ol class="simple">
+<li><p>Imprimir los números pares menores que 20</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 3</span>
@@ -1094,6 +1141,9 @@ Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes,
 </div>
 </div>
 </div>
+<ol class="simple">
+<li><p>Imprimir los números impares menores e iguales a 25.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 4</span>
@@ -1152,8 +1202,8 @@ Para familizarizarte con la lógica, juega con la siguientes celdas. Como antes,
 </div>
 </div>
 </div>
-<p>Utilizando los mismos índices, es posible extraer «subconjuntos# de la lista mediante el uso de el símbolo «:» y la estructura</p>
-<p><code class="docutils literal notranslate"><span class="pre">[limite</span> <span class="pre">inferior:limite</span> <span class="pre">superior]</span></code></p>
+<p>Utilizando los mismos índices, es posible extraer «subconjuntos» de la lista mediante el uso de el símbolo <code class="docutils literal notranslate"><span class="pre">:</span></code> y la estructura</p>
+<p><code class="docutils literal notranslate"><span class="pre">[&lt;limite</span> <span class="pre">inferior&gt;:&lt;limite</span> <span class="pre">superior&gt;]</span></code></p>
 <p>Observa que el subconjunto siempre <strong>contiene</strong> al límite inferior y <strong>no contiene</strong> al superior:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1176,7 +1226,7 @@ También se muestra cómo imprimir varias cosas en una misma línea, introducien
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El elemento es&#39;</span><span class="p">,</span> <span class="n">numero</span><span class="p">,</span> <span class="s1">&#39;y su cuadrado es&#39;</span><span class="p">,</span> <span class="n">numero</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El elemento es&#39;</span><span class="p">,</span> <span class="n">numero</span><span class="p">,</span> <span class="s1">&#39;y su cuadrado es&#39;</span><span class="p">,</span> <span class="n">numero</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1200,8 +1250,8 @@ El elemento es 0 y su cuadrado es 0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Esta&#39;</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;una&#39;</span><span class="p">,</span> <span class="s1">&#39;lista&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;cadenas&#39;</span><span class="p">,</span> <span class="s1">&#39;las&#39;</span><span class="p">,</span> <span class="s1">&#39;cadenas&#39;</span><span class="p">,</span> <span class="s1">&#39;deben&#39;</span><span class="p">,</span> <span class="s1">&#39;ir&#39;</span><span class="p">,</span> <span class="s1">&#39;entre&#39;</span><span class="p">,</span> <span class="s1">&#39;comillas.&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">cadena</span> <span class="ow">in</span> <span class="n">lista2</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">)</span>
-  <span class="c1">#print(2*cadena)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">)</span>
+    <span class="c1">#print(2*cadena)</span>
 </pre></div>
 </div>
 </div>
@@ -1244,7 +1294,7 @@ comillas.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-  <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 </pre></div>
@@ -1374,8 +1424,8 @@ comillas.
 </div>
 </div>
 </div>
-<p>Analizando los últimos dos ejemplos, ¿qué interpretación tiene2 la multiplicación de dos arreglos o el cuadrado de un arreglo?</p>
-<p>Si se quiere recoger el sentido del producto (interno) de vectores se puede usar la función <code class="docutils literal notranslate"><span class="pre">np.dot()</span></code> o la función</p>
+<p>Analizando los últimos dos ejemplos, ¿qué interpretación tiene la multiplicación de dos arreglos o el cuadrado de un arreglo?</p>
+<p>Si se quiere recoger el sentido del producto (interno) de vectores se puede usar la función <code class="docutils literal notranslate"><span class="pre">np.dot()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">arreglo1</span><span class="p">,</span> <span class="n">arreglo2</span><span class="p">)</span>
@@ -1429,7 +1479,7 @@ comillas.
 <li><p><code class="docutils literal notranslate"><span class="pre">np.ones([n,m])</span></code> (arreglo hecho de puros unos)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">np.random.rand(n,m)</span></code> arreglo de números aleatorios entre 0 y 1</p></li>
 </ul>
-<p>para más información, visitar <a class="reference external" href="https://numpy.org/">https://numpy.org/</a></p>
+<p>Para más información ver la <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html#how-to-create-a-basic-array">documentación de numpy</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
@@ -1543,8 +1593,6 @@ comillas.
 <h3><span class="section-number">2.1.5.1. </span>Ejercicios de arreglos<a class="headerlink" href="#ejercicios-de-arreglos" title="Enlazar permanentemente con este título">#</a></h3>
 <ol class="simple">
 <li><p>Genera los arreglos <code class="docutils literal notranslate"><span class="pre">arreglo_pares</span></code> y <code class="docutils literal notranslate"><span class="pre">arreglo_impares</span></code> convirtiendo las listas generadas en los ejercicios anteriores en arreglos.</p></li>
-<li><p>Suma, resta, multiplica y <strong>divide</strong> ambos arreglos.</p></li>
-<li><p>Contesta: ¿qué significado tiene la división de arreglos de numpy?</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1553,6 +1601,9 @@ comillas.
 </div>
 </div>
 </div>
+<ol class="simple">
+<li><p>Suma, resta, multiplica y <strong>divide</strong> ambos arreglos.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 2</span>
@@ -1560,6 +1611,9 @@ comillas.
 </div>
 </div>
 </div>
+<ol class="simple">
+<li><p>Contesta: ¿qué significado tiene la división de arreglos de numpy?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejercicio 3</span>
@@ -1568,13 +1622,13 @@ comillas.
 </div>
 </div>
 <ol class="simple">
-<li><p>Genera un arreglo cuya entrada <code class="docutils literal notranslate"><span class="pre">[i,j]</span></code> sea la multiplicación de la entrada <code class="docutils literal notranslate"><span class="pre">[i]</span></code> del arreglo <code class="docutils literal notranslate"><span class="pre">arreglo_pares</span></code> y la entrada <code class="docutils literal notranslate"><span class="pre">[j]</span></code> del arreglo <code class="docutils literal notranslate"><span class="pre">arreglo_impares</span></code>.
-Recomendación:</p></li>
+<li><p>Genera un arreglo cuya entrada <code class="docutils literal notranslate"><span class="pre">[i,j]</span></code> sea la multiplicación de la entrada <code class="docutils literal notranslate"><span class="pre">[i]</span></code> del arreglo <code class="docutils literal notranslate"><span class="pre">arreglo_pares</span></code> y la entrada <code class="docutils literal notranslate"><span class="pre">[j]</span></code> del arreglo <code class="docutils literal notranslate"><span class="pre">arreglo_impares</span></code>.</p></li>
 </ol>
+<p>Recomendación:</p>
 <ul class="simple">
 <li><p>Identifica la longitud de los arreglos y llámalo <code class="docutils literal notranslate"><span class="pre">L</span></code></p></li>
 <li><p>Genera un arreglo de puros ceros de dimensión <span class="math notranslate nohighlight">\(L \times L\)</span> y llámalo <code class="docutils literal notranslate"><span class="pre">A</span></code></p></li>
-<li><p>Mediante un for dentro de otro for, sustituye los elementos de <code class="docutils literal notranslate"><span class="pre">A</span></code> por los productos de las entradas de los arreglos (este último paso se pone a continuación, tú debes hacer los primeros dos pasos):</p></li>
+<li><p>Mediante un <code class="docutils literal notranslate"><span class="pre">for</span></code> dentro de otro <code class="docutils literal notranslate"><span class="pre">for</span></code>, sustituye los elementos de <code class="docutils literal notranslate"><span class="pre">A</span></code> por los productos de las entradas de los arreglos (este último paso se pone a continuación, tú debes hacer los primeros dos pasos):</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1583,22 +1637,8 @@ Recomendación:</p></li>
 
 <span class="c1">## a continuacion se proporciona el tercer paso</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
-    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arreglo_pares</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">arreglo_pares</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-82-97b8841c1922&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## a continuacion se proporciona el tercer paso</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arreglo_pares</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">arreglo_pares</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;L&#39; is not defined
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arreglo_pares</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">arreglo_pares</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1607,8 +1647,7 @@ Recomendación:</p></li>
 </div>
 <div class="section" id="importar-networkx-y-matplotlib">
 <h2><span class="section-number">2.1.6. </span>Importar NetworkX y Matplotlib<a class="headerlink" href="#importar-networkx-y-matplotlib" title="Enlazar permanentemente con este título">#</a></h2>
-<p>En la primera parte de este curso, además de Numpy, serán fundamentales otras dos librerías que ya están integradas en anaconda: en NetworkX están definidos todos los objetos y funciones de redes que usaremos y en Pyplot hay muchas funciones para visualizar información. Pyplot está contenida en otra librería llamada Matplotlib.
-Más información en <a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a> y <a class="reference external" href="https://networkx.org/">https://networkx.org/</a></p>
+<p>En la primera parte de este curso, además de Numpy, serán fundamentales otras dos librerías que ya están integradas en anaconda: <a class="reference external" href="https://networkx.org/">NetworkX</a> y <a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/pyplot.html">pyplot</a>. NetworkX es una librería para el análisis de redes en la cual están definidos todos los objetos y funciones de redes que usaremos a lo largo del curso. Pyplot es una librería para la visualización de información. Nótese que pyplot a su vez está contenida en otra librería llamada <a class="reference external" href="https://matplotlib.org/">matplotlib</a>.</p>
 <p>En la siguiente celda se importan ambas librerías con sus claves convencionales:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1670,9 +1709,12 @@ Más información en <a class="reference external" href="https://matplotlib.org/
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+    By Carlos Francisco Betancourt y Luis Guillermo García Jacome<br/>
   
-      &copy; Derechos de autor 2023.<br/>
+      &copy; Copyright 2023.<br/>
+    <div class="extra_footer">
+      <span>Última actualización: 02/02/2023</span>
+    </div>
 </p>
         </footer>
     </div>

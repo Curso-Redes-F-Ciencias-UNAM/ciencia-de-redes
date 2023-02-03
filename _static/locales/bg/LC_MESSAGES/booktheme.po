@@ -8,74 +8,74 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Fullscreen mode"
-msgstr "Режим на цял екран"
-
-msgid "Toggle navigation"
-msgstr "Превключване на навигацията"
-
-msgid "Download this page"
-msgstr "Изтеглете тази страница"
-
-msgid "By the"
-msgstr "По"
-
-msgid "next page"
-msgstr "Следваща страница"
-
-msgid "Edit this page"
-msgstr "Редактирайте тази страница"
-
-msgid "Download source file"
-msgstr "Изтеглете изходния файл"
-
-msgid "Sphinx Book Theme"
-msgstr "Тема на книгата Sphinx"
-
-msgid "Download notebook file"
-msgstr "Изтеглете файла на бележника"
-
-msgid "Print to PDF"
-msgstr "Печат в PDF"
-
-msgid "Theme by the"
-msgstr "Тема от"
-
-msgid "previous page"
-msgstr "предишна страница"
-
-msgid "By"
-msgstr "От"
-
-msgid "Search the docs ..."
-msgstr "Търсене в документите ..."
-
-msgid "Contents"
-msgstr "Съдържание"
-
-msgid "Launch"
-msgstr "Стартиране"
-
-msgid "Source repository"
-msgstr "Хранилище на източника"
-
 msgid "repository"
 msgstr "хранилище"
-
-msgid "Copyright"
-msgstr "Авторско право"
-
-msgid "Last updated on"
-msgstr "Последна актуализация на"
 
 msgid "open issue"
 msgstr "отворен брой"
 
-msgid "suggest edit"
-msgstr "предложи редактиране"
+msgid "Contents"
+msgstr "Съдържание"
+
+msgid "Fullscreen mode"
+msgstr "Режим на цял екран"
+
+msgid "Download this page"
+msgstr "Изтеглете тази страница"
+
+msgid "Download source file"
+msgstr "Изтеглете изходния файл"
+
+msgid "Launch"
+msgstr "Стартиране"
+
+msgid "Edit this page"
+msgstr "Редактирайте тази страница"
+
+msgid "Toggle navigation"
+msgstr "Превключване на навигацията"
+
+msgid "Theme by the"
+msgstr "Тема от"
+
+msgid "Source repository"
+msgstr "Хранилище на източника"
+
+msgid "Last updated on"
+msgstr "Последна актуализация на"
+
+msgid "By the"
+msgstr "По"
+
+msgid "Sphinx Book Theme"
+msgstr "Тема на книгата Sphinx"
+
+msgid "Open an issue"
+msgstr "Отворете проблем"
+
+msgid "next page"
+msgstr "Следваща страница"
+
+msgid "Copyright"
+msgstr "Авторско право"
 
 msgid "Search this book..."
 msgstr "Търсене в тази книга ..."
 
-msgid "Open an issue"
-msgstr "Отворете проблем"
+msgid "Print to PDF"
+msgstr "Печат в PDF"
+
+msgid "By"
+msgstr "От"
+
+msgid "previous page"
+msgstr "предишна страница"
+
+msgid "Search the docs ..."
+msgstr "Търсене в документите ..."
+
+msgid "Download notebook file"
+msgstr "Изтеглете файла на бележника"
+
+msgid "suggest edit"
+msgstr "предложи редактиране"

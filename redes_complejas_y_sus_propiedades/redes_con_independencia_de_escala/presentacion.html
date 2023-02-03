@@ -75,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">⚠️ Este libro está en constante actualización. Para poder visualizar los últimos cambios se recomienda borrar el caché del navegador. ⚠️</div>
+<div class="announcement header-item noprint"><span class="anuncio">⚠️ Para poder ver siempre los últimos cambios se recomienda recargar constantemente la página sin el caché: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> o <kbd>Ctrl</kbd>+<kbd>F5</kbd> ⚠️</span></div>
 <div class="header header-item noprint"></div>
 
     
@@ -96,15 +96,13 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
+      <img src="../../_static/logo-pagina-03.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar..." aria-label="Buscar..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -610,7 +608,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Creado con <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
             
         </div>
@@ -640,7 +638,7 @@ const thebe_selector_output = ".output, .cell_output"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="right"
-title="Navegación de palanca"
+title="Toggle navigation"
 >
   
 
@@ -657,7 +655,7 @@ title="Navegación de palanca"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="bottom"
-title="Modo de pantalla completa"
+title="Fullscreen mode"
 >
   
 
@@ -666,6 +664,51 @@ title="Modo de pantalla completa"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/issues/new?title=Issue%20on%20page%20%2Fredes_complejas_y_sus_propiedades/redes_con_independencia_de_escala/presentacion.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -679,7 +722,7 @@ title="Modo de pantalla completa"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Descargar archivo fuente"
+title="Download source file"
 >
   
 
@@ -697,7 +740,7 @@ title="Descargar archivo fuente"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="left"
-title="Imprimir en PDF"
+title="Print to PDF"
 >
   
 
@@ -797,9 +840,12 @@ title="Imprimir en PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+    By Carlos Francisco Betancourt y Luis Guillermo García Jacome<br/>
   
-      &copy; Derechos de autor 2023.<br/>
+      &copy; Copyright 2023.<br/>
+    <div class="extra_footer">
+      <span>Última actualización: 02/02/2023</span>
+    </div>
 </p>
         </footer>
     </div>
