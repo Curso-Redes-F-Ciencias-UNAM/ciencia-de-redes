@@ -75,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">⚠️ Este libro está en constante actualización. Para poder visualizar los últimos cambios se recomienda borrar el caché del navegador. ⚠️</div>
+<div class="announcement header-item noprint"><span class="anuncio">⚠️ Para poder ver siempre los últimos cambios se recomienda recargar constantemente la página sin el caché: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> o <kbd>Ctrl</kbd>+<kbd>F5</kbd> ⚠️</span></div>
 <div class="header header-item noprint"></div>
 
     
@@ -96,15 +96,13 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
+      <img src="../../_static/logo-pagina-03.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar..." aria-label="Buscar..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -610,7 +608,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Creado con <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
             
         </div>
@@ -640,7 +638,7 @@ const thebe_selector_output = ".output, .cell_output"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="right"
-title="Navegación de palanca"
+title="Toggle navigation"
 >
   
 
@@ -657,7 +655,7 @@ title="Navegación de palanca"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="bottom"
-title="Modo de pantalla completa"
+title="Fullscreen mode"
 >
   
 
@@ -666,6 +664,51 @@ title="Modo de pantalla completa"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/issues/new?title=Issue%20on%20page%20%2Fmedidas_y_metricas/medidas_de_grupos_de_nodos/modularidad.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -679,7 +722,7 @@ title="Modo de pantalla completa"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Descargar archivo fuente"
+title="Download source file"
 >
   
 
@@ -697,7 +740,7 @@ title="Descargar archivo fuente"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="left"
-title="Imprimir en PDF"
+title="Print to PDF"
 >
   
 
@@ -730,7 +773,7 @@ title="Imprimir en PDF"
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
     <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contenido
+        <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
@@ -764,7 +807,7 @@ title="Imprimir en PDF"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contenido </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -815,8 +858,8 @@ title="Imprimir en PDF"
 <p class="admonition-title">Nota</p>
 <p>Para profundizar en el tema se sugiere consultar:</p>
 <ul class="simple">
-<li><p>Apartado 7.13 <em>Homophily and assortative mixing</em> del libro de <span id="id1">Newman [<a class="reference internal" href="../../referencias/referencias.html#id3" title="M. Newman. Networks. Oxford University Press, New York, United States, 2018. URL: https://www.dropbox.com/s/14xchb0u9hlbigz/Mark%20Newman-Networks_%20An%20%20Introduction-Oxford%20University%20Press%20%282010%29.pdf?dl=0.">11</a>]</span></p></li>
-<li><p>Preprint de <span id="id2">Clauset <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id7" title="Aaron Clauset, M. E. J. Newman, and Cristopher Moore. Finding community structure in very large networks. Physical Review E, Dec 2004. URL: http://dx.doi.org/10.1103/PhysRevE.70.066111, doi:10.1103/physreve.70.066111.">6</a>]</span> en el que introducen la modularidad</p></li>
+<li><p>Apartado 7.13 <em>Homophily and assortative mixing</em> del libro de <span id="id1">Newman [<a class="reference internal" href="../../referencias/referencias.html#id3" title="M. Newman. Networks. Oxford University Press, New York, United States, 2018. URL: https://www.dropbox.com/s/14xchb0u9hlbigz/Mark%20Newman-Networks_%20An%20%20Introduction-Oxford%20University%20Press%20%282010%29.pdf?dl=0.">New18</a>]</span></p></li>
+<li><p>Preprint de <span id="id2">Clauset <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id7" title="Aaron Clauset, M. E. J. Newman, and Cristopher Moore. Finding community structure in very large networks. Physical Review E, Dec 2004. URL: http://dx.doi.org/10.1103/PhysRevE.70.066111, doi:10.1103/physreve.70.066111.">CNM04</a>]</span> en el que introducen la modularidad</p></li>
 </ul>
 </div>
 </div>
@@ -831,9 +874,9 @@ title="Imprimir en PDF"
 <p class="admonition-title">Nota</p>
 <p>Para profundizar se recomienda consultar las siguientes referencias:</p>
 <ul class="simple">
-<li><p><span id="id3">Blondel <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id8" title="Vincent D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre. Fast unfolding of communities in large networks. Journal of Statistical Mechanics: Theory and Experiment, 2008(10):P10008, Oct 2008. URL: http://dx.doi.org/10.1088/1742-5468/2008/10/P10008, doi:10.1088/1742-5468/2008/10/p10008.">5</a>]</span></p></li>
-<li><p><span id="id4">Clauset <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id7" title="Aaron Clauset, M. E. J. Newman, and Cristopher Moore. Finding community structure in very large networks. Physical Review E, Dec 2004. URL: http://dx.doi.org/10.1103/PhysRevE.70.066111, doi:10.1103/physreve.70.066111.">6</a>]</span></p></li>
-<li><p><span id="id5">Girvan and Newman [<a class="reference internal" href="../../referencias/referencias.html#id9" title="M. Girvan and M. E. J. Newman. Community structure in social and biological networks. Proceedings of the National Academy of Sciences, 99(12):7821-7826, 2002. URL: https://www.pnas.org/content/pnas/99/12/7821.full.pdf, doi:10.1073/pnas.122653799.">9</a>]</span>.</p></li>
+<li><p><span id="id3">Blondel <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id8" title="Vincent D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre. Fast unfolding of communities in large networks. Journal of Statistical Mechanics: Theory and Experiment, 2008(10):P10008, Oct 2008. URL: http://dx.doi.org/10.1088/1742-5468/2008/10/P10008, doi:10.1088/1742-5468/2008/10/p10008.">BGLL08</a>]</span></p></li>
+<li><p><span id="id4">Clauset <em>et al.</em> [<a class="reference internal" href="../../referencias/referencias.html#id7" title="Aaron Clauset, M. E. J. Newman, and Cristopher Moore. Finding community structure in very large networks. Physical Review E, Dec 2004. URL: http://dx.doi.org/10.1103/PhysRevE.70.066111, doi:10.1103/physreve.70.066111.">CNM04</a>]</span></p></li>
+<li><p><span id="id5">Girvan and Newman [<a class="reference internal" href="../../referencias/referencias.html#id9" title="M. Girvan and M. E. J. Newman. Community structure in social and biological networks. Proceedings of the National Academy of Sciences, 99(12):7821-7826, 2002. URL: https://www.pnas.org/content/pnas/99/12/7821.full.pdf, doi:10.1073/pnas.122653799.">GN02</a>]</span>.</p></li>
 </ul>
 </div>
 </div>
@@ -887,9 +930,12 @@ title="Imprimir en PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+    By Carlos Francisco Betancourt y Luis Guillermo García Jacome<br/>
   
-      &copy; Derechos de autor 2023.<br/>
+      &copy; Copyright 2023.<br/>
+    <div class="extra_footer">
+      <span>Última actualización: 02/02/2023</span>
+    </div>
 </p>
         </footer>
     </div>

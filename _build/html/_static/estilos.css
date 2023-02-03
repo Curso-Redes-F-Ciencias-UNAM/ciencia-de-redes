@@ -54,6 +54,10 @@ h5,h6{
 	font-size: 12pt;
 }
 
+.anuncio{
+    font-size: 10pt;
+}
+
 .caption-text{
 	text-transform: none;
 	/* font-family: 'Zilla Slab',serif; */
@@ -113,3 +117,4 @@ a.nav-link {
 .fa-github::before{
     content:url('icons/github.svg')
 }
+

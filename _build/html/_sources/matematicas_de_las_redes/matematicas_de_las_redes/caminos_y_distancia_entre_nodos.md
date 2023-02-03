@@ -1,6 +1,6 @@
 # Caminos y distancia entre nodos
 
-A partir de las propiedades de la matriz de adyacencia, particularmente sus potencias, se pueden obtener el número de caminos y la distancia entre nodos. Eso se explica en el último video de este bloque.
+A partir de las propiedades de la matriz de adyacencia, particularmente de sus potencias, se pueden obtener el número de caminos y la distancia entre nodos. Eso se explica en el siguiente video, el último de este bloque.
 
 <div class="iframe-container-out">
 	<div class="iframe-container-in">
@@ -9,5 +9,5 @@ A partir de las propiedades de la matriz de adyacencia, particularmente sus pote
 </div>
 
 :::{admonition} Nota
-Estas últimas propiedades de las potencias de la matriz de adyacencia también se generalizan sin cambios a las redes dirigidas.
+Estas últimas propiedades de las potencias de la matriz de adyacencia también se generalizan sin modificaciones a las redes dirigidas.
 :::

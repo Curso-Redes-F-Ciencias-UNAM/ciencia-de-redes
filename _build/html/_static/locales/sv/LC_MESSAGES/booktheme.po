@@ -8,74 +8,74 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Fullscreen mode"
-msgstr "Fullskärmsläge"
-
-msgid "Toggle navigation"
-msgstr "Växla navigering"
-
-msgid "Download this page"
-msgstr "Ladda ner den här sidan"
-
-msgid "By the"
-msgstr "Vid"
-
-msgid "next page"
-msgstr "nästa sida"
-
-msgid "Edit this page"
-msgstr "Redigera den här sidan"
-
-msgid "Download source file"
-msgstr "Ladda ner källfil"
-
-msgid "Sphinx Book Theme"
-msgstr "Sphinx boktema"
-
-msgid "Download notebook file"
-msgstr "Ladda ner anteckningsbokfilen"
-
-msgid "Print to PDF"
-msgstr "Skriv ut till PDF"
-
-msgid "Theme by the"
-msgstr "Tema av"
-
-msgid "previous page"
-msgstr "föregående sida"
-
-msgid "By"
-msgstr "Förbi"
-
-msgid "Search the docs ..."
-msgstr "Sök i dokumenten ..."
-
-msgid "Contents"
-msgstr "Innehåll"
-
-msgid "Launch"
-msgstr "Lansera"
-
-msgid "Source repository"
-msgstr "Källförvar"
-
 msgid "repository"
 msgstr "förvar"
-
-msgid "Copyright"
-msgstr "upphovsrätt"
-
-msgid "Last updated on"
-msgstr "Senast uppdaterad den"
 
 msgid "open issue"
 msgstr "öppet problem"
 
-msgid "suggest edit"
-msgstr "föreslå redigering"
+msgid "Contents"
+msgstr "Innehåll"
+
+msgid "Fullscreen mode"
+msgstr "Fullskärmsläge"
+
+msgid "Download this page"
+msgstr "Ladda ner den här sidan"
+
+msgid "Download source file"
+msgstr "Ladda ner källfil"
+
+msgid "Launch"
+msgstr "Lansera"
+
+msgid "Edit this page"
+msgstr "Redigera den här sidan"
+
+msgid "Toggle navigation"
+msgstr "Växla navigering"
+
+msgid "Theme by the"
+msgstr "Tema av"
+
+msgid "Source repository"
+msgstr "Källförvar"
+
+msgid "Last updated on"
+msgstr "Senast uppdaterad den"
+
+msgid "By the"
+msgstr "Vid"
+
+msgid "Sphinx Book Theme"
+msgstr "Sphinx boktema"
+
+msgid "Open an issue"
+msgstr "Öppna ett problem"
+
+msgid "next page"
+msgstr "nästa sida"
+
+msgid "Copyright"
+msgstr "upphovsrätt"
 
 msgid "Search this book..."
 msgstr "Sök i den här boken ..."
 
-msgid "Open an issue"
-msgstr "Öppna ett problem"
+msgid "Print to PDF"
+msgstr "Skriv ut till PDF"
+
+msgid "By"
+msgstr "Förbi"
+
+msgid "previous page"
+msgstr "föregående sida"
+
+msgid "Search the docs ..."
+msgstr "Sök i dokumenten ..."
+
+msgid "Download notebook file"
+msgstr "Ladda ner anteckningsbokfilen"
+
+msgid "suggest edit"
+msgstr "föreslå redigering"

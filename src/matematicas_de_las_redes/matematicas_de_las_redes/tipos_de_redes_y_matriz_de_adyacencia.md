@@ -3,9 +3,9 @@
 En el siguiente video (20 min) presentamos la definición de matriz de adyacencia, una representación matemática de las redes que tendrá varias aplicaciones en el análisis de sus propiedades, y se introducen las caracterísiticas de cuatro tipos de redes: 
 
 1. Redes simples
-1. Resdes dirigidas
-1. *Multiredes* o redes con multienlaces
-1. Redes ponderadas o redes con pesos
+2. Resdes dirigidas
+3. *Multiredes* o redes con multienlaces
+4. Redes ponderadas o redes con pesos
 
 <div class="iframe-container-out">
 	<div class="iframe-container-in">

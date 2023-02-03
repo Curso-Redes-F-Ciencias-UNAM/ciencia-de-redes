@@ -5,8 +5,10 @@
 
 # ## Introducción
 # En este curso utilizaremos python mediante el uso de **notebooks**. Éstos se pueden abrir en Google Colab o pueden ser archivos tipo `.ipynb` que se abren con [Jupyter](https://jupyter.org/). La forma más sencilla para installar Jupyter en sus computadoras es a travéz de Anaconda (una distribución de python). Para ello se recomienda visitar la [página oficial de Anaconda](https://www.anaconda.com/) y seguir las instrucciones.
-#  
-# En primer lugar, un notebook es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y "correr" la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar `Shift + Enter`.
+# 
+# ---
+# 
+# En primer lugar, un notebook es una calculadora. Ahí se pueden realizar las operaciones suma, resta, multiplicación, división, potencia, etc. Basta con escribir la operación y "correr" la celda; para ello puedes presionar el botón correspondiente a la izquierda de la celda o puedes presionar `Shift`+`Enter`.
 #  
 # A continuación se presentan algunas operaciones "comentadas", es decir, antecedidas por el signo `#` (en python, todo lo que esté a la derecha de ese signo será ignorado), puedes borrar el signo `#` al inicio y correr la celda cada vez para obtener cada resultado. Nóta que cada celda puede ser corrida tantas veces como quieras. Es común que en alguna línea se ponga una explicación con el uso de otro signo `#`; aquí se hace para explicarle a las personas no familiarizadas con algunas operaciones matemáticas los nombres de éstas, pero puede ser un buen hábito comentar el código que generemos (como veremos más adelante).
 
@@ -29,7 +31,7 @@
 
 
 # ## Importar paquetes
-# Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita [la página oficial de numpy](https://numpy.org/)) 
+# Para utilizar otras funciones matemáticas será necesario importar una librería. Aquí utilizaremos la librería Numpy que viene por defecto en Anaconda. Esta librería tiene una cantidad inimaginable de funciones y objetos matemáticos de los que utilizaremos unos cuantos (para más información visita [la página oficial de numpy](https://numpy.org/)). 
 # 
 # Ahora se introduce una forma estándar para importar las librerías. La estructura es: `import <libreria> as <clave>`. La clave será la forma con la que "invocaremos" a la librería en nuestro código. Si bien la clave puede ser cualquier conjunto de letras, en foros, tutoriales y documentaciones suele haber convenciones que también utilizaremos aquí. En este caso, se suele importar a numpy con la clave `np`.
 # 
@@ -100,19 +102,17 @@ for i in range(10):
 
 
 for i in range(10):
-  #print(i)
-  #print(i-1)
-  #print(2*i)
-  #print(i**2)
-  #print(2**i)
+    #print(i)
+    #print(i-1)
+    #print(2*i)
+    #print(i**2)
+    #print(2**i)
 
 
 # ### Ejercicios `for`
 # Mediante el uso de las estructuras ```for``` y ```range()```, genera un bucle que produzca los siguientes resultados:
+# 
 # 1. Imprimir todos los números del 0 al 15
-# 2. Imprimir todos los números del 1 al 15
-# 3. Imprimir los números pares menores que 20
-# 4. Imprimir los números impares menores e iguales a 25. 
 
 # In[ ]:
 
@@ -120,17 +120,23 @@ for i in range(10):
 # Ejercicio 1
 
 
+# 2. Imprimir todos los números del 1 al 15
+
 # In[ ]:
 
 
 # Ejercicio 2
 
 
+# 3. Imprimir los números pares menores que 20
+
 # In[ ]:
 
 
 # Ejercicio 3
 
+
+# 4. Imprimir los números impares menores e iguales a 25. 
 
 # In[ ]:
 
@@ -182,9 +188,9 @@ lista[-1]
 #lista[-11]
 
 
-# Utilizando los mismos índices, es posible extraer "subconjuntos# de la lista mediante el uso de el símbolo ":" y la estructura 
+# Utilizando los mismos índices, es posible extraer "subconjuntos" de la lista mediante el uso de el símbolo `:` y la estructura 
 # 
-# ```[limite inferior:limite superior]```
+# ```[<limite inferior>:<limite superior>]```
 # 
 # Observa que el subconjunto siempre **contiene** al límite inferior y **no contiene** al superior:
 # 
@@ -207,7 +213,7 @@ lista[2:6]
 
 
 for numero in lista:
-  print('El elemento es', numero, 'y su cuadrado es', numero**2)
+      print('El elemento es', numero, 'y su cuadrado es', numero**2)
 
 
 # In[ ]:
@@ -216,8 +222,8 @@ for numero in lista:
 lista2 = ['Esta', 'es', 'una', 'lista', 'de', 'cadenas', 'las', 'cadenas', 'deben', 'ir', 'entre', 'comillas.']
 
 for cadena in lista2:
-  print(cadena)
-  #print(2*cadena)
+    print(cadena)
+    #print(2*cadena)
 
 
 # Nota la diferencia entre multiplicar números y multiplicar números por cadenas.
@@ -239,7 +245,7 @@ print(A)
 
 
 for i in range(5):
-  A.append(i)
+    A.append(i)
 
 print(A)
 
@@ -316,9 +322,9 @@ arreglo1 + arreglo2
 #arreglo1**2
 
 
-# Analizando los últimos dos ejemplos, ¿qué interpretación tiene2 la multiplicación de dos arreglos o el cuadrado de un arreglo?
+# Analizando los últimos dos ejemplos, ¿qué interpretación tiene la multiplicación de dos arreglos o el cuadrado de un arreglo?
 # 
-# Si se quiere recoger el sentido del producto (interno) de vectores se puede usar la función ```np.dot()``` o la función 
+# Si se quiere recoger el sentido del producto (interno) de vectores se puede usar la función ```np.dot()```: 
 # 
 
 # In[ ]:
@@ -352,7 +358,7 @@ Arreglo2d
 # -  ```np.ones([n,m])``` (arreglo hecho de puros unos)
 # - ```np.random.rand(n,m)``` arreglo de números aleatorios entre 0 y 1
 # 
-# para más información, visitar https://numpy.org/
+# Para más información ver la [documentación de numpy](https://numpy.org/doc/stable/user/absolute_beginners.html#how-to-create-a-basic-array).
 
 # In[ ]:
 
@@ -411,8 +417,6 @@ print(R)
 
 # ### Ejercicios de arreglos
 # 1. Genera los arreglos ```arreglo_pares``` y ```arreglo_impares``` convirtiendo las listas generadas en los ejercicios anteriores en arreglos.
-# 2. Suma, resta, multiplica y **divide** ambos arreglos.
-# 3. Contesta: ¿qué significado tiene la división de arreglos de numpy?
 
 # In[ ]:
 
@@ -420,11 +424,15 @@ print(R)
 # Ejercicio 1
 
 
+# 2. Suma, resta, multiplica y **divide** ambos arreglos.
+
 # In[ ]:
 
 
 # Ejercicio 2
 
+
+# 3. Contesta: ¿qué significado tiene la división de arreglos de numpy?
 
 # In[ ]:
 
@@ -433,10 +441,11 @@ print(R)
 
 
 # 4. Genera un arreglo cuya entrada ```[i,j]``` sea la multiplicación de la entrada ```[i]``` del arreglo ```arreglo_pares``` y la entrada ```[j]``` del arreglo ```arreglo_impares```.
+# 
 # Recomendación:
 #   - Identifica la longitud de los arreglos y llámalo ```L```
 #   - Genera un arreglo de puros ceros de dimensión $L \times L$ y llámalo ```A```
-#   - Mediante un for dentro de otro for, sustituye los elementos de ```A``` por los productos de las entradas de los arreglos (este último paso se pone a continuación, tú debes hacer los primeros dos pasos):
+#   - Mediante un `for` dentro de otro `for`, sustituye los elementos de `A` por los productos de las entradas de los arreglos (este último paso se pone a continuación, tú debes hacer los primeros dos pasos):
 
 # In[ ]:
 
@@ -446,14 +455,13 @@ print(R)
 
 ## a continuacion se proporciona el tercer paso
 for i in range(L):
-  for j in range(L):
-    A[i,j] = arreglo_pares[i]*arreglo_pares[j]
+    for j in range(L):
+        A[i,j] = arreglo_pares[i]*arreglo_pares[j]
 
 
 # ## Importar NetworkX y Matplotlib
 
-# En la primera parte de este curso, además de Numpy, serán fundamentales otras dos librerías que ya están integradas en anaconda: en NetworkX están definidos todos los objetos y funciones de redes que usaremos y en Pyplot hay muchas funciones para visualizar información. Pyplot está contenida en otra librería llamada Matplotlib.
-# Más información en https://matplotlib.org/ y https://networkx.org/
+# En la primera parte de este curso, además de Numpy, serán fundamentales otras dos librerías que ya están integradas en anaconda: [NetworkX](https://networkx.org/) y [pyplot](https://matplotlib.org/stable/tutorials/introductory/pyplot.html). NetworkX es una librería para el análisis de redes en la cual están definidos todos los objetos y funciones de redes que usaremos a lo largo del curso. Pyplot es una librería para la visualización de información. Nótese que pyplot a su vez está contenida en otra librería llamada [matplotlib](https://matplotlib.org/).
 # 
 # En la siguiente celda se importan ambas librerías con sus claves convencionales:
 

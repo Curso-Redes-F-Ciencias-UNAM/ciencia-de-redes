@@ -1,7 +1,7 @@
 title: "Ciencia de Redes"
-author: "Carlos Francisco Betancourt y Luis Guillermo García Jácome"
+author: "Carlos Francisco Betancourt y Luis Guillermo García Jacome"
 copyright: "2023"
-logo: "logo-pagina-02.png"
+logo: "logo-pagina-03.png"
 only_build_toc_files: true
 
 execute:
@@ -14,23 +14,33 @@ repository:
 
 launch_buttons:
   notebook_interface: "classic"
-  binderhub_url: ""
-  colab_url: "https://colab.research.google.com"
   
 html:
-    # use_repository_button: true
-    # use_issues_button: true
-    use_multitoc_numbering: false
-    home_page_in_navbar: false
+    use_multitoc_numbering: False
+    home_page_in_navbar: False
     favicon: "favicon.ico"
-    announcement: "⚠️ Este libro está en constante actualización. Para poder visualizar los últimos cambios se recomienda borrar el caché del navegador. ⚠️"
-    extran_navbar: 'Creado con <a href="https://jupyterbook.org">Jupyter Book</a>' # no funciona
 
 sphinx:
   config:
-    language: es
-    # html_theme_options: { "search_bar_text": "Buscar..." } # esto si funciona pero rompe bontones de launch
-    # html_theme_options: { "extra_navbar": 'Creado con <a href="https://jupyterbook.org">Jupyter Book</a>'} # esto si funciona pero también rompe botones de launch 
+    html_extra_path: ["assets"]
+    language: es # hacer que funcione el idioma: https://github.com/executablebooks/sphinx-book-theme/issues/584#issuecomment-1180040436
+    html_theme_options: {
+      "search_bar_text": "Buscar...",
+      "extra_navbar": 'Creado con <a href="https://jupyterbook.org">Jupyter Book</a>',
+      "repository_url": "https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes",
+      "repository_branch": "main",
+      "path_to_docs": "src/",
+      "use_download_button": True,
+      "use_repository_button": True,
+      "use_issues_button": True,
+      "use_sidenotes": True,
+      "logo_only": True,
+      "launch_buttons": {
+        "colab_url": "https://colab.research.google.com"
+        },
+      "announcement": '<span class="anuncio">⚠️ Para poder ver siempre los últimos cambios se recomienda recargar constantemente la página sin el caché: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> o <kbd>Ctrl</kbd>+<kbd>F5</kbd> ⚠️</span>',
+      "extra_footer": "<span>Última actualización: 02/02/2023</span>"
+      } 
 
 bibtex_bibfiles:
     - references.bib

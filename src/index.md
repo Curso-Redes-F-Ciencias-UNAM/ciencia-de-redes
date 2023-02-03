@@ -1,15 +1,10 @@
 # Ciencia de Redes
 
+¡Bienvenido! Esta es la página del curso de **Ciencia de Redes** que se imparte en la [Facultad de Ciencias de la UNAM](https://www.fciencias.unam.mx/). Este es un curso introductorio a la ciencia de redes y a sus aplicaciones para el estudio de fenómenos reales. Aquí encontrarás todo el material teórico y práctico que se utiliza en el curso. 
 
-_versión 0.4_
-
-_Editado por última vez el: 27/01/23_
-
----
-
-¡Bienvenido! Esta es la página del curso de **Ciencia de Redes** que se imparte en la **Facultad de Ciencias**, UNAM. Este es un curso introductorio a la Ciencia de Redes y a sus aplicaciones para el estudio de fenómenos reales. Aquí encontrarás todo el material teórico y práctico que se utiliza en el curso. 
-
-![avatar](./_static/img/avatar.png)
+<div class="iframe-container-out">
+	<div id="graph-cont"></div>
+</div>
 
 ## Contacto
 
@@ -19,3 +14,6 @@ _Editado por última vez el: 27/01/23_
 	- **correo:** angela.84@ciencias.unam.mx
 - Luis Guillermo García Jácome
 	- **correo:** lggj37@ciencias.unam.mx
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="./scripts/graph.js"></script>

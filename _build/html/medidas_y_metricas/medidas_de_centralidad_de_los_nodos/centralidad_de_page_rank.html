@@ -75,7 +75,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="visually-hidden">Toggle in-page Table of Contents</div>
 </label>
 <!-- Headers at the top -->
-<div class="announcement header-item noprint">⚠️ Este libro está en constante actualización. Para poder visualizar los últimos cambios se recomienda borrar el caché del navegador. ⚠️</div>
+<div class="announcement header-item noprint"><span class="anuncio">⚠️ Para poder ver siempre los últimos cambios se recomienda recargar constantemente la página sin el caché: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> o <kbd>Ctrl</kbd>+<kbd>F5</kbd> ⚠️</span></div>
 <div class="header header-item noprint"></div>
 
     
@@ -96,15 +96,13 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/logo-pagina-02.png" class="logo" alt="logo">
+      <img src="../../_static/logo-pagina-03.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">Ciencia de Redes</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar..." aria-label="Buscar..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <p aria-level="2" class="caption" role="heading">
@@ -610,7 +608,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Creado con <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
             
         </div>
@@ -640,7 +638,7 @@ const thebe_selector_output = ".output, .cell_output"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="right"
-title="Navegación de palanca"
+title="Toggle navigation"
 >
   
 
@@ -657,7 +655,7 @@ title="Navegación de palanca"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="bottom"
-title="Modo de pantalla completa"
+title="Fullscreen mode"
 >
   
 
@@ -666,6 +664,51 @@ title="Modo de pantalla completa"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Curso-Redes-F-Ciencias-UNAM/ciencia-de-redes/issues/new?title=Issue%20on%20page%20%2Fmedidas_y_metricas/medidas_de_centralidad_de_los_nodos/centralidad_de_page_rank.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -679,7 +722,7 @@ title="Modo de pantalla completa"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Descargar archivo fuente"
+title="Download source file"
 >
   
 
@@ -697,7 +740,7 @@ title="Descargar archivo fuente"
   class="headerbtn"
   data-toggle="tooltip"
 data-placement="left"
-title="Imprimir en PDF"
+title="Print to PDF"
 >
   
 
@@ -738,8 +781,8 @@ title="Imprimir en PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="centralidad-de-page-rank-opcional">
 <h1><span class="section-number">1.6. </span>Centralidad de Page Rank (opcional)<a class="headerlink" href="#centralidad-de-page-rank-opcional" title="Enlazar permanentemente con este título">#</a></h1>
-<p>El enfoque del libro de <span id="id1">Newman [<a class="reference internal" href="../../referencias/referencias.html#id3" title="M. Newman. Networks. Oxford University Press, New York, United States, 2018. URL: https://www.dropbox.com/s/14xchb0u9hlbigz/Mark%20Newman-Networks_%20An%20%20Introduction-Oxford%20University%20Press%20%282010%29.pdf?dl=0.">11</a>]</span> es interesante por lo siguiente. Tal y como aquí lo vimos, Newman aborda a la centralidad de eigenvector como una generalización de la centralidad de grado (es recomendable revisar su argumento ya que aquí no profundizamos en él). Sin embargo, a diferencia de la deducción que elegimos, para Newman (p. 172) la centralidad de Katz puede verse como una generalización (o corrección) de la centralidad de eigenvector. Siguiendo el mismo hilo, Newman (p. 175) continúa con otra centralidad, la centralidad Page-Rank, como una corrección de la centralidad de Katz. Vale la pena que conozcan, aunque sea de forma general, sus argumentos.</p>
-<p>La centralidad Page-Rank, llamada así por quien la propuso por primera vez, Larry Page (fundador de Google junto con Sergey Brin; <span id="id2">Bin and Page [<a class="reference internal" href="../../referencias/referencias.html#id6" title="S. Bin and L. Page. The anatomy of a large-scale hypertextual web search engine. Computer Networks and ISD Systems, 30(1-7):107-117, 1998. URL: http://infolab.stanford.edu/~backrub/google.html.">4</a>]</span>), tiene importancia histórica por estar detrás del algoritmo de búsqueda de Google. Frente a la pregunta inicial de este bloque, ¿qué tan importante es un nodo en la red?, este algoritmo fue una innovación ya que por primera vez pudo ordenar a todas las páginas de la <em>WWW</em> según cierta importancia que tuvo muchas ventajas. Se dice que fue la idea que hizo lo que Google es hoy.</p>
+<p>El enfoque del libro de <span id="id1">Newman [<a class="reference internal" href="../../referencias/referencias.html#id3" title="M. Newman. Networks. Oxford University Press, New York, United States, 2018. URL: https://www.dropbox.com/s/14xchb0u9hlbigz/Mark%20Newman-Networks_%20An%20%20Introduction-Oxford%20University%20Press%20%282010%29.pdf?dl=0.">New18</a>]</span> es interesante por lo siguiente. Tal y como aquí lo vimos, Newman aborda a la centralidad de eigenvector como una generalización de la centralidad de grado (es recomendable revisar su argumento ya que aquí no profundizamos en él). Sin embargo, a diferencia de la deducción que elegimos, para Newman (p. 172) la centralidad de Katz puede verse como una generalización (o corrección) de la centralidad de eigenvector. Siguiendo el mismo hilo, Newman (p. 175) continúa con otra centralidad, la centralidad Page-Rank, como una corrección de la centralidad de Katz. Vale la pena que conozcan, aunque sea de forma general, sus argumentos.</p>
+<p>La centralidad Page-Rank, llamada así por quien la propuso por primera vez, Larry Page (fundador de Google junto con Sergey Brin; <span id="id2">Bin and Page [<a class="reference internal" href="../../referencias/referencias.html#id6" title="S. Bin and L. Page. The anatomy of a large-scale hypertextual web search engine. Computer Networks and ISD Systems, 30(1-7):107-117, 1998. URL: http://infolab.stanford.edu/~backrub/google.html.">BP98</a>]</span>), tiene importancia histórica por estar detrás del algoritmo de búsqueda de Google. Frente a la pregunta inicial de este bloque, ¿qué tan importante es un nodo en la red?, este algoritmo fue una innovación ya que por primera vez pudo ordenar a todas las páginas de la <em>WWW</em> según cierta importancia que tuvo muchas ventajas. Se dice que fue la idea que hizo lo que Google es hoy.</p>
 <div class="admonition-nota admonition">
 <p class="admonition-title">Nota</p>
 <p>Recuerda que todos los libros y artículos citados se pueden descargar desde la <a class="reference internal" href="../../referencias/referencias.html"><span class="doc std std-doc">lista de Referencias</span></a>.</p>
@@ -794,9 +837,12 @@ title="Imprimir en PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    Por Carlos Francisco Betancourt y Luis Guillermo García Jácome<br/>
+    By Carlos Francisco Betancourt y Luis Guillermo García Jacome<br/>
   
-      &copy; Derechos de autor 2023.<br/>
+      &copy; Copyright 2023.<br/>
+    <div class="extra_footer">
+      <span>Última actualización: 02/02/2023</span>
+    </div>
 </p>
         </footer>
     </div>

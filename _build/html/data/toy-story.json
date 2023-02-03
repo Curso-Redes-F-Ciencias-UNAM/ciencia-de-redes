@@ -1,0 +1,2423 @@
+{
+    "directed": false,
+    "multigraph": false,
+    "graph": {
+        "mode": "dynamic",
+        "node_default": {
+            "Eccentricity": 0.0,
+            "Closeness Centrality": 0.0,
+            "Betweenness Centrality": 0.0,
+            "Degree": 0,
+            "Component ID": 0,
+            "Modularity Class": 0
+        },
+        "edge_default": {}
+    },
+    "nodes": [
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 4,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -76.04552,
+                    "y": 146.9229,
+                    "z": 0.0
+                }
+            },
+            "label": "ALIEN",
+            "id": "5155783"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.868421052631579,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 150.11006,
+                    "y": -41.246952,
+                    "z": 0.0
+                }
+            },
+            "label": "ALIEN #1",
+            "id": "5155566"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.868421052631579,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 182.15697,
+                    "y": -92.52561,
+                    "z": 0.0
+                }
+            },
+            "label": "ALIEN #2",
+            "id": "5155570"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.868421052631579,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 129.30786,
+                    "y": -89.68071,
+                    "z": 0.0
+                }
+            },
+            "label": "ALIEN #3",
+            "id": "5155668"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.868421052631579,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 150.62564,
+                    "y": -136.88446,
+                    "z": 0.0
+                }
+            },
+            "label": "ALIEN #4",
+            "id": "5155656"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.868421052631579,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 198.01291,
+                    "y": -44.97956,
+                    "z": 0.0
+                }
+            },
+            "label": "ALIENS",
+            "id": "5155573"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.5789473684210527,
+            "Betweenness Centrality": 11.399999999999999,
+            "Degree": 17,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.5169024,
+                "position": {
+                    "x": -95.37497,
+                    "y": -65.95127,
+                    "z": 0.0
+                }
+            },
+            "label": "ANDY",
+            "id": "5152583"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 5,
+            "Component ID": 0,
+            "Modularity Class": 2,
+            "viz": {
+                "color": {
+                    "r": 95,
+                    "g": 202,
+                    "b": 190,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -24.899681,
+                    "y": 88.03573,
+                    "z": 0.0
+                }
+            },
+            "label": "ATTENDANT",
+            "id": "5155201"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.5526315789473684,
+            "Betweenness Centrality": 7.6499999999999995,
+            "Degree": 18,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.346869,
+                "position": {
+                    "x": -141.88487,
+                    "y": -90.10385,
+                    "z": 0.0
+                }
+            },
+            "label": "BO PEEP",
+            "id": "5152982"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 2.0,
+            "Closeness Centrality": 1.105263157894737,
+            "Betweenness Centrality": 330.81666666666666,
+            "Degree": 34,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 20.0,
+                "position": {
+                    "x": -10.936935,
+                    "y": 19.662695,
+                    "z": 0.0
+                }
+            },
+            "label": "BUZZ",
+            "id": "5153730"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.736842105263158,
+            "Betweenness Centrality": 0.0,
+            "Degree": 11,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -87.59005,
+                    "y": -190.1954,
+                    "z": 0.0
+                }
+            },
+            "label": "FRIEND #1",
+            "id": "5153631"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.736842105263158,
+            "Betweenness Centrality": 0.0,
+            "Degree": 11,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -269.17996,
+                    "y": -20.359922,
+                    "z": 0.0
+                }
+            },
+            "label": "FRIEND #2",
+            "id": "5153639"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.5526315789473684,
+            "Betweenness Centrality": 7.6499999999999995,
+            "Degree": 18,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.346869,
+                "position": {
+                    "x": -96.57854,
+                    "y": -113.04948,
+                    "z": 0.0
+                }
+            },
+            "label": "HAMM",
+            "id": "5152829"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.894736842105263,
+            "Betweenness Centrality": 37.0,
+            "Degree": 5,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 6.677666,
+                "position": {
+                    "x": -71.88474,
+                    "y": 100.43025,
+                    "z": 0.0
+                }
+            },
+            "label": "HANNAH",
+            "id": "5155833"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 223.2835,
+                    "y": 298.8945,
+                    "z": 0.0
+                }
+            },
+            "label": "KID #1",
+            "id": "5156420"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 246.94069,
+                    "y": 240.73553,
+                    "z": 0.0
+                }
+            },
+            "label": "KID #2",
+            "id": "5156465"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.763157894736842,
+            "Betweenness Centrality": 0.25,
+            "Degree": 10,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.0113354,
+                "position": {
+                    "x": -251.7797,
+                    "y": -122.009,
+                    "z": 0.0
+                }
+            },
+            "label": "LENNY",
+            "id": "5154425"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 274.21848,
+                    "y": 193.46495,
+                    "z": 0.0
+                }
+            },
+            "label": "LOCAL ANNOUNCER",
+            "id": "5156518"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 216.26694,
+                    "y": 205.30643,
+                    "z": 0.0
+                }
+            },
+            "label": "MALE CHORUS",
+            "id": "5156440"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 2.0,
+            "Betweenness Centrality": 0.0,
+            "Degree": 9,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -176.88364,
+                    "y": -217.72963,
+                    "z": 0.0
+                }
+            },
+            "label": "MIKE",
+            "id": "5153024"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 4.0,
+            "Closeness Centrality": 2.8684210526315788,
+            "Betweenness Centrality": 0.0,
+            "Degree": 1,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -144.87709,
+                    "y": 250.85547,
+                    "z": 0.0
+                }
+            },
+            "label": "MOM",
+            "id": "5156591"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.5526315789473684,
+            "Betweenness Centrality": 7.6499999999999995,
+            "Degree": 18,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.346869,
+                "position": {
+                    "x": -136.98395,
+                    "y": -45.41031,
+                    "z": 0.0
+                }
+            },
+            "label": "MR POTATO HEAD",
+            "id": "5152817"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 2.0,
+            "Betweenness Centrality": 0.0,
+            "Degree": 9,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -228.53568,
+                    "y": -194.8612,
+                    "z": 0.0
+                }
+            },
+            "label": "MR SPELL",
+            "id": "5153082"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.631578947368421,
+            "Betweenness Centrality": 5.8999999999999995,
+            "Degree": 15,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.26752,
+                "position": {
+                    "x": -122.15884,
+                    "y": 5.9914403,
+                    "z": 0.0
+                }
+            },
+            "label": "MRS DAVIS",
+            "id": "5152734"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 5,
+            "Component ID": 0,
+            "Modularity Class": 2,
+            "viz": {
+                "color": {
+                    "r": 95,
+                    "g": 202,
+                    "b": 190,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -30.03758,
+                    "y": 133.97818,
+                    "z": 0.0
+                }
+            },
+            "label": "PIZZA DELIVERER",
+            "id": "5155198"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.736842105263158,
+            "Betweenness Centrality": 0.0,
+            "Degree": 11,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -189.54614,
+                    "y": 60.512577,
+                    "z": 0.0
+                }
+            },
+            "label": "RC CAR",
+            "id": "5154750"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.5526315789473684,
+            "Betweenness Centrality": 7.6499999999999995,
+            "Degree": 18,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.346869,
+                "position": {
+                    "x": -184.36748,
+                    "y": -96.69454,
+                    "z": 0.0
+                }
+            },
+            "label": "REX",
+            "id": "5152953"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.7894736842105263,
+            "Betweenness Centrality": 0.0,
+            "Degree": 9,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": -229.51218,
+                    "y": 24.506224,
+                    "z": 0.0
+                }
+            },
+            "label": "ROBOT",
+            "id": "5154295"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 2.0789473684210527,
+            "Betweenness Centrality": 0.0,
+            "Degree": 1,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 39.70146,
+                    "y": 116.231224,
+                    "z": 0.0
+                }
+            },
+            "label": "ROBOT GUARDS",
+            "id": "5155367"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.631578947368421,
+            "Betweenness Centrality": 3.9000000000000004,
+            "Degree": 15,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.176835,
+                "position": {
+                    "x": -148.74675,
+                    "y": -140.18492,
+                    "z": 0.0
+                }
+            },
+            "label": "SARGENT",
+            "id": "5152849"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 2.0,
+            "Closeness Centrality": 1.5526315789473684,
+            "Betweenness Centrality": 31.666666666666664,
+            "Degree": 17,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 6.4358406,
+                "position": {
+                    "x": 24.686558,
+                    "y": -62.24283,
+                    "z": 0.0
+                }
+            },
+            "label": "SID",
+            "id": "5154385"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9736842105263157,
+            "Betweenness Centrality": 0.0,
+            "Degree": 3,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 89.228676,
+                    "y": 28.093508,
+                    "z": 0.0
+                }
+            },
+            "label": "SID'S MOM",
+            "id": "5156187"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.5263157894736843,
+            "Betweenness Centrality": 44.650000000000006,
+            "Degree": 19,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 7.024535,
+                "position": {
+                    "x": -183.80441,
+                    "y": -38.314503,
+                    "z": 0.0
+                }
+            },
+            "label": "SLINKY",
+            "id": "5152861"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 275.76132,
+                    "y": 283.25555,
+                    "z": 0.0
+                }
+            },
+            "label": "SPACE COMMANDER",
+            "id": "5156408"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.7105263157894737,
+            "Betweenness Centrality": 0.5,
+            "Degree": 12,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.022671,
+                "position": {
+                    "x": -245.2214,
+                    "y": -66.88237,
+                    "z": 0.0
+                }
+            },
+            "label": "TOYS",
+            "id": "5154731"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 302.48013,
+                    "y": 239.79944,
+                    "z": 0.0
+                }
+            },
+            "label": "TV ANNOUNCER",
+            "id": "5156446"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 3.0,
+            "Closeness Centrality": 1.9210526315789473,
+            "Betweenness Centrality": 0.0,
+            "Degree": 7,
+            "Component ID": 0,
+            "Modularity Class": 3,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 220,
+                    "b": 101,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 194.50183,
+                    "y": 257.70953,
+                    "z": 0.0
+                }
+            },
+            "label": "TV BUZZ",
+            "id": "5156480"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 2.0,
+            "Closeness Centrality": 1.263157894736842,
+            "Betweenness Centrality": 108.31666666666669,
+            "Degree": 28,
+            "Component ID": 0,
+            "Modularity Class": 0,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 170,
+                    "b": 51,
+                    "a": 1.0
+                },
+                "size": 9.91133,
+                "position": {
+                    "x": -66.91722,
+                    "y": -27.48294,
+                    "z": 0.0
+                }
+            },
+            "label": "WOODY",
+            "id": "5152626"
+        },
+        {
+            "movie_id": 836,
+            "Eccentricity": 4.0,
+            "Closeness Centrality": 2.5,
+            "Betweenness Centrality": 0.0,
+            "Degree": 1,
+            "Component ID": 0,
+            "Modularity Class": 1,
+            "viz": {
+                "color": {
+                    "r": 255,
+                    "g": 102,
+                    "b": 0,
+                    "a": 1.0
+                },
+                "size": 5.0,
+                "position": {
+                    "x": 26.000927,
+                    "y": 83.51247,
+                    "z": 0.0
+                }
+            },
+            "label": "WOUNDED SOLDIER",
+            "id": "5153351"
+        }
+    ],
+    "links": [
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185007",
+            "source": "5155783",
+            "target": "5155833"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185006",
+            "source": "5155783",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185005",
+            "source": "5155783",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185001",
+            "source": "5155783",
+            "target": "5153730"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184967",
+            "source": "5155566",
+            "target": "5155570"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184990",
+            "source": "5155566",
+            "target": "5155668"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184989",
+            "source": "5155566",
+            "target": "5155656"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184988",
+            "source": "5155566",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184987",
+            "source": "5155566",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184980",
+            "source": "5155566",
+            "target": "5155573"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184974",
+            "source": "5155566",
+            "target": "5153730"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184994",
+            "source": "5155570",
+            "target": "5155668"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184993",
+            "source": "5155570",
+            "target": "5155656"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184992",
+            "source": "5155570",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184991",
+            "source": "5155570",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184981",
+            "source": "5155570",
+            "target": "5155573"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184975",
+            "source": "5155570",
+            "target": "5153730"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185000",
+            "source": "5155668",
+            "target": "5155656"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184985",
+            "source": "5155668",
+            "target": "5155573"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184979",
+            "source": "5155668",
+            "target": "5153730"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184999",
+            "source": "5155668",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184997",
+            "source": "5155668",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184984",
+            "source": "5155656",
+            "target": "5155573"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184978",
+            "source": "5155656",
+            "target": "5153730"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184998",
+            "source": "5155656",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184996",
+            "source": "5155656",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184983",
+            "source": "5155573",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184982",
+            "source": "5155573",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184973",
+            "source": "5155573",
+            "target": "5153730"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184949",
+            "source": "5152583",
+            "target": "5155201"
+        },
+        {
+            "weight": 5.0,
+            "movie_id": 836,
+            "label": "184687",
+            "source": "5152583",
+            "target": "5152982"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184798",
+            "source": "5152583",
+            "target": "5153639"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184683",
+            "source": "5152583",
+            "target": "5152829"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184688",
+            "source": "5152583",
+            "target": "5153024"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184689",
+            "source": "5152583",
+            "target": "5153082"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184948",
+            "source": "5152583",
+            "target": "5155198"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184870",
+            "source": "5152583",
+            "target": "5154750"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184685",
+            "source": "5152583",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184867",
+            "source": "5152583",
+            "target": "5154731"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184964",
+            "source": "5152583",
+            "target": "5153730"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184791",
+            "source": "5152583",
+            "target": "5153631"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184776",
+            "source": "5152583",
+            "target": "5152817"
+        },
+        {
+            "weight": 9.0,
+            "movie_id": 836,
+            "label": "184943",
+            "source": "5152583",
+            "target": "5152734"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184784",
+            "source": "5152583",
+            "target": "5152953"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184767",
+            "source": "5152583",
+            "target": "5152849"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184757",
+            "source": "5152583",
+            "target": "5152626"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184951",
+            "source": "5155201",
+            "target": "5153730"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184946",
+            "source": "5155201",
+            "target": "5152734"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184952",
+            "source": "5155201",
+            "target": "5155198"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184942",
+            "source": "5155201",
+            "target": "5152626"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184815",
+            "source": "5152982",
+            "target": "5152829"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184723",
+            "source": "5152982",
+            "target": "5153024"
+        },
+        {
+            "weight": 5.0,
+            "movie_id": 836,
+            "label": "184843",
+            "source": "5152982",
+            "target": "5152817"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184724",
+            "source": "5152982",
+            "target": "5153082"
+        },
+        {
+            "weight": 8.0,
+            "movie_id": 836,
+            "label": "185083",
+            "source": "5152982",
+            "target": "5152953"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184844",
+            "source": "5152982",
+            "target": "5154295"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184927",
+            "source": "5152982",
+            "target": "5152849"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184845",
+            "source": "5152982",
+            "target": "5154385"
+        },
+        {
+            "weight": 6.0,
+            "movie_id": 836,
+            "label": "184813",
+            "source": "5152982",
+            "target": "5152861"
+        },
+        {
+            "weight": 6.0,
+            "movie_id": 836,
+            "label": "185090",
+            "source": "5152982",
+            "target": "5152626"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184829",
+            "source": "5152982",
+            "target": "5153730"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184794",
+            "source": "5152982",
+            "target": "5153631"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184805",
+            "source": "5152982",
+            "target": "5153639"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185156",
+            "source": "5152982",
+            "target": "5154425"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184809",
+            "source": "5152982",
+            "target": "5152734"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184921",
+            "source": "5152982",
+            "target": "5154750"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184906",
+            "source": "5152982",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185047",
+            "source": "5153730",
+            "target": "5156420"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185050",
+            "source": "5153730",
+            "target": "5156465"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184835",
+            "source": "5153730",
+            "target": "5154425"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185052",
+            "source": "5153730",
+            "target": "5156518"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185048",
+            "source": "5153730",
+            "target": "5156440"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184830",
+            "source": "5153730",
+            "target": "5152817"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184965",
+            "source": "5153730",
+            "target": "5152734"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184897",
+            "source": "5153730",
+            "target": "5154750"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184828",
+            "source": "5153730",
+            "target": "5152953"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184831",
+            "source": "5153730",
+            "target": "5154295"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184900",
+            "source": "5153730",
+            "target": "5152849"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184833",
+            "source": "5153730",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184894",
+            "source": "5153730",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185049",
+            "source": "5153730",
+            "target": "5156446"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185051",
+            "source": "5153730",
+            "target": "5156480"
+        },
+        {
+            "weight": 18.0,
+            "movie_id": 836,
+            "label": "184956",
+            "source": "5153730",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184796",
+            "source": "5153730",
+            "target": "5153631"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184807",
+            "source": "5153730",
+            "target": "5153639"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "185193",
+            "source": "5153730",
+            "target": "5152829"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "185012",
+            "source": "5153730",
+            "target": "5155833"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184953",
+            "source": "5153730",
+            "target": "5155198"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184959",
+            "source": "5153730",
+            "target": "5155367"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "185014",
+            "source": "5153730",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185036",
+            "source": "5153730",
+            "target": "5156187"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185040",
+            "source": "5153730",
+            "target": "5156408"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184792",
+            "source": "5153631",
+            "target": "5153639"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184797",
+            "source": "5153631",
+            "target": "5152829"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184793",
+            "source": "5153631",
+            "target": "5152734"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184795",
+            "source": "5153631",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184775",
+            "source": "5153631",
+            "target": "5152817"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184783",
+            "source": "5153631",
+            "target": "5152953"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184766",
+            "source": "5153631",
+            "target": "5152849"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184756",
+            "source": "5153631",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184808",
+            "source": "5153639",
+            "target": "5152829"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184804",
+            "source": "5153639",
+            "target": "5152734"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184806",
+            "source": "5153639",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184777",
+            "source": "5153639",
+            "target": "5152817"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184785",
+            "source": "5153639",
+            "target": "5152953"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184768",
+            "source": "5153639",
+            "target": "5152849"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184758",
+            "source": "5153639",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184863",
+            "source": "5152829",
+            "target": "5154425"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184709",
+            "source": "5152829",
+            "target": "5153024"
+        },
+        {
+            "weight": 8.0,
+            "movie_id": 836,
+            "label": "184739",
+            "source": "5152829",
+            "target": "5152817"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184710",
+            "source": "5152829",
+            "target": "5153082"
+        },
+        {
+            "weight": 7.0,
+            "movie_id": 836,
+            "label": "184751",
+            "source": "5152829",
+            "target": "5152626"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184812",
+            "source": "5152829",
+            "target": "5152734"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184923",
+            "source": "5152829",
+            "target": "5154750"
+        },
+        {
+            "weight": 6.0,
+            "movie_id": 836,
+            "label": "184747",
+            "source": "5152829",
+            "target": "5152953"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184856",
+            "source": "5152829",
+            "target": "5154295"
+        },
+        {
+            "weight": 5.0,
+            "movie_id": 836,
+            "label": "184735",
+            "source": "5152829",
+            "target": "5152849"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184859",
+            "source": "5152829",
+            "target": "5154385"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184817",
+            "source": "5152829",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184908",
+            "source": "5152829",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185069",
+            "source": "5155833",
+            "target": "5156591"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185011",
+            "source": "5155833",
+            "target": "5154385"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "185013",
+            "source": "5155833",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185055",
+            "source": "5156420",
+            "target": "5156465"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185057",
+            "source": "5156420",
+            "target": "5156518"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185053",
+            "source": "5156420",
+            "target": "5156440"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185054",
+            "source": "5156420",
+            "target": "5156446"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185056",
+            "source": "5156420",
+            "target": "5156480"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185041",
+            "source": "5156420",
+            "target": "5156408"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185066",
+            "source": "5156465",
+            "target": "5156518"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185065",
+            "source": "5156465",
+            "target": "5156480"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185059",
+            "source": "5156465",
+            "target": "5156440"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185044",
+            "source": "5156465",
+            "target": "5156408"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185062",
+            "source": "5156465",
+            "target": "5156446"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "185158",
+            "source": "5154425",
+            "target": "5152953"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "185157",
+            "source": "5154425",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185155",
+            "source": "5154425",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184853",
+            "source": "5154425",
+            "target": "5152817"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184857",
+            "source": "5154425",
+            "target": "5154295"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184860",
+            "source": "5154425",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184827",
+            "source": "5154425",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185061",
+            "source": "5156518",
+            "target": "5156440"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185046",
+            "source": "5156518",
+            "target": "5156408"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185064",
+            "source": "5156518",
+            "target": "5156446"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185067",
+            "source": "5156518",
+            "target": "5156480"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185058",
+            "source": "5156440",
+            "target": "5156446"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185060",
+            "source": "5156440",
+            "target": "5156480"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185042",
+            "source": "5156440",
+            "target": "5156408"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184725",
+            "source": "5153024",
+            "target": "5153082"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184703",
+            "source": "5153024",
+            "target": "5152817"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184721",
+            "source": "5153024",
+            "target": "5152953"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184714",
+            "source": "5153024",
+            "target": "5152849"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184718",
+            "source": "5153024",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184696",
+            "source": "5153024",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184704",
+            "source": "5152817",
+            "target": "5153082"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184849",
+            "source": "5152817",
+            "target": "5154295"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184850",
+            "source": "5152817",
+            "target": "5154385"
+        },
+        {
+            "weight": 13.0,
+            "movie_id": 836,
+            "label": "184750",
+            "source": "5152817",
+            "target": "5152626"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184881",
+            "source": "5152817",
+            "target": "5152734"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184920",
+            "source": "5152817",
+            "target": "5154750"
+        },
+        {
+            "weight": 10.0,
+            "movie_id": 836,
+            "label": "184746",
+            "source": "5152817",
+            "target": "5152953"
+        },
+        {
+            "weight": 5.0,
+            "movie_id": 836,
+            "label": "184729",
+            "source": "5152817",
+            "target": "5152849"
+        },
+        {
+            "weight": 5.0,
+            "movie_id": 836,
+            "label": "184911",
+            "source": "5152817",
+            "target": "5152861"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184905",
+            "source": "5152817",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184722",
+            "source": "5153082",
+            "target": "5152953"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184715",
+            "source": "5153082",
+            "target": "5152849"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184719",
+            "source": "5153082",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184697",
+            "source": "5153082",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184945",
+            "source": "5152734",
+            "target": "5155198"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184880",
+            "source": "5152734",
+            "target": "5154750"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184879",
+            "source": "5152734",
+            "target": "5152953"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184810",
+            "source": "5152734",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184877",
+            "source": "5152734",
+            "target": "5154731"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184875",
+            "source": "5152734",
+            "target": "5152626"
+        },
+        {
+            "weight": 2.0,
+            "movie_id": 836,
+            "label": "184769",
+            "source": "5152734",
+            "target": "5152849"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184954",
+            "source": "5155198",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184922",
+            "source": "5154750",
+            "target": "5152849"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184915",
+            "source": "5154750",
+            "target": "5152953"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184910",
+            "source": "5154750",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184904",
+            "source": "5154750",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184889",
+            "source": "5154750",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184838",
+            "source": "5152953",
+            "target": "5154295"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184918",
+            "source": "5152953",
+            "target": "5152849"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184839",
+            "source": "5152953",
+            "target": "5154385"
+        },
+        {
+            "weight": 6.0,
+            "movie_id": 836,
+            "label": "184788",
+            "source": "5152953",
+            "target": "5152861"
+        },
+        {
+            "weight": 6.0,
+            "movie_id": 836,
+            "label": "184726",
+            "source": "5152953",
+            "target": "5152626"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184903",
+            "source": "5152953",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184854",
+            "source": "5154295",
+            "target": "5154385"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184855",
+            "source": "5154295",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184823",
+            "source": "5154295",
+            "target": "5152626"
+        },
+        {
+            "weight": 4.0,
+            "movie_id": 836,
+            "label": "184728",
+            "source": "5152849",
+            "target": "5152626"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184913",
+            "source": "5152849",
+            "target": "5152861"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184907",
+            "source": "5152849",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184858",
+            "source": "5154385",
+            "target": "5152861"
+        },
+        {
+            "weight": 5.0,
+            "movie_id": 836,
+            "label": "185015",
+            "source": "5154385",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185111",
+            "source": "5154385",
+            "target": "5156187"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185109",
+            "source": "5156187",
+            "target": "5152626"
+        },
+        {
+            "weight": 9.0,
+            "movie_id": 836,
+            "label": "185144",
+            "source": "5152861",
+            "target": "5152626"
+        },
+        {
+            "weight": 3.0,
+            "movie_id": 836,
+            "label": "184902",
+            "source": "5152861",
+            "target": "5154731"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "184727",
+            "source": "5152861",
+            "target": "5153351"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185043",
+            "source": "5156408",
+            "target": "5156446"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185045",
+            "source": "5156408",
+            "target": "5156480"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185139",
+            "source": "5154731",
+            "target": "5152626"
+        },
+        {
+            "weight": 1.0,
+            "movie_id": 836,
+            "label": "185063",
+            "source": "5156446",
+            "target": "5156480"
+        }
+    ]
+}
