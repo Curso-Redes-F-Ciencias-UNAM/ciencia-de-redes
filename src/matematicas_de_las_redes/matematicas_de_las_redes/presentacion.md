@@ -1,6 +1,6 @@
 # Matemáticas de las redes
 
-Este capítulo contiene cinco videos y una serie de lecturas recomendadas para adquirit las herramientas matemáticas mínimas necesarias para el análisis de redes y de los fenómenos que estudiaremos en las siguientes semanas del curso. Los contenidos están ordenados de la siguiente forma:
+Este capítulo contiene cinco videos y una serie de lecturas recomendadas para adquirir las herramientas matemáticas mínimas necesarias para el análisis de redes y de los fenómenos que estudiaremos en las siguientes semanas del curso. Los contenidos están ordenados de la siguiente forma:
 
 - [Tipos de redes y matriz de adyacencia](./tipos_de_redes_y_matriz_de_adyacencia.md) (video 20 min)
 - [Definición de grado](./definicion_de_grado.md) (video 4 min)
