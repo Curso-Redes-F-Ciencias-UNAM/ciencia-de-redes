@@ -22,7 +22,7 @@ parts:
     - file: matematicas_de_las_redes/practica_01/presentacion
       sections:
       - file: matematicas_de_las_redes/practica_01/sesion_practica_01_notebook
-      - file: matematicas_de_las_redes/practica_01/sesion_practica_01_video
+      # - file: matematicas_de_las_redes/practica_01/sesion_practica_01_video
   - caption: "Parte 2: Medidas y métricas"
     numbered: True
     chapters:
@@ -37,7 +37,7 @@ parts:
     - file: medidas_y_metricas/practica_02/presentacion
       sections:
       - file: medidas_y_metricas/practica_02/sesion_practica_02_notebook
-      - file: medidas_y_metricas/practica_02/sesion_practica_02_video
+      # - file: medidas_y_metricas/practica_02/sesion_practica_02_video
     - file: medidas_y_metricas/medidas_de_grupos_de_nodos/presentacion
       sections:
       - file: medidas_y_metricas/medidas_de_grupos_de_nodos/coeficiente_de_agrupacion
