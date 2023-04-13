@@ -59,13 +59,14 @@ parts:
       - file: redes_complejas_y_sus_propiedades/redes_aleatorias_01/definicion_de_red_aleatoria
       - file: redes_complejas_y_sus_propiedades/redes_aleatorias_01/distribucion_binomial
       - file: redes_complejas_y_sus_propiedades/redes_aleatorias_01/numero_de_enlaces
-      - file: redes_complejas_y_sus_propiedades/redes_aleatorias_01/grado_promedio_distribucion_de_grado_y_clustering
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias_01/grado_promedio_y_clustering
     - file: redes_complejas_y_sus_propiedades/practica_04/presentacion
       sections:
       - file: redes_complejas_y_sus_propiedades/practica_04/sesion_practica_04_notebook
     - file: redes_complejas_y_sus_propiedades/redes_aleatorias_02/presentacion
       sections:
-      - file: redes_complejas_y_sus_propiedades/redes_aleatorias_02/distribucion_binomial_y_de_poisson
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias_02/distribucion_binomial
+      - file: redes_complejas_y_sus_propiedades/redes_aleatorias_02/distribucion_de_poisson
       - file: redes_complejas_y_sus_propiedades/redes_aleatorias_02/redes_aleatorias_y_redes_reales
       - file: redes_complejas_y_sus_propiedades/redes_aleatorias_02/redes_aleatorias_y_propiedad_de_mundo_pequenio 
       - file: redes_complejas_y_sus_propiedades/redes_aleatorias_02/transicion_de_fase_en_redes_aleatorias

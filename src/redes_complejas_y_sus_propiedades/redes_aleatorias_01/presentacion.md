@@ -8,4 +8,4 @@ El contenido de este capítulo es el siguiente:
 - [Definición de red aleatoria](definicion_de_red_aleatoria.md) (video 2 min)
 - [Repaso de la distribución binomial](./distribucion_binomial.md) (video 10 min)
 - [Número de enlaces](./numero_de_enlaces.md) (video 11 min)
-- [Grado promedio, distribución de grado y clustering](./grado_promedio_distribucion_de_grado_y_clustering.md) (videos 4, 3 min)
+- [Grado promedio y clustering](./grado_promedio_y_clustering.md) (videos 4, 3 min)

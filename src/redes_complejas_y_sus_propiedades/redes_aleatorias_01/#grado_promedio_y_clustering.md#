@@ -1,14 +1,10 @@
-# Grado promedio, distribución de grado y clustering
+# Grado promedio y clustering
 
-A partir del número de enlaces esperado se puede obtener una expresión para el grado promedio (esperado) de la red aleatoria
+A partir del número de enlaces esperado se puede obtener una expresión para el grado promedio (esperado) de la red aleatoria:
 
 $$\left< k \right> = p(N-1)$$
 
-Sin embargo, el grado promedio también puede obtenerse a partir de las propiedades de la distribución binomial, que también describe a la distribución de grado de la red aleatoria. Se tiene entonces que la distribución de grado de la red es
-
-$$P_k = \left( \begin{array}{c}N-1 \\ k \end{array}\right) p^{k}(1-p)^{N-1-k}$$
-
-La derivación de esta distribución de grado está desarrollada en el siguiente video:
+La derivación de este resultado se ve en el siguiente video:
 
 <div class="iframe-container-out">
 	<div class="iframe-container-in">
