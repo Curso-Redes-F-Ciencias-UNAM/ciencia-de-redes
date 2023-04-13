@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.1. Distribución biniomial y de Poisson &#8212; Ciencia de Redes</title>
+    <title>3.1. Distribución biniomial &#8212; Ciencia de Redes</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -372,7 +372,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../redes_aleatorias_01/grado_promedio_distribucion_de_grado_y_clustering.html">
-     1.5. Grado promedio, distribución de grado y clustering
+     1.5. Grado promedio y clustering
     </a>
    </li>
   </ul>
@@ -406,7 +406,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.1. Distribución biniomial y de Poisson
+     3.1. Distribución biniomial
     </a>
    </li>
    <li class="toctree-l2">
@@ -759,7 +759,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Distribución biniomial y de Poisson</h1>
+                <h1>Distribución biniomial</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -771,9 +771,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="distribucion-biniomial-y-de-poisson">
-<h1><span class="section-number">3.1. </span>Distribución biniomial y de Poisson<a class="headerlink" href="#distribucion-biniomial-y-de-poisson" title="Enlazar permanentemente con este título">#</a></h1>
-<p>En la primera parte de la <a class="reference internal" href="../practica_04/sesion_practica_04_notebook.html"><span class="doc std std-doc">práctica 4</span></a> obtuvieron la distribución de grado y su ajuste mediante la distribución binomial de una red aleatoria. En el siguiente video se deduce formalmente este resultado:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="distribucion-biniomial">
+<h1><span class="section-number">3.1. </span>Distribución biniomial<a class="headerlink" href="#distribucion-biniomial" title="Enlazar permanentemente con este título">#</a></h1>
+<p>En la primera parte de la <a class="reference internal" href="../practica_04/sesion_practica_04_notebook.html"><span class="doc std std-doc">práctica 4</span></a> se obtuvo la distribución de grado de una red aleatoria y se vio que se ajusta a una distribución binomial:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P_k = \left( \begin{array}{c}N-1 \\ k \end{array}\right) p^{k}(1-p)^{N-1-k}\end{split}\]</div>
+<p>En el siguiente video se deduce formalmente este resultado:</p>
 <div class="iframe-container-out">
 	<div class="iframe-container-in">
 		<iframe src="https://www.youtube.com/embed/x8BCsk7BZy8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -781,13 +784,8 @@ title="Print to PDF"
 </div>
 <div class="danger admonition">
 <p class="admonition-title">Corrección</p>
-<p>En el minuto 4:20 se habla con cierta soltura de la anchura de la distribución. Se comete un error al hablar del segundo momento de la distribución <span class="math notranslate nohighlight">\(⟨k^2⟩\)</span>. La expresión <span class="math notranslate nohighlight">\(np(1−p)\)</span> corresponde a la varianza, es decir <span class="math notranslate nohighlight">\(⟨k^2⟩−⟨k⟩^2\)</span>. En las imágenes ya está la corrección.</p>
+<p>En el minuto 4:20 se habla con cierta soltura de la anchura de la distribución. Se comete un error al hablar del segundo momento de la distribución <span class="math notranslate nohighlight">\(⟨k^2⟩\)</span>. La expresión <span class="math notranslate nohighlight">\(np(1−p)\)</span> corresponde a la varianza, es decir <span class="math notranslate nohighlight">\(⟨k^2⟩−⟨k⟩^2\)</span>.</p>
 </div>
-<p>Como se ejemplificó, sin probar, en la práctica 4, si ocurre que el grado promedio (que depende de <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(N\)</span> como se explicó en la página anterior) y <span class="math notranslate nohighlight">\(N\)</span> satisfacen que <span class="math notranslate nohighlight">\(\frac{⟨k⟩}{N}≪1\)</span>$ la distribución binomial se aproxima a una de Poisson.</p>
-<div class="math notranslate nohighlight">
-\[P_k = e^{-\left&lt; k \right&gt;} {{\left&lt; k \right&gt;^{k}}\over{k!}}\]</div>
-<p>Esto es de gran importancia porque para la mayoría de las redes reales de interés se satisface esta condición. Es de hecho la condición de «escasez» de enlaces en las redes reales. Esto facilitó la comparación entre las redes reales y la red aleatoria correspondiente (mismo tamaño <span class="math notranslate nohighlight">\(N\)</span> y mismo grado promedio <span class="math notranslate nohighlight">\(\left&lt; k \right&gt;\)</span>).</p>
-<p>La demostración de este hecho está desarrollada con todo detalle en el <a class="reference external" href="http://networksciencebook.com/chapter/3#advanced-a">material complementario del segundo capítulo del libro de Barabasi</a>.</p>
 </div>
 
     <script type="text/x-thebe-config">
