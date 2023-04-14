@@ -1,10 +1,10 @@
-# Distribución biniomial
+# Distribución de grado
 
-En la primera parte de la [práctica 4](../practica_04/sesion_practica_04_notebook) se obtuvo la distribución de grado de una red aleatoria y se vio que se ajusta a una distribución binomial:
+La distribución de grado de una red aleatoria también es una binomial:
 
 $$P_k = \left( \begin{array}{c}N-1 \\ k \end{array}\right) p^{k}(1-p)^{N-1-k}$$
 
-En el siguiente video se deduce formalmente este resultado:
+En el siguiente video se deduce este resultado:
 
 <div class="iframe-container-out">
 	<div class="iframe-container-in">

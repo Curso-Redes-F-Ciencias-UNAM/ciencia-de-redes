@@ -227,7 +227,7 @@ plt.xlabel
 # ## Comparación del modelo de red aleatoria con redes reales
 # El modelo de red aleatoria ha resultado muy útil para aplicar los conceptos matemáticos que hemos venido estudiando hasta ahora. Ahora corresponderá utilizar este modelo para intentar describir el comportamiento de redes reales. La suposición principal detrás de esto sería pensar que las interacciones entre los elementos del sistema están dadas de forma aleatoria. Eso tendría consecuencias particularmente en propiedades como su grado promedio, su distribución de grado y el coeficiente de clustering de los nodos. Esas mismas propiedades son las que analizaremos en las redes reales.
 # 
-# En la siguiente celda deben seleccionar el archivo de los datos que hayan elegido. Recuerden que si están trabajando en colab, deben utilizar ```files``` para subir el archivo (líneas comentadas). También recuerden el procedimiento para preparar los datos, descrito en la práctica 2 https://www.youtube.com/watch?v=tD7-9yM-xLA
+# En la siguiente celda deben seleccionar el archivo de los datos que hayan elegido. Recuerden que si están trabajando en colab, deben utilizar ```files``` para subir el archivo (líneas comentadas). También recuerden el procedimiento para preparar los datos, descrito en la [práctica 2](https://youtu.be/60kGhRrq5eo)
 # 
 
 # In[ ]:
