@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.2. Primera aproximación al modelo Watts-Strogatz (notebook) &#8212; Ciencia de Redes</title>
+    <title>4.3. Primera aproximación al modelo Watts-Strogatz (notebook) &#8212; Ciencia de Redes</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="4.3. Experimento W-S" href="experimento_ws.html" />
-    <link rel="prev" title="4.1. Introducción al modelo Watts-Strogatz" href="introduccion_al_modelo_watts_strogatz.html" />
+    <link rel="next" title="4.4. Experimento W-S" href="experimento_ws.html" />
+    <link rel="prev" title="4.2. Introducción al modelo Watts-Strogatz" href="introduccion_al_modelo_watts_strogatz.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="es">
     
@@ -427,18 +427,23 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="propiedad_de_mundo_pequeno.html">
+     4.1. Propiedad de mundo pequeño
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="introduccion_al_modelo_watts_strogatz.html">
-     4.1. Introducción al modelo Watts-Strogatz
+     4.2. Introducción al modelo Watts-Strogatz
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.2. Primera aproximación al modelo Watts-Strogatz (notebook)
+     4.3. Primera aproximación al modelo Watts-Strogatz (notebook)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="experimento_ws.html">
-     4.3. Experimento W-S
+     4.4. Experimento W-S
     </a>
    </li>
   </ul>
@@ -790,34 +795,34 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funcion-anillo">
-   4.2.1. Función anillo
+   4.3.1. Función anillo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matriz-de-distancia-distancia-promedio-y-diametro">
-   4.2.2. Matriz de distancia, distancia promedio y diámetro
+   4.3.2. Matriz de distancia, distancia promedio y diámetro
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funcion-cambio-de-enlaces">
-   4.2.3. Función cambio de enlaces
+   4.3.3. Función cambio de enlaces
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#varias-veces">
-     4.2.3.1. Varias veces
+     4.3.3.1. Varias veces
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comportamiento-de-diametro-distancia-media-y-clustering">
-     4.2.3.2. Comportamiento de diámetro, distancia media y clustering
+     4.3.3.2. Comportamiento de diámetro, distancia media y clustering
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#el-experimento-de-watts-strogatz">
-   4.2.4. El «experimento» de Watts-Strogatz
+   4.3.4. El «experimento» de Watts-Strogatz
   </a>
  </li>
 </ul>
@@ -841,34 +846,34 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funcion-anillo">
-   4.2.1. Función anillo
+   4.3.1. Función anillo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matriz-de-distancia-distancia-promedio-y-diametro">
-   4.2.2. Matriz de distancia, distancia promedio y diámetro
+   4.3.2. Matriz de distancia, distancia promedio y diámetro
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funcion-cambio-de-enlaces">
-   4.2.3. Función cambio de enlaces
+   4.3.3. Función cambio de enlaces
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#varias-veces">
-     4.2.3.1. Varias veces
+     4.3.3.1. Varias veces
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comportamiento-de-diametro-distancia-media-y-clustering">
-     4.2.3.2. Comportamiento de diámetro, distancia media y clustering
+     4.3.3.2. Comportamiento de diámetro, distancia media y clustering
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#el-experimento-de-watts-strogatz">
-   4.2.4. El «experimento» de Watts-Strogatz
+   4.3.4. El «experimento» de Watts-Strogatz
   </a>
  </li>
 </ul>
@@ -882,7 +887,7 @@ title="Print to PDF"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="primera-aproximacion-al-modelo-watts-strogatz-notebook">
-<h1><span class="section-number">4.2. </span>Primera aproximación al modelo Watts-Strogatz (notebook)<a class="headerlink" href="#primera-aproximacion-al-modelo-watts-strogatz-notebook" title="Enlazar permanentemente con este título">#</a></h1>
+<h1><span class="section-number">4.3. </span>Primera aproximación al modelo Watts-Strogatz (notebook)<a class="headerlink" href="#primera-aproximacion-al-modelo-watts-strogatz-notebook" title="Enlazar permanentemente con este título">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -894,7 +899,7 @@ title="Print to PDF"
 </div>
 <p>Watts y Strogatz parten de una red regular similar a la que generamos en las primeras sesiones prácticas. Le llamamos red anillo y tiene la característica de que su coeficiente de clustering es constante e independiente de <span class="math notranslate nohighlight">\(N\)</span>. Mediante esa estructura se puede generar una red tan grande como quiera.</p>
 <div class="section" id="funcion-anillo">
-<h2><span class="section-number">4.2.1. </span>Función anillo<a class="headerlink" href="#funcion-anillo" title="Enlazar permanentemente con este título">#</a></h2>
+<h2><span class="section-number">4.3.1. </span>Función anillo<a class="headerlink" href="#funcion-anillo" title="Enlazar permanentemente con este título">#</a></h2>
 <p>En la siguiente celda puedes decidir la cantidad de nodos adyacentes en el anillo con los que cada nodo estará conectado. Se necesita que estén conectados, como mínimo, a segundos vecinos para que el coeficiente de clustering sea distinto de cero. Juega con esa variable descomentando las líneas (o generando nuevas) y con el número de nodos de la red para ver cómo se comporta el coeficiente de clustering de los nodos.</p>
 <p>Notar que se modificó un poco la definición de la red anillo, introduciendo un segundo parámetro (<code class="docutils literal notranslate"><span class="pre">l</span></code>) para determinar con cuántos «l-vecinos» estará conectado cada nodo.</p>
 <div class="cell docutils container">
@@ -955,7 +960,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="section" id="matriz-de-distancia-distancia-promedio-y-diametro">
-<h2><span class="section-number">4.2.2. </span>Matriz de distancia, distancia promedio y diámetro<a class="headerlink" href="#matriz-de-distancia-distancia-promedio-y-diametro" title="Enlazar permanentemente con este título">#</a></h2>
+<h2><span class="section-number">4.3.2. </span>Matriz de distancia, distancia promedio y diámetro<a class="headerlink" href="#matriz-de-distancia-distancia-promedio-y-diametro" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Ahora, para visualizar el comportamiento de las distancias entre cualquier pareja de nodos, utilizamos una representación gráfica (mediante <code class="docutils literal notranslate"><span class="pre">imshow</span></code>) de la matriz de distancias entre nodos.
 Para ello se genera una matriz cuadrada de <span class="math notranslate nohighlight">\(N \times N\)</span> y se asigna a cada entrada <span class="math notranslate nohighlight">\((i,j)\)</span> la distancia <span class="math notranslate nohighlight">\(d_{ij}\)</span> entre los nodos <span class="math notranslate nohighlight">\((i,j)\)</span>.</p>
 <p>Después, mediante el uso de la función <code class="docutils literal notranslate"><span class="pre">plt.subplots</span></code> se visualizan la matriz de adyacencia y la red juntas. Utilicen esta representación para comprender la estructura de la matriz de distancias y cómo se relacionan el diámetro y la distancia promedio.</p>
@@ -999,7 +1004,7 @@ Para ello se genera una matriz cuadrada de <span class="math notranslate nohighl
 </div>
 </div>
 <div class="section" id="funcion-cambio-de-enlaces">
-<h2><span class="section-number">4.2.3. </span>Función cambio de enlaces<a class="headerlink" href="#funcion-cambio-de-enlaces" title="Enlazar permanentemente con este título">#</a></h2>
+<h2><span class="section-number">4.3.3. </span>Función cambio de enlaces<a class="headerlink" href="#funcion-cambio-de-enlaces" title="Enlazar permanentemente con este título">#</a></h2>
 <p>La idea principal de Watts y Strogatz fue reducir la distancia entre todas las parejas de nodos cambiando de forma aleatoria enlaces. Esto generaría «puentes» entre enlaces que originalmente están lejanos pero que podrían modificar la estructura completa de las distancias. Veamos esto con detalle.</p>
 <p>Primero hay que definir una red <code class="docutils literal notranslate"><span class="pre">cambio_enlace</span></code> que hace lo siguiente:</p>
 <ul class="simple">
@@ -1089,7 +1094,7 @@ Para ello se genera una matriz cuadrada de <span class="math notranslate nohighl
 </div>
 <p>Para responder a las preguntas anteriores se puede hacer el proceso de forma más sistemática si se usa un bucle para aplicar la función varias veces. Juega con eso en la siguiente casilla. Como puedes ver, el bucle sólo toma cinco líneas, el resto son instrucciones para la visualización y comparación de las redes y las matrices, inciales y finales.</p>
 <div class="section" id="varias-veces">
-<h3><span class="section-number">4.2.3.1. </span>Varias veces<a class="headerlink" href="#varias-veces" title="Enlazar permanentemente con este título">#</a></h3>
+<h3><span class="section-number">4.3.3.1. </span>Varias veces<a class="headerlink" href="#varias-veces" title="Enlazar permanentemente con este título">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G2</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1149,7 +1154,7 @@ Para ello se genera una matriz cuadrada de <span class="math notranslate nohighl
 </div>
 </div>
 <div class="section" id="comportamiento-de-diametro-distancia-media-y-clustering">
-<h3><span class="section-number">4.2.3.2. </span>Comportamiento de diámetro, distancia media y clustering<a class="headerlink" href="#comportamiento-de-diametro-distancia-media-y-clustering" title="Enlazar permanentemente con este título">#</a></h3>
+<h3><span class="section-number">4.3.3.2. </span>Comportamiento de diámetro, distancia media y clustering<a class="headerlink" href="#comportamiento-de-diametro-distancia-media-y-clustering" title="Enlazar permanentemente con este título">#</a></h3>
 <p>Como ejercicio. Genera ahora unas gráficas de diámetro, distancia media y clustering en función del número de enlaces que se modificaron en la red. Lo que se quiere es visualizar cuál disminuye más rápido, y qué tan rápido.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1273,7 +1278,7 @@ Para ello se genera una matriz cuadrada de <span class="math notranslate nohighl
 </div>
 </div>
 <div class="section" id="el-experimento-de-watts-strogatz">
-<h2><span class="section-number">4.2.4. </span>El «experimento» de Watts-Strogatz<a class="headerlink" href="#el-experimento-de-watts-strogatz" title="Enlazar permanentemente con este título">#</a></h2>
+<h2><span class="section-number">4.3.4. </span>El «experimento» de Watts-Strogatz<a class="headerlink" href="#el-experimento-de-watts-strogatz" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Ahora que se ha generado un poco de intuición, se genera una nueva función más apegada a la propuesta de Watts y Strogatz. En esta, se parte de una red regular (que hemos llamado anillo) se le cambian un porcentaje de enlaces dados por una probabilidad <span class="math notranslate nohighlight">\(0 \le p \le 1\)</span>.</p>
 <p>A continucación se les proporciona la función <code class="docutils literal notranslate"><span class="pre">re_enlazar</span></code> que:</p>
 <ul class="simple">
@@ -1346,13 +1351,13 @@ Para ello se genera una matriz cuadrada de <span class="math notranslate nohighl
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">anterior</p>
-            <p class="prev-next-title"><span class="section-number">4.1. </span>Introducción al modelo Watts-Strogatz</p>
+            <p class="prev-next-title"><span class="section-number">4.2. </span>Introducción al modelo Watts-Strogatz</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="experimento_ws.html" title="siguiente página">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title"><span class="section-number">4.3. </span>Experimento W-S</p>
+        <p class="prev-next-title"><span class="section-number">4.4. </span>Experimento W-S</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

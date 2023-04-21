@@ -72,6 +72,7 @@ parts:
       # - file: redes_complejas_y_sus_propiedades/redes_aleatorias_02/transicion_de_fase_en_redes_aleatorias
     - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/presentacion
       sections:
+      - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/propiedad_de_mundo_pequeno
       - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/introduccion_al_modelo_watts_strogatz
       - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/actividad_primera_aproximacion_al_modelo_WS
       - file: redes_complejas_y_sus_propiedades/redes_de_mundo_pequeno/experimento_ws
