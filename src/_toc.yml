@@ -88,6 +88,10 @@ parts:
   - caption: "Parte 4: Procesos en redes"
     numbered: True
     chapters:
+    - file: procesos_en_redes/transicion_de_fase/presentacion
+      sections:
+      - file: procesos_en_redes/transicion_de_fase/simulacion_de_la_transicion_de_fase_en_redes_aleatorias
+      - file: procesos_en_redes/transicion_de_fase/analisis_de_la_transicion_de_fase_en_redes_aleatorias
     - file: procesos_en_redes/difusion_en_redes/presentacion
       sections:
       - file: procesos_en_redes/difusion_en_redes/ecuacion_de_difusion_y_laplaciano_en_redes
@@ -96,13 +100,13 @@ parts:
     - file: procesos_en_redes/percolacion_en_redes/presentacion
       sections:
       - file: procesos_en_redes/percolacion_en_redes/percolacion
-  - caption: "Parte 5: Estudio de redes reales"
-    numbered: True
-    chapters:
-    - file: estudio_de_redes_reales/redes_de_informacion/presentacion
-    - file: estudio_de_redes_reales/redes_en_biologia/presentacion
-    - file: estudio_de_redes_reales/redes_sociales/presentacion
-    - file: estudio_de_redes_reales/proyectos_finales/presentacion
+  # - caption: "Parte 5: Estudio de redes reales"
+  #   numbered: True
+  #   chapters:
+  #   - file: estudio_de_redes_reales/redes_de_informacion/presentacion
+  #   - file: estudio_de_redes_reales/redes_en_biologia/presentacion
+  #   - file: estudio_de_redes_reales/redes_sociales/presentacion
+  #   - file: estudio_de_redes_reales/proyectos_finales/presentacion
   - caption: "Referencias"
     chapters:
     - file: referencias/referencias

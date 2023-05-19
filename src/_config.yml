@@ -39,7 +39,7 @@ sphinx:
         "colab_url": "https://colab.research.google.com"
         },
       "announcement": '<span class="anuncio">⚠️ Para poder ver siempre los últimos cambios se recomienda recargar constantemente la página sin el caché: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> o <kbd>Ctrl</kbd>+<kbd>F5</kbd> ⚠️</span>',
-      "extra_footer": "<span>Última actualización: 02/02/2023</span>"
+      "extra_footer": "<span>Última actualización: 18/05/2023</span>"
       } 
 
 bibtex_bibfiles:
